@@ -1,7 +1,27 @@
-const { addUser, getByEmail } = require("./service");
+const { getUsers, getById, addUser, getByEmail } = require("./service");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
+
+async function get(req, res) {
+    try {
+        console.log(req.query);
+
+        if (req.query.id) {
+            const id = req.query.id;
+            const result = await getById(id);
+            console.log("result of specific user =>", result);
+            return res.send(result);
+        }
+
+        const result = await getUsers();
+        console.log("result =>", result);
+
+        return res.send(result);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 async function register(req, res) {
     try {
@@ -43,6 +63,7 @@ async function login(req, res) {
 }
 
 module.exports = {
+    get,
     register,
     login,
 };

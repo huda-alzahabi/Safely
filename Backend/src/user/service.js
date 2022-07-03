@@ -2,6 +2,14 @@ const User = require("../../model/User");
 const jwt = require("jsonwebtoken");
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
 
+async function getUsers() {
+    return await User.find();
+}
+
+async function getById(id) {
+    return await User.findById(id).populate("contacts");
+}
+
 async function addUser(body, hashPassword) {
     const { name, email } = body;
 
@@ -27,6 +35,8 @@ async function getByEmail(email) {
 }
 
 module.exports = {
+    getUsers,
+    getById,
     addUser,
     getByEmail,
 };
