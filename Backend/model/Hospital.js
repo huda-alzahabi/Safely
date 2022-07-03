@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userTypeSchema = new mongoose.Schema({
+const hospitalSchema = new mongoose.Schema({
     phone_number: {
         type: String,
         required: true,
@@ -18,4 +18,4 @@ const userTypeSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("UserType", userTypeSchema);
+module.exports = mongoose.model("Hospital", hospitalSchema);

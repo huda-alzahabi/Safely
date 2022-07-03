@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const userRouter = require("./src/user");
 const patientRouter = require("./src/patient");
+const hospitalRouter = require("./src/hospital");
 
 const DB_CONNECT = process.env.DB_CONNECT || "";
 mongoose.connect(DB_CONNECT, (err) => {
@@ -17,5 +18,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/user", userRouter);
 app.use("/api/patient", patientRouter);
+app.use("/api/hospital", hospitalRouter);
 
 app.listen(3030, () => console.log("Server running"));
