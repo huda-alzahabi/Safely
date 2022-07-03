@@ -13,7 +13,10 @@ const doctorSchema = new mongoose.Schema({
         min: 6,
         max: 255,
     },
-    //  hospital_id
+    hospital: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Hospital",
+    },
 });
 
 module.exports = mongoose.model("Doctor", doctorSchema);

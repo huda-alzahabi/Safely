@@ -31,9 +31,18 @@ const patientSchema = new mongoose.Schema({
         min: 6,
         max: 255,
     },
-    //prescription_id
-    //address:[ {}],
-    //user_id
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    prescriptions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Prescription",
+    }, ],
+    addresses: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Address",
+    }, ],
 });
 
 module.exports = mongoose.model("Patient", patientSchema);

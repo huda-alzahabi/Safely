@@ -25,10 +25,18 @@ const appointmentSchema = new mongoose.Schema({
         min: 5,
         max: 255,
     },
-
-    //  hospital_id
-    //  patient_id
-    //  doctor_id
+    hospital: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Hospital",
+    },
+    patient: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Patient",
+    },
+    doctor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Doctor",
+    },
 });
 
 module.exports = mongoose.model("Appointment", appointmentSchema);

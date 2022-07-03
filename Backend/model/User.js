@@ -25,7 +25,10 @@ const userSchema = new mongoose.Schema({
         min: 25,
         max: 65535,
     },
-    // usertype_id
+    userType: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "UserType",
+    },
 });
 
 module.exports = mongoose.model("User", userSchema);

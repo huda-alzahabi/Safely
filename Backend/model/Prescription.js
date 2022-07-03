@@ -19,8 +19,14 @@ const prescriptionSchema = new mongoose.Schema({
         min: "2022-07-28",
         max: "2022-09-23",
     },
-    // patient_id
-    // doctor_id
+    patient: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Patient",
+    },
+    doctor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Doctor",
+    },
 });
 
 module.exports = mongoose.model("Prescription", prescriptionSchema);

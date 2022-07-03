@@ -7,8 +7,15 @@ const userTypeSchema = new mongoose.Schema({
         min: 6,
         max: 255,
     },
-    //address:[ {}],
-    //user_id
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+
+    address: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Address",
+    },
 });
 
 module.exports = mongoose.model("UserType", userTypeSchema);
