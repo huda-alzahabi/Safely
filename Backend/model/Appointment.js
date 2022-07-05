@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 
 const appointmentSchema = new mongoose.Schema({
-    examination_room: {
-        type: String,
-        required: true,
-        min: 6,
-        max: 255,
-    },
     date: {
         type: Date,
         required: true,
