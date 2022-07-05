@@ -38,11 +38,18 @@ const patientSchema = new mongoose.Schema({
     prescriptions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Prescription",
-    }, ],
-    addresses: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Address",
-    }, ],
+    },],
+    locations: [{
+        type: {
+            type: String,
+            enum: ["Point"],
+            required: true,
+        },
+        coordinates: {
+            type: [Number],
+            required: true,
+        },
+    }]
 });
 
 module.exports = mongoose.model("Patient", patientSchema);
