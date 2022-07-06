@@ -1,4 +1,4 @@
-package com.safely.frontend
+package com.finalproj.safely
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
