@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Frontend</string>
+    <string name="app_name">Safely</string>
+    <string name="welcome">Welcome to Safely</string>
+    <string name="near">Close to you, wherever you are...</string>
+    <string name="try_now">Try Now</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log in</string>
+    <string name="register">Register</string>
+
+
 </resources>
