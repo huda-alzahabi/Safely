@@ -44,6 +44,9 @@ dependencies {
     def arch_version = '2.6.0-alpha01'
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:$arch_version")
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
 
 }
