@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<FrameLayout
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
-    <EditText
-        android:id="@+id/login_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:layout_centerHorizontal="true"
-        />
-    <EditText
-        android:id="@+id/login_pass"
-        android:layout_below="@id/login_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:hint="@string/password"/>
-    <Button
-        android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_pass"
-        android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/login"
-        android:backgroundTint="#D90BA3D3"
-        android:textAllCaps="false"/>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login"
+        android:scaleType="fitStart"/>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="HardcodedText"
+        tools:context=".SignUpActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_email1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="350dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/email">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_pass1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/password">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--sample button to submit entered data inside from edit text-->
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/login"
+            android:backgroundTint="#D90BA3D3"
+            android:fontFamily="@font/inter"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+</FrameLayout>
