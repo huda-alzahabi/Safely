@@ -9,9 +9,9 @@ class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
-        val btn_try_now = findViewById(R.id.trynow) as Button
-        btn_try_now.setOnClickListener {
-            val intent = Intent(this@WelcomeActivity, UserTypeActivity::class.java)
+        val tryNow = findViewById<Button>(R.id.trynow)
+        tryNow.setOnClickListener {
+            val intent = Intent(this@WelcomeActivity, SignUpActivity::class.java)
             startActivity(intent)
         }
     }
