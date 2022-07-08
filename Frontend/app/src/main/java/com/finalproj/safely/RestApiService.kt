@@ -19,4 +19,18 @@ class RestApiService {
             }
         )
     }
+    fun login(loginInfo: LoginInfo, onResult: (LoginInfo?) -> Unit){
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.login(loginInfo).enqueue(
+            object : Callback<LoginInfo> {
+                override fun onFailure(call: Call<LoginInfo>, t: Throwable) {
+                    onResult(null)
+                }
+                override fun onResponse( call: Call<LoginInfo>, response: Response<LoginInfo>) {
+                    val addedUser = response.body()
+                    onResult(addedUser)
+                }
+            }
+        )
+    }
 }
