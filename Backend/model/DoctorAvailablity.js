@@ -23,6 +23,17 @@ const doctorAvailablitySchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Doctor",
     },
+    user_appointment:{
+        user:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+        }, 
+        available:{
+        type: Boolean,
+        default: true
+        }
+
+    }
 });
 
 module.exports = mongoose.model("DoctorAvailability", doctorAvailablitySchema);
