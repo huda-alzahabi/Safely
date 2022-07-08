@@ -11,4 +11,8 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("/api/user/auth/register")
     fun register(@Body userData: UserInfo): Call<UserInfo>
+
+    @Headers("Content-Type: application/json")
+    @POST("/api/user/auth/login")
+    fun login(@Body loginInfo: LoginInfo): Call<LoginInfo>
 }
