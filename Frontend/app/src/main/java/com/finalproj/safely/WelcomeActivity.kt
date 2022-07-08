@@ -11,7 +11,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
         val tryNow = findViewById<Button>(R.id.trynow)
         tryNow.setOnClickListener {
-            val intent = Intent(this@WelcomeActivity, SignUpActivity::class.java)
+            val intent = Intent(this@WelcomeActivity, LoginActivity::class.java)
             startActivity(intent)
         }
     }
