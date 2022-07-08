@@ -31,9 +31,9 @@
         android:layout_below="@+id/oldMan"
         android:gravity="center"
         android:text="@string/welcome"
-        android:font="@font/inter"
+        android:fontFamily="@font/inter"
+        android:textColor="@color/black"
         android:textSize="34sp"
-        android:fontFamily="sans-serif"
         />
     <TextView
         android:id="@+id/near"
@@ -42,9 +42,10 @@
         android:layout_below="@+id/welcome"
         android:gravity="center"
         android:text="@string/near"
-        app:fontWeight="400"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:fontFamily="@font/manrope"
+        android:textColor="@color/black"
+
         />
 
     <Button
@@ -52,10 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/near"
-        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/try_now"
+        android:layout_marginTop="25dp"
         android:backgroundTint="#D90BA3D3"
-        android:textAllCaps="false"/>
+        android:text="@string/try_now"
+        android:textAllCaps="false" />
 </RelativeLayout>
 </FrameLayout>
