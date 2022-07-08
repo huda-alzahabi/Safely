@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Safely</string>
+    <string name="welcome">Bienvenue à Safely</string>
+    <string name="near">Proche de vous, où que vous soyez...</string>
+    <string name="try_now">Essayez maintenant</string>
+    <string name="full_name">Nom et prénom</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Connexion</string>
+    <string name="register"> S\'inscrire</string>
+
+
+</resources>
