@@ -16,6 +16,12 @@ const hospitalSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Address",
     },
+    doctors:
+        [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Doctor",
+        }],
+    
 });
 
 module.exports = mongoose.model("Hospital", hospitalSchema);
