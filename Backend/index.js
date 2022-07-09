@@ -7,6 +7,8 @@ const userRouter = require("./src/user");
 const patientRouter = require("./src/patient");
 const hospitalRouter = require("./src/hospital");
 const userTypeRouter = require("./src/usertype");
+const doctorRouter = require("./src/doctor");
+
 
 const DB_CONNECT = process.env.DB_CONNECT || "";
 mongoose.connect(DB_CONNECT, (err) => {
@@ -21,5 +23,6 @@ app.use("/api/user", userRouter);
 app.use("/api/patient", patientRouter);
 app.use("/api/hospital", hospitalRouter);
 app.use("/api/userType", userTypeRouter);
+app.use("/api/doctor", doctorRouter);
 
 app.listen(3030, () => console.log("Server running"));
