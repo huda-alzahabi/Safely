@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4D0ba3d3"
+    tools:context=".UserTypeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitStart"
+        android:src="@drawable/usertype" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="270dp"
+            android:fontFamily="@font/inter"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="-2"
+            android:shadowDy="-2"
+            android:shadowRadius="1"
+            android:text="@string/me"
+            android:textColor="@color/white"
+            android:textFontWeight="800"
+            android:textSize="28sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/patient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/me"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/white_rounded_corners"
+            android:fontFamily="@font/inter_extra_bold"
+            android:text="@string/patient"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/patient"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/white_rounded_corners"
+            android:fontFamily="@font/inter_extra_bold"
+            android:text="@string/doctor"
+            android:textAllCaps="false"
+            android:textColor="@color/blue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/hospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/doctor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/white_rounded_corners"
+            android:fontFamily="@font/inter_extra_bold"
+            android:text="@string/hospital"
+            android:textAllCaps="false"
+            android:textColor="@color/blue" />
+
+    </RelativeLayout>
+</FrameLayout>

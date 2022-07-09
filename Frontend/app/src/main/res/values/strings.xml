@@ -9,6 +9,10 @@
     <string name="login">Log in</string>
     <string name="signup">Sign Up</string>
     <string name="no_acc">Don\'t have an account?</string>
+    <string name="me">I am...</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Doctor</string>
+    <string name="hospital">Hospital</string>
     <string name="register">Register</string>
 
 

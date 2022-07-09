@@ -10,6 +10,10 @@
     <string name="login">Connexion</string>
     <string name="signup">S\'inscrire</string>
     <string name="no_acc">Vous n\'avez pas de compte?</string>
+    <string name="me">Je suis...</string>
+    <string name="patient">Patient</string>
+    <string name="doctor">Docteur</string>
+    <string name="hospital">Hôpital</string>
     <string name="register"> S\'inscrire</string>
 
 
