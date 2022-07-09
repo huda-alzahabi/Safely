@@ -1,10 +1,10 @@
 const UserType = require("../../model/UserType");
 
 function addUserType() {
-    var admin = new UserType({
-        name: "Admin",
+    var doctor = new UserType({
+        name: "Doctor",
     });
-    admin.save();
+    doctor.save();
 
     var patient = new UserType({
         name: "Patient",
