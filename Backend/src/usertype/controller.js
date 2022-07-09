@@ -1,6 +1,6 @@
 const { addUserType } = require("./service");
 
-async function add(req, res) {
+async function add(res) {
     try {
         const newUserType = await addUserType();
         return res.status(200).send(newUserType); // 200
