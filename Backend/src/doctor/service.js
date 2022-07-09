@@ -34,8 +34,13 @@ async function addDoctorAvailability(body) {
   
     return await doctorAvailability.save();
   }
+  
+  async function getDoctorsByHospitalId(hospital_id) {
+    return await Doctor.find({ hospital: hospital_id });
+  }
 
 module.exports = {
     addDoctor,
     addDoctorAvailability,
+    getDoctorsByHospitalId
 };
