@@ -14,10 +14,10 @@ class PatientHospitalsActivity : AppCompatActivity() {
     }
 
     private fun clickedNavItem() {
-        findViewById<BottomNavigationView>(R.id.bottom_nav).menu.findItem(R.id.nav_hospitals).isChecked = true;
+        val bottomnav= findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
 
-        findViewById<BottomNavigationView>(R.id.bottom_nav)
-            .setOnItemSelectedListener { item ->
+        bottomnav.setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.nav_home -> {
                         val intent =
