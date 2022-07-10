@@ -14,6 +14,12 @@
     <string name="doctor">Doctor</string>
     <string name="hospital">Hospital</string>
     <string name="register">Register</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="home">Home</string>
+    <string name="location"> Location</string>
+    <string name="medical_records">Medical Records</string>
+    <string name="profile"> Profile</string>
+
 
 
 </resources>

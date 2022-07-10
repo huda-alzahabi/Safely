@@ -15,6 +15,11 @@
     <string name="doctor">Docteur</string>
     <string name="hospital">Hôpital</string>
     <string name="register"> S\'inscrire</string>
+    <string name="title_activity_maps">CartesActivité</string>
+    <string name="home"> D\'accueil</string>
+    <string name="location"> Emplacement</string>
+    <string name="medical_records"> Dossiers médicaux</string>
+    <string name="profile"> Profil</string>
 
 
 </resources>
