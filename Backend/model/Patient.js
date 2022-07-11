@@ -35,10 +35,6 @@ const patientSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-    prescriptions: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Prescription",
-    },],
     locations: [{
         type: {
             type: String,
