@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -16,8 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".SignUpActivity"
-        tools:ignore="HardcodedText">
+        >
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_name1"
@@ -63,11 +63,13 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
+            app:endIconMode="password_toggle"
             android:hint="@string/password">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_pass"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -75,6 +77,7 @@
 
         <!--sample button to submit entered data inside from edit text-->
         <Button
+
             android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
