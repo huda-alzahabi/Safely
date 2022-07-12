@@ -41,11 +41,13 @@ class SignUpActivity : AppCompatActivity() {
             val userInfo = UserInfo(
                 name = name,
                 email = email,
-                password = password)
+                password = password,
+           )
 
                 apiService.register(userInfo) {
-                if (userInfo.email!= null) {
-                    Log.d("OKKKKK",userInfo.toString())
+                    Log.d("User",userInfo.toString())
+                    if (it.toString()!=null) {
+                    Log.d("HEYYY",it.toString())
                 } else {
                     Log.d("OKKKKK","Error registering new user")
                 }
