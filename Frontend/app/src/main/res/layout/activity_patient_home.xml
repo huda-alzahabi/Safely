@@ -21,12 +21,12 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/inter"
-            android:text="User!"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -58,6 +58,7 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/appointment_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -80,6 +81,7 @@
                 android:src="@drawable/location" />
 
             <TextView
+                android:id="@+id/hospital_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
