@@ -91,9 +91,11 @@
             android:fontFamily="@font/inter"
             android:gravity="center"
             android:text="@string/register"
+            android:clickable="true"
             android:textColor="@color/blue"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:focusable="true" />
 
     </LinearLayout>
 </FrameLayout>
