@@ -1,6 +1,8 @@
 package com.finalproj.safely
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +15,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         val login = findViewById<Button>(R.id.login_btn)
         val register = findViewById<TextView>(R.id.register)
 
@@ -35,18 +36,26 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(email:String, password:String) {
-
+        val sharedPrefFile = "kotlinsharedpreference"
         val apiService = RestApiService()
         val loginInfo = LoginInfo(
             email = email,
             password = password)
 
         apiService.login(loginInfo) {
-            if (email!=null) {
-                Log.d("OKKKKK",it.toString())
+            if (it?.token!=null) {
+                Log.d("Token", it.token)
+                val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+                    Context.MODE_PRIVATE)
+                val editor:SharedPreferences.Editor =  sharedPreferences.edit()
+                editor.putString("Token", it.token)
+                editor.apply()
+                editor.commit()
+                val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
-
-                Log.d("OKKKKK","Error loggin new user")
+                Log.d("Login Error","Error logging new user")
             }
         }
     }

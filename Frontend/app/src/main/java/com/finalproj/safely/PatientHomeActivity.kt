@@ -1,15 +1,25 @@
 package com.finalproj.safely
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit.RestAdapter
 
 class PatientHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_home)
         clickedNavItem()
+        val sharedPrefFile = "kotlinsharedpreference"
+
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token= sharedPreferences.getString("Token","")
+        Log.d("YEYYY",""+token)
     }
 
     private fun clickedNavItem() {
