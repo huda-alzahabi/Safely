@@ -19,6 +19,29 @@
     <string name="location"> Location</string>
     <string name="medical_records">Medical Records</string>
     <string name="profile"> Profile</string>
+    <string name="phone_num"> Phone Number</string>
+    <string name="dob"> Date of Birth</string>
+    <string name="nationality"> Nationality</string>
+    <string name="marital_status"> Marital Status</string>
+    <string name="sex"> Sex</string>
+    <string name="submit"> Submit</string>
+    <string-array name="nationalities">
+        <item>Lebanese</item>
+        <item>English</item>
+        <item>French</item>
+        <item>American</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="marital_status">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Engaged</item>
+        <item>Divorced</item>
+        <item>Widowed</item>
+    </string-array>
+        <string name="male">Male</string>
+        <string name="female">Female</string>
+        <string name="other">Other</string>
 
 
 

@@ -20,6 +20,29 @@
     <string name="location"> Emplacement</string>
     <string name="medical_records"> Dossiers médicaux</string>
     <string name="profile"> Profil</string>
+    <string name="phone_num"> Numéro de Téléphone</string>
+    <string name="dob"> Date de naissance</string>
+    <string name="nationality"> Nationalité</string>
+    <string name="marital_status"> État civil</string>
+    <string name="sex"> Sexe</string>
+    <string name="submit"> Soumettre</string>
+    <string-array name="nationalities">
+        <item>Libanais</item>
+        <item>Anglais</item>
+        <item>Français</item>
+        <item>Américain</item>
+        <item>Autre</item>
+    </string-array>
+    <string-array name="marital_status">
+        <item>Seul</item>
+        <item>Marié</item>
+        <item>Engagé</item>
+        <item>Divorcé</item>
+        <item>Veuve</item>
+    </string-array>
+    <string name="male">Masculin</string>
+    <string name="female">Féminin</string>
+    <string name="other">Autre</string>
 
 
 </resources>
