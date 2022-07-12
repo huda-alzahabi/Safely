@@ -39,10 +39,11 @@
         <item>Divorced</item>
         <item>Widowed</item>
     </string-array>
-        <string name="male">Male</string>
-        <string name="female">Female</string>
-        <string name="other">Other</string>
-
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="hello"> Hello</string>
+    <string name="next_appointment">Your upcoming appointment is on</string>
 
 
 </resources>

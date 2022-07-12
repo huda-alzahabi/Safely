@@ -43,6 +43,9 @@
     <string name="male">Masculin</string>
     <string name="female">Féminin</string>
     <string name="other">Autre</string>
+    <string name="hello"> Bonjour</string>
+    <string name="next_appointment">Votre prochain rendez-vous est le</string>
+
 
 
 </resources>
