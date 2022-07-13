@@ -8,12 +8,48 @@
         <entry key="..\:/Users/Ayman/Safely/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Ayman/Safely/Frontend/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Ayman/Safely/Frontend/app/src/main/res/layout/activity_welcome.xml" value="0.18" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable-v24/white_rounded_corners.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/blue_rounded_corners.xml" value="0.2075" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/edit_text.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/home_icon.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/hospital_icon.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_records_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_outline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_outline_location_on_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_outline_records_24.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/location_icon.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/nav_item_color_selected.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/nav_item_selected.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/profile_icon.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/records_icon.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/whit_btn.xml" value="0.178" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/white_rounded_corners.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout-v26/activity_welcome.xml" value="0.5" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctors.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_book_appointment.xml" value="0.15476699444206926" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctors.xml" value="0.17162872154115585" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_user_type.xml" value="0.1" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_welcome.xml" value="0.21714285714285714" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_login2.xml" value="0.22" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_main.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_maps.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_medical_records.xml" value="0.10944848225737494" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_home.xml" value="0.296969696969697" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_hospitals.xml" value="0.10944848225737494" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_profile.xml" value="0.10944848225737494" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_sign_up.xml" value="0.18" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_user_info.xml" value="0.2757142857142857" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_user_type.xml" value="0.212" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_welcome.xml" value="0.19094488188976377" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/marital_status_dropdown.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nationality_dropdown.xml" value="0.11196736174070716" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
       </map>
     </option>
   </component>

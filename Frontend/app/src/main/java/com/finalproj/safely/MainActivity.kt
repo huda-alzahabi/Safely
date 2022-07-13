@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
         GlobalScope.launch {
-            delay(5000L)
-            val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+            delay(4000L)
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
