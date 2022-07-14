@@ -4,8 +4,6 @@ const appointmentSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
-        min: "2022-07-28",
-        max: "2022-09-23",
     },
     start_time: {
         type: String,
@@ -19,17 +17,42 @@ const appointmentSchema = new mongoose.Schema({
         min: 5,
         max: 255,
     },
-    hospital: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Hospital",
+    hospital_name: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
     },
-    patient: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Patient",
+    hospital_id:{
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
     },
-    doctor: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Doctor",
+    patient_name: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
+    },
+    patient_id: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
+    },
+    
+    doctor_name: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
+    },
+    doctor_id: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 255,
     },
 });
 
