@@ -19,10 +19,6 @@ const doctorAvailablitySchema = new mongoose.Schema({
         min: 5,
         max: 255,
     },
-    doctor: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Doctor",
-    },
     user_appointment:{
         user:{
             type: mongoose.Schema.Types.ObjectId,
