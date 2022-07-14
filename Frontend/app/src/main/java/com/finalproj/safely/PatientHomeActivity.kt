@@ -21,10 +21,11 @@ class PatientHomeActivity : AppCompatActivity() {
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")
         Log.d("YEYYY", "" + token)
-        val name = intent.getStringExtra("User name").toString()
+        val name = sharedPreferences.getString("Name", "")
+//        val name = intent.getStringExtra("User name").toString()
         val textView: TextView = findViewById(R.id.user_name) as TextView
-        textView.text=name+"!"
-        Log.d("HUDA", name)
+        textView.text = name + "!"
+        Log.d("HUDA", name + "!")
 
 
     }

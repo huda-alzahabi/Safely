@@ -54,11 +54,11 @@ class LoginActivity : AppCompatActivity() {
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("Token", it.token)
+                editor.putString("Name", decodeToken(it.token))
                 editor.apply()
                 editor.commit()
-                Log.d("DECODED:",decodeToken(it.token))
+
                 val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
-                intent.putExtra("User name",decodeToken(it.token))
                 startActivity(intent)
             } else {
                 Log.d("Login Error", "Error logging new user")
