@@ -1,10 +1,12 @@
 package com.finalproj.safely
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -13,10 +15,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.finalproj.safely.databinding.ActivityMapsBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -26,6 +26,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -76,6 +78,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (location != null) {
 
                     val latLng = LatLng(location.latitude, location.longitude)
+
                     // create a marker at the exact location
                     map.addMarker(MarkerOptions().position(latLng)
                         .title("You are currently here!"))
@@ -84,13 +87,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                     map.moveCamera(update)
                     //Save the location data to the database
-//                    ref.setValue(location)
+                    val patient_confirm_location = findViewById<Button>(R.id.patient_confirm_location)
+                    patient_confirm_location.setOnClickListener {
+                        Log.d("YOUR LOCATION",latLng.toString())
+                        val intent =
+                            Intent(this@MapsActivity, PatientHomeActivity::class.java)
+                        startActivity(intent)
+                    }
+
                 } else {
                     // if location is null , log an error message
                     Log.e(TAG, "No location found")
                 }
-
-
 
             }
         }
