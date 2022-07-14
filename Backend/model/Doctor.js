@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const DoctorAvailability = require("./DoctorAvailability");
 
 const doctorSchema = new mongoose.Schema({
     name: {
@@ -17,10 +18,8 @@ const doctorSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Hospital",
     },
-    availability:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "DoctorAvailability",
-    }],
+ 
+    availability: {DoctorAvailability}
 });
 
 module.exports = mongoose.model("Doctor", doctorSchema);
