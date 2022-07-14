@@ -36,15 +36,15 @@ const patientSchema = new mongoose.Schema({
         ref: "User",
     },
     locations: [{
-        type: {
+        longitude:{
             type: String,
-            enum: ["Point"],
             required: true,
-        },
-        coordinates: {
-            type: [Number],
+        }
+        ,
+        latitude:{
+            type: String,
             required: true,
-        },
+        }
     }]
 });
 
