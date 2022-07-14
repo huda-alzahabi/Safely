@@ -22,8 +22,8 @@ const userSchema = new mongoose.Schema({
     },
    
     userType: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "UserType",
+        type: String,
+        enum: ['Patient', 'Doctor','Hospital']
     },
 });
 
