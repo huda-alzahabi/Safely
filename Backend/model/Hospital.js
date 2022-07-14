@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const HospitalAddress = require("./Address");
 
 const hospitalSchema = new mongoose.Schema({
     phone_number: {
@@ -11,11 +12,19 @@ const hospitalSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-
-    address: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Address",
-    },
+    address: {HospitalAddress},
+    
+    locations: [{
+        longitude:{
+            type: String,
+            required: true,
+        }
+        ,
+        latitude:{
+            type: String,
+            required: true,
+        }
+    }],
     doctors:
         [{
             type: mongoose.Schema.Types.ObjectId,
