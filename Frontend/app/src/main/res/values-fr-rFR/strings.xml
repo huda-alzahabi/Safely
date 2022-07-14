@@ -45,6 +45,8 @@
     <string name="other">Autre</string>
     <string name="hello"> Bonjour</string>
     <string name="next_appointment">Votre prochain rendez-vous est le</string>
+    <string name="confirm_location">Confirmer L\'emplacement</string>
+
 
 
 

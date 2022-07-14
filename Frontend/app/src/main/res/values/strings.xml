@@ -44,6 +44,9 @@
     <string name="other">Other</string>
     <string name="hello"> Hello</string>
     <string name="next_appointment">Your upcoming appointment is on</string>
+    <string name="confirm_location">Confirm Location</string>
+
+
 
 
 </resources>
