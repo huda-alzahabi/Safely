@@ -25,10 +25,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['Patient', 'Doctor','Hospital']
     },
-    appointment:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Appointment",
-    }
 });
 
 module.exports = mongoose.model("User", userSchema);
