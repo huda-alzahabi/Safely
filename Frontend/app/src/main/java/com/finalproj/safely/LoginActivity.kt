@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             else login(email, password)
         }
         register.setOnClickListener {
-            val intent = Intent(this@LoginActivity, SignUpActivity::class.java)
+            val intent = Intent(this@LoginActivity, UserTypeActivity::class.java)
             startActivity(intent)
         }
     }
