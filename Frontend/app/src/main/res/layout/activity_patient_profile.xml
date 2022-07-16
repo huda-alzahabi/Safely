@@ -11,7 +11,131 @@
         android:id="@+id/fl_wrapper"
         android:layout_above="@+id/bottom_nav"/>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitStart"
+        android:src="@drawable/editprof" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="120dp"
+            android:textSize="30sp"
+            android:text="@string/info"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/full_name"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/laila"
+            android:textSize="20sp"
+
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_name1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="32dp"
+           >
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/email"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/laila"
+            android:textSize="20sp"
+
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_email1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="32dp"
+           >
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/password"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/laila"
+            android:textSize="20sp"
+
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_pass1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="32dp"
+            app:endIconMode="password_toggle">
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--sample button to submit entered data inside from edit text-->
+        <Button
+
+            android:id="@+id/submit_changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="#D90BA3D3"
+            android:fontFamily="@font/inter_extra_bold"
+            android:padding="13dp"
+            android:text="@string/submit_changes"
+            android:textAllCaps="false"
+            android:textSize="17sp" />
+
+    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
@@ -23,11 +147,6 @@
         app:itemTextColor="@color/white"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_navigation_menu" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/profile"
-        />
+
 
 </RelativeLayout>
