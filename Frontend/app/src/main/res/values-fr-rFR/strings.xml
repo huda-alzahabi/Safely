@@ -46,6 +46,10 @@
     <string name="hello"> Bonjour</string>
     <string name="next_appointment">Votre prochain rendez-vous est le</string>
     <string name="confirm_location">Confirmer L\'emplacement</string>
+    <string name="time">L\'heure</string>
+    <string name="book">Prendre rendez-vous</string>
+
+
 
 
 

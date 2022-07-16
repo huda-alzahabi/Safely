@@ -45,6 +45,9 @@
     <string name="hello"> Hello</string>
     <string name="next_appointment">Your upcoming appointment is on</string>
     <string name="confirm_location">Confirm Location</string>
+    <string name="time">Time</string>
+    <string name="book">Book Appointment</string>
+
 
 
 
