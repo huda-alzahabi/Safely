@@ -49,7 +49,7 @@ const doctorSchema = new mongoose.Schema({
         ref: "Hospital",
     },
  
-    availability: {doctorAvailablitySchema}
+    availability:[{doctorAvailablitySchema}]
 });
 
 module.exports = mongoose.model("Doctor", doctorSchema);

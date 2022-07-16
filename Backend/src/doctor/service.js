@@ -1,46 +1,24 @@
 const Doctor = require("../../model/Doctor");
-const DoctorAvailability = require("../../model/DoctorAvailability");
 
+async function addDoctor(req) {
 
-async function addDoctor(body) {
-    const { name, specialty,hospital,availability } = body;
-
+    var availability = [];
+    availability.push(req.body.availability);
     const doctor = new Doctor({
-        name,
-        specialty,
-        hospital,
-        availability 
+        name:req.body.name,
+        specialty:req.body.specialty,
+        hospital:req.body.hospital,
+        availability
     });
 
     return await doctor.save();
 }
 
-async function addDoctorAvailability(body) {
-    const {
-      date,
-      start_time,
-      end_time,
-      doctor,
-      user_appointment,
-    } = body;
-  
-    const doctorAvailability = new DoctorAvailability({
-      date,
-      start_time,
-      end_time,
-      doctor,
-      user_appointment,
-    });
-  
-    return await doctorAvailability.save();
-  }
-  
   async function getDoctorsByHospitalId(hospital_id) {
     return await Doctor.find({ hospital: hospital_id });
   }
 
 module.exports = {
     addDoctor,
-    addDoctorAvailability,
     getDoctorsByHospitalId
 };
