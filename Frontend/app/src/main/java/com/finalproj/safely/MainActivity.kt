@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
         GlobalScope.launch {
             delay(4000L)
-            val intent = Intent(this@MainActivity, LoginActivity::class.java)
+            val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
             startActivity(intent)
             finish()
         }
