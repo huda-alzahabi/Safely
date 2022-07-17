@@ -41,8 +41,8 @@ class UserInfoActivity : AppCompatActivity() {
         submit.setOnClickListener {
 
             //save the phone number and the date of birth
-            var phone_num = findViewById<EditText>(R.id.phone_num).text.toString()
-            var dob = findViewById<EditText>(R.id.dob).text.toString()
+            val phone_num = findViewById<EditText>(R.id.phone_num).text.toString()
+            val dob = findViewById<EditText>(R.id.dob).text.toString()
 
             // save the selected nationality
             val selectedNationality = nationality.text.toString()
