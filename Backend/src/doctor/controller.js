@@ -1,10 +1,12 @@
-const { addDoctor,getDoctorsByHospitalId } = require("./service");
+const { addDoctor,getDoctorsByHospitalId ,addAvailability} = require("./service");
 const Hospital = require("../../model/Hospital");
+const Doctor = require("../../model/Doctor");
+
 
 
 async function addDr(req, res) {
     try {
-        const newDoctor = await addDoctor(req);
+        const newDoctor = await addDoctor(req.body);
         console.log("newDoctor =>", newDoctor);
 
         const updateHospital = await Hospital.updateOne(
@@ -41,7 +43,31 @@ async function getDoctors(req, res) {
     }
   }
 
+  async function addDrAvailability(req, res){ 
+    try {
+      const newAvailability = await addAvailability(req.body);
+      console.log("newAvailability =>", newAvailability);
+      const updateDr = await Doctor.updateOne(
+        {
+          _id: newAvailability.doctor,
+        },
+        {
+          $push: {
+            availability: newAvailability,
+          },
+        }
+      );
+      console.log("updateDr =>", updateDr);
+  
+      return res.status(200).send(newAvailability);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+    }
+  }
+  
 module.exports = {
     addDr,
+    addDrAvailability,
   getDoctors
 };
