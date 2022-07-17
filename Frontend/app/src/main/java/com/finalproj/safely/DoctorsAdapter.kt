@@ -38,8 +38,8 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun submitList(blogList: List<Doctor>) {
-
         items = blogList
+        return notifyDataSetChanged()
         Log.d("Submit",items.toString())
     }
 
@@ -64,9 +64,9 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .applyDefaultRequestOptions(requestOptions)
                 .load(doctor.image)
                 .into(img)
-            txt.setText(doctor._id)
-            sub_txt.setText(doctor.name)
-            sub_txt2.setText(doctor.specialty)
+            txt.setText(doctor.name)
+            sub_txt.setText(doctor.specialty)
+            sub_txt2.setText(doctor._id)
 
 
         }

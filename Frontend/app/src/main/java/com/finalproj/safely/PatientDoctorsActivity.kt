@@ -2,18 +2,24 @@ package com.finalproj.safely
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PatientDoctorsActivity : AppCompatActivity() {
-    private lateinit var blogAdapter: DoctorsAdapter
+    private lateinit var doctorAdapter: DoctorsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctors)
+
+        val apiService = RestApiService()
+        apiService.getDrs(){
+            Log.d("doctors",it.toString())
+            doctorAdapter.submitList(it as List<Doctor>)
+        }
         initRecyclerView()
-        addDataSet()
         clickedNavItem()
     }
 
@@ -52,19 +58,21 @@ class PatientDoctorsActivity : AppCompatActivity() {
         }
     }
 
-    private fun addDataSet() {
-        val data = DataSource.createDataSet()
-        blogAdapter.submitList(data)
-    }
+//    private fun addDataSet() {
+//
+//        val data = DataSource.createDataSet()
+//        blogAdapter.submitList(data)
+//    }
 
     private fun initRecyclerView(){
+
     val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this@PatientDoctorsActivity)
             val topSpacingDecorator = TopSpacingItemDecoration(30)
             addItemDecoration(topSpacingDecorator)
-            blogAdapter = DoctorsAdapter()
-            adapter = blogAdapter
+            doctorAdapter = DoctorsAdapter()
+            adapter = doctorAdapter
         }
     }
 }
