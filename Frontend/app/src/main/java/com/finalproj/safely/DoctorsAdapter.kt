@@ -1,5 +1,6 @@
 package com.finalproj.safely
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +38,9 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun submitList(blogList: List<Doctor>) {
+
         items = blogList
+        Log.d("Submit",items.toString())
     }
 
     class BlogViewHolder
@@ -61,9 +64,9 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .applyDefaultRequestOptions(requestOptions)
                 .load(doctor.image)
                 .into(img)
-            txt.setText(doctor.id)
+            txt.setText(doctor._id)
             sub_txt.setText(doctor.name)
-            sub_txt2.setText(doctor.speciality)
+            sub_txt2.setText(doctor.specialty)
 
 
         }

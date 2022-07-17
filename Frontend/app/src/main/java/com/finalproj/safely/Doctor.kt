@@ -1,15 +1,15 @@
 package com.finalproj.safely
 
 data class Doctor(
-    var id: String,
+    var _id: String,
     var name: String,
     var image: String,
-    var speciality: String,
+    var specialty: String,
 
     ) {
 
     override fun toString(): String {
-        return "Doctor(id='$id', image='$image', name='$name', speciality='$speciality')"
+        return "Doctor(id='$_id',  name='$name',image='$image', specialty='$specialty')"
     }
 
 
