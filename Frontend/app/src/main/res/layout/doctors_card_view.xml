@@ -11,11 +11,11 @@
     card_view:cardUseCompatPadding="true"
     card_view:cardCornerRadius="15dp"
     card_view:cardElevation="5dp"
-    card_view:contentPadding="10dp">
+    card_view:contentPadding="5dp">
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="13dp"
         android:orientation="vertical">
 
         <ImageView android:layout_width="80dp"
@@ -30,6 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:fontFamily="@font/laila"
+            android:textColor="@color/blue"
             android:layout_toEndOf="@+id/img"
             android:layout_marginStart="20dp"/>
 
@@ -39,23 +41,11 @@
             android:text="Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
+            android:fontFamily="@font/inter"
             android:layout_toEndOf="@+id/img"
             android:layout_below="@+id/txt"
             android:layout_marginStart="20dp"
             />
-        <TextView
-            android:id="@+id/sub_txt2"
-            android:textSize="18sp"
-            android:text="Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:layout_toEndOf="@+id/img"
-            android:layout_below="@+id/sub_txt"
-            android:layout_marginStart="20dp"
-            />
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

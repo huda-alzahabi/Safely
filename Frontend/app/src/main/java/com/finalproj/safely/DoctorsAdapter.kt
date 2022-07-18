@@ -51,14 +51,13 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
         val img = itemView.findViewById<View>(R.id.img) as ImageView
-        val sub_txt2 = itemView.findViewById<View>(R.id.sub_txt2) as TextView
 
 
         fun bind(doctor: Doctor) {
 
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.avatar)
+                .error(R.drawable.avatar)
 
             Glide.with(itemView.context)
                 .applyDefaultRequestOptions(requestOptions)
@@ -66,8 +65,6 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .into(img)
             txt.setText(doctor.name)
             sub_txt.setText(doctor.specialty)
-            sub_txt2.setText(doctor._id)
-
 
         }
 
