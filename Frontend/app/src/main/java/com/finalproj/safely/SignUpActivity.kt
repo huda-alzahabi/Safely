@@ -1,6 +1,8 @@
 package com.finalproj.safely
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -42,7 +44,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun registerUser(name: String, email: String, password: String) {
-
+        val sharedPrefFile = "kotlin_shared_preference"
         val apiService = RestApiService()
         val userInfo = UserInfo(
             name = name,
@@ -54,6 +56,12 @@ class SignUpActivity : AppCompatActivity() {
             Log.d("User", userInfo.toString())
             if (it.toString() != null) {
                 Log.d("HEYYY", it.toString())
+                val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+                    Context.MODE_PRIVATE)
+                val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                editor.putString("Name", name)
+                editor.apply()
+                editor.commit()
             } else {
                 Log.d("OKKKKK", "Error registering new user")
             }
