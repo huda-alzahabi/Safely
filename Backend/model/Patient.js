@@ -47,7 +47,7 @@ const patientSchema = new mongoose.Schema({
       },
     },
   ],
-  medical_records: [
+  medical_records: 
     {
       current_medications: {
         type: String,
@@ -70,7 +70,7 @@ const patientSchema = new mongoose.Schema({
         required: true,
       },
     },
-  ],
+  
 });
 
 module.exports = mongoose.model("Patient", patientSchema);

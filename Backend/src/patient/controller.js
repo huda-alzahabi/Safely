@@ -29,7 +29,30 @@ async function addLocation(req, res) {
     console.log(error);
   }
 }
+async function addMedicalRecords(req, res) {
+  try {
+    const patient = await Patient.findByIdAndUpdate(
+      { _id: req.query.id },
+      {
+        $set: {
+          medical_records: {
+            current_medications: req.body.current_medications,
+            chronic_diseases: req.body.chronic_diseases,
+            allergies: req.body.allergies,
+            previous_surgeries: req.body.previous_surgeries,
+            family_history: req.body.family_history,
+          },
+        },
+      }
+    );
+    return res.send("Medical Records Added");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   add,
-  addLocation
+  addLocation,
+  addMedicalRecords,
 };
