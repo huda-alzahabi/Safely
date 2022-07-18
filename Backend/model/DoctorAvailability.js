@@ -5,13 +5,7 @@ const doctorAvailablitySchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    start_time: {
-        type: String,
-        required: true,
-        min: 5,
-        max: 255,
-    },
-    end_time: {
+    time: {
         type: String,
         required: true,
         min: 5,
