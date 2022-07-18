@@ -10,7 +10,7 @@ data class Doctor(
     ) {
 
     override fun toString(): String {
-        return "Doctor(id='$_id',  name='$name',image='$image', specialty='$specialty')"
+        return "Doctor(id='$_id',  name='$name',image='$image', specialty='$specialty',availability='$availability')"
     }
     data class Availability(
         var _id: String,
