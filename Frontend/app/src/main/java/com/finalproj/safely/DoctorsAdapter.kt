@@ -12,13 +12,10 @@ import com.bumptech.glide.request.RequestOptions
 import kotlin.collections.ArrayList
 
 class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val TAG: String = "AppDebug"
-
     private var items: List<Doctor> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return BlogViewHolder(
+        return DoctorViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.doctors_card_view, parent, false)
         )
     }
@@ -26,7 +23,7 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
 
-            is BlogViewHolder -> {
+            is DoctorViewHolder -> {
                 holder.bind(items.get(position))
             }
 
@@ -37,13 +34,12 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(blogList: List<Doctor>) {
-        items = blogList
+    fun submitList(doctorList: List<Doctor>) {
+        items = doctorList
         return notifyDataSetChanged()
-        Log.d("Submit",items.toString())
     }
 
-    class BlogViewHolder
+    class DoctorViewHolder
     constructor(
         itemView: View,
     ) : RecyclerView.ViewHolder(itemView) {
@@ -51,7 +47,6 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
         val img = itemView.findViewById<View>(R.id.img) as ImageView
-
 
         fun bind(doctor: Doctor) {
 
