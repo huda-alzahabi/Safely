@@ -12,15 +12,27 @@ class PatientDoctorsActivity : AppCompatActivity() {
     private lateinit var doctorAdapter: DoctorsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_doctors)
+        setContentView(R.layout.activity_patient_doctors)
 
         val apiService = RestApiService()
-        apiService.getDrs(){
-            Log.d("doctors",it.toString())
+        apiService.getDrs() {
+            Log.d("doctors", it.toString())
             doctorAdapter.submitList(it as List<Doctor>)
         }
         initRecyclerView()
         clickedNavItem()
+    }
+
+    private fun initRecyclerView() {
+
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(this@PatientDoctorsActivity)
+            val topSpacingDecorator = TopSpacingItemDecoration(30)
+            addItemDecoration(topSpacingDecorator)
+            doctorAdapter = DoctorsAdapter()
+            adapter = doctorAdapter
+        }
     }
 
     private fun clickedNavItem() {
@@ -55,24 +67,6 @@ class PatientDoctorsActivity : AppCompatActivity() {
                 }
             }
             return@setOnItemSelectedListener true
-        }
-    }
-
-//    private fun addDataSet() {
-//
-//        val data = DataSource.createDataSet()
-//        blogAdapter.submitList(data)
-//    }
-
-    private fun initRecyclerView(){
-
-    val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@PatientDoctorsActivity)
-            val topSpacingDecorator = TopSpacingItemDecoration(30)
-            addItemDecoration(topSpacingDecorator)
-            doctorAdapter = DoctorsAdapter()
-            adapter = doctorAdapter
         }
     }
 }
