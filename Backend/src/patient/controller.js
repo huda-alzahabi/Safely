@@ -5,7 +5,7 @@ async function add(req, res) {
   try {
     const newPatient = await addPatient(req.body);
     console.log("newPatient =>", newPatient);
-    return res.status(200).send(newPatient); // 200
+    return res.status(200).send(newPatient); 
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -46,7 +46,7 @@ async function addMedicalRecords(req, res) {
         },
       }
     );
-    return res.send({message: "Records Added"});
+    return res.send({ message: "Records Added" });
   } catch (error) {
     console.log(error);
   }

@@ -22,6 +22,7 @@ async function addPatient(body) {
     return await patient.save();
 }
 
+
 module.exports = {
     addPatient,
 };

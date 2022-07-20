@@ -39,11 +39,11 @@ const patientSchema = new mongoose.Schema({
     {
       longitude: {
         type: String,
-        required: true,
+        required: false,
       },
       latitude: {
         type: String,
-        required: true,
+        required: false,
       },
     },
   ],
@@ -51,27 +51,27 @@ const patientSchema = new mongoose.Schema({
     {
       current_medications: {
         type: String,
-        required: true,
+        required: false,
       },
       chronic_diseases: {
         type: String,
-        required: true,
+        required: false,
       },
       allergies: {
         type: String,
-        required: true,
+        required: false,
       },
       blood_type: {
         type: String,
-        required: true,
+        required: false,
       },
       weight: {
         type: String,
-        required: true,
+        required: false,
       },
       height: {
         type: String,
-        required: true,
+        required: false,
       },
     },
   
