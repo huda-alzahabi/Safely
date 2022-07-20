@@ -4,7 +4,7 @@ const addressSchema=require("../model/Address").schema;
 const hospitalSchema = new mongoose.Schema({
     phone_number: {
         type: String,
-        required: true,
+        required: false,
         min: 6,
         max: 255,
     },
@@ -14,17 +14,17 @@ const hospitalSchema = new mongoose.Schema({
     },
     address: [addressSchema],
 
-    locations: [{
+    locations: {
         longitude:{
             type: String,
-            required: true,
+            required: false,
         }
         ,
         latitude:{
             type: String,
-            required: true,
+            required: false,
         }
-    }],
+    },
     doctors:
         [{
             type: mongoose.Schema.Types.ObjectId,
