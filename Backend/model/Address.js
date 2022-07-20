@@ -25,10 +25,6 @@ const addressSchema = new mongoose.Schema({
         min: 6,
         max: 255,
     },
-    hospital: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Hospital",
-    }
 });
 
 module.exports = mongoose.model("Address", addressSchema);
