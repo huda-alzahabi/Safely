@@ -69,6 +69,10 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      additional_notes: {
+        type: String,
+        required: true,
+      },
     },
   
 });
