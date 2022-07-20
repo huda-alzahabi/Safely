@@ -4,6 +4,8 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
 import com.finalproj.safely.patient.Doctor
+import com.finalproj.safely.patient.MedicalRecords
+import com.finalproj.safely.patient.MedicalRecordsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -72,4 +74,23 @@ class RestApiService {
                 }
             })
     }
+    fun submitRecords(medicalRecords: MedicalRecords, onResult: (MedicalRecordsResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.submitRecords("62c1f77a3841c742c4986d76",medicalRecords).enqueue(
+            object : Callback<MedicalRecordsResponse> {
+                override fun onFailure(call: Call<MedicalRecordsResponse>, t: Throwable) {
+                    Log.d("No Records", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<MedicalRecordsResponse>,
+                    response: Response<MedicalRecordsResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Records", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+
 }
