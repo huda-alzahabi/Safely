@@ -61,15 +61,15 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      previous_surgeries: {
+      blood_type: {
         type: String,
         required: true,
       },
-      family_history: {
+      weight: {
         type: String,
         required: true,
       },
-      additional_notes: {
+      height: {
         type: String,
         required: true,
       },

@@ -39,8 +39,9 @@ async function addMedicalRecords(req, res) {
             current_medications: req.body.current_medications,
             chronic_diseases: req.body.chronic_diseases,
             allergies: req.body.allergies,
-            previous_surgeries: req.body.previous_surgeries,
-            family_history: req.body.family_history,
+            blood_type: req.body.blood_type,
+            weight: req.body.weight,
+            height: req.body.height,
           },
         },
       }
