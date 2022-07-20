@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import androidx.core.app.ActivityCompat
 import com.finalproj.safely.R
+import com.finalproj.safely.user.RestApiService
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -28,7 +29,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
 
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -44,6 +44,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         map = googleMap //initialise map
         getCurrentLocation()
     }
+
     private fun setupLocClient() {
         fusedLocClient =
             LocationServices.getFusedLocationProviderClient(this)
@@ -57,7 +58,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     companion object {
-        private const val REQUEST_LOCATION = 1 //request code to identify specific permission request
+        private const val REQUEST_LOCATION =
+            1 //request code to identify specific permission request
         private const val TAG = "MapsActivity" // for debugging
     }
 
@@ -65,7 +67,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Check if the ACCESS_FINE_LOCATION permission was granted before requesting a location
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) !=
-            PackageManager.PERMISSION_GRANTED) {
+            PackageManager.PERMISSION_GRANTED
+        ) {
 
             // call requestLocPermissions() if permission isn't granted
             requestLocPermissions()
@@ -75,7 +78,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 // lastLocation is a task running in the background
                 val location = it.result //obtain location
                 //reference to the database
-                val ref: FirebaseDatabase = FirebaseDatabase.getInstance("https://safely-11a5a-default-rtdb.asia-southeast1.firebasedatabase.app/")
+                val ref: FirebaseDatabase =
+                    FirebaseDatabase.getInstance("https://safely-11a5a-default-rtdb.asia-southeast1.firebasedatabase.app/")
                 if (location != null) {
 
                     val latLng = LatLng(location.latitude, location.longitude)
@@ -88,9 +92,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                     map.moveCamera(update)
                     //Save the location data to the database
-                    val patient_confirm_location = findViewById<Button>(R.id.patient_confirm_location)
+                    val patient_confirm_location =
+                        findViewById<Button>(R.id.patient_confirm_location)
                     patient_confirm_location.setOnClickListener {
-                        Log.d("YOUR LOCATION",latLng.toString())
+                        submitLocation(location.latitude.toString(),location.latitude.toString());
                         val intent =
                             Intent(this@MapsActivity, PatientHomeActivity::class.java)
                         startActivity(intent)
@@ -109,20 +114,40 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
-        grantResults: IntArray) {
+        grantResults: IntArray,
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         //check if the request code matches the REQUEST_LOCATION
-        if (requestCode == REQUEST_LOCATION)
-        {
+        if (requestCode == REQUEST_LOCATION) {
             //check if grantResults contains PERMISSION_GRANTED.If it does, call getCurrentLocation()
             if (grantResults.size == 1 && grantResults[0] ==
-                PackageManager.PERMISSION_GRANTED) {
+                PackageManager.PERMISSION_GRANTED
+            ) {
                 getCurrentLocation()
             } else {
                 //if it doesn`t log an error message
                 Log.e(TAG, "Location permission has been denied")
             }
         }
+    }
+    private fun submitLocation(
+        longitude:String,
+        latitude:String
+    ){
+        val apiService = RestApiService()
+        val patientLocation=PatientLocation(
+            longitude=longitude,
+            latitude=latitude
+        )
+        apiService.addPatientLocation(patientLocation){
+            Log.d("LOCATION", patientLocation.toString())
+            if (it!= null) {
+                Log.d("Location", it.toString())
+            } else {
+                Log.d("NOO", "Error adding location")
+            }
+        }
+
     }
 
 }
