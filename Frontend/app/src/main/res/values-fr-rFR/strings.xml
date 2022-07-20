@@ -56,9 +56,9 @@
     <string name="allergies">Allergies</string>
     <string name="current_medications"> Médicament Actuel</string>
     <string name="chronic_diseases">Maladies Chroniques</string>
-    <string name="blood_type">Groupe Sanguin</string>    <string name="family_history">Histoire de Famille</string>
-    <string name="weight">Le Poids</string>
-    <string name="height"> La Taille</string>
+    <string name="blood_type">Groupe Sanguin</string>
+    <string name="weight">Le Poids (LBS) </string>
+    <string name="height"> La Taille (Inch) </string>
 
 
 

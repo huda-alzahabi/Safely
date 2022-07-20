@@ -56,8 +56,8 @@
     <string name="current_medications"> Current Medication</string>
     <string name="chronic_diseases">Chronic Diseases</string>
     <string name="blood_type">Blood Type</string>
-    <string name="weight">Weight</string>
-    <string name="height">Height</string>
+    <string name="weight">Weight (in KG)</string>
+    <string name="height">Height (in cm) </string>
 
 
 
