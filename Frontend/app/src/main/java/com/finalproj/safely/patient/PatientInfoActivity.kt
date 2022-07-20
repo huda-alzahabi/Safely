@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
+import com.finalproj.safely.user.RestApiService
 
 
 class PatientInfoActivity : AppCompatActivity() {
@@ -32,11 +33,13 @@ class PatientInfoActivity : AppCompatActivity() {
 
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
 
-            selectedSex =  when(checkedId) {
+            selectedSex = when (checkedId) {
                 R.id.radio_button_1 -> findViewById<RadioButton>(R.id.radio_button_1).text.toString()
                 R.id.radio_button_2 -> findViewById<RadioButton>(R.id.radio_button_2).text.toString()
                 R.id.radio_button_3 -> findViewById<RadioButton>(R.id.radio_button_3).text.toString()
-                else -> {"NONE" }
+                else -> {
+                    "NONE"
+                }
             }
         }
         submit.setOnClickListener {
@@ -50,8 +53,8 @@ class PatientInfoActivity : AppCompatActivity() {
 
             // save the selected maritalStatus
             val selectedStatus = maritalStatus.text.toString()
-
-            submitInfo(phone_num, dob, selectedNationality, selectedStatus, selectedSex)
+            val user = "62d53a07e3dcb9c6a5945b91"
+            submitInfo(phone_num, dob, selectedNationality, selectedStatus, selectedSex, user)
 
         }
     }
@@ -62,13 +65,24 @@ class PatientInfoActivity : AppCompatActivity() {
         nationality: String,
         maritalStatus: String,
         sex: String,
+        user: String,
     ) {
-        Log.d("Phone Number", phone_num)
-        Log.d("Date of Birth", dob)
-        Log.d("Nationality", nationality)
-        Log.d("Marital Status", maritalStatus)
-        Log.d("Sex", sex)
-        val intent = Intent(this@PatientInfoActivity, MapsActivity::class.java)
-        startActivity(intent)
+        val apiService = RestApiService()
+        val patientInfo = PatientInfo(
+            phone_number = phone_num,
+            date_of_birth = dob,
+            nationality = nationality,
+            sex = sex,
+            marital_status = maritalStatus,
+            user = user
+        )
+        apiService.addPatient(patientInfo) {
+            Log.d("PATIENT", patientInfo.toString())
+            if (it.toString() != null) {
+                Log.d("Patienttt", it.toString())
+            } else {
+                Log.d("NOO", "Error adding new patient")
+            }
+        }
     }
 }
