@@ -46,7 +46,7 @@ async function addMedicalRecords(req, res) {
         },
       }
     );
-    return res.send("Medical Records Added");
+    return res.send({message: "Records Added"});
   } catch (error) {
     console.log(error);
   }
