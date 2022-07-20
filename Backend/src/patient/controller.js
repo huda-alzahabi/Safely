@@ -16,7 +16,7 @@ async function addLocation(req, res) {
       { _id: req.query.id },
       {
         $set: {
-          locations: {
+          location: {
             longitude: req.body.longitude,
             latitude: req.body.latitude,
           },

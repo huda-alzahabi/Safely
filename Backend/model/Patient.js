@@ -35,7 +35,7 @@ const patientSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  locations: [
+  locations: 
     {
       longitude: {
         type: String,
@@ -46,7 +46,6 @@ const patientSchema = new mongoose.Schema({
         required: false,
       },
     },
-  ],
   medical_records: 
     {
       current_medications: {
