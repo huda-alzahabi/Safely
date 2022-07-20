@@ -55,9 +55,9 @@
     <string name="allergies">Allergies</string>
     <string name="current_medications"> Current Medication</string>
     <string name="chronic_diseases">Chronic Diseases</string>
-    <string name="previous_surgeries">Previous Surgeries</string>
-    <string name="family_history">Family History</string>
-    <string name="additional_notes">Additional Notes</string>
+    <string name="blood_type">Blood Type</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
 
 
 
