@@ -1,9 +1,8 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 
-import com.squareup.okhttp.ResponseBody
+import com.finalproj.safely.patient.Doctor
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.*
 
 interface RestApi {

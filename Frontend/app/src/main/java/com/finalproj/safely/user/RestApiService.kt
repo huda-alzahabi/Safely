@@ -1,10 +1,9 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
-import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
-import androidx.lifecycle.MutableLiveData
+import com.finalproj.safely.patient.Doctor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -57,7 +56,7 @@ class RestApiService {
 
     fun getDrs(onResult: (List<Doctor?>) -> Unit) {
         val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
-        retrofitInstance.getDrsByHospitalId("62c9894d6393fe22e5cfa344")
+        retrofitInstance.getDrsByHospitalId("62c1fad00a4ae6cd447d12bf")
             .enqueue(object : Callback<List<Doctor>?> {
                 override fun onResponse(
                     call: Call<List<Doctor>?>,
@@ -69,7 +68,7 @@ class RestApiService {
                 }
 
                 override fun onFailure(call: Call<List<Doctor>?>, t: Throwable) {
-                    d(TAG, "onFailure: " + t.message) //แสดง log onFailure
+                    d(TAG, "onFailure: " + t.message)
                 }
             })
     }

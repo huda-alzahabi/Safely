@@ -1,8 +1,9 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.finalproj.safely.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PatientHospitalsActivity : AppCompatActivity() {

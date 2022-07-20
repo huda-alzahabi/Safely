@@ -1,9 +1,8 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
@@ -12,8 +11,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.finalproj.safely.R
+import com.finalproj.safely.patient.PatientHomeActivity
 import org.json.JSONObject
-import java.util.Base64.getUrlDecoder
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import com.finalproj.safely.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import retrofit.RestAdapter
 
 class PatientHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.Manifest
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.core.app.ActivityCompat
+import com.finalproj.safely.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

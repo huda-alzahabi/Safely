@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 import android.content.Context
 import android.content.Intent
@@ -9,12 +9,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonParser
-import kotlinx.coroutines.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
+import com.finalproj.safely.R
+import com.finalproj.safely.patient.PatientInfoActivity
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -66,7 +62,7 @@ class SignUpActivity : AppCompatActivity() {
                 Log.d("OKKKKK", "Error registering new user")
             }
         }
-        val intent = Intent(this@SignUpActivity, UserInfoActivity::class.java)
+        val intent = Intent(this@SignUpActivity, PatientInfoActivity::class.java)
         startActivity(intent)
     }
 }

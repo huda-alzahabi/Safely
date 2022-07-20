@@ -1,10 +1,15 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.Toast
+import com.finalproj.safely.R
+import com.finalproj.safely.patient.MapsActivity
+import com.finalproj.safely.patient.MedicalRecordsActivity
+import com.finalproj.safely.patient.PatientHomeActivity
+import com.finalproj.safely.patient.PatientProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 

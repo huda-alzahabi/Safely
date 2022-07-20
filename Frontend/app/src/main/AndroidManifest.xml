@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.finalproj.safely">
 
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,31 +20,38 @@
         android:theme="@style/Theme.Frontend"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".patient.MedicalRecordsContinuedActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/minilogo" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/blue" />
+
         <activity
-            android:name=".UserInfoActivity"
+            android:name=".patient.PatientInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".BookAppointmentActivity"
+            android:name=".user.BookAppointmentActivity"
             android:exported="false" />
         <activity
-            android:name=".PatientProfileActivity"
+            android:name=".patient.PatientProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MedicalRecordsActivity"
+            android:name=".patient.MedicalRecordsActivity"
             android:exported="false" />
         <activity
-            android:name=".PatientHospitalsActivity"
+            android:name=".patient.PatientHospitalsActivity"
             android:exported="false" />
         <activity
-            android:name=".PatientHomeActivity"
+            android:name=".patient.PatientHomeActivity"
             android:exported="false" />
 
         <meta-data
@@ -52,26 +59,26 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".patient.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".PatientDoctorsActivity"
+            android:name=".patient.PatientDoctorsActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".user.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".user.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".UserTypeActivity"
+            android:name=".user.UserTypeActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".user.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".user.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,8 +86,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name=".patient.MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
             <intent-filter>

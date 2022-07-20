@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.finalproj.safely.*
+import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PatientDoctorsActivity : AppCompatActivity() {

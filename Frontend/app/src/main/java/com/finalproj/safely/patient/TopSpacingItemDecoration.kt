@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.graphics.Rect
 import android.view.View

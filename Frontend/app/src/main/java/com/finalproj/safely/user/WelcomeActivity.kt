@@ -1,9 +1,10 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.finalproj.safely.R
 
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

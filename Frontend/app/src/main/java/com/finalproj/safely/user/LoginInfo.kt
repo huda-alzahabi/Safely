@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.user
 
 import com.google.gson.annotations.SerializedName
 

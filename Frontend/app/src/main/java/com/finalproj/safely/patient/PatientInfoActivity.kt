@@ -1,16 +1,17 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.finalproj.safely.R
 
 
-class UserInfoActivity : AppCompatActivity() {
+class PatientInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_info)
+        setContentView(R.layout.activity_patient_info)
         var selectedSex = ""
         //create dropdown for nationalities
         val nationalities = resources.getStringArray(R.array.nationalities)
@@ -67,7 +68,7 @@ class UserInfoActivity : AppCompatActivity() {
         Log.d("Nationality", nationality)
         Log.d("Marital Status", maritalStatus)
         Log.d("Sex", sex)
-        val intent = Intent(this@UserInfoActivity, MapsActivity::class.java)
+        val intent = Intent(this@PatientInfoActivity, MapsActivity::class.java)
         startActivity(intent)
     }
 }

@@ -1,45 +1,46 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.finalproj.safely.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PatientProfileActivity : AppCompatActivity() {
+class MedicalRecordsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_patient_profile)
+        setContentView(R.layout.activity_medical_records)
         clickedNavItem()
     }
 
     private fun clickedNavItem() {
-        val bottomnav=findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomnav.menu.findItem(R.id.nav_profile).isChecked = true;
+       val bottomnav= findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomnav.menu.findItem(R.id.nav_records).isChecked = true;
 
-        bottomnav.setOnItemSelectedListener {
-                    item ->
+        bottomnav.setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.nav_home -> {
                         val intent =
-                            Intent(this@PatientProfileActivity, PatientHomeActivity::class.java)
+                            Intent(this@MedicalRecordsActivity, PatientHomeActivity::class.java)
                         startActivity(intent)
                     }
                     R.id.nav_hospitals -> {
-                        val intent = Intent(this@PatientProfileActivity,
+                        val intent = Intent(this@MedicalRecordsActivity,
                             PatientHospitalsActivity::class.java)
                         startActivity(intent)
                     }
                     R.id.nav_location -> {
-                        val intent = Intent(this@PatientProfileActivity, MapsActivity::class.java)
+                        val intent = Intent(this@MedicalRecordsActivity, MapsActivity::class.java)
                         startActivity(intent)
                     }
                     R.id.nav_records -> {
-                        val intent =
-                            Intent(this@PatientProfileActivity, MedicalRecordsActivity::class.java)
-                        startActivity(intent)
+
                     }
                     R.id.nav_profile -> {
-                       }
+                        val intent =
+                            Intent(this@MedicalRecordsActivity, PatientProfileActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
                 return@setOnItemSelectedListener true
             }

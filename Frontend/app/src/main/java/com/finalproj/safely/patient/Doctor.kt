@@ -1,4 +1,4 @@
-package com.finalproj.safely
+package com.finalproj.safely.patient
 
 data class Doctor(
     var _id: String,
