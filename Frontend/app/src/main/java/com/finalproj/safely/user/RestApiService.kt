@@ -5,7 +5,8 @@ import android.util.Log
 import android.util.Log.d
 import com.finalproj.safely.patient.Doctor
 import com.finalproj.safely.patient.MedicalRecords
-import com.finalproj.safely.patient.MedicalRecordsResponse
+import com.finalproj.safely.patient.SuccessMessageResponse
+import com.finalproj.safely.patient.PatientInfo
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -74,20 +75,38 @@ class RestApiService {
                 }
             })
     }
-    fun submitRecords(medicalRecords: MedicalRecords, onResult: (MedicalRecordsResponse?) -> Unit) {
+    fun submitRecords(medicalRecords: MedicalRecords, onResult: (SuccessMessageResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.submitRecords("62c1f77a3841c742c4986d76",medicalRecords).enqueue(
-            object : Callback<MedicalRecordsResponse> {
-                override fun onFailure(call: Call<MedicalRecordsResponse>, t: Throwable) {
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No Records", t.toString())
                     onResult(null)
                 }
                 override fun onResponse(
-                    call: Call<MedicalRecordsResponse>,
-                    response: Response<MedicalRecordsResponse>,
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
                     Log.d("Added Records", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+    fun addPatient(patientInfo: PatientInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addPatient(patientInfo).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Patient", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Patient", response.body().toString())
                     onResult(addedUser)
                 }
             })
