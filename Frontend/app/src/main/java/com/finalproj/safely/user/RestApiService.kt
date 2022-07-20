@@ -3,10 +3,7 @@ package com.finalproj.safely.user
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
-import com.finalproj.safely.patient.Doctor
-import com.finalproj.safely.patient.MedicalRecords
-import com.finalproj.safely.patient.SuccessMessageResponse
-import com.finalproj.safely.patient.PatientInfo
+import com.finalproj.safely.patient.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -96,6 +93,24 @@ class RestApiService {
     fun addPatient(patientInfo: PatientInfo, onResult: (SuccessMessageResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.addPatient(patientInfo).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Patient", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Patient", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+    fun addPatientLocation(patientLocation: PatientLocation, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addPatientLocation("62c1f77a3841c742c4986d76",patientLocation).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No Patient", t.toString())
