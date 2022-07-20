@@ -3,7 +3,8 @@ package com.finalproj.safely.user
 
 import com.finalproj.safely.patient.Doctor
 import com.finalproj.safely.patient.MedicalRecords
-import com.finalproj.safely.patient.MedicalRecordsResponse
+import com.finalproj.safely.patient.SuccessMessageResponse
+import com.finalproj.safely.patient.PatientInfo
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -23,6 +24,9 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @POST("/api/patient/records/")
-    fun submitRecords(@Query("id") patientId: String?, @Body medicalRecords: MedicalRecords): Call<MedicalRecordsResponse>
+    fun submitRecords(@Query("id") patientId: String?, @Body medicalRecords: MedicalRecords): Call<SuccessMessageResponse>
 
+    @Headers("Content-Type: application/json")
+    @POST("/api/patient")
+    fun addPatient(@Body patientInfo: PatientInfo): Call<SuccessMessageResponse>
 }
