@@ -52,6 +52,18 @@
     <string name="submit_changes">Soumettre des changements</string>
     <string name="available">Disponibles</string>
     <string name="doctors">Médecins</string>
+    <string name="next">Suivant</string>
+    <string name="allergies">Allergies</string>
+    <string name="current_medications"> Médicament Actuel</string>
+    <string name="chronic_diseases">Maladies Chroniques</string>
+    <string name="previous_surgeries">Chirurgies Précédentes</string>
+    <string name="family_history">Histoire de Famille</string>
+    <string name="additional_notes">Notes Complémentaires</string>
+
+
+
+
+
 
 
 

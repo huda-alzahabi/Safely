@@ -51,6 +51,14 @@
     <string name="submit_changes">Submit Changes</string>
     <string name="available">Available</string>
     <string name="doctors">Doctors</string>
+    <string name="next">Next</string>
+    <string name="allergies">Allergies</string>
+    <string name="current_medications"> Current Medication</string>
+    <string name="chronic_diseases">Chronic Diseases</string>
+    <string name="previous_surgeries">Previous Surgeries</string>
+    <string name="family_history">Family History</string>
+    <string name="additional_notes">Additional Notes</string>
+
 
 
 </resources>
