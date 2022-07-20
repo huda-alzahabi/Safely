@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignUpActivity">
+    tools:context=".user.SignUpActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -77,7 +77,6 @@
 
         <!--sample button to submit entered data inside from edit text-->
         <Button
-
             android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
