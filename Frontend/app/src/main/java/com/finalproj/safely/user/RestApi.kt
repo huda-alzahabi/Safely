@@ -1,6 +1,7 @@
 package com.finalproj.safely.user
 
 
+import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -30,4 +31,8 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("/api/patient/location")
     fun addPatientLocation(@Query("id") patientId: String?,@Body patientLocation: PatientLocation): Call<SuccessMessageResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("/api/hospital")
+    fun addHospitalInfo(@Body hospitalInfo: HospitalInfo): Call<SuccessMessageResponse>
 }
