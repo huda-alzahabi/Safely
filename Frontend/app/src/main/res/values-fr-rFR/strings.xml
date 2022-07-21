@@ -59,6 +59,14 @@
     <string name="blood_type">Groupe Sanguin</string>
     <string name="weight">Le Poids (LBS) </string>
     <string name="height"> La Taille (Inch) </string>
+    <string name="address">Adresse</string>
+    <string name="country">Pays</string>
+    <string name="city">Ville</string>
+    <string name="street">Rue</string>
+    <string name="building">Bâtiment</string>
+    <string name="specialty">Spécialité</string>
+    <string name="years_of_experience">Années d\'expérience</string>
+
 
 
 
