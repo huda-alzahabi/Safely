@@ -35,7 +35,7 @@ const patientSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  locations: 
+  location: 
     {
       longitude: {
         type: String,
