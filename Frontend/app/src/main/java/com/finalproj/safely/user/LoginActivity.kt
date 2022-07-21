@@ -60,6 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
                 val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 Log.d("Login Error", "Error logging new user")
             }

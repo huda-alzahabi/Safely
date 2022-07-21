@@ -14,6 +14,7 @@ class WelcomeActivity : AppCompatActivity() {
         tryNow.setOnClickListener {
             val intent = Intent(this@WelcomeActivity, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

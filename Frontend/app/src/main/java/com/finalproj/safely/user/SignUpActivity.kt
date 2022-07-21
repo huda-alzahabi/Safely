@@ -64,5 +64,6 @@ class SignUpActivity : AppCompatActivity() {
         }
         val intent = Intent(this@SignUpActivity, PatientInfoActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }
