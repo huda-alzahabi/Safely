@@ -1,8 +1,6 @@
 package com.finalproj.safely.patient
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,13 +8,12 @@ import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
-import com.finalproj.safely.user.UserInfo
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MedicalRecordsActivity : AppCompatActivity() {
+class AddMedicalRecordsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_medical_records)
+        setContentView(R.layout.activity_add_medical_records)
 
         val submit = findViewById<Button>(R.id.submit_records)
 
@@ -73,16 +70,16 @@ class MedicalRecordsActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> {
                     val intent =
-                        Intent(this@MedicalRecordsActivity, PatientHomeActivity::class.java)
+                        Intent(this@AddMedicalRecordsActivity, PatientHomeActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_hospitals -> {
-                    val intent = Intent(this@MedicalRecordsActivity,
+                    val intent = Intent(this@AddMedicalRecordsActivity,
                         PatientHospitalsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_location -> {
-                    val intent = Intent(this@MedicalRecordsActivity, MapsActivity::class.java)
+                    val intent = Intent(this@AddMedicalRecordsActivity, MapsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_records -> {
@@ -90,7 +87,7 @@ class MedicalRecordsActivity : AppCompatActivity() {
                 }
                 R.id.nav_profile -> {
                     val intent =
-                        Intent(this@MedicalRecordsActivity, PatientProfileActivity::class.java)
+                        Intent(this@AddMedicalRecordsActivity, PatientProfileActivity::class.java)
                     startActivity(intent)
                 }
             }
