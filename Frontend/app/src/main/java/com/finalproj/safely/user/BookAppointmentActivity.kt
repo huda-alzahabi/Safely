@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.Toast
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.MapsActivity
-import com.finalproj.safely.patient.MedicalRecordsActivity
-import com.finalproj.safely.patient.PatientHomeActivity
-import com.finalproj.safely.patient.PatientProfileActivity
+import com.finalproj.safely.patient.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
@@ -50,7 +47,7 @@ class BookAppointmentActivity : AppCompatActivity() {
                     }
                     R.id.nav_records -> {
                         val intent = Intent(this@BookAppointmentActivity,
-                            MedicalRecordsActivity::class.java)
+                            AddMedicalRecordsActivity::class.java)
                         startActivity(intent)
                     }
                     R.id.nav_profile -> {

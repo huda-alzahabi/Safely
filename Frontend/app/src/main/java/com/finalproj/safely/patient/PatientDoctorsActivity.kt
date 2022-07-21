@@ -59,7 +59,7 @@ class PatientDoctorsActivity : AppCompatActivity() {
                 }
                 R.id.nav_records -> {
                     val intent =
-                        Intent(this@PatientDoctorsActivity, MedicalRecordsActivity::class.java)
+                        Intent(this@PatientDoctorsActivity, AddMedicalRecordsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_profile -> {

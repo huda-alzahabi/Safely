@@ -36,7 +36,7 @@ class PatientHospitalsActivity : AppCompatActivity() {
                     }
                     R.id.nav_records -> {
                         val intent = Intent(this@PatientHospitalsActivity,
-                            MedicalRecordsActivity::class.java)
+                            AddMedicalRecordsActivity::class.java)
                         startActivity(intent)
                         overridePendingTransition(0,0);
                     }

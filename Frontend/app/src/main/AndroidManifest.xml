@@ -4,8 +4,8 @@
     package="com.finalproj.safely">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
@@ -21,16 +21,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".patient.MedicalRecordsContinuedActivity"
+            android:name=".doctor.AddAvailabilityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".hospital.HospitalHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.DoctorHomeActivity"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/minilogo" />
-        <!--
- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more.
-        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/blue" />
@@ -45,7 +47,7 @@
             android:name=".patient.PatientProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".patient.MedicalRecordsActivity"
+            android:name=".patient.AddMedicalRecordsActivity"
             android:exported="false" />
         <activity
             android:name=".patient.PatientHospitalsActivity"
