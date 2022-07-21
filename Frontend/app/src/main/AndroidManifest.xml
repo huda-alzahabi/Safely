@@ -27,6 +27,9 @@
             android:name=".hospital.HospitalHomeActivity"
             android:exported="false" />
         <activity
+            android:name=".hospital.HospitalInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".doctor.DoctorHomeActivity"
             android:exported="false" />
 
