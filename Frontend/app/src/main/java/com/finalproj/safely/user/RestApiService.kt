@@ -3,6 +3,7 @@ package com.finalproj.safely.user
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
+import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -122,6 +123,24 @@ class RestApiService {
                 ) {
                     val addedUser = response.body()
                     Log.d("Added Patient", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+    fun addHospitalInfo(hospitalInfo: HospitalInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addHospitalInfo(hospitalInfo).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Hospital", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Hospital", response.body().toString())
                     onResult(addedUser)
                 }
             })
