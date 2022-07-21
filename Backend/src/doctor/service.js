@@ -2,11 +2,11 @@ const Doctor = require("../../model/Doctor");
 const DrAvailability = require("../../model/DoctorAvailability");
 
 async function addDoctor(body) {
-  const { name, specialty, hospital } = body;
+  const { specialty, years_of_experience, hospital } = body;
 
   const doctor = new Doctor({
-    name,
     specialty,
+    years_of_experience,
     hospital,
   });
 
