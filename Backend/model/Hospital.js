@@ -14,7 +14,7 @@ const hospitalSchema = new mongoose.Schema({
     },
     address: [addressSchema],
 
-    locations: {
+    location: {
         longitude:{
             type: String,
             required: false,
@@ -33,4 +33,5 @@ const hospitalSchema = new mongoose.Schema({
     
 });
 
+hospitalSchema.index({location:"2dsphere"});
 module.exports = mongoose.model("Hospital", hospitalSchema);
