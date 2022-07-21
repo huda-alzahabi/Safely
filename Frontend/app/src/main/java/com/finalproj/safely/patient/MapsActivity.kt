@@ -95,7 +95,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     val patient_confirm_location =
                         findViewById<Button>(R.id.patient_confirm_location)
                     patient_confirm_location.setOnClickListener {
-                        submitLocation(location.latitude.toString(),location.latitude.toString());
+                        submitLocation(location.longitude.toString(),location.latitude.toString());
                         val intent =
                             Intent(this@MapsActivity, PatientHomeActivity::class.java)
                         startActivity(intent)
