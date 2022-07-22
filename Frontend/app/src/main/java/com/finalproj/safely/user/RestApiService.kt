@@ -109,9 +109,9 @@ class RestApiService {
                 }
             })
     }
-    fun addPatientLocation(patientLocation: PatientLocation, onResult: (SuccessMessageResponse?) -> Unit) {
+    fun addPatientLocation(location: Location, onResult: (SuccessMessageResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
-        retrofit.addPatientLocation("62c1f77a3841c742c4986d76",patientLocation).enqueue(
+        retrofit.addPatientLocation("62c1f77a3841c742c4986d76",location).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No Patient", t.toString())
@@ -142,6 +142,24 @@ class RestApiService {
                     val addedUser = response.body()
                     Log.d("Added Hospital", response.body().toString())
                     onResult(addedUser)
+                }
+            })
+    }
+    fun getHospitals(onResult: (List<Hospital?>) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getAllHospitals()
+            .enqueue(object : Callback<List<Hospital>?> {
+                override fun onResponse(
+                    call: Call<List<Hospital>?>,
+                    response: Response<List<Hospital>?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("HOSPITALSS", responseBody.toString())
+                }
+
+                override fun onFailure(call: Call<List<Hospital>?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
                 }
             })
     }
