@@ -66,16 +66,8 @@
     <string name="building">Bâtiment</string>
     <string name="specialty">Spécialité</string>
     <string name="years_of_experience">Années d\'expérience</string>
-
-
-
-
-
-
-
-
-
-
+    <string name="hospitals">Hôpitaux</string>
+    <string name="nearby">Proche</string>
 
 
 </resources>

@@ -65,6 +65,8 @@
     <string name="building">Building</string>
     <string name="specialty">Specialty</string>
     <string name="years_of_experience">Years of Experience</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="nearby">Nearby</string>
 
 
 </resources>
