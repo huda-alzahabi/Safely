@@ -1,4 +1,5 @@
 const { addHospital, getHospitals, getHospitalById } = require("./service");
+const Hospital = require("../../model/Hospital");
 
 async function add(req, res) {
   try {
@@ -29,8 +30,27 @@ async function get(req, res) {
     console.log(error);
   }
 }
+async function addHospitalLocation(req, res) {
+  try {
+    const hospital = await Hospital.findByIdAndUpdate(
+      { _id: req.query.id },
+      {
+        $set: {
+          hospital_location: {
+            longitude: req.body.longitude,
+            latitude: req.body.latitude,
+          },
+        },
+      }
+    );
+    return res.send({message:"Hospital Location Added"});
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   add,
   get,
+  addHospitalLocation
 };
