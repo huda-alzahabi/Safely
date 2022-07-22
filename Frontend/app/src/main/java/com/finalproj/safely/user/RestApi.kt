@@ -30,9 +30,13 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @POST("/api/patient/location")
-    fun addPatientLocation(@Query("id") patientId: String?,@Body patientLocation: PatientLocation): Call<SuccessMessageResponse>
+    fun addPatientLocation(@Query("id") patientId: String?,@Body location: Location): Call<SuccessMessageResponse>
 
     @Headers("Content-Type: application/json")
     @POST("/api/hospital")
     fun addHospitalInfo(@Body hospitalInfo: HospitalInfo): Call<SuccessMessageResponse>
+
+    @Headers("Content-Type: application/json")
+    @GET("/api/hospital")
+    fun getAllHospitals(): Call<List<Hospital>>
 }
