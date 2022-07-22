@@ -7,11 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.*
+import com.finalproj.safely.user.BookAppointmentActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PatientDoctorsActivity : AppCompatActivity() {
+class PatientDoctorsActivity : AppCompatActivity(),DoctorsAdapter.OnItemClickListener {
     private lateinit var doctorAdapter: DoctorsAdapter
+    private lateinit var doctorsList: List<Doctor>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_doctors)
@@ -19,7 +22,8 @@ class PatientDoctorsActivity : AppCompatActivity() {
         val apiService = RestApiService()
         apiService.getDrs() {
             Log.d("doctors", it.toString())
-            doctorAdapter.submitList(it as List<Doctor>)
+            doctorsList = it as List<Doctor>
+            doctorAdapter.submitList(doctorsList)
         }
         initRecyclerView()
         clickedNavItem()
@@ -32,9 +36,17 @@ class PatientDoctorsActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@PatientDoctorsActivity)
             val topSpacingDecorator = TopSpacingItemDecoration(30)
             addItemDecoration(topSpacingDecorator)
-            doctorAdapter = DoctorsAdapter()
+            doctorAdapter = DoctorsAdapter(this@PatientDoctorsActivity)
             adapter = doctorAdapter
         }
+    }
+
+    override fun onItemClick(position: Int) {
+        val intent = Intent(this, BookAppointmentActivity::class.java)
+        val clickedItem: Doctor = doctorsList[position]
+        doctorAdapter.notifyItemChanged(position)
+        startActivity(intent)
+
     }
 
     private fun clickedNavItem() {
