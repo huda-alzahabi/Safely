@@ -19,10 +19,11 @@
         android:padding="13dp"
         android:orientation="vertical">
 
-        <ImageView android:layout_width="80dp"
-            android:layout_height="80dp"
+        <ImageView
             android:id="@+id/img"
-            android:contentDescription="@string/app_name"/>
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/txt"
