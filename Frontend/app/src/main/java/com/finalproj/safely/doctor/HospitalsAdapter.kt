@@ -11,7 +11,8 @@ import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
 import com.finalproj.safely.patient.Hospital
 
-class HospitalsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HospitalsAdapter(private val listener: OnItemClickListener) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var items: List<Hospital> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -39,29 +40,42 @@ class HospitalsAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return notifyDataSetChanged()
     }
 
-    class HospitalViewHolder
+    inner class HospitalViewHolder
     constructor(
         itemView: View,
-    ) : RecyclerView.ViewHolder(itemView) {
+    ) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
 
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
         val img = itemView.findViewById<View>(R.id.img) as ImageView
 
-        fun bind(hospital: Hospital) {
-
-            val requestOptions = RequestOptions()
-                .placeholder(R.drawable.hospital)
-                .error(R.drawable.hospital)
-
-            Glide.with(itemView.context)
-                .applyDefaultRequestOptions(requestOptions)
-                .load(hospital.user.name)
-                .into(img)
-            txt.setText(hospital.user.name)
-            sub_txt.setText(hospital.phone_number)
-
+        init {
+            itemView.setOnClickListener(this)
         }
 
+        override fun onClick(v: View?) {
+            val position: Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onItemClick(position)
+            }
+        }
+            fun bind(hospital: Hospital) {
+
+                val requestOptions = RequestOptions()
+                    .placeholder(R.drawable.hospital)
+                    .error(R.drawable.hospital)
+
+                Glide.with(itemView.context)
+                    .applyDefaultRequestOptions(requestOptions)
+                    .load(hospital.user.name)
+                    .into(img)
+                txt.setText(hospital.user.name)
+                sub_txt.setText(hospital.phone_number)
+
+            }
+
+        }
+        interface OnItemClickListener {
+            fun onItemClick(position:Int)
+        }
     }
-}
