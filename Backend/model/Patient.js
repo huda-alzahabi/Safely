@@ -35,45 +35,42 @@ const patientSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  location: 
-    {
-      longitude: {
-        type: String,
-        required: false,
-      },
-      latitude: {
-        type: String,
-        required: false,
-      },
+  location: {
+    longitude: {
+      type: String,
+      required: false,
     },
-  medical_records: 
-    {
-      current_medications: {
-        type: String,
-        required: false,
-      },
-      chronic_diseases: {
-        type: String,
-        required: false,
-      },
-      allergies: {
-        type: String,
-        required: false,
-      },
-      blood_type: {
-        type: String,
-        required: false,
-      },
-      weight: {
-        type: String,
-        required: false,
-      },
-      height: {
-        type: String,
-        required: false,
-      },
+    latitude: {
+      type: String,
+      required: false,
     },
-  
+  },
+  medical_records: {
+    current_medications: {
+      type: String,
+      required: false,
+    },
+    chronic_diseases: {
+      type: String,
+      required: false,
+    },
+    allergies: {
+      type: String,
+      required: false,
+    },
+    blood_type: {
+      type: String,
+      required: false,
+    },
+    weight: {
+      type: String,
+      required: false,
+    },
+    height: {
+      type: String,
+      required: false,
+    },
+  },
 });
 
 module.exports = mongoose.model("Patient", patientSchema);
