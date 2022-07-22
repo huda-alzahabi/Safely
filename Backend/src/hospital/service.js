@@ -17,7 +17,7 @@ async function addHospital(body) {
   return await hospital.save();
 }
 async function getHospitals() {
-  return await Hospital.find();
+  return await Hospital.find().populate("user");
 }
 async function getHospitalById(id) {
   return await Hospital.findById(id);
