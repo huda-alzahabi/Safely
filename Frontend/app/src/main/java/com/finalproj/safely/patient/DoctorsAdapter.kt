@@ -5,16 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
 import kotlin.collections.ArrayList
 
-class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var items: List<Doctor> = ArrayList()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return DoctorViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.doctors_card_view, parent, false)
         )
@@ -26,7 +27,6 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             is DoctorViewHolder -> {
                 holder.bind(items.get(position))
             }
-
         }
     }
 
@@ -39,14 +39,26 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return notifyDataSetChanged()
     }
 
-    class DoctorViewHolder
+   inner class DoctorViewHolder
     constructor(
         itemView: View,
-    ) : RecyclerView.ViewHolder(itemView) {
+    ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
         val img = itemView.findViewById<View>(R.id.img) as ImageView
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position:Int = adapterPosition
+            if(position != RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
+
+        }
 
         fun bind(doctor: Doctor) {
 
@@ -62,7 +74,9 @@ class DoctorsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             sub_txt.setText(doctor.specialty)
 
         }
-
     }
 
+    interface OnItemClickListener {
+        fun onItemClick(position:Int)
+    }
 }
