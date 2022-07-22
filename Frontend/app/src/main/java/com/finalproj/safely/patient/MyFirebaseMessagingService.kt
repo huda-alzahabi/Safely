@@ -57,6 +57,4 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
         noticationManager.notify(0, notification.build())
     }
-    //attach it to custom layout
-    //show it on the screen
 }

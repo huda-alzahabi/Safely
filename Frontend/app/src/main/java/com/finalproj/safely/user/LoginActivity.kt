@@ -66,7 +66,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun decodeToken(token: String): String {
         val elements = token.split('.')
         var user_name = ""

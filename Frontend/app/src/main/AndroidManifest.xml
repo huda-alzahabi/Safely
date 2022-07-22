@@ -4,7 +4,6 @@
     package="com.finalproj.safely">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -20,6 +19,12 @@
         android:theme="@style/Theme.Frontend"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".doctor.AllHospitalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.DoctorProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".doctor.AddAvailabilityActivity"
             android:exported="false" />

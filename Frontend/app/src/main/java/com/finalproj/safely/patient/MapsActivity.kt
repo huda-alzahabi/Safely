@@ -135,12 +135,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         latitude:String
     ){
         val apiService = RestApiService()
-        val patientLocation=PatientLocation(
+        val location=Location(
             longitude=longitude,
             latitude=latitude
         )
-        apiService.addPatientLocation(patientLocation){
-            Log.d("LOCATION", patientLocation.toString())
+        apiService.addPatientLocation(location){
+            Log.d("LOCATION", location.toString())
             if (it!= null) {
                 Log.d("Location", it.toString())
             } else {
