@@ -1,5 +1,7 @@
 package com.finalproj.safely.hospital
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +12,8 @@ import com.finalproj.safely.patient.PatientInfo
 import com.finalproj.safely.user.RestApiService
 
 class HospitalInfoActivity : AppCompatActivity() {
+    private val sharedPrefFile = "kotlin_shared_preference"
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hospital_info)
@@ -21,7 +25,9 @@ class HospitalInfoActivity : AppCompatActivity() {
             val city = findViewById<EditText>(R.id.city).text.toString()
             val street = findViewById<EditText>(R.id.street).text.toString()
             val building = findViewById<EditText>(R.id.building).text.toString()
-            var user="62d907013a51ab400a6dfe96"
+            sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+                Context.MODE_PRIVATE)
+            val user = sharedPreferences.getString("user_id", "")!!
 
             submitInfo(phone_num, country, city, street, building, user)
 
