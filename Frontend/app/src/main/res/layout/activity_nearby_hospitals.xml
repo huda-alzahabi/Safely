@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient.PatientHospitalsActivity">
+    tools:context=".patient.NearbyHospitalsActivity">
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
@@ -54,7 +54,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hospitals_recycler_view"
+        android:id="@+id/h_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="170dp"

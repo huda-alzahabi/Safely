@@ -1,7 +1,6 @@
 package com.finalproj.safely.patient
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -59,7 +58,7 @@ class PatientProfileActivity : AppCompatActivity() {
                     }
                     R.id.nav_hospitals -> {
                         val intent = Intent(this@PatientProfileActivity,
-                            PatientHospitalsActivity::class.java)
+                            NearbyHospitalsActivity::class.java)
                         startActivity(intent)
                     }
                     R.id.nav_location -> {

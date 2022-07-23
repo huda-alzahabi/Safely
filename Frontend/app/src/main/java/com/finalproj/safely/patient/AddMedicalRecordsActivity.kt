@@ -75,7 +75,7 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
                 }
                 R.id.nav_hospitals -> {
                     val intent = Intent(this@AddMedicalRecordsActivity,
-                        PatientHospitalsActivity::class.java)
+                        NearbyHospitalsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_location -> {

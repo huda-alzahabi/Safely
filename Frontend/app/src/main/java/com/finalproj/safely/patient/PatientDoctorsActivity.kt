@@ -62,7 +62,7 @@ class PatientDoctorsActivity : AppCompatActivity(),DoctorsAdapter.OnItemClickLis
                 }
                 R.id.nav_hospitals -> {
                     val intent =
-                        Intent(this@PatientDoctorsActivity, PatientHospitalsActivity::class.java)
+                        Intent(this@PatientDoctorsActivity, NearbyHospitalsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_location -> {
