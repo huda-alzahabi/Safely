@@ -57,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
         val sharedPrefFile = "kotlin_shared_preference"
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
-        val usertype = sharedPreferences.getString("usertype", "")
+        val usertype = intent.getStringExtra("usertype")
 
         val apiService = RestApiService()
         val userInfo = UserInfo(

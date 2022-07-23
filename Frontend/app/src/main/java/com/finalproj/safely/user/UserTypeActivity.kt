@@ -17,32 +17,25 @@ class UserTypeActivity : AppCompatActivity() {
         val doctor = findViewById<Button>(R.id.doctor)
         val hospital = findViewById<Button>(R.id.hospital)
 
-        val sharedPrefFile = "kotlin_shared_preference"
-        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
-            Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
         patient.setOnClickListener {
-            editor.putString("usertype", "patient")
-            editor.apply()
-            editor.commit()
-            val intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+
+            intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+            intent.putExtra("usertype", "patient")
             startActivity(intent)
             finish()
         }
         doctor.setOnClickListener {
-            editor.putString("usertype", "doctor")
-            editor.apply()
-            editor.commit()
-            val intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+
+            intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+            intent.putExtra("usertype", "doctor")
             startActivity(intent)
             finish()
         }
         hospital.setOnClickListener {
-            editor.putString("usertype", "hospital")
-            editor.apply()
-            editor.commit()
-            val intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+
+            intent = Intent(this@UserTypeActivity, SignUpActivity::class.java)
+            intent.putExtra("usertype", "hospital")
             startActivity(intent)
             finish()
         }
