@@ -3,6 +3,7 @@ package com.finalproj.safely.patient
 import com.finalproj.safely.user.UserInfo
 
 data class Hospital(
+    val _id: String,
     val phone_number: String,
     val address: Address,
     val hospital_location: Location,
@@ -10,7 +11,7 @@ data class Hospital(
     val doctors: ArrayList<String>
 ) {
     override fun toString(): String {
-        return "Hospital(phone_number='$phone_number',  address='$address',hospital_location='$hospital_location', user='$user', doctors='$doctors')"
+        return "Hospital(_id='$_id',phone_number='$phone_number',  address='$address',hospital_location='$hospital_location', user='$user', doctors='$doctors')"
     }
 
     data class Address(
