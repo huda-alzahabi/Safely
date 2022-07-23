@@ -47,4 +47,9 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("/api/doctor")
     fun addDoctor(@Body doctor: DoctorInfo): Call<SuccessMessageResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("api/user/profile")
+    fun editUserProfile(@Query("id") userId: String?,@Body userInfo: UserInfo): Call<SuccessMessageResponse>
+
 }
