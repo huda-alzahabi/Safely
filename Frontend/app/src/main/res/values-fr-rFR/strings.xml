@@ -69,6 +69,10 @@
     <string name="hospitals">Hôpitaux</string>
     <string name="nearby">Proche</string>
     <string name="choose_workplace">Choisissez un lieu de travail</string>
+    <string name="login_failed">Échec de la connexion</string>
+    <string name="invalid_credentials">Les informations d\'identification invalides</string>
+    <string name="signup_failed">Échec de l\'inscription</string>
+    <string name="email_in_use">Email déjà utilisé</string>
 
 
 </resources>

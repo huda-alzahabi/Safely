@@ -68,6 +68,9 @@
     <string name="hospitals">Hospitals</string>
     <string name="nearby">Nearby</string>
     <string name="choose_workplace">Choose Workplace</string>
-
+    <string name="login_failed">Login Failed</string>
+    <string name="invalid_credentials">Invalid Credentials</string>
+    <string name="signup_failed">Signup Failed</string>
+    <string name="email_in_use">Email Already in use</string>
 
 </resources>
