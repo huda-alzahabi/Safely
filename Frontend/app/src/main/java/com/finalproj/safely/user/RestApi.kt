@@ -26,7 +26,7 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @POST("/api/patient")
-    fun addPatient(@Body patientInfo: PatientInfo): Call<SuccessMessageResponse>
+    fun addPatient(@Body patientInfo: PatientInfo): Call<PatientResponse>
 
     @Headers("Content-Type: application/json")
     @POST("/api/patient/location")
