@@ -2,18 +2,19 @@ const Doctor = require("../../model/Doctor");
 const DrAvailability = require("../../model/DoctorAvailability");
 
 async function addDoctor(body) {
-  const { specialty, years_of_experience, hospital } = body;
+  const { specialty, years_of_experience, hospital, user } = body;
 
   const doctor = new Doctor({
     specialty,
     years_of_experience,
     hospital,
+    user
   });
 
   return await doctor.save();
 }
 async function getDoctorsByHospitalId(hospital_id) {
-  return await Doctor.find({ hospital: hospital_id });
+  return await Doctor.find({ hospital: hospital_id }).populate("user");
 }
 async function addAvailability(body) {
   const { date, time, doctor } = body;

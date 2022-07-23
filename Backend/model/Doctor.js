@@ -14,6 +14,10 @@ const doctorSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Hospital",
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 
   availability: [drAvailability.schema],
 });
