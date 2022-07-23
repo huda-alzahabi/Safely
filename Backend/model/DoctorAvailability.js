@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const doctorAvailablitySchema = new mongoose.Schema({
     date: {
-        type: Date,
+        type: String,
         required: true,
     },
     time: {
