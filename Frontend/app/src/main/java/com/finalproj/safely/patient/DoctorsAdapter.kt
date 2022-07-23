@@ -68,9 +68,10 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
 
             Glide.with(itemView.context)
                 .applyDefaultRequestOptions(requestOptions)
-                .load(doctor.image)
+                .load(R.drawable.avatar)
                 .into(img)
-            txt.setText(doctor.name)
+            
+            txt.setText(doctor.user.name)
             sub_txt.setText(doctor.specialty)
 
         }

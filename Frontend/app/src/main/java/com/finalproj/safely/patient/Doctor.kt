@@ -1,16 +1,17 @@
 package com.finalproj.safely.patient
 
+import com.finalproj.safely.user.UserInfo
+
 data class Doctor(
     var _id: String,
-    var name: String,
-    var image: String,
     var specialty: String,
-    var availability: ArrayList<Availability>
+    var availability: ArrayList<Availability>,
+    var user: UserInfo
 
     ) {
 
     override fun toString(): String {
-        return "Doctor(id='$_id',  name='$name',image='$image', specialty='$specialty',availability='$availability')"
+        return "Doctor(id='$_id', specialty='$specialty',availability='$availability', user='$user')"
     }
     data class Availability(
         var _id: String,
