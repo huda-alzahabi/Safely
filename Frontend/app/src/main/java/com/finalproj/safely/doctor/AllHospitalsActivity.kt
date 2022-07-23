@@ -44,8 +44,11 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
     }
 
     override fun onItemClick(position: Int) {
-        val intent = Intent(this, PatientDoctorsActivity::class.java)
+        val intent = Intent(this, DoctorProfileActivity::class.java)
         val clickedItem: Hospital = hospitalsList[position]
+        clickedItem._id?.let {
+            intent.putExtra("hospital_id", it)
+        }
         hospitalsAdapter.notifyItemChanged(position)
         startActivity(intent)
     }
