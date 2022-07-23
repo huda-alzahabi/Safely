@@ -5,13 +5,15 @@ import com.finalproj.safely.user.UserInfo
 data class Doctor(
     var _id: String,
     var specialty: String,
+    var years_of_experience: String,
+    var hospital: String,
     var availability: ArrayList<Availability>,
     var user: UserInfo
 
     ) {
 
     override fun toString(): String {
-        return "Doctor(id='$_id', specialty='$specialty',availability='$availability', user='$user')"
+        return "Doctor(specialty='$specialty',years_of_experience='$years_of_experience',hospital='$hospital', user='$user' ,_id='$_id',availability='$availability')"
     }
     data class Availability(
         var _id: String,
