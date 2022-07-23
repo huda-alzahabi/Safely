@@ -1,6 +1,8 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -44,6 +46,11 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
         currentMedications: String,
         chronicDiseases: String,
     ) {
+        val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val patientId = sharedPreferences.getString("patient_id", "")!!
+
         val apiService = RestApiService()
         val medicalRecords = MedicalRecords(
             current_medications = currentMedications,
@@ -53,9 +60,9 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
             weight = weight,
             height = height
             )
-        apiService.submitRecords(medicalRecords) {
+        apiService.submitRecords(patientId,medicalRecords) {
             Log.d("Records", medicalRecords.toString())
-            if (it.toString() != null) {
+            if (it != null) {
                 Log.d("Medss", it.toString())
             } else {
                 Log.d("NOO", "Error registering new user")
