@@ -181,5 +181,23 @@ class RestApiService {
                 }
             })
     }
+    fun addDoctor(doctor: DoctorInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addDoctor(doctor).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Patient", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Doctor", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
 
 }
