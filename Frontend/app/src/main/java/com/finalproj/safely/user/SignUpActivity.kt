@@ -19,6 +19,7 @@ import com.finalproj.safely.patient.PatientInfoActivity
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var builder: AlertDialog.Builder
+    lateinit var alertDialog: AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,8 @@ class SignUpActivity : AppCompatActivity() {
         builder.setIcon(android.R.drawable.ic_dialog_alert)
         builder.setPositiveButton("Exit") { dialogInterface, which ->
         }
+        alertDialog = builder.create()
+
 
         signUp.setOnClickListener {
             var name = findViewById<EditText>(R.id.signup_name).text.toString()
@@ -88,7 +91,6 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 Log.d("OKKKKK", "Error registering new user")
 
-                val alertDialog: AlertDialog = builder.create()
                 alertDialog.setCancelable(false)
                 alertDialog.show()
             }

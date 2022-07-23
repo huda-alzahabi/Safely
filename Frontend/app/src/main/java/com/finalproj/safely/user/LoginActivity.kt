@@ -18,7 +18,7 @@ import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
     lateinit var builder: AlertDialog.Builder
-    
+    lateinit var alertDialog: AlertDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
         builder.setIcon(android.R.drawable.ic_dialog_alert)
         builder.setPositiveButton("Exit") { dialogInterface, which ->
         }
+        alertDialog= builder.create()
 
         login.setOnClickListener {
             var email = findViewById<EditText>(R.id.login_email).text.toString()
@@ -73,8 +74,6 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             } else {
                 Log.d("Login Error", "Error logging new user")
-
-                val alertDialog: AlertDialog = builder.create()
                 alertDialog.setCancelable(false)
                 alertDialog.show()
             }
