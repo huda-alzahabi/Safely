@@ -58,7 +58,7 @@ async function findNearbyHospitals(req, res) {
   const patientLatitude = patient.location.latitude;
   const patientLongitude = patient.location.longitude;
   //get all hospitals
-  const hospitals = await Hospital.find();
+  const hospitals = await Hospital.find().populate("user");
   //find hospitals within 25km
   const nearbyHospitals = hospitals.filter((hospital) => {
     const hospitalLatitude = hospital.hospital_location.latitude;
@@ -72,7 +72,7 @@ async function findNearbyHospitals(req, res) {
     return distance <= 25;
   }
   );
-  return res.send({ message: nearbyHospitals});
+  return res.send(nearbyHospitals);
   }
   catch (error) {
     console.log(error);
