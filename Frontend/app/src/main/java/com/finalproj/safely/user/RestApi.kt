@@ -39,4 +39,8 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @GET("/api/hospital")
     fun getAllHospitals(): Call<List<Hospital>>
+
+    @Headers("Content-Type: application/json")
+    @GET("/api/patient/nearby")
+    fun findNearbyHospitals(@Query("id") patientId: String?): Call<List<Hospital>>
 }
