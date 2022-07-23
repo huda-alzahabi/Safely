@@ -11,12 +11,13 @@ async function getById(id) {
 }
 
 async function addUser(body, hashPassword) {
-    const { name, email } = body;
+    const { name, email,userType } = body;
 
     const user = new User({
         name,
         email,
         password: hashPassword,
+        userType
     });
 
     const token = jwt.sign({ _id: user._id, name: user.name, email: user.email },
