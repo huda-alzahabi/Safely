@@ -55,7 +55,7 @@ class RestApiService {
         )
     }
 
-    fun getDrs(hospitalId:String,onResult: (List<Doctor?>) -> Unit) {
+    fun getDrs(hospitalId: String, onResult: (List<Doctor?>) -> Unit) {
         val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
         retrofitInstance.getDrsByHospitalId(hospitalId)
             .enqueue(object : Callback<List<Doctor>?> {
@@ -73,14 +73,20 @@ class RestApiService {
                 }
             })
     }
-    fun submitRecords(patientId:String,medicalRecords: MedicalRecords, onResult: (SuccessMessageResponse?) -> Unit) {
+
+    fun submitRecords(
+        patientId: String,
+        medicalRecords: MedicalRecords,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
-        retrofit.submitRecords(patientId,medicalRecords).enqueue(
+        retrofit.submitRecords(patientId, medicalRecords).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No Records", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -91,6 +97,7 @@ class RestApiService {
                 }
             })
     }
+
     fun addPatient(patientInfo: PatientInfo, onResult: (PatientResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.addPatient(patientInfo).enqueue(
@@ -99,6 +106,7 @@ class RestApiService {
                     Log.d("No Patient", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<PatientResponse>,
                     response: Response<PatientResponse>,
@@ -109,14 +117,20 @@ class RestApiService {
                 }
             })
     }
-    fun addPatientLocation(patientId:String, location: Location, onResult: (SuccessMessageResponse?) -> Unit) {
+
+    fun addPatientLocation(
+        patientId: String,
+        location: Location,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
-        retrofit.addPatientLocation(patientId,location).enqueue(
+        retrofit.addPatientLocation(patientId, location).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No Patient", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -127,6 +141,7 @@ class RestApiService {
                 }
             })
     }
+
     fun addHospitalInfo(hospitalInfo: HospitalInfo, onResult: (SuccessMessageResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.addHospitalInfo(hospitalInfo).enqueue(
@@ -135,6 +150,7 @@ class RestApiService {
                     Log.d("No Hospital", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -145,6 +161,7 @@ class RestApiService {
                 }
             })
     }
+
     fun getHospitals(onResult: (List<Hospital?>) -> Unit) {
         val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
         retrofitInstance.getAllHospitals()
@@ -163,7 +180,8 @@ class RestApiService {
                 }
             })
     }
-    fun findNearbyHospitals(patientId:String,onResult: (List<Hospital?>) -> Unit) {
+
+    fun findNearbyHospitals(patientId: String, onResult: (List<Hospital?>) -> Unit) {
         val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
         retrofitInstance.findNearbyHospitals(patientId)
             .enqueue(object : Callback<List<Hospital>?> {
@@ -181,6 +199,7 @@ class RestApiService {
                 }
             })
     }
+
     fun addDoctor(doctor: DoctorInfo, onResult: (SuccessMessageResponse?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.addDoctor(doctor).enqueue(
@@ -189,12 +208,31 @@ class RestApiService {
                     Log.d("No Patient", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
                     Log.d("Added Doctor", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+    fun editUserProfile(userId:String, userInfo: UserInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.editUserProfile(userId,userInfo).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No User", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Edited Profile", response.body().toString())
                     onResult(addedUser)
                 }
             })
