@@ -11,16 +11,26 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.finalproj.safely.R
 import com.finalproj.safely.patient.PatientHomeActivity
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
+    lateinit var builder: AlertDialog.Builder
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         val login = findViewById<Button>(R.id.login_btn)
         val register = findViewById<TextView>(R.id.register)
+        builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.login_failed)
+        builder.setMessage(R.string.invalid_credentials)
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+        builder.setPositiveButton("Exit") { dialogInterface, which ->
+        }
 
         login.setOnClickListener {
             var email = findViewById<EditText>(R.id.login_email).text.toString()
@@ -63,20 +73,25 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             } else {
                 Log.d("Login Error", "Error logging new user")
+
+                val alertDialog: AlertDialog = builder.create()
+                alertDialog.setCancelable(false)
+                alertDialog.show()
             }
         }
     }
-    private fun decodeToken(token: String): String {
-        val elements = token.split('.')
-        var user_name = ""
-        if (elements.size == 3) {
-            val (header, payload, signature) = elements
-            val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
-            val json = JSONObject(p)
-             user_name = json.getString(("name").toString())
-        } else {
-            error("Invalid token")
-        }
-        return user_name
+}
+
+private fun decodeToken(token: String): String {
+    val elements = token.split('.')
+    var user_name = ""
+    if (elements.size == 3) {
+        val (header, payload, signature) = elements
+        val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
+        val json = JSONObject(p)
+        user_name = json.getString(("name").toString())
+    } else {
+        error("Invalid token")
     }
+    return user_name
 }
