@@ -15,11 +15,13 @@ import com.finalproj.safely.doctor.AllHospitalsActivity
 import com.finalproj.safely.hospital.HospitalHomeActivity
 import com.finalproj.safely.patient.Hospital
 import com.finalproj.safely.patient.PatientInfoActivity
+import org.json.JSONObject
 
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var builder: AlertDialog.Builder
     lateinit var alertDialog: AlertDialog
+    lateinit var user_id: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,11 +72,16 @@ class SignUpActivity : AppCompatActivity() {
         apiService.register(userInfo) {
             Log.d("User", userInfo.toString())
             if (it != null) {
-                Log.d("HEYYY", it.toString())
+                Log.d("it", it.toString())
+                user_id = it.user
+
+                //add name and id of user to shared preferences
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("Name", name)
+                editor.putString("user_id", user_id)
                 editor.apply()
                 editor.commit()
+
                 if (usertype != null) {
                     Log.d("Usertype", usertype)
                 }
