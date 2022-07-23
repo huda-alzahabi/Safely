@@ -78,6 +78,7 @@ class SignUpActivity : AppCompatActivity() {
                 //add name and id of user to shared preferences
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("Name", name)
+                editor.putString("Email", email)
                 editor.putString("user_id", user_id)
                 editor.apply()
                 editor.commit()

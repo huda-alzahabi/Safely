@@ -1,9 +1,12 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
@@ -12,12 +15,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class PatientProfileActivity : AppCompatActivity() {
-    private val PREFERENCES = "kotlin_shared_preference"
-
+    private val sharedPrefFile = "kotlin_shared_preference"
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_profile)
+
         val submit_btn=findViewById<Button>(R.id.submit_changes)
+        val edit_name=findViewById<EditText>(R.id.edit_name)
+        val edit_email=findViewById<EditText>(R.id.edit_email)
+
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val name = sharedPreferences.getString("Name", "")!!
+        val email = sharedPreferences.getString("Email", "")!!
+
+        edit_name.setText(name)
+        edit_email.setText(email)
+
 
         submit_btn.setOnClickListener{
             editProfile()
@@ -38,7 +53,7 @@ class PatientProfileActivity : AppCompatActivity() {
     }
 
     private fun logout(){
-        this.getSharedPreferences(PREFERENCES, 0).edit().clear().apply();
+        this.getSharedPreferences(sharedPrefFile, 0).edit().clear().apply();
         val intent= Intent(this,MainActivity::class.java)
         startActivity(intent)
         finish()
