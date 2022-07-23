@@ -163,5 +163,23 @@ class RestApiService {
                 }
             })
     }
+    fun findNearbyHospitals(onResult: (List<Hospital?>) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.findNearbyHospitals("62d9070e3a51ab400a6dfe98")
+            .enqueue(object : Callback<List<Hospital>?> {
+                override fun onResponse(
+                    call: Call<List<Hospital>?>,
+                    response: Response<List<Hospital>?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("Nearby HOSPITALSS", responseBody.toString())
+                }
+
+                override fun onFailure(call: Call<List<Hospital>?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
+                }
+            })
+    }
 
 }
