@@ -1,10 +1,11 @@
 const { addPatient } = require("./service");
 const Patient = require("../../model/Patient");
+const Hospital = require("../../model/Hospital");
 
 async function add(req, res) {
   try {
     const newPatient = await addPatient(req.body);
-    return res.status(200).send({message:"New Patient Added"}); 
+    return res.status(200).send({ message: "New Patient Added" });
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -23,7 +24,7 @@ async function addLocation(req, res) {
         },
       }
     );
-    return res.send({message:"Patient Location Added"});
+    return res.send({ message: "Patient Location Added" });
   } catch (error) {
     console.log(error);
   }
@@ -50,9 +51,55 @@ async function addMedicalRecords(req, res) {
     console.log(error);
   }
 }
+async function findNearbyHospitals(req, res) {
+  try {
+  //get patient location
+  const patient = await Patient.findById(req.query.id);
+  const patientLatitude = patient.location.latitude;
+  const patientLongitude = patient.location.longitude;
+  //get all hospitals
+  const hospitals = await Hospital.find();
+  //find hospitals within 25km
+  const nearbyHospitals = hospitals.filter((hospital) => {
+    const hospitalLatitude = hospital.hospital_location.latitude;
+    const hospitalLongitude = hospital.hospital_location.longitude;
+    const distance = getDistanceFromLatLonInKm(
+      patientLatitude,
+      patientLongitude,
+      hospitalLatitude,
+      hospitalLongitude
+    );
+    return distance <= 25;
+  }
+  );
+  return res.send({ message: nearbyHospitals});
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = degreesToRadians(lat2 - lat1); // deg2rad below
+  var dLon = degreesToRadians(lon2 - lon1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(degreesToRadians(lat1)) *
+      Math.cos(degreesToRadians(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function degreesToRadians(degrees) {
+  return degrees * Math.PI / 180;
+}
 
 module.exports = {
   add,
   addLocation,
   addMedicalRecords,
+  findNearbyHospitals,
 };
