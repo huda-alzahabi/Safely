@@ -42,6 +42,10 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
     override fun onItemClick(position: Int) {
         val intent = Intent(this, PatientDoctorsActivity::class.java)
         val clickedItem: Hospital = hospitalsList[position]
+        Log.d("hospitals", clickedItem._id)
+        clickedItem._id?.let {
+            intent.putExtra("hospital_id", it)
+        }
         hospitalsAdapter.notifyItemChanged(position)
         startActivity(intent)
     }
