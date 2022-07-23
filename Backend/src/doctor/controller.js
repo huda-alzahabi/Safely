@@ -23,7 +23,7 @@ async function addDr(req, res) {
     );
     console.log("updateHospital =>", updateHospital);
 
-    return res.status(200).send(newDoctor);
+    return res.status(200).send({message: newDoctor._id});
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
