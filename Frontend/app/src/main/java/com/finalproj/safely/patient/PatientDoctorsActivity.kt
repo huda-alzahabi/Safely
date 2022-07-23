@@ -11,16 +11,23 @@ import com.finalproj.safely.user.BookAppointmentActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class PatientDoctorsActivity : AppCompatActivity(),DoctorsAdapter.OnItemClickListener {
+class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickListener {
     private lateinit var doctorAdapter: DoctorsAdapter
     private lateinit var doctorsList: List<Doctor>
+    private lateinit var hospital_id: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_doctors)
+        intent.getStringExtra("hospital_id")
+            ?.let {
+                hospital_id = it
+                Log.d("user_id", it)
+            }
 
         val apiService = RestApiService()
-        apiService.getDrs() {
+        apiService.getDrs(hospital_id) {
             Log.d("doctors", it.toString())
             doctorsList = it as List<Doctor>
             doctorAdapter.submitList(doctorsList)
