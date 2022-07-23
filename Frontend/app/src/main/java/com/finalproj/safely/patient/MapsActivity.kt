@@ -1,7 +1,9 @@
 package com.finalproj.safely.patient
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -95,7 +97,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     val patient_confirm_location =
                         findViewById<Button>(R.id.patient_confirm_location)
                     patient_confirm_location.setOnClickListener {
-                        submitLocation(location.longitude.toString(),location.latitude.toString());
+                        submitLocation(location.longitude.toString(), location.latitude.toString());
                         val intent =
                             Intent(this@MapsActivity, PatientHomeActivity::class.java)
                         startActivity(intent)
@@ -130,18 +132,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
+
     private fun submitLocation(
-        longitude:String,
-        latitude:String
-    ){
+        longitude: String,
+        latitude: String,
+    ) {
+        val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val patientId = sharedPreferences.getString("patient_id", "")!!
+
         val apiService = RestApiService()
-        val location=Location(
-            longitude=longitude,
-            latitude=latitude
+        val location = Location(
+            longitude = longitude,
+            latitude = latitude
         )
-        apiService.addPatientLocation(location){
+        apiService.addPatientLocation(patientId, location) {
             Log.d("LOCATION", location.toString())
-            if (it!= null) {
+            if (it != null) {
                 Log.d("Location", it.toString())
             } else {
                 Log.d("NOO", "Error adding location")
