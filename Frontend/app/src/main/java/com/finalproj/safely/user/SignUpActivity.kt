@@ -10,6 +10,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
+import com.finalproj.safely.doctor.AllHospitalsActivity
+import com.finalproj.safely.hospital.HospitalHomeActivity
+import com.finalproj.safely.patient.Hospital
 import com.finalproj.safely.patient.PatientInfoActivity
 
 
@@ -41,6 +44,9 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun registerUser(name: String, email: String, password: String) {
         val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+
         val apiService = RestApiService()
         val userInfo = UserInfo(
             name = name,
@@ -52,8 +58,6 @@ class SignUpActivity : AppCompatActivity() {
             Log.d("User", userInfo.toString())
             if (it.toString() != null) {
                 Log.d("HEYYY", it.toString())
-                val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
-                    Context.MODE_PRIVATE)
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("Name", name)
                 editor.apply()
@@ -62,8 +66,20 @@ class SignUpActivity : AppCompatActivity() {
                 Log.d("OKKKKK", "Error registering new user")
             }
         }
-        val intent = Intent(this@SignUpActivity, PatientInfoActivity::class.java)
-        startActivity(intent)
-        finish()
+
+        val usertype = sharedPreferences.getString("usertype", "")
+        if (usertype != null) {
+            Log.d("Usertype", usertype)
+        }
+        if (usertype == "patient") {
+            val intent = Intent(this, PatientInfoActivity::class.java)
+            startActivity(intent)
+        } else if (usertype == "doctor") {
+            val intent = Intent(this, AllHospitalsActivity::class.java)
+            startActivity(intent)
+        }else if (usertype == "hospital") {
+            val intent = Intent(this, HospitalHomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
