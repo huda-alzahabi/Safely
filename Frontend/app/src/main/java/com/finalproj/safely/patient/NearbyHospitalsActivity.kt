@@ -1,6 +1,8 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,9 +18,14 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
     private lateinit var hospitalsList: List<Hospital>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val patientId = sharedPreferences.getString("patient_id", "")!!
+
         setContentView(R.layout.activity_nearby_hospitals)
         val apiService = RestApiService()
-        apiService.findNearbyHospitals () {
+        apiService.findNearbyHospitals (patientId) {
             hospitalsList = it as List<Hospital>
             Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)
