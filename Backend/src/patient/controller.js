@@ -5,7 +5,7 @@ const Hospital = require("../../model/Hospital");
 async function add(req, res) {
   try {
     const newPatient = await addPatient(req.body);
-    return res.status(200).send({ message: "New Patient Added" });
+    return res.status(200).send(newPatient);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
