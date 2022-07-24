@@ -1,14 +1,16 @@
 package com.finalproj.safely.patient
 
 data class DrAvailabilityResponse(
-    var _id: String,
-    var doctor_id: String,
-    var day: String,
-    var time: ArrayList<String>,
     var user_appointment: AppointmentStatus,
+    var day: String,
+    var times: ArrayList<String>,
+    var doctor: String,
+    var _id: String,
+
+
 ) {
     override fun toString(): String {
-        return "DrAvailabilityInfo(id='$_id', doctor_id='$doctor_id', time='$time', day='$day', user_appointment='$user_appointment')"
+        return "DrAvailabilityResponse(user_appointment=$user_appointment, day='$day', times=$times, doctor='$doctor', _id='$_id')"
     }
 
     data class AppointmentStatus(
@@ -16,7 +18,7 @@ data class DrAvailabilityResponse(
         var available: Boolean,
     ) {
         override fun toString(): String {
-            return "Appointment(user_id='$user', available='$available')"
+            return "user_appointment(user='$user', available='$available')"
         }
     }
 }
