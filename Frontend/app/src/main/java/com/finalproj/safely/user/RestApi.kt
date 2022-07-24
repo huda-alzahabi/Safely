@@ -1,6 +1,7 @@
 package com.finalproj.safely.user
 
 
+import com.finalproj.safely.doctor.Availability
 import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
 import retrofit2.Call
@@ -51,5 +52,9 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("api/user/profile")
     fun editUserProfile(@Query("id") userId: String?,@Body userInfo: UserInfo): Call<SuccessMessageResponse>
+
+    @Headers("Content-Type: application/json")
+    @POST("/api/doctor/available")
+    fun addDrAvailability(@Body availability: Availability): Call<SuccessMessageResponse>
 
 }
