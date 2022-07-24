@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.Doctor
 import com.finalproj.safely.patient.Hospital
 import java.util.*
 import kotlin.collections.ArrayList
@@ -24,7 +23,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return HospitalViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.doctors_card_view, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.card_view, parent, false)
         )
     }
 

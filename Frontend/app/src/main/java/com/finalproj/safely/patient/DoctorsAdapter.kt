@@ -7,7 +7,6 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -22,7 +21,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return DoctorViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.doctors_card_view, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.card_view, parent, false)
         )
     }
 
