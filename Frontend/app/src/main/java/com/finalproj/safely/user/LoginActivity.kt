@@ -60,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
         apiService.login(loginInfo) {
             var user_name = ""
             var email = ""
-            var password = ""
 
             if (it?.token != null) {
                 Log.d("Token", it.token)

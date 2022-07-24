@@ -40,7 +40,7 @@ class PatientHomeActivity : AppCompatActivity() {
                 }
                 R.id.nav_hospitals -> {
                     val intent =
-                        Intent(this@PatientHomeActivity, PatientDoctorsActivity::class.java)
+                        Intent(this@PatientHomeActivity, NearbyHospitalsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_location -> {
