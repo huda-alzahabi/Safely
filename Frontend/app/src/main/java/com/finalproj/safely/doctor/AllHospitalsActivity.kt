@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.R
@@ -28,6 +29,7 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
             hospitalsAdapter.submitList(hospitalsList)
 
         }
+        searchHospitals()
         initRecyclerView()
     }
 
@@ -41,6 +43,19 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
             hospitalsAdapter = HospitalsAdapter(this@AllHospitalsActivity)
             adapter = hospitalsAdapter
         }
+    }
+    private fun searchHospitals() {
+        val searchView = findViewById<SearchView>(R.id.searchAll)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                hospitalsAdapter.filter.filter(newText)
+                return false
+            }
+        })
     }
 
     override fun onItemClick(position: Int) {

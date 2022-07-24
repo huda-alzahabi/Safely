@@ -40,8 +40,8 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <SearchView
-        android:id="@+id/searchView"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
