@@ -23,7 +23,7 @@ async function addDr(req, res) {
     );
     console.log("updateHospital =>", updateHospital);
 
-    return res.status(200).send({message: newDoctor._id});
+    return res.status(200).send({ message: newDoctor._id });
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -39,6 +39,18 @@ async function getDoctors(req, res) {
       const result = await getDoctorsByHospitalId(id);
       console.log("result of specific hospital =>", result);
       return res.send(result);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function getAvailabilityByDrId(req, res) {
+  try {
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await Doctor.findById(id);
+      console.log(result.availability);
+      return res.send(result.availability);
     }
   } catch (error) {
     console.log(error);
@@ -61,7 +73,7 @@ async function addDrAvailability(req, res) {
     );
     console.log("updateDr =>", updateDr);
 
-    return res.status(200).send({message:"Availability Added"});
+    return res.status(200).send({ message: "Availability Added" });
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -72,4 +84,5 @@ module.exports = {
   addDr,
   addDrAvailability,
   getDoctors,
+  getAvailabilityByDrId,
 };
