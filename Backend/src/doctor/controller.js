@@ -61,7 +61,7 @@ async function addDrAvailability(req, res) {
     );
     console.log("updateDr =>", updateDr);
 
-    return res.status(200).send(newAvailability);
+    return res.status(200).send({message:"Availability Added"});
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
