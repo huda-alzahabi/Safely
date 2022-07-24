@@ -55,6 +55,9 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     override fun onItemClick(position: Int) {
         val intent = Intent(this, BookAppointmentActivity::class.java)
         val clickedItem: DoctorResponse = doctorsList[position]
+        clickedItem._id?.let {
+            intent.putExtra("doctor_id", it)
+        }
         doctorAdapter.notifyItemChanged(position)
         startActivity(intent)
 
