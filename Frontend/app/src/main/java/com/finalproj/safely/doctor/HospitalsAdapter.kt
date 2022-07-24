@@ -3,17 +3,24 @@ package com.finalproj.safely.doctor
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
+import com.finalproj.safely.patient.Doctor
 import com.finalproj.safely.patient.Hospital
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HospitalsAdapter(private val listener: OnItemClickListener) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
     private var items: List<Hospital> = ArrayList()
+    private var fullList: List<Hospital> = ArrayList()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return HospitalViewHolder(
@@ -27,7 +34,6 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
             is HospitalViewHolder -> {
                 holder.bind(items.get(position))
             }
-
         }
     }
 
@@ -37,6 +43,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
 
     fun submitList(hospitalList: List<Hospital>) {
         items = hospitalList
+        fullList = hospitalList
         return notifyDataSetChanged()
     }
 
@@ -73,8 +80,32 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
                 sub_txt.setText(hospital.phone_number)
 
             }
-
         }
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filteredList: MutableList<Hospital> = ArrayList()
+
+                if (constraint == null || constraint.isEmpty()) {
+                    filteredList.addAll(fullList)
+                } else {
+                    val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
+                    for (item in fullList) {
+                        if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
+                            filteredList.add(item)
+                        }
+                    }
+                }
+                val results = FilterResults()
+                results.values = filteredList
+                return results
+            }
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                items = results?.values as List<Hospital>
+                notifyDataSetChanged()
+            }
+        }
+    }
         interface OnItemClickListener {
             fun onItemClick(position:Int)
         }
