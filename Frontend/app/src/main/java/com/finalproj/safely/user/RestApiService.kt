@@ -244,7 +244,11 @@ class RestApiService {
                 }
             })
     }
-    fun addDrAvailability(availability: DrAvailabilityInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+
+    fun addDrAvailability(
+        availability: DrAvailabilityInfo,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
         retrofit.addDrAvailability(availability).enqueue(
             object : Callback<SuccessMessageResponse> {
@@ -252,6 +256,7 @@ class RestApiService {
                     Log.d("No DrAvailabilityInfo", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -259,6 +264,25 @@ class RestApiService {
                     val addedUser = response.body()
                     Log.d("Added DrAvailabilityInfo", response.body().toString())
                     onResult(addedUser)
+                }
+            })
+    }
+
+    fun getAvailabilityByDrId(doctorId: String, onResult: (List<DrAvailabilityResponse>?) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getAvailabilityByDrId(doctorId)
+            .enqueue(object : Callback<List<DrAvailabilityResponse>> {
+                override fun onResponse(
+                    call: Call<List<DrAvailabilityResponse>>,
+                    response: Response<List<DrAvailabilityResponse>>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("DOCTOR AVAILABILITY", response.toString())
+                }
+
+                override fun onFailure(call: Call<List<DrAvailabilityResponse>>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
                 }
             })
     }
