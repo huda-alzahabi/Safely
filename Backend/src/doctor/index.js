@@ -5,6 +5,6 @@ const router = Router();
 router.post("/", addDr);
 router.post("/available", addDrAvailability);
 router.get("/", getDoctors);
-router.get("/get", getAvailabilityByDrId);
+router.get("/available/get", getAvailabilityByDrId);
 
 module.exports = router;
