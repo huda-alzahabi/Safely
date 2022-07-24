@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.*
@@ -20,6 +21,8 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_doctors)
+
+
         intent.getStringExtra("hospital_id")
             ?.let {
                 hospital_id = it
@@ -32,6 +35,7 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
             doctorsList = it as List<Doctor>
             doctorAdapter.submitList(doctorsList)
         }
+        searchDrs()
         initRecyclerView()
         clickedNavItem()
     }
@@ -56,38 +60,52 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
 
     }
 
-    private fun clickedNavItem() {
-        val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
-
-        bottomnav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val intent =
-                        Intent(this@PatientDoctorsActivity, PatientHomeActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_hospitals -> {
-                    val intent =
-                        Intent(this@PatientDoctorsActivity, NearbyHospitalsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_location -> {
-                    val intent = Intent(this@PatientDoctorsActivity, MapsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_records -> {
-                    val intent =
-                        Intent(this@PatientDoctorsActivity, AddMedicalRecordsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_profile -> {
-                    val intent =
-                        Intent(this@PatientDoctorsActivity, PatientProfileActivity::class.java)
-                    startActivity(intent)
-                }
+    private fun searchDrs() {
+        val searchView = findViewById<SearchView>(R.id.search_view)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
             }
-            return@setOnItemSelectedListener true
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                doctorAdapter.filter.filter(newText)
+                return false
+            }
+        })
+    }
+        private fun clickedNavItem() {
+            val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
+            bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
+
+            bottomnav.setOnItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.nav_home -> {
+                        val intent =
+                            Intent(this@PatientDoctorsActivity, PatientHomeActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.nav_hospitals -> {
+                        val intent =
+                            Intent(this@PatientDoctorsActivity, NearbyHospitalsActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.nav_location -> {
+                        val intent = Intent(this@PatientDoctorsActivity, MapsActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.nav_records -> {
+                        val intent =
+                            Intent(this@PatientDoctorsActivity,
+                                AddMedicalRecordsActivity::class.java)
+                        startActivity(intent)
+                    }
+                    R.id.nav_profile -> {
+                        val intent =
+                            Intent(this@PatientDoctorsActivity, PatientProfileActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                return@setOnItemSelectedListener true
+            }
         }
     }
-}
