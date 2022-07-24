@@ -89,6 +89,6 @@
         app:itemIconTint="@drawable/nav_item_color_selected"
         app:itemTextColor="@color/white"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navigation_menu" />
+        app:menu="@menu/patient_navigation_menu" />
 
 </RelativeLayout>
