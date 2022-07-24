@@ -46,9 +46,16 @@ class HospitalInfoActivity : AppCompatActivity() {
             user = user
         )
         apiService.addHospitalInfo(hospitalInfo) {
-            Log.d("PATIENT", hospitalInfo.toString())
+            Log.d("Hospital", hospitalInfo.toString())
             if (it != null) {
-                Log.d("Hospital", it.toString())
+                Log.d("HOSPITAL", it.toString())
+                sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+                    Context.MODE_PRIVATE)
+                val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                editor.putString("hospital_id", it.message)
+                editor.apply()
+                editor.commit()
+                Log.d("HOSPID", it.message!!)
             } else {
                 Log.d("NOO", "Error adding new hospital")
             }
