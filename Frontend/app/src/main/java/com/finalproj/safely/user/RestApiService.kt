@@ -3,6 +3,7 @@ package com.finalproj.safely.user
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
+import com.finalproj.safely.doctor.Availability
 import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
 import retrofit2.Call
@@ -219,14 +220,20 @@ class RestApiService {
                 }
             })
     }
-    fun editUserProfile(userId:String, userInfo: UserInfo, onResult: (SuccessMessageResponse?) -> Unit) {
+
+    fun editUserProfile(
+        userId: String,
+        userInfo: UserInfo,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
         val retrofit = ServiceBuilder.buildService(RestApi::class.java)
-        retrofit.editUserProfile(userId,userInfo).enqueue(
+        retrofit.editUserProfile(userId, userInfo).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
                     Log.d("No User", t.toString())
                     onResult(null)
                 }
+
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -237,5 +244,24 @@ class RestApiService {
                 }
             })
     }
+    fun addDrAvailability(availability: Availability, onResult: (SuccessMessageResponse?) -> Unit) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addDrAvailability(availability).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Availability", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Availability", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
+
 
 }
