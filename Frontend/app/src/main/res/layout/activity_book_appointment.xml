@@ -12,30 +12,22 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_nav">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitStart"
-            android:src="@drawable/calendarbg" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <DatePicker
-                android:id="@+id/date_Picker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:calendarTextColor="@color/black"
-                android:headerBackground="@android:color/transparent"
-
-                />
+        <ImageView
+            android:id="@+id/r"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+           />
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/date_Picker"
+                android:layout_below="@id/r"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="20dp"

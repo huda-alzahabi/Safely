@@ -3,29 +3,36 @@ package com.finalproj.safely.user
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
-import android.widget.Toast
+import android.util.Log
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.finalproj.safely.R
 import com.finalproj.safely.patient.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
 class BookAppointmentActivity : AppCompatActivity() {
+    private lateinit var doctor_id: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_appointment)
-        val datePicker = findViewById<DatePicker>(R.id.date_Picker)
-        val today = Calendar.getInstance()
-        datePicker.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
-            today.get(Calendar.DAY_OF_MONTH)
+        val imageView: ImageView = findViewById(R.id.r)
+        Glide.with(this).load(R.drawable.gif).into(imageView)
+        intent.getStringExtra("doctor_id")
+            ?.let {
+                doctor_id = it
+                Log.d("doctor_id", it)
+            }
 
-        ) { view, year, month, day ->
-            val month = month + 1
-            val msg = "You Selected: $day/$month/$year"
-            Toast.makeText(this@BookAppointmentActivity, msg, Toast.LENGTH_SHORT).show()
+        val apiService = RestApiService()
+        apiService.getAvailabilityByDrId(doctor_id) {
+            Log.d("availability", it.toString())
         }
+
         clickedNavItem()
     }
+
 
     private fun clickedNavItem() {
        val bottomnav= findViewById<BottomNavigationView>(R.id.bottom_nav)
