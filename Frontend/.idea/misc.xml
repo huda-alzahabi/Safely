@@ -34,7 +34,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/whit_btn.xml" value="0.178" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/white_rounded_corners.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout-v26/activity_welcome.xml" value="0.5" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_add_availability.xml" value="0.14505893019038985" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_add_availability.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_add_medical_records.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_all_hospitals.xml" value="0.32142857142857145" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_book_appointment.xml" value="0.22" />
@@ -64,6 +64,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/card_view.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/doctors_card_view.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/dropdown.xml" value="0.14505893019038985" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/fragment_first.xml" value="0.14913871260199457" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/marital_status_dropdown.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nationality_dropdown.xml" value="0.11196736174070716" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/notification.xml" value="0.25" />

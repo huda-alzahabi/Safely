@@ -1,15 +1,19 @@
 package com.finalproj.safely.doctor
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.finalproj.safely.R
 import com.finalproj.safely.patient.Hospital
+import com.finalproj.safely.user.RestApiService
 import java.util.*
 
 class AddAvailabilityActivity : AppCompatActivity() {
-    private var picked_day=""
+
+    private var picked_day = ""
     private var picked_times: MutableList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +21,26 @@ class AddAvailabilityActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_availability)
 
         val add_availability = findViewById<Button>(R.id.add_availability)
-        add_availability.setOnClickListener{
+        add_availability.setOnClickListener {
+            val sharedPrefFile = "kotlin_shared_preference"
+            val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+                Context.MODE_PRIVATE)
+            val doctor = sharedPreferences.getString("doctor_id", "")!!
+
+            Log.d("doctor", doctor)
             Log.d("date", picked_day)
             Log.d("time", picked_times.toString())
+            addAvailability(picked_day, picked_times, doctor)
+            picked_times.clear()
         }
 
         //create dropdown for times
-        val times = resources.getStringArray(R.array.time_per_day)
+        var times = resources.getStringArray(R.array.time_per_day)
         val timeAdapter = ArrayAdapter(this, R.layout.dropdown, times)
         val timeslot = findViewById<AutoCompleteTextView>(R.id.timeslot)
         timeslot.setAdapter(timeAdapter)
         timeslot.setOnItemClickListener { parent, view, position, id ->
-            picked_times=addElement(times[position])
+            picked_times = addElement(times[position])
         }
 
         val datePicker = findViewById<DatePicker>(R.id.date_Picker)
@@ -38,24 +50,37 @@ class AddAvailabilityActivity : AppCompatActivity() {
             today.get(Calendar.DAY_OF_MONTH)
         ) { view, year, month, day ->
             val month = month + 1
-            picked_day =  "$day/$month/$year"
-
+            picked_day = "$day/$month/$year"
             Toast.makeText(this@AddAvailabilityActivity, picked_day, Toast.LENGTH_SHORT).show()
         }
         datePicker.setMinDate(System.currentTimeMillis() - 1000)
 
+
+    }
+
+    private fun addAvailability(
+        pickedDay: String,
+        pickedTimes: MutableList<String>,
+        doctor: String,
+    ) {
+        val apiService = RestApiService()
+        val availability = Availability(day = pickedDay, times = pickedTimes, doctor = doctor)
+        apiService.addDrAvailability(availability) {
+            if (it != null) {
+                Log.d("availability", it.message!!)
+            } else {
+                Log.d("NOO", "Error adding new availability")
+            }
+        }
+
     }
 
     private fun addElement(s: String): MutableList<String> {
-        if(picked_times.contains(s)){
+        if (picked_times.contains(s)) {
             return picked_times
-        }
-        else{
+        } else {
             picked_times.add(s)
             return picked_times
         }
-
     }
-
-
 }
