@@ -17,11 +17,11 @@ async function getDoctorsByHospitalId(hospital_id) {
   return await Doctor.find({ hospital: hospital_id }).populate("user");
 }
 async function addAvailability(body) {
-  const { date, time, doctor } = body;
+  const { date, times, doctor } = body;
 
   const availability = new DrAvailability({
     date,
-    time,
+    times,
     doctor,
   });
   console.log("availability =>", availability);

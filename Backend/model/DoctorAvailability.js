@@ -5,12 +5,12 @@ const doctorAvailablitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    time: {
+    times: [{
         type: String,
         required: true,
         min: 5,
         max: 255,
-    },
+    }],
     user_appointment:{
         user:{
             type: mongoose.Schema.Types.ObjectId,
