@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.Hospital
+import com.finalproj.safely.patient.HospitalResponse
 import java.util.*
 import kotlin.collections.ArrayList
 
 class HospitalsAdapter(private val listener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
-    private var items: List<Hospital> = ArrayList()
-    private var fullList: List<Hospital> = ArrayList()
+    private var items: List<HospitalResponse> = ArrayList()
+    private var fullList: List<HospitalResponse> = ArrayList()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -40,9 +40,9 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
         return items.size
     }
 
-    fun submitList(hospitalList: List<Hospital>) {
-        items = hospitalList
-        fullList = hospitalList
+    fun submitList(hospitalResponseList: List<HospitalResponse>) {
+        items = hospitalResponseList
+        fullList = hospitalResponseList
         return notifyDataSetChanged()
     }
 
@@ -65,7 +65,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
                 listener.onItemClick(position)
             }
         }
-            fun bind(hospital: Hospital) {
+            fun bind(hospitalResponse: HospitalResponse) {
 
                 val requestOptions = RequestOptions()
                     .placeholder(R.drawable.hospital)
@@ -73,17 +73,17 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
 
                 Glide.with(itemView.context)
                     .applyDefaultRequestOptions(requestOptions)
-                    .load(hospital.user.name)
+                    .load(hospitalResponse.user.name)
                     .into(img)
-                txt.setText(hospital.user.name)
-                sub_txt.setText(hospital.phone_number)
+                txt.setText(hospitalResponse.user.name)
+                sub_txt.setText(hospitalResponse.phone_number)
 
             }
         }
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val filteredList: MutableList<Hospital> = ArrayList()
+                val filteredList: MutableList<HospitalResponse> = ArrayList()
 
                 if (constraint == null || constraint.isEmpty()) {
                     filteredList.addAll(fullList)
@@ -100,7 +100,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
                 return results
             }
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                items = results?.values as List<Hospital>
+                items = results?.values as List<HospitalResponse>
                 notifyDataSetChanged()
             }
         }

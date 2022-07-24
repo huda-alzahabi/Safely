@@ -8,23 +8,20 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.Doctor
-import com.finalproj.safely.patient.Hospital
-import com.finalproj.safely.patient.PatientDoctorsActivity
+import com.finalproj.safely.patient.HospitalResponse
 import com.finalproj.safely.patient.TopSpacingItemDecoration
-import com.finalproj.safely.user.BookAppointmentActivity
 import com.finalproj.safely.user.RestApiService
 
 class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickListener {
     private lateinit var hospitalsAdapter: HospitalsAdapter
-    private lateinit var hospitalsList: List<Hospital>
+    private lateinit var hospitalsList: List<HospitalResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_hospitals)
         val apiService = RestApiService()
         apiService.getHospitals() {
-            hospitalsList = it as List<Hospital>
+            hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)
 
@@ -60,7 +57,7 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this, DoctorProfileActivity::class.java)
-        val clickedItem: Hospital = hospitalsList[position]
+        val clickedItem: HospitalResponse = hospitalsList[position]
         clickedItem._id?.let {
             intent.putExtra("hospital_id", it)
         }

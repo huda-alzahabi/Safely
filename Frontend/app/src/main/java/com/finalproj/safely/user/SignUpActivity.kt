@@ -13,9 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
 import com.finalproj.safely.doctor.AllHospitalsActivity
 import com.finalproj.safely.hospital.HospitalHomeActivity
-import com.finalproj.safely.patient.Hospital
 import com.finalproj.safely.patient.PatientInfoActivity
-import org.json.JSONObject
 
 
 class SignUpActivity : AppCompatActivity() {

@@ -1,7 +1,7 @@
 package com.finalproj.safely.user
 
 
-import com.finalproj.safely.doctor.Availability
+import com.finalproj.safely.doctor.DrAvailabilityInfo
 import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
 import retrofit2.Call
@@ -19,7 +19,7 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @GET("/api/doctor/")
-    fun getDrsByHospitalId(@Query("id") hospitalId: String?): Call<List<Doctor>>
+    fun getDrsByHospitalId(@Query("id") hospitalId: String?): Call<List<DoctorResponse>>
 
     @Headers("Content-Type: application/json")
     @POST("/api/patient/records/")
@@ -39,11 +39,11 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @GET("/api/hospital")
-    fun getAllHospitals(): Call<List<Hospital>>
+    fun getAllHospitals(): Call<List<HospitalResponse>>
 
     @Headers("Content-Type: application/json")
     @GET("/api/patient/nearby")
-    fun findNearbyHospitals(@Query("id") patientId: String?): Call<List<Hospital>>
+    fun findNearbyHospitals(@Query("id") patientId: String?): Call<List<HospitalResponse>>
 
     @Headers("Content-Type: application/json")
     @POST("/api/doctor")
@@ -55,6 +55,6 @@ interface RestApi {
 
     @Headers("Content-Type: application/json")
     @POST("/api/doctor/available")
-    fun addDrAvailability(@Body availability: Availability): Call<SuccessMessageResponse>
+    fun addDrAvailability(@Body availability: DrAvailabilityInfo): Call<SuccessMessageResponse>
 
 }

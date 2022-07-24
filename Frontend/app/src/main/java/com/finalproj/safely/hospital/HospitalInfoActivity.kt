@@ -46,7 +46,7 @@ class HospitalInfoActivity : AppCompatActivity() {
             user = user
         )
         apiService.addHospitalInfo(hospitalInfo) {
-            Log.d("Hospital", hospitalInfo.toString())
+            Log.d("HospitalResponse", hospitalInfo.toString())
             if (it != null) {
                 Log.d("HOSPITAL", it.toString())
                 sharedPreferences = this.getSharedPreferences(sharedPrefFile,

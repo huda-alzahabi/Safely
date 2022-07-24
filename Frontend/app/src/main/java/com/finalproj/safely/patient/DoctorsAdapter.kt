@@ -16,8 +16,8 @@ import kotlin.collections.ArrayList
 
 class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
     Filterable {
-    private var items: List<Doctor> = ArrayList()
-    private var fullList: List<Doctor> = ArrayList()
+    private var items: List<DoctorResponse> = ArrayList()
+    private var fullList: List<DoctorResponse> = ArrayList()
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return DoctorViewHolder(
@@ -38,7 +38,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
         return items.size
     }
 
-    fun submitList(doctorList: List<Doctor>) {
+    fun submitList(doctorList: List<DoctorResponse>) {
         items = doctorList
         fullList = doctorList
         return notifyDataSetChanged()
@@ -65,7 +65,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
 
         }
 
-        fun bind(doctor: Doctor) {
+        fun bind(doctor: DoctorResponse) {
 
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.avatar)
@@ -84,7 +84,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val filteredList: MutableList<Doctor> = ArrayList()
+                val filteredList: MutableList<DoctorResponse> = ArrayList()
 
                 if (constraint == null || constraint.isEmpty()) {
                     filteredList.addAll(fullList)
@@ -101,7 +101,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
                 return results
             }
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                items = results?.values as List<Doctor>
+                items = results?.values as List<DoctorResponse>
                 notifyDataSetChanged()
             }
         }

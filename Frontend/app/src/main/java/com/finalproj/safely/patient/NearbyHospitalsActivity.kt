@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickListener {
     private lateinit var hospitalsAdapter: HospitalsAdapter
-    private lateinit var hospitalsList: List<Hospital>
+    private lateinit var hospitalsList: List<HospitalResponse>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPrefFile = "kotlin_shared_preference"
@@ -27,7 +27,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
         setContentView(R.layout.activity_nearby_hospitals)
         val apiService = RestApiService()
         apiService.findNearbyHospitals (patientId) {
-            hospitalsList = it as List<Hospital>
+            hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)
 
@@ -50,7 +50,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this, PatientDoctorsActivity::class.java)
-        val clickedItem: Hospital = hospitalsList[position]
+        val clickedItem: HospitalResponse = hospitalsList[position]
         Log.d("hospitals", clickedItem._id)
         clickedItem._id?.let {
             intent.putExtra("hospital_id", it)

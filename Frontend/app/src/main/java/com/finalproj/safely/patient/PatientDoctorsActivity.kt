@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickListener {
     private lateinit var doctorAdapter: DoctorsAdapter
-    private lateinit var doctorsList: List<Doctor>
+    private lateinit var doctorsList: List<DoctorResponse>
     private lateinit var hospital_id: String
 
 
@@ -32,7 +32,7 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
         val apiService = RestApiService()
         apiService.getDrs(hospital_id) {
             Log.d("doctors", it.toString())
-            doctorsList = it as List<Doctor>
+            doctorsList = it as List<DoctorResponse>
             doctorAdapter.submitList(doctorsList)
         }
         searchDrs()
@@ -54,7 +54,7 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this, BookAppointmentActivity::class.java)
-        val clickedItem: Doctor = doctorsList[position]
+        val clickedItem: DoctorResponse = doctorsList[position]
         doctorAdapter.notifyItemChanged(position)
         startActivity(intent)
 

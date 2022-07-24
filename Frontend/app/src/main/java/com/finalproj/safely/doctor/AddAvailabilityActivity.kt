@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.Hospital
 import com.finalproj.safely.user.RestApiService
 import java.util.*
 
@@ -64,7 +63,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
         doctor: String,
     ) {
         val apiService = RestApiService()
-        val availability = Availability(day = pickedDay, times = pickedTimes, doctor = doctor)
+        val availability = DrAvailabilityInfo(day = pickedDay, times = pickedTimes, doctor = doctor)
         apiService.addDrAvailability(availability) {
             if (it != null) {
                 Log.d("availability", it.message!!)

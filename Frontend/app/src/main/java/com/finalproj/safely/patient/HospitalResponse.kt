@@ -2,7 +2,7 @@ package com.finalproj.safely.patient
 
 import com.finalproj.safely.user.UserInfo
 
-data class Hospital(
+data class HospitalResponse(
     val _id: String,
     val phone_number: String,
     val address: Address,
@@ -15,7 +15,6 @@ data class Hospital(
     }
 
     data class Address(
-
         var country: String,
         var city: String,
         var street: String,
