@@ -81,19 +81,10 @@ class SignUpActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                if (user_type != null) {
-                    Log.d("Usertype", user_type)
-                }
-                if (user_type == "patient") {
-                    val intent = Intent(this, PatientInfoActivity::class.java)
+                    val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
-                } else if (user_type == "doctor") {
-                    val intent = Intent(this, AllHospitalsActivity::class.java)
-                    startActivity(intent)
-                } else if (user_type == "hospital") {
-                    val intent = Intent(this, HospitalHomeActivity::class.java)
-                    startActivity(intent)
-                }
+                    finish()
+
             } else {
                 Log.d("OKKKKK", "Error registering new user")
 

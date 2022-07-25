@@ -65,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
             var user_name = ""
             var email = ""
             var user_type = ""
+            var _id = ""
 
             if (it?.token != null) {
                 Log.d("Token", it.token)
@@ -77,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
                     user_name = json.getString(("name").toString())
                     email = json.getString(("email").toString())
                     user_type = json.getString(("userType").toString())
+                    _id = json.getString(("_id").toString())
                 } else {
                     error("Invalid token")
                 }
@@ -87,15 +89,16 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("Token", it.token)
                 editor.putString("Name", user_name)
                 editor.putString("Email", email)
+                editor.putString("user_id", _id)
                 editor.apply()
                 editor.commit()
 
                 if (user_type == "patient") {
-                    val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
+                    val intent = Intent(this@LoginActivity, PatientInfoActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else if (user_type == "doctor") {
-                    val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
+                    val intent = Intent(this@LoginActivity, AllHospitalsActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else if (user_type == "hospital") {
