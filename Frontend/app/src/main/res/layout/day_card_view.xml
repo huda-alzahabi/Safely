@@ -22,7 +22,7 @@
             android:text="10/10/2020"
             android:padding="10dp"
             android:textColor="@color/blue"
-            android:textSize="22sp"
+            android:textSize="21sp"
             android:textStyle="bold" />
 
 </androidx.cardview.widget.CardView>
