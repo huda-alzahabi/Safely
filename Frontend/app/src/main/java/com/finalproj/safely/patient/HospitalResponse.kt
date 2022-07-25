@@ -7,11 +7,12 @@ data class HospitalResponse(
     val phone_number: String,
     val address: Address,
     val hospital_location: Location,
+    val distance: String,
     val user: UserInfo,
     val doctors: ArrayList<String>
 ) {
     override fun toString(): String {
-        return "Hospital(_id='$_id',phone_number='$phone_number',  address='$address',hospital_location='$hospital_location', user='$user', doctors='$doctors')"
+        return "Hospital(_id='$_id',phone_number='$phone_number',  address='$address',hospital_location='$hospital_location', user='$user', doctors='$doctors',distance='$distance')"
     }
 
     data class Address(
