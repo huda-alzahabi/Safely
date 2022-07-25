@@ -1,6 +1,8 @@
-const { addPatient } = require("./service");
+const { addPatient,addAppointment } = require("./service");
 const Patient = require("../../model/Patient");
 const Hospital = require("../../model/Hospital");
+const Appointment = require("../../model/Appointment");
+
 
 async function add(req, res) {
   try {
@@ -11,6 +13,7 @@ async function add(req, res) {
     res.status(500).send(error);
   }
 }
+
 async function addLocation(req, res) {
   try {
     const patient = await Patient.findByIdAndUpdate(
@@ -29,6 +32,7 @@ async function addLocation(req, res) {
     console.log(error);
   }
 }
+
 async function addMedicalRecords(req, res) {
   try {
     const patient = await Patient.findByIdAndUpdate(
@@ -98,9 +102,20 @@ function degreesToRadians(degrees) {
   return degrees * Math.PI / 180;
 }
 
+async function bookAppointment(req, res) {
+  try {
+    const newAppointment = await addAppointment(req.body);
+    return res.status(200).send(newAppointment);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+}
+
 module.exports = {
   add,
   addLocation,
   addMedicalRecords,
   findNearbyHospitals,
+  bookAppointment
 };
