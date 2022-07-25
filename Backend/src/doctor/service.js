@@ -25,7 +25,7 @@ async function addAvailability(body) {
     doctor,
   });
   console.log("availability =>", availability);
-  return await availability;
+  return await availability.save();
 }
 
 module.exports = {

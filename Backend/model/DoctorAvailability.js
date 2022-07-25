@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const doctorAvailablitySchema = new mongoose.Schema({
     day: {
         type: String,
-        required: true,
+        required: false,
     },
     times: [{
         type: String,
-        required: true,
+        required: false,
         min: 5,
         max: 255,
     }],
@@ -18,7 +18,7 @@ const doctorAvailablitySchema = new mongoose.Schema({
         }, 
         available:{
         type: Boolean,
-        default: true
+        default: false
         }
     },
     doctor: {
