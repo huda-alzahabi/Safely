@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.R
 import com.finalproj.safely.patient.HospitalResponse
+import com.finalproj.safely.patient.NearbyHospitalsAdapter
 import com.finalproj.safely.patient.TopSpacingItemDecoration
 import com.finalproj.safely.user.RestApiService
 
-class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickListener {
-    private lateinit var hospitalsAdapter: HospitalsAdapter
+class AllHospitalsActivity : AppCompatActivity(), AllHospitalsAdapter.OnItemClickListener {
+    private lateinit var hospitalsAdapter: AllHospitalsAdapter
     private lateinit var hospitalsList: List<HospitalResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
             hospitalsAdapter.submitList(hospitalsList)
 
         }
+
         searchHospitals()
         initRecyclerView()
     }
@@ -37,7 +39,7 @@ class AllHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickLi
             layoutManager = LinearLayoutManager(this@AllHospitalsActivity)
             val topSpacingDecorator = TopSpacingItemDecoration(30)
             addItemDecoration(topSpacingDecorator)
-            hospitalsAdapter = HospitalsAdapter(this@AllHospitalsActivity)
+            hospitalsAdapter = AllHospitalsAdapter(this@AllHospitalsActivity)
             adapter = hospitalsAdapter
         }
     }
