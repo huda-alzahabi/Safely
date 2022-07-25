@@ -58,7 +58,11 @@ interface RestApi {
     fun addDrAvailability(@Body availability: DrAvailabilityInfo): Call<SuccessMessageResponse>
 
     @Headers("Content-Type: application/json")
-    @GET("/api/doctor/available/get")
+    @GET("/api/doctor/available")
     fun getAvailabilityByDrId(@Query("id") doctorId: String?): Call<List<DrAvailabilityResponse>>
+
+    @Headers("Content-Type: application/json")
+    @GET("/api/doctor/available/times")
+    fun getTimesByAvailabilityId(@Query("id") availabilityId: String?): Call<TimesResponse>
 
 }
