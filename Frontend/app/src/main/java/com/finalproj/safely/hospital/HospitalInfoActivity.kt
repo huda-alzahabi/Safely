@@ -8,7 +8,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.PatientInfo
 import com.finalproj.safely.user.RestApiService
 
 class HospitalInfoActivity : AppCompatActivity() {

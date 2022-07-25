@@ -8,7 +8,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.*
-import com.finalproj.safely.user.BookAppointmentActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -53,7 +52,7 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     }
 
     override fun onItemClick(position: Int) {
-        val intent = Intent(this, BookAppointmentActivity::class.java)
+        val intent = Intent(this, ChooseDayActivity::class.java)
         val clickedItem: DoctorResponse = doctorsList[position]
         clickedItem._id?.let {
             intent.putExtra("doctor_id", it)

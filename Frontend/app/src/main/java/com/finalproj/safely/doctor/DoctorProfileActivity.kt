@@ -9,9 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.Doctor
 import com.finalproj.safely.patient.DoctorInfo
-import com.finalproj.safely.patient.MapsActivity
 import com.finalproj.safely.user.RestApiService
 
 class DoctorProfileActivity : AppCompatActivity() {
