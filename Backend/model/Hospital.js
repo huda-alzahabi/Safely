@@ -24,6 +24,10 @@ const hospitalSchema = new mongoose.Schema({
       required: false,
     },
   },
+  distance: {
+    type: String,
+    required: false,
+  },
   doctors: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -31,6 +35,6 @@ const hospitalSchema = new mongoose.Schema({
     },
   ],
 });
-hospitalSchema.index({'hospital_location':"2dsphere"});
+hospitalSchema.index({ hospital_location: "2dsphere" });
 
 module.exports = mongoose.model("Hospital", hospitalSchema);

@@ -69,6 +69,7 @@ async function findNearbyHospitals(req, res) {
       hospitalLatitude,
       hospitalLongitude
     );
+    hospital.distance = distance.toFixed(2);
     return distance <= 25;
   }
   );
