@@ -57,14 +57,14 @@ class SignUpActivity : AppCompatActivity() {
         val sharedPrefFile = "kotlin_shared_preference"
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
-        val usertype = intent.getStringExtra("usertype")
+        val user_type = intent.getStringExtra("usertype")
 
         val apiService = RestApiService()
         val userInfo = UserInfo(
             name = name,
             email = email,
             password = password,
-            userType = usertype
+            userType = user_type
         )
 
         apiService.register(userInfo) {
@@ -81,16 +81,16 @@ class SignUpActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                if (usertype != null) {
-                    Log.d("Usertype", usertype)
+                if (user_type != null) {
+                    Log.d("Usertype", user_type)
                 }
-                if (usertype == "patient") {
+                if (user_type == "patient") {
                     val intent = Intent(this, PatientInfoActivity::class.java)
                     startActivity(intent)
-                } else if (usertype == "doctor") {
+                } else if (user_type == "doctor") {
                     val intent = Intent(this, AllHospitalsActivity::class.java)
                     startActivity(intent)
-                } else if (usertype == "hospital") {
+                } else if (user_type == "hospital") {
                     val intent = Intent(this, HospitalHomeActivity::class.java)
                     startActivity(intent)
                 }
