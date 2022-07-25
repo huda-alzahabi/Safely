@@ -10,12 +10,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.R
-import com.finalproj.safely.doctor.HospitalsAdapter
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClickListener {
-    private lateinit var hospitalsAdapter: HospitalsAdapter
+class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnItemClickListener {
+    private lateinit var nearbyHospitalsAdapter: NearbyHospitalsAdapter
     private lateinit var hospitalsList: List<HospitalResponse>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
         apiService.findNearbyHospitals (patientId) {
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
-            hospitalsAdapter.submitList(hospitalsList)
+            nearbyHospitalsAdapter.submitList(hospitalsList)
 
         }
         searchHospitals()
@@ -43,8 +42,8 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
             layoutManager = LinearLayoutManager(this@NearbyHospitalsActivity)
             val topSpacingDecorator = TopSpacingItemDecoration(30)
             addItemDecoration(topSpacingDecorator)
-            hospitalsAdapter = HospitalsAdapter(this@NearbyHospitalsActivity)
-            adapter = hospitalsAdapter
+            nearbyHospitalsAdapter = NearbyHospitalsAdapter(this@NearbyHospitalsActivity)
+            adapter = nearbyHospitalsAdapter
         }
     }
 
@@ -55,7 +54,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
         clickedItem._id?.let {
             intent.putExtra("hospital_id", it)
         }
-        hospitalsAdapter.notifyItemChanged(position)
+        nearbyHospitalsAdapter.notifyItemChanged(position)
         startActivity(intent)
     }
     private fun searchHospitals() {
@@ -66,7 +65,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), HospitalsAdapter.OnItemClic
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                hospitalsAdapter.filter.filter(newText)
+                nearbyHospitalsAdapter.filter.filter(newText)
                 return false
             }
         })

@@ -1,4 +1,4 @@
-package com.finalproj.safely.doctor
+package com.finalproj.safely.patient
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.finalproj.safely.R
-import com.finalproj.safely.patient.HospitalResponse
 import java.util.*
 import kotlin.collections.ArrayList
 
-class HospitalsAdapter(private val listener: OnItemClickListener) :
+class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
     private var items: List<HospitalResponse> = ArrayList()
     private var fullList: List<HospitalResponse> = ArrayList()
@@ -23,7 +22,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return HospitalViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.card_view, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.nearby_card_view, parent, false)
         )
     }
 
@@ -53,6 +52,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
 
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
+        val sub_txt2 = itemView.findViewById<View>(R.id.sub_txt2) as TextView
         val img = itemView.findViewById<View>(R.id.img) as ImageView
 
         init {
@@ -77,6 +77,8 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
                     .into(img)
                 txt.setText(hospitalResponse.user.name)
                 sub_txt.setText(hospitalResponse.phone_number)
+                val distance=hospitalResponse.distance.toString()+" km away"
+                sub_txt2.setText(distance)
 
             }
         }
@@ -90,7 +92,7 @@ class HospitalsAdapter(private val listener: OnItemClickListener) :
                 } else {
                     val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
                     for (item in fullList) {
-                        if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
+                        if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)||item.distance?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
                             filteredList.add(item)
                         }
                     }
