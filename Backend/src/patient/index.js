@@ -6,7 +6,7 @@ router.post("/", add);
 router.post("/location", addLocation);
 router.post("/records", addMedicalRecords);
 router.get("/nearby", findNearbyHospitals);
-router.get("/book", bookAppointment);
+router.post("/book", bookAppointment);
 
 
 module.exports = router;
