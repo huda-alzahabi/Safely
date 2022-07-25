@@ -16,7 +16,7 @@ class RestApiService {
         retrofit.register(userData).enqueue(
             object : Callback<SignupResponse> {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-                    Log.d("Added 32User", t.toString())
+                    Log.d("No User", t.toString())
                     onResult(null)
                 }
 
@@ -27,8 +27,6 @@ class RestApiService {
                     val addedUser = response.body()
                     Log.d("Added User", response.body().toString())
                     onResult(addedUser)
-
-
                 }
             })
     }
@@ -287,5 +285,23 @@ class RestApiService {
             })
     }
 
+    fun getTimesByAvailabilityId(availabilityId: String, onResult: (TimesResponse?) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getTimesByAvailabilityId(availabilityId).enqueue(
+            object : Callback<TimesResponse> {
+                override fun onResponse(
+                    call: Call<TimesResponse>,
+                    response: Response<TimesResponse>,
+                ) {
+                    val result = response.body()
+                    Log.d("Timess", response.body().toString())
+                    onResult(result)
+                }
 
+                override fun onFailure(call: Call<TimesResponse>, t: Throwable) {
+                    Log.d("No Times", t.toString())
+                    onResult(null)
+                }
+            })
+    }
 }
