@@ -12,14 +12,14 @@ import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class BookAppointmentActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
+class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
     private lateinit var doctor_id: String
     private lateinit var daysAdapter: DaysAdapter
     private lateinit var daysList: List<DrAvailabilityResponse>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_book_appointment)
+        setContentView(R.layout.activity_choose_day)
         val imageView: ImageView = findViewById(R.id.r)
         Glide.with(this).load(R.drawable.gif).into(imageView)
         intent.getStringExtra("doctor_id")
@@ -41,8 +41,8 @@ class BookAppointmentActivity : AppCompatActivity(), DaysAdapter.OnItemClickList
     private fun initRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.d_recycler_view)
         recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@BookAppointmentActivity)
-            daysAdapter = DaysAdapter(this@BookAppointmentActivity)
+            layoutManager = LinearLayoutManager(this@ChooseDayActivity)
+            daysAdapter = DaysAdapter(this@ChooseDayActivity)
             adapter = daysAdapter
         }
     }
@@ -56,23 +56,23 @@ class BookAppointmentActivity : AppCompatActivity(), DaysAdapter.OnItemClickList
             when (item.itemId) {
                 R.id.nav_home -> {
                     val intent =
-                        Intent(this@BookAppointmentActivity, PatientHomeActivity::class.java)
+                        Intent(this@ChooseDayActivity, PatientHomeActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_hospitals -> {
 
                 }
                 R.id.nav_location -> {
-                    val intent = Intent(this@BookAppointmentActivity, MapsActivity::class.java)
+                    val intent = Intent(this@ChooseDayActivity, MapsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_records -> {
-                    val intent = Intent(this@BookAppointmentActivity,
+                    val intent = Intent(this@ChooseDayActivity,
                         AddMedicalRecordsActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_profile -> {
-                    val intent = Intent(this@BookAppointmentActivity,
+                    val intent = Intent(this@ChooseDayActivity,
                         PatientProfileActivity::class.java)
                     startActivity(intent)
                 }
@@ -82,11 +82,11 @@ class BookAppointmentActivity : AppCompatActivity(), DaysAdapter.OnItemClickList
     }
 
     override fun onItemClick(position: Int) {
-        val intent = Intent(this, PatientDoctorsActivity::class.java)
+        val intent = Intent(this, ChooseTimeActivity::class.java)
         val clickedItem: DrAvailabilityResponse = daysList[position]
-        Log.d("hospitals", clickedItem._id)
+        Log.d("availability_id", clickedItem._id)
         clickedItem._id?.let {
-            intent.putExtra("hospital_id", it)
+            intent.putExtra("availability_id", it)
         }
         daysAdapter.notifyItemChanged(position)
         startActivity(intent)
