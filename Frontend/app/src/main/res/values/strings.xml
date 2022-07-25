@@ -86,5 +86,6 @@
         <item>5:00–6:00 P.M</item>
     </string-array>
     <string name="choose_day">What day suits you best?</string>
+    <string name="choose_time">At what time?</string>
 
 </resources>
