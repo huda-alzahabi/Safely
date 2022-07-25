@@ -91,7 +91,7 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
                 } else {
                     val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
                     for (item in fullList) {
-                        if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
+                        if (item.specialty?.lowercase(Locale.ROOT)!!.contains(filterPattern)||item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
                             filteredList.add(item)
                         }
                     }
