@@ -53,7 +53,7 @@ async function login(req, res) {
     if (!validPassword) return res.status(400).send("invalid credentials");
 
     const token = jwt.sign(
-      { _id: user._id, name: user.name, email: user.email },
+      { _id: user._id, name: user.name, email: user.email, userType: user.userType },
       TOKEN_SECRET
     );
 
