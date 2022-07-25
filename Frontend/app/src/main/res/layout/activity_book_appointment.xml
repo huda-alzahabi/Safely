@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.BookAppointmentActivity">
+    tools:context=".patient.BookAppointmentActivity">
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
@@ -17,58 +17,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/r"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-           />
+            <ImageView
+                android:id="@+id/r"
+                android:layout_width="match_parent"
+                android:layout_height="280dp" />
 
             <TextView
-                android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/r"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="300dp"
                 android:fontFamily="@font/laila"
-                android:text="@string/time"
-                android:textColor="@color/blue" />
+                android:text="@string/choose_day"
+                android:textColor="@color/blue"
+                android:textSize="22sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/time"
-                android:layout_marginStart="32dp">
-
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:inputType="none"
-                    android:text="00:00 A.M." />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/book"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/time"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="32dp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/inter_extra_bold"
-                android:padding="13dp"
-                android:text="@string/book"
-                android:textAllCaps="false"
-                android:textSize="17sp" />
 
         </RelativeLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/d_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="350dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitEnd"
+            android:src="@drawable/daybg" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

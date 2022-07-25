@@ -49,7 +49,7 @@
             android:name=".patient.PatientInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".user.BookAppointmentActivity"
+            android:name=".patient.BookAppointmentActivity"
             android:exported="false" />
         <activity
             android:name=".patient.PatientProfileActivity"

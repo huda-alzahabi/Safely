@@ -86,6 +86,8 @@
         <item>4:00–5:00 P.M</item>
         <item>5:00–6:00 P.M</item>
     </string-array>
+    <string name="choose_day">Quel jour vous convient le mieux?</string>
+
 
 
 
