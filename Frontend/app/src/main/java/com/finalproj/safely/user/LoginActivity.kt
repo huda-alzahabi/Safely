@@ -93,15 +93,32 @@ class LoginActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                if (user_type == "patient") {
+                val patientId = sharedPreferences.getString("patient_id", "")!!
+                val doctorId = sharedPreferences.getString("doctor_id", "")!!
+                val hospitalId = sharedPreferences.getString("hospital_id", "")!!
+
+
+                if (user_type == "patient" && patientId == "") {
                     val intent = Intent(this@LoginActivity, PatientInfoActivity::class.java)
                     startActivity(intent)
                     finish()
-                } else if (user_type == "doctor") {
+                } else if (user_type == "patient" && patientId != "") {
+                    val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else if (user_type == "doctor" && doctorId != "") {
+                    val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else if (user_type == "doctor" && doctorId == "") {
                     val intent = Intent(this@LoginActivity, AllHospitalsActivity::class.java)
                     startActivity(intent)
                     finish()
-                } else if (user_type == "hospital") {
+                } else if (user_type == "hospital" && hospitalId == "") {
+                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else if (user_type == "hospital" && hospitalId != "") {
                     val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
                     startActivity(intent)
                     finish()
