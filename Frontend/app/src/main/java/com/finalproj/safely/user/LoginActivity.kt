@@ -13,7 +13,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.finalproj.safely.R
+import com.finalproj.safely.doctor.AllHospitalsActivity
+import com.finalproj.safely.doctor.DoctorHomeActivity
+import com.finalproj.safely.hospital.HospitalHomeActivity
 import com.finalproj.safely.patient.PatientHomeActivity
+import com.finalproj.safely.patient.PatientInfoActivity
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
@@ -60,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
         apiService.login(loginInfo) {
             var user_name = ""
             var email = ""
+            var user_type = ""
 
             if (it?.token != null) {
                 Log.d("Token", it.token)
@@ -68,8 +73,10 @@ class LoginActivity : AppCompatActivity() {
                     val (header, payload, signature) = elements
                     val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
                     val json = JSONObject(p)
+                    Log.d("Payload", json.toString())
                     user_name = json.getString(("name").toString())
                     email = json.getString(("email").toString())
+                    user_type = json.getString(("userType").toString())
                 } else {
                     error("Invalid token")
                 }
@@ -83,9 +90,20 @@ class LoginActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
-                startActivity(intent)
-                finish()
+                if (user_type == "patient") {
+                    val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else if (user_type == "doctor") {
+                    val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else if (user_type == "hospital") {
+                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+
             } else {
                 Log.d("Login Error", "Error logging new user")
                 alertDialog.setCancelable(false)
