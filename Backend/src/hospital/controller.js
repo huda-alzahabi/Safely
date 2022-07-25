@@ -36,7 +36,7 @@ async function addHospitalLocation(req, res) {
       { _id: req.query.id },
       {
         $set: {
-          hospital_location: {
+          location: {
             longitude: req.body.longitude,
             latitude: req.body.latitude,
           },

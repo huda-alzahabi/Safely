@@ -14,7 +14,7 @@ const hospitalSchema = new mongoose.Schema({
   },
   address: addressSchema,
 
-  hospital_location: {
+  location: {
     longitude: {
       type: String,
       required: false,

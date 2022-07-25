@@ -61,8 +61,8 @@ async function findNearbyHospitals(req, res) {
   const hospitals = await Hospital.find().populate("user");
   //find hospitals within 25km
   const nearbyHospitals = hospitals.filter((hospital) => {
-    const hospitalLatitude = hospital.hospital_location.latitude;
-    const hospitalLongitude = hospital.hospital_location.longitude;
+    const hospitalLatitude = hospital.location.latitude;
+    const hospitalLongitude = hospital.location.longitude;
     const distance = getDistanceFromLatLonInKm(
       patientLatitude,
       patientLongitude,
