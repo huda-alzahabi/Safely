@@ -15,6 +15,8 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     private lateinit var doctorAdapter: DoctorsAdapter
     private lateinit var doctorsList: List<DoctorResponse>
     private lateinit var hospital_id: String
+    private lateinit var hospital_name: String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,8 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
             doctorsList = it as List<DoctorResponse>
             doctorAdapter.submitList(doctorsList)
         }
+        hospital_name=intent.getStringExtra("hospital_name")!!
+
         searchDrs()
         initRecyclerView()
         clickedNavItem()
@@ -54,8 +58,11 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     override fun onItemClick(position: Int) {
         val intent = Intent(this, ChooseDayActivity::class.java)
         val clickedItem: DoctorResponse = doctorsList[position]
-        clickedItem._id?.let {
-            intent.putExtra("doctor_id", it)
+        clickedItem?.let {
+            intent.putExtra("doctor_id", it._id)
+            intent.putExtra("doctor_name", it.user.name)
+            intent.putExtra("hospital_id", hospital_id)
+            intent.putExtra("hospital_name", hospital_name)
         }
         doctorAdapter.notifyItemChanged(position)
         startActivity(intent)

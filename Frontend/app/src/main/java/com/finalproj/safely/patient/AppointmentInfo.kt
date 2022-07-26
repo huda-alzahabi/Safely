@@ -3,7 +3,7 @@ package com.finalproj.safely.patient
 import com.google.gson.annotations.SerializedName
 
 data class AppointmentInfo(
-    @SerializedName("date") val date: String,
+    @SerializedName("day") val day: String,
     @SerializedName("time") val time: String,
     @SerializedName("hospital_name") var hospital_name: String,
     @SerializedName("hospital_id") var hospital_id: String,

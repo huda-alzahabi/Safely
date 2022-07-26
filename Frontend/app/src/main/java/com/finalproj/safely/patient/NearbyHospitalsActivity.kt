@@ -51,8 +51,9 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         val intent = Intent(this, PatientDoctorsActivity::class.java)
         val clickedItem: HospitalResponse = hospitalsList[position]
         Log.d("hospitals", clickedItem._id)
-        clickedItem._id?.let {
-            intent.putExtra("hospital_id", it)
+        clickedItem?.let {
+            intent.putExtra("hospital_id", it._id)
+            intent.putExtra("hospital_name", it.user.name)
         }
         nearbyHospitalsAdapter.notifyItemChanged(position)
         startActivity(intent)

@@ -14,6 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
     private lateinit var doctor_id: String
+    private lateinit var doctor_name: String
+    private lateinit var hospital_id: String
+    private lateinit var hospital_name: String
     private lateinit var daysAdapter: DaysAdapter
     private lateinit var daysList: List<DrAvailabilityResponse>
 
@@ -34,6 +37,11 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
             Log.d("availability", it.toString())
             daysAdapter.submitList(daysList)
         }
+
+        doctor_name=intent.getStringExtra("doctor_name")!!
+        hospital_id=intent.getStringExtra("hospital_id")!!
+        hospital_name=intent.getStringExtra("hospital_name")!!
+
         initRecyclerView()
         clickedNavItem()
     }
@@ -47,6 +55,21 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
         }
     }
 
+    override fun onItemClick(position: Int) {
+        val intent = Intent(this, ChooseTimeActivity::class.java)
+        intent.putExtra("doctor_id", doctor_id)
+        intent.putExtra("doctor_name", doctor_name)
+        intent.putExtra("hospital_id", hospital_id)
+        intent.putExtra("hospital_name", hospital_name)
+        val clickedItem: DrAvailabilityResponse = daysList[position]
+        Log.d("availability_id", clickedItem._id)
+        clickedItem?.let {
+            intent.putExtra("availability_id", it._id)
+            intent.putExtra("appointment_day", it.day)
+        }
+        daysAdapter.notifyItemChanged(position)
+        startActivity(intent)
+    }
 
     private fun clickedNavItem() {
         val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
@@ -81,14 +104,4 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(position: Int) {
-        val intent = Intent(this, ChooseTimeActivity::class.java)
-        val clickedItem: DrAvailabilityResponse = daysList[position]
-        Log.d("availability_id", clickedItem._id)
-        clickedItem._id?.let {
-            intent.putExtra("availability_id", it)
-        }
-        daysAdapter.notifyItemChanged(position)
-        startActivity(intent)
-    }
 }

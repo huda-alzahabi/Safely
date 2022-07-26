@@ -16,6 +16,11 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
     private lateinit var availability_id: String
     private lateinit var timesAdapter: TimesAdapter
     private lateinit var timesList: ArrayList<String>
+    private lateinit var appointment_day:String
+    private lateinit var doctor_id: String
+    private lateinit var doctor_name: String
+    private lateinit var hospital_id: String
+    private lateinit var hospital_name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +32,9 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
                 availability_id = it
                 Log.d("availability_id", it)
             }
+        Log.d("DD", intent.getStringExtra("appointment_day")!!)
+         appointment_day = intent.getStringExtra("appointment_day")!!
+
 
         val apiService = RestApiService()
         apiService.getTimesByAvailabilityId(availability_id) {
@@ -36,6 +44,11 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
             Log.d("times", it.toString())
             timesAdapter.submitList(timesList)
         }
+        doctor_id=intent.getStringExtra("doctor_id")!!
+        doctor_name=intent.getStringExtra("doctor_name")!!
+        hospital_id= intent.getStringExtra("hospital_id")!!
+        hospital_name=intent.getStringExtra("hospital_name")!!
+
         initRecyclerView()
         clickedNavItem()
     }
@@ -50,14 +63,19 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
     }
 
     override fun onItemClick(position: Int) {
-//        val intent = Intent(this, PatientDoctorsActivity::class.java)
+        val intent = Intent(this, ConfirmAppointmentActivity::class.java)
+        intent.putExtra("appointment_day", appointment_day)
+        intent.putExtra("doctor_id", doctor_id)
+        intent.putExtra("doctor_name", doctor_name)
+        intent.putExtra("hospital_id", hospital_id)
+        intent.putExtra("hospital_name", hospital_name)
         val clickedItem: String = timesList[position]
         Log.d("CLICKED", clickedItem)
-//        clickedItem._id?.let {
-//            intent.putExtra("availability_id", it)
-//        }
+        clickedItem?.let {
+            intent.putExtra("appointment_time", it)
+        }
         timesAdapter.notifyItemChanged(position)
-//        startActivity(intent)
+        startActivity(intent)
     }
 
     private fun clickedNavItem() {
