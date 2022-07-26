@@ -90,6 +90,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("Name", user_name)
                 editor.putString("Email", email)
                 editor.putString("user_id", _id)
+                editor.putString("user_type", user_type)
                 editor.apply()
                 editor.commit()
 

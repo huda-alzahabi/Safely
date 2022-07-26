@@ -18,14 +18,16 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
     private lateinit var hospitalsList: List<HospitalResponse>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_nearby_hospitals)
+
         val sharedPrefFile = "kotlin_shared_preference"
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val patientId = sharedPreferences.getString("patient_id", "")!!
+        Log.d("patientId", patientId)
 
-        setContentView(R.layout.activity_nearby_hospitals)
         val apiService = RestApiService()
-        apiService.findNearbyHospitals (patientId) {
+        apiService.findNearbyHospitals(patientId) {
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             nearbyHospitalsAdapter.submitList(hospitalsList)
@@ -35,6 +37,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         initRecyclerView()
         clickedNavItem()
     }
+
     private fun initRecyclerView() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.h_recycler_view)
@@ -58,6 +61,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         nearbyHospitalsAdapter.notifyItemChanged(position)
         startActivity(intent)
     }
+
     private fun searchHospitals() {
         val searchView = findViewById<SearchView>(R.id.searchView)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -73,39 +77,39 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
     }
 
     private fun clickedNavItem() {
-        val bottomnav= findViewById<BottomNavigationView>(R.id.bottom_nav)
+        val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
 
         bottomnav.setOnItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.nav_home -> {
-                        val intent =
-                            Intent(this@NearbyHospitalsActivity, PatientHomeActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(0,0);
-                    }
-                    R.id.nav_hospitals -> {
-
-                    }
-                    R.id.nav_location -> {
-                        val intent = Intent(this@NearbyHospitalsActivity, MapsActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(0,0);
-                    }
-                    R.id.nav_records -> {
-                        val intent = Intent(this@NearbyHospitalsActivity,
-                            AddMedicalRecordsActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(0,0);
-                    }
-                    R.id.nav_profile -> {
-                        val intent = Intent(this@NearbyHospitalsActivity,
-                            PatientProfileActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(0,0);
-                    }
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    val intent =
+                        Intent(this@NearbyHospitalsActivity, PatientHomeActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(0, 0);
                 }
-                return@setOnItemSelectedListener true
+                R.id.nav_hospitals -> {
+
+                }
+                R.id.nav_location -> {
+                    val intent = Intent(this@NearbyHospitalsActivity, MapsActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(0, 0);
+                }
+                R.id.nav_records -> {
+                    val intent = Intent(this@NearbyHospitalsActivity,
+                        AddMedicalRecordsActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(0, 0);
+                }
+                R.id.nav_profile -> {
+                    val intent = Intent(this@NearbyHospitalsActivity,
+                        PatientProfileActivity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(0, 0);
+                }
             }
+            return@setOnItemSelectedListener true
+        }
     }
 }

@@ -46,8 +46,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-
-
+            else{
+                val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
 } }
 
