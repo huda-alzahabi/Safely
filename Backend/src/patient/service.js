@@ -24,7 +24,7 @@ async function addPatient(body) {
 }
 async function addAppointment(body) {
     const {
-        date,
+        day,
         time,
         hospital_name,
         hospital_id,
@@ -35,7 +35,7 @@ async function addAppointment(body) {
     } = body;
 
     const appointment = new Appointment({
-        date,
+        day,
         time,
         hospital_name,
         hospital_id,

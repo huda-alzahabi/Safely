@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const appointmentSchema = new mongoose.Schema({
-    date: {
+    day: {
         type: String,
         required: true,
     },

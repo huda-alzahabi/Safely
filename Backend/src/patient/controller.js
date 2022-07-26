@@ -105,7 +105,7 @@ function degreesToRadians(degrees) {
 async function bookAppointment(req, res) {
   try {
     const newAppointment = await addAppointment(req.body);
-    return res.status(200).send(newAppointment);
+    return res.status(200).send({message: newAppointment._id});
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
