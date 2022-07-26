@@ -18,3 +18,4 @@ function userMiddleware() {
         return next();
     };
 }
+module.exports = userMiddleware;
