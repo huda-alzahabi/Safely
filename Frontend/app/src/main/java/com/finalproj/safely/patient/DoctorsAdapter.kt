@@ -75,9 +75,11 @@ class DoctorsAdapter(private val listener: OnItemClickListener) : RecyclerView.A
                 .applyDefaultRequestOptions(requestOptions)
                 .load(R.drawable.avatar)
                 .into(img)
-            
-            txt.setText(doctor.user.name)
+            val dr="Dr. "+ doctor.user.name
+            txt.setText(dr)
             sub_txt.setText(doctor.specialty)
+            sub_txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_medical_services_24, 0, 0, 0);
+
 
         }
     }
