@@ -94,6 +94,12 @@
     <string name="appointment_date">Date du Rendez-vous</string>
     <string name="appointment_time">Heure du Rendez-vous</string>
     <string name="appointment_location">Emplacement du Rendez-vous</string>
+    <string name="no_appointment">Aucun rendez-vous à venir</string>
+    <string name="discover">Découvrez les hôpitaux à proximité</string>
+    <string name="available_doctors">Trouver les médecins disponibles</string>
+    <string name="flow">Prenez Rendez-vous</string>
+
+
 
 
 

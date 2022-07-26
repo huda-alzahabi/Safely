@@ -63,10 +63,12 @@ class PatientHomeActivity : AppCompatActivity() {
             val location = "$hospital_name Hospital / Dr. $doctor_name"
             hospital.setText(location)
         } else {
-            upcoming_appointment.text = "No Scheduled Appointments"
+            val applicationContext: Context = applicationContext
+            upcoming_appointment.text = applicationContext.resources.getString(R.string.no_appointment)
             upcoming_appointment.setPadding(0, 20, 0, 0);
-            hospital.text = ""
-            home_date.text = "Discover the nearby hospitals and doctors and book an appointment"
+            home_date.text = ""
+            hospital.text = "\u25BA "+applicationContext.resources.getString(R.string.discover)+"\n\u25BA "+applicationContext.resources.getString(R.string.available_doctors) +"\n\u25BA "+ applicationContext.resources.getString(R.string.flow)
+            hospital.setPadding(0, -10, 0, 0);
             val imageView = findViewById<ImageView>(R.id.loc)
             imageView.visibility = ImageView.GONE
         }

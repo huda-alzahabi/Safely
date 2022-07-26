@@ -93,6 +93,10 @@
     <string name="appointment_date">Appointment Date</string>
     <string name="appointment_time">Appointment Time</string>
     <string name="appointment_location">Appointment Location</string>
+    <string name="no_appointment">No upcoming Appointments</string>
+    <string name="discover">Discover the nearby hospitals</string>
+    <string name="available_doctors">Find the available doctors</string>
+    <string name="flow">Book an Appointment</string>
 
 
 </resources>
