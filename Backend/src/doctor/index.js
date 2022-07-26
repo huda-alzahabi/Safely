@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { addDr, getDoctors, addDrAvailability,getAvailabilityByDrId,getTimesByAvailabilityId } = require("./controller");
+const { addDr, getDoctors, addDrAvailability,getAvailabilityByDrId,getTimesByAvailabilityId,getAppointmentsByDrId } = require("./controller");
 const router = Router();
 const userMiddleware = require("../../middleware/user_middleware");
 
@@ -9,5 +9,7 @@ router.post("/available",userMiddleware(), addDrAvailability);
 router.get("/",userMiddleware(), getDoctors);
 router.get("/available",userMiddleware(), getAvailabilityByDrId);
 router.get("/available/times",userMiddleware(), getTimesByAvailabilityId);
+router.get("/appointment",userMiddleware(), getAppointmentsByDrId);
+
 
 module.exports = router;
