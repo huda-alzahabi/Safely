@@ -20,17 +20,21 @@ class PatientHomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_patient_home)
         clickedNavItem()
         val sharedPrefFile = "kotlin_shared_preference"
-
+        var name = ""
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")
         Log.d("YEYYY", "" + token)
-        val name = sharedPreferences.getString("Name", "")
-        val textView = findViewById<TextView>(R.id.user_name)
-        textView.text = name + "!"
-        if (name != null) {
-            Log.d("HUDA", name)
+        if (intent.getStringExtra("new_name") == null) {
+            name = sharedPreferences.getString("Name", "")!!
+            val textView = findViewById<TextView>(R.id.user_name)
+            textView.text = name + "!"
+        } else {
+            name = intent.getStringExtra("new_name")!!
+            val textView = findViewById<TextView>(R.id.user_name)
+            textView.text = name + "!"
         }
+
         var appointment_day = ""
         var appointment_time = ""
         var doctor_name = ""
@@ -54,20 +58,18 @@ class PatientHomeActivity : AppCompatActivity() {
         val upcoming_appointment = findViewById<TextView>(R.id.upcoming)
 
         if (appointment_day != "" && appointment_time != "" && doctor_name != "" && hospital_name != "") {
-            val date= "$appointment_day, $appointment_time"
+            val date = "$appointment_day, $appointment_time"
             home_date.text = date
-            val location= "$hospital_name Hospital / Dr. $doctor_name"
+            val location = "$hospital_name Hospital / Dr. $doctor_name"
             hospital.setText(location)
-        }
-        else{
+        } else {
             upcoming_appointment.text = "No Scheduled Appointments"
             upcoming_appointment.setPadding(0, 20, 0, 0);
-            hospital.text=""
-            home_date.text="Discover the nearby hospitals and doctors and book an appointment"
+            hospital.text = ""
+            home_date.text = "Discover the nearby hospitals and doctors and book an appointment"
             val imageView = findViewById<ImageView>(R.id.loc)
             imageView.visibility = ImageView.GONE
         }
-
 
 
     }

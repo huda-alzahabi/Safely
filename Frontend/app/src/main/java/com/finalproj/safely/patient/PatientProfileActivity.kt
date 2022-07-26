@@ -44,6 +44,7 @@ class PatientProfileActivity : AppCompatActivity() {
 
             editProfile(edit_name, edit_email, edit_pass, usertype)
             val intent = Intent(this, PatientHomeActivity::class.java)
+            intent.putExtra("new_name", edit_name)
             startActivity(intent)
         }
 
@@ -67,7 +68,7 @@ class PatientProfileActivity : AppCompatActivity() {
             if (it != null) {
                 Log.d("User Updated", it.toString())
             } else {
-                Log.d("NOO", "Error adding new patient")
+                Log.d("NOO", "Error updating user")
             }
         }
     }
