@@ -78,7 +78,7 @@ async function editProfile(req, res) {
         },
       }
     );
-    return res.send("Contact Successfully Updated");
+    return res.send({message:"Contact Successfully Updated"});
   } catch (error) {
     console.log(error);
   }
