@@ -112,10 +112,25 @@ async function bookAppointment(req, res) {
   }
 }
 
+async function getAppointmentsByPatientId(req, res) {
+  try {
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await Appointment.find({patient_id: id});
+      console.log(result);
+      return res.send(result);
+
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   add,
   addLocation,
   addMedicalRecords,
   findNearbyHospitals,
-  bookAppointment
+  bookAppointment,
+  getAppointmentsByPatientId
 };
