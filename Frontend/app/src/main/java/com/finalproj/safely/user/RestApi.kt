@@ -65,4 +65,8 @@ interface RestApi {
     @GET("/api/doctor/available/times")
     fun getTimesByAvailabilityId(@Query("id") availabilityId: String?): Call<TimesResponse>
 
+    @Headers("Content-Type: application/json")
+    @POST("/api/patient/book")
+    fun bookAppointment(@Body appointmentInfo: AppointmentInfo): Call<SuccessMessageResponse>
+
 }
