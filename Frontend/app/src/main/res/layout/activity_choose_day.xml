@@ -20,7 +20,8 @@
             <ImageView
                 android:id="@+id/r"
                 android:layout_width="match_parent"
-                android:layout_height="280dp" />
+                android:layout_height="280dp"
+                android:src="@drawable/gif"/>
 
             <TextView
                 android:layout_width="wrap_content"

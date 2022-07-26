@@ -23,8 +23,7 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_day)
-        val imageView: ImageView = findViewById(R.id.r)
-        Glide.with(this).load(R.drawable.gif).into(imageView)
+
         intent.getStringExtra("doctor_id")
             ?.let {
                 doctor_id = it

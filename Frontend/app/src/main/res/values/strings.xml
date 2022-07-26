@@ -87,5 +87,12 @@
     </string-array>
     <string name="choose_day">What day suits you best?</string>
     <string name="choose_time">At what time?</string>
+    <string name="confirm_appointment">Confirm Appointment </string>
+    <string name="away">km away</string>
+    <string name="appointment_summary">Appointment Summary</string>
+    <string name="appointment_date">Appointment Date</string>
+    <string name="appointment_time">Appointment Time</string>
+    <string name="appointment_location">Appointment Location</string>
+
 
 </resources>

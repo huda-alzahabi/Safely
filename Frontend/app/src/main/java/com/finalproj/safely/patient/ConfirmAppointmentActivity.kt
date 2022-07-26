@@ -5,7 +5,11 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
 import com.finalproj.safely.user.UserInfo
@@ -14,6 +18,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_appointment)
+
+
         val appointment_day = intent.getStringExtra("appointment_day")
         val appointment_time = intent.getStringExtra("appointment_time")
         val doctor_id = intent.getStringExtra("doctor_id")
@@ -35,6 +41,30 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         Log.d("PATIENT_NAME", patient_name)
         Log.d("HOSPITAL_ID", hospital_id!!)
         Log.d("HOSPITAL_NAME", hospital_name!!)
+
+        val day = findViewById<TextView>(R.id.appointment_date)
+        val time = findViewById<TextView>(R.id.appointment_time)
+        val location = findViewById<TextView>(R.id.appointment_location)
+        val doctor = findViewById<TextView>(R.id.appointment_doctor)
+
+        day.setText(appointment_day)
+        time.setText(appointment_time)
+        location.setText(hospital_name)
+        doctor.setText(doctor_name)
+
+        day.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_today_24, 0, 0, 0);
+        time.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_access_time_24,
+            0,
+            0,
+            0);
+        location.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_hospital_location_on_24,
+            0,
+            0,
+            0);
+        doctor.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_medical_services_24,
+            0,
+            0,
+            0);
 
         val confirm_appointment = findViewById<Button>(R.id.confirm_appointment)
         confirm_appointment.setOnClickListener {

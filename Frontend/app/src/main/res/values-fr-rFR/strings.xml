@@ -88,6 +88,13 @@
     </string-array>
     <string name="choose_day">Quel jour vous convient le mieux?</string>
     <string name="choose_time">À quelle heure?</string>
+    <string name="confirm_appointment">Confirmer le Rendez-vous</string>
+    <string name="away">km loin</string>
+    <string name="appointment_summary">Résumé du Rendez-vous</string>
+    <string name="appointment_date">Date du Rendez-vous</string>
+    <string name="appointment_time">Heure du Rendez-vous</string>
+    <string name="appointment_location">Emplacement du Rendez-vous</string>
+
 
 
 

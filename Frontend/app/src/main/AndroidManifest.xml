@@ -20,6 +20,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".patient.ConfirmAppointmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.DoctorHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".patient.ChooseTimeActivity"
             android:exported="false" />
         <activity
@@ -36,9 +42,6 @@
             android:exported="false" />
         <activity
             android:name=".hospital.HospitalInfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".doctor.DoctorHomeActivity"
             android:exported="false" />
 
         <meta-data
