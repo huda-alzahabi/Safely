@@ -260,7 +260,7 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added DrAvailabilityInfo", response.body().toString())
+                    Log.d("Added DrAvailability", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -301,6 +301,28 @@ class RestApiService {
                 override fun onFailure(call: Call<TimesResponse>, t: Throwable) {
                     Log.d("No Times", t.toString())
                     onResult(null)
+                }
+            })
+    }
+
+    fun bookAppointment(
+        appointmentInfo: AppointmentInfo,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.bookAppointment(appointmentInfo).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Appointment", t.toString())
+                    onResult(null)
+                }
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Appointment Booked", response.body().toString())
+                    onResult(addedUser)
                 }
             })
     }
