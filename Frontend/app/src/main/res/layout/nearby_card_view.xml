@@ -46,8 +46,9 @@
             android:layout_toEndOf="@+id/img"
             android:fontFamily="@font/inter"
             android:text="Title"
-            android:textColor="@color/black"
+            android:textColor="#4f4d4d"
             android:textSize="16sp" />
+
         <TextView
             android:id="@+id/sub_txt2"
             android:layout_width="wrap_content"
@@ -57,6 +58,7 @@
             android:layout_toEndOf="@+id/img"
             android:fontFamily="@font/inter"
             android:text="Title"
+            android:textColor="#4f4d4d"
             android:textSize="16sp" />
     </RelativeLayout>
 

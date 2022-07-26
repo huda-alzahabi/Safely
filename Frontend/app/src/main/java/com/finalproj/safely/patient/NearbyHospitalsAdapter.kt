@@ -1,5 +1,6 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -75,10 +76,18 @@ class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
                     .applyDefaultRequestOptions(requestOptions)
                     .load(hospitalResponse.user.name)
                     .into(img)
-                txt.setText(hospitalResponse.user.name)
-                sub_txt.setText(hospitalResponse.phone_number)
-                val distance=hospitalResponse.distance.toString()+" km away"
-                sub_txt2.setText(distance)
+                val applicationContext: Context = itemView.context
+                val hospital_name=hospitalResponse.user.name+" " +applicationContext.resources.getString(R.string.hospital)
+
+                txt.setText(hospital_name)
+
+                val distance=hospitalResponse.distance+" " +applicationContext.resources.getString(R.string.away)
+                sub_txt.setText(distance)
+                sub_txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_hospital_location_on_24, 0, 0, 0);
+
+                sub_txt2.setText(hospitalResponse.phone_number)
+                sub_txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_phone_24, 0, 0, 0);
+
 
             }
         }
