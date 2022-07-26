@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +15,7 @@ import com.finalproj.safely.R
 import com.finalproj.safely.doctor.AllHospitalsActivity
 import com.finalproj.safely.hospital.HospitalHomeActivity
 import com.finalproj.safely.patient.PatientInfoActivity
+import org.json.JSONObject
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -72,20 +74,54 @@ class SignUpActivity : AppCompatActivity() {
             if (it != null) {
                 Log.d("it", it.toString())
                 user_id = it.user
+                val loginInfo = LoginInfo(
+                    email = email,
+                    password = password
+                )
+                apiService.login(loginInfo) {
+                    var user_name = ""
+                    var email = ""
+                    var user_type = ""
+                    var _id = ""
 
-                //add name and id of user to shared preferences
-                val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putString("Name", name)
-                editor.putString("Email", email)
-                editor.putString("user_id", user_id)
-                editor.apply()
-                editor.commit()
+                    if (it?.token != null) {
+                        Log.d("Token", it.token)
+                        val elements = it.token.split('.')
+                        if (elements.size == 3) {
+                            val (header, payload, signature) = elements
+                            val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
+                            val json = JSONObject(p)
+                            Log.d("Payload", json.toString())
+                            user_name = json.getString(("name").toString())
+                            email = json.getString(("email").toString())
+                            user_type = json.getString(("userType").toString())
+                            _id = json.getString(("_id").toString())
+                        } else {
+                            error("Invalid token")
+                        }
+                        val sharedPreferences: SharedPreferences =
+                            this.getSharedPreferences(sharedPrefFile,
+                                Context.MODE_PRIVATE)
 
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                        editor.putString("Token", it.token)
+                        editor.putString("Name", user_name)
+                        editor.putString("Email", email)
+                        editor.putString("user_id", _id)
+                        editor.putString("user_type", user_type)
+                        editor.apply()
+                        editor.commit()
+                        intent =
+                            Intent(this, if (user_type == "patient") PatientInfoActivity::class.java
+                            else if (user_type == "doctor") AllHospitalsActivity::class.java else HospitalHomeActivity::class.java)
+
+                        startActivity(intent)
+                    }
+                }
+
 
             } else {
+
                 Log.d("OKKKKK", "Error registering new user")
 
                 alertDialog.setCancelable(false)
