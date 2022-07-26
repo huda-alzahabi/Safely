@@ -1,6 +1,8 @@
 package com.finalproj.safely.doctor
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,8 +22,12 @@ class AllHospitalsActivity : AppCompatActivity(), AllHospitalsAdapter.OnItemClic
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_hospitals)
+        val sharedPrefFile = "kotlin_shared_preference"
+        var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
-        apiService.getHospitals() {
+        apiService.getHospitals(token) {
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)

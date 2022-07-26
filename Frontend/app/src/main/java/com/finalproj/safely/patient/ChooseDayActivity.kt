@@ -1,6 +1,8 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +25,10 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_day)
-
+        val sharedPrefFile = "kotlin_shared_preference"
+        var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
         intent.getStringExtra("doctor_id")
             ?.let {
                 doctor_id = it
@@ -31,7 +36,7 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
             }
 
         val apiService = RestApiService()
-        apiService.getAvailabilityByDrId(doctor_id) {
+        apiService.getAvailabilityByDrId(doctor_id,token) {
             daysList = it as List<DrAvailabilityResponse>
             Log.d("availability", it.toString())
             daysAdapter.submitList(daysList)

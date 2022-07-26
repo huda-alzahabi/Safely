@@ -1,6 +1,8 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -29,9 +31,13 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
                 hospital_id = it
                 Log.d("user_id", it)
             }
+        val sharedPrefFile = "kotlin_shared_preference"
+        var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
 
         val apiService = RestApiService()
-        apiService.getDrs(hospital_id) {
+        apiService.getDrs(hospital_id,token) {
             Log.d("doctors", it.toString())
             doctorsList = it as List<DoctorResponse>
             doctorAdapter.submitList(doctorsList)

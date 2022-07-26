@@ -62,9 +62,11 @@ class PatientProfileActivity : AppCompatActivity() {
         editedPass: String,
         usertype: String,
     ) {
+
+        val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
         val userInfo = UserInfo(editedName, editedEmail, editedPass, usertype)
-        apiService.editUserProfile(user, userInfo) {
+        apiService.editUserProfile(user, userInfo,token) {
             if (it != null) {
                 Log.d("User Updated", it.toString())
             } else {

@@ -50,6 +50,8 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val patientId = sharedPreferences.getString("patient_id", "")!!
+        val token = sharedPreferences.getString("Token", "")!!
+
 
         val apiService = RestApiService()
         val medicalRecords = MedicalRecords(
@@ -60,7 +62,7 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
             weight = weight,
             height = height
             )
-        apiService.submitRecords(patientId,medicalRecords) {
+        apiService.submitRecords(patientId,medicalRecords,token) {
             Log.d("Records", medicalRecords.toString())
             if (it != null) {
                 Log.d("Medss", it.toString())

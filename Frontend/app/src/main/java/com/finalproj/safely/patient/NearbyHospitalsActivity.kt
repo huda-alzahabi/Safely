@@ -24,10 +24,12 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val patientId = sharedPreferences.getString("patient_id", "")!!
+        val token = sharedPreferences.getString("Token", "")!!
+
         Log.d("patientId", patientId)
 
         val apiService = RestApiService()
-        apiService.findNearbyHospitals(patientId) {
+        apiService.findNearbyHospitals(patientId,token) {
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             nearbyHospitalsAdapter.submitList(hospitalsList)

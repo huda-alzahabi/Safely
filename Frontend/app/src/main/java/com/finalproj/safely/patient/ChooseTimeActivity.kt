@@ -1,6 +1,8 @@
 package com.finalproj.safely.patient
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,10 +36,13 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
             }
         Log.d("DD", intent.getStringExtra("appointment_day")!!)
          appointment_day = intent.getStringExtra("appointment_day")!!
-
+        val sharedPrefFile = "kotlin_shared_preference"
+        var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
 
         val apiService = RestApiService()
-        apiService.getTimesByAvailabilityId(availability_id) {
+        apiService.getTimesByAvailabilityId(availability_id,token) {
             if (it != null) {
                 timesList = it.times as ArrayList<String>
             }

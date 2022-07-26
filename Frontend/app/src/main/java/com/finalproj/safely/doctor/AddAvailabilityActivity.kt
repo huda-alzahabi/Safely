@@ -62,9 +62,14 @@ class AddAvailabilityActivity : AppCompatActivity() {
         pickedTimes: MutableList<String>,
         doctor: String,
     ) {
+        setContentView(R.layout.activity_all_hospitals)
+        val sharedPrefFile = "kotlin_shared_preference"
+        var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
         val availability = DrAvailabilityInfo(day = pickedDay, times = pickedTimes, doctor = doctor)
-        apiService.addDrAvailability(availability) {
+        apiService.addDrAvailability(availability, token) {
             if (it != null) {
                 Log.d("availability", it.message!!)
             } else {

@@ -34,7 +34,9 @@ class HospitalInfoActivity : AppCompatActivity() {
     }
 
     private fun submitInfo(phoneNum: String, country: String, city: String, street: String, building: String, user: String) {
-
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
         val hospitalInfo = HospitalInfo(
             phone_number = phoneNum,
@@ -44,12 +46,11 @@ class HospitalInfoActivity : AppCompatActivity() {
             building = building,
             user = user
         )
-        apiService.addHospitalInfo(hospitalInfo) {
+        apiService.addHospitalInfo(hospitalInfo,token) {
             Log.d("HospitalResponse", hospitalInfo.toString())
             if (it != null) {
                 Log.d("HOSPITAL", it.toString())
-                sharedPreferences = this.getSharedPreferences(sharedPrefFile,
-                    Context.MODE_PRIVATE)
+
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("hospital_id", it.message)
                 editor.apply()

@@ -24,7 +24,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
     lateinit var hospital_name: String
     lateinit var patient_id: String
     lateinit var patient_name: String
-
+    val sharedPrefFile = "kotlin_shared_preference"
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +39,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         hospital_id = intent.getStringExtra("hospital_id")!!
         hospital_name = intent.getStringExtra("hospital_name")!!
 
-        val sharedPrefFile = "kotlin_shared_preference"
-        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+
+         sharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         patient_id = sharedPreferences.getString("patient_id", "")!!
         patient_name = sharedPreferences.getString("Name", "")!!
@@ -103,7 +104,9 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
             patient_name = patientName
         )
 
-        apiService.bookAppointment(appointmentInfo) {
+        val token = sharedPreferences.getString("Token", "")!!
+
+        apiService.bookAppointment(appointmentInfo,token) {
             Log.d("Appointment", appointmentInfo.toString())
             if (it != null) {
                 Log.d("it", it.toString())

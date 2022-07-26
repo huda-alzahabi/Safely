@@ -40,18 +40,22 @@ class DoctorProfileActivity : AppCompatActivity() {
         hospitalId: String,
         user: String,
     ) {
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+        Context.MODE_PRIVATE)
+
         val apiService = RestApiService()
         val doctor =
             DoctorInfo(specialty = specialty,
                 years_of_experience = experience,
                 hospital = hospitalId,
                 user = user)
-        apiService.addDoctor(doctor) {
+
+        val token = sharedPreferences.getString("Token", "")!!
+        apiService.addDoctor(doctor,token) {
             Log.d("DOCC", doctor.toString())
             if (it != null) {
                 Log.d("DOCT", it.toString())
-                sharedPreferences = this.getSharedPreferences(sharedPrefFile,
-                    Context.MODE_PRIVATE)
+
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("doctor_id", it.message)
                 editor.apply()

@@ -78,6 +78,9 @@ class PatientInfoActivity : AppCompatActivity() {
         sex: String,
         user: String,
     ) {
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
         val patientInfo = PatientInfo(
             phone_number = phone_num,
@@ -87,12 +90,11 @@ class PatientInfoActivity : AppCompatActivity() {
             marital_status = maritalStatus,
             user = user
         )
-        apiService.addPatient(patientInfo) {
+        apiService.addPatient(patientInfo,token) {
             Log.d("PATIENT", patientInfo.toString())
             if (it != null) {
                 Log.d("Patienttt", it.toString())
-                sharedPreferences = this.getSharedPreferences(sharedPrefFile,
-                    Context.MODE_PRIVATE)
+
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("patient_id", it._id)
                 editor.apply()

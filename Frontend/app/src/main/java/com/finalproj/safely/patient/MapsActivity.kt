@@ -141,13 +141,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val patientId = sharedPreferences.getString("patient_id", "")!!
+        val token = sharedPreferences.getString("Token", "")!!
+
 
         val apiService = RestApiService()
         val location = Location(
             longitude = longitude,
             latitude = latitude
         )
-        apiService.addPatientLocation(patientId, location) {
+        apiService.addPatientLocation(patientId, location,token) {
             Log.d("LOCATION", location.toString())
             if (it != null) {
                 Log.d("Location", it.toString())
