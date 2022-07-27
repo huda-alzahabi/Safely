@@ -1,6 +1,7 @@
 package com.finalproj.safely.user
 
 
+import com.finalproj.safely.doctor.AppointmentResponse
 import com.finalproj.safely.doctor.DrAvailabilityInfo
 import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
@@ -68,5 +69,9 @@ interface RestApi {
     @Headers("Content-Type: application/json")
     @POST("/api/patient/book")
     fun bookAppointment(@Body appointmentInfo: AppointmentInfo,@Header("token") token:String): Call<SuccessMessageResponse>
+
+    @Headers("Content-Type: application/json")
+    @GET("/api/doctor/appointment")
+    fun getAppointmentsByDrId(@Query("id") doctorId: String?,@Header("token") token:String): Call<List<AppointmentResponse>>
 
 }
