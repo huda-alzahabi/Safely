@@ -3,6 +3,7 @@ package com.finalproj.safely.user
 import android.content.ContentValues.TAG
 import android.util.Log
 import android.util.Log.d
+import com.finalproj.safely.doctor.AppointmentResponse
 import com.finalproj.safely.doctor.DrAvailabilityInfo
 import com.finalproj.safely.hospital.HospitalInfo
 import com.finalproj.safely.patient.*
@@ -328,6 +329,24 @@ class RestApiService {
                     val addedUser = response.body()
                     Log.d("Appointment Booked", response.body().toString())
                     onResult(addedUser)
+                }
+            })
+    }
+    fun getAppointmentsByDrId(doctorId: String,token: String, onResult: (List<AppointmentResponse?>) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getAppointmentsByDrId(doctorId,token)
+            .enqueue(object : Callback<List<AppointmentResponse>?> {
+                override fun onResponse(
+                    call: Call<List<AppointmentResponse>?>,
+                    response: Response<List<AppointmentResponse>?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("HOSPITALSS", responseBody.toString())
+                }
+
+                override fun onFailure(call: Call<List<AppointmentResponse>?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
                 }
             })
     }
