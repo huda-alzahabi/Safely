@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <attr name="custom_white" format="color" />
+        <attr name="custom_blue" format="color" />
+        <attr name="custom_black" format="color" />
+        <attr name="custom_grey" format="color" />
+        <attr name="custom_beige" format="color" />
+</resources>

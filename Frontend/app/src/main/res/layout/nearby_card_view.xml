@@ -47,7 +47,7 @@
             android:layout_toEndOf="@+id/img"
             android:fontFamily="@font/inter"
             android:text="Title"
-            android:textColor="#4f4d4d"
+            android:textColor="?attr/custom_grey"
             android:textSize="16sp" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:layout_toEndOf="@+id/img"
             android:fontFamily="@font/inter"
             android:text="Title"
-            android:textColor="#4f4d4d"
+            android:textColor="?attr/custom_grey"
             android:textSize="16sp" />
     </RelativeLayout>
 

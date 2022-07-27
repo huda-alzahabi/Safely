@@ -17,7 +17,7 @@
         android:fontFamily="@font/laila"
         android:layout_gravity="center_horizontal"
         android:textSize="25sp"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:layout_marginTop="30dp"/>
     <TextView
         android:id="@+id/appointment_date"
@@ -27,7 +27,7 @@
         android:layout_marginStart="30dp"
         android:fontFamily="@font/inter"
         android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:layout_marginTop="100dp"/>
 
     <TextView
@@ -38,7 +38,7 @@
         android:fontFamily="@font/inter"
         android:textSize="20sp"
         android:layout_marginStart="30dp"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:layout_marginTop="135dp"/>
     <TextView
         android:id="@+id/appointment_doctor"
@@ -48,7 +48,7 @@
         android:fontFamily="@font/inter"
         android:textSize="20sp"
         android:layout_marginStart="30dp"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:layout_marginTop="170dp"/>
     <TextView
         android:id="@+id/appointment_location"
@@ -58,7 +58,7 @@
         android:fontFamily="@font/inter"
         android:textSize="20sp"
         android:layout_marginStart="30dp"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:layout_marginTop="205dp"/>
 
     <Button

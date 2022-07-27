@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f5f8"
+    android:background="?attr/custom_beige"
     tools:context=".patient.NearbyHospitalsActivity">
 
     <FrameLayout
@@ -38,7 +38,7 @@
         android:layout_marginTop="50dp"
         android:fontFamily="@font/inter"
         android:text="@string/hospitals"
-        android:textColor="@color/black"
+        android:textColor="?attr/custom_black"
         android:textSize="20sp" />
 
     <androidx.appcompat.widget.SearchView
