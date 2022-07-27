@@ -65,7 +65,7 @@ class DoctorProfileActivity : AppCompatActivity() {
                 Log.d("NOO", "Error adding new doctor")
             }
         }
-        val intent = Intent(this@DoctorProfileActivity, DoctorHomeActivity::class.java)
+        val intent = Intent(this@DoctorProfileActivity, AddAvailabilityActivity::class.java)
         startActivity(intent)
     }
 }
