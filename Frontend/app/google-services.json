@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "893925159203",
+    "firebase_url": "https://safely-11a5a-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "safely-11a5a",
     "storage_bucket": "safely-11a5a.appspot.com"
   },
@@ -20,7 +21,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDsbsFA3xCZknPaiw6cGDpfpV28wuLj0K4"
+          "current_key": "AIzaSyBpUUmgGcRyE1rd3rmPS_UvOXHjxwdZlz4"
         }
       ],
       "services": {
