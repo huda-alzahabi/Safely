@@ -61,6 +61,8 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_medical_records_continue.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_medical_records_continued.xml" value="0.21908602150537634" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_nearby_hospitals.xml" value="0.12012692656391659" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_notification.xml" value="0.16636446056210336" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_notification2.xml" value="0.1128739800543971" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_doctors.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_home.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_hospitals.xml" value="0.10944848225737494" />
@@ -76,6 +78,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/doctors_card_view.xml" value="0.1675929884566054" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/dropdown.xml" value="0.14505893019038985" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/fragment_first.xml" value="0.14913871260199457" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/fragment_login.xml" value="0.1373526745240254" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/marital_status_dropdown.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nationality_dropdown.xml" value="0.11196736174070716" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nearby_card_view.xml" value="0.16681776971894832" />
