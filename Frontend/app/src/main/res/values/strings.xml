@@ -97,6 +97,7 @@
     <string name="discover">Discover the nearby hospitals</string>
     <string name="available_doctors">Find the available doctors</string>
     <string name="flow">Book an Appointment</string>
+    <string name="new_appointment">New Appointment</string>
 
 
 </resources>

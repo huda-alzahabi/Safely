@@ -5,15 +5,21 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.StrictMode
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
 import com.finalproj.safely.user.UserInfo
+import org.json.JSONObject
 
 class ConfirmAppointmentActivity : AppCompatActivity() {
     lateinit var appointment_day: String
@@ -116,6 +122,12 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
 
             }
         }
+        val newAppointment=applicationContext.resources.getString(R.string.new_appointment)
+        val details= "$appointmentDay, $appointmentTime"
+        pushNotification(this,
+            "e3AAQ4LAQBm7Yi4FZJVK3N:APA91bHPott-AD22wGSmg_kUYeUCms5nVejBDFAkIaK7LL-Pr4aiz8V-3Naci3DgQYQIDYFIZrEM9WrGZ4FjbykTXVbk0OChD-pJWpAAwnLICdzca1_PbYsGtfSVRxKzTamiKFcgYs8D",
+            newAppointment,
+            details)
         val intent =
             Intent(this@ConfirmAppointmentActivity, PatientHomeActivity::class.java)
         intent.putExtra("appointment_day", appointment_day)
@@ -123,5 +135,46 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         intent.putExtra("doctor_name", doctor_name)
         intent.putExtra("hospital_name", hospital_name)
         startActivity(intent)
+    }
+    val BASE_URL: String = "https://fcm.googleapis.com/fcm/send"
+    val SERVER_KEY: String =
+        "f2HBLJinT9qGNDS2BXaYI7:APA91bHt-CMoBYv_C-mMEHixdHFNVdDHvEPn-WnZDobTwB8xy9-1RSjdA_usv91mF1EAy03ZczCwG4iZA79bKNMNGNKP5Rnot1oHfaMTAj4mbgSu82j8HxoVCv_GG2Q9fYsuAc7TO80v"
+
+
+    fun pushNotification(context: Context, token: String, title: String, message: String) {
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+
+        val requestQueue = Volley.newRequestQueue(context)
+        try {
+            val json = JSONObject()
+            val notification = JSONObject()
+            notification.put("title", title)
+            notification.put("body", message)
+            json.put("to", token)
+            json.put("notification", notification)
+            val request: JsonObjectRequest = object : JsonObjectRequest(Request.Method.POST,
+                BASE_URL,
+                json,
+                Response.Listener<JSONObject>
+                { response ->
+                    Log.d("TAGTest", response.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("TAGTest", "error: ${it.message}")
+                }) {
+                override fun getHeaders(): MutableMap<String, String> {
+                    val headers = HashMap<String, String>()
+                    headers["Authorization"] = "key=$SERVER_KEY"
+                    headers["Content-Type"] = "application/json"
+                    return headers
+                }
+
+            }
+            requestQueue.add(request)
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 }
