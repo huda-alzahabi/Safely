@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch {
             delay(4000L)
             if (token.isEmpty()) {
-                val intent = Intent(this@MainActivity, DoctorHomeActivity::class.java)
+                val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
                 startActivity(intent)
                 finish()
             } else if(user_type == "patient") {

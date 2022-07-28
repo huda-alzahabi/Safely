@@ -1,6 +1,7 @@
 package com.finalproj.safely.hospital
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
+import com.finalproj.safely.doctor.AddAvailabilityActivity
 import com.finalproj.safely.user.RestApiService
 
 class HospitalInfoActivity : AppCompatActivity() {
@@ -60,5 +62,7 @@ class HospitalInfoActivity : AppCompatActivity() {
                 Log.d("NOO", "Error adding new hospital")
             }
         }
+        val intent = Intent(this@HospitalInfoActivity, HospitalLocationActivity::class.java)
+        startActivity(intent)
     }
 }

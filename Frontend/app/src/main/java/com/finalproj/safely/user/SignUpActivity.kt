@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
 import com.finalproj.safely.doctor.AllHospitalsActivity
 import com.finalproj.safely.hospital.HospitalHomeActivity
+import com.finalproj.safely.hospital.HospitalInfoActivity
 import com.finalproj.safely.patient.PatientInfoActivity
 import org.json.JSONObject
 
@@ -113,7 +114,7 @@ class SignUpActivity : AppCompatActivity() {
                         editor.commit()
                         intent =
                             Intent(this, if (user_type == "patient") PatientInfoActivity::class.java
-                            else if (user_type == "doctor") AllHospitalsActivity::class.java else HospitalHomeActivity::class.java)
+                            else if (user_type == "doctor") AllHospitalsActivity::class.java else HospitalInfoActivity::class.java)
 
                         startActivity(intent)
                     }
