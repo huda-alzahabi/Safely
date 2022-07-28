@@ -34,22 +34,22 @@
         <item>Autre</item>
     </string-array>
     <string-array name="marital_status">
-        <item>Seul</item>
+        <item>Célibataire</item>
         <item>Marié</item>
         <item>Engagé</item>
         <item>Divorcé</item>
         <item>Veuve</item>
     </string-array>
-    <string name="male">Masculin</string>
-    <string name="female">Féminin</string>
+    <string name="male">Homme</string>
+    <string name="female">Femme</string>
     <string name="other">Autre</string>
     <string name="hello"> Bonjour</string>
     <string name="next_appointment">Votre prochain rendez-vous est le</string>
-    <string name="confirm_location">Confirmer L\'emplacement</string>
+    <string name="confirm_location">Confirmation de localisation</string>
     <string name="time">L\'heure</string>
     <string name="book">Prendre rendez-vous</string>
     <string name="info">Informations personnelles</string>
-    <string name="submit_changes">Soumettre des changements</string>
+    <string name="submit_changes">Soumettre les changements</string>
     <string name="available">Disponibles</string>
     <string name="doctors">Médecins</string>
     <string name="next">Suivant</string>
@@ -96,12 +96,12 @@
     <string name="appointment_location">Emplacement du Rendez-vous</string>
     <string name="no_appointment">Aucun rendez-vous à venir</string>
     <string name="discover">Découvrez les hôpitaux à proximité</string>
-    <string name="available_doctors">Trouver les médecins disponibles</string>
+    <string name="available_doctors">Médecins disponibles</string>
     <string name="flow">Prenez Rendez-vous</string>
     <string name="new_appointment">Nouveau Rendez-vous</string>
-    <string name="add_availability">Ajouter Disponibilité</string>
+    <string name="add_availability">Ajouter Votre Disponibilité</string>
     <string name="logout">Déconnexion</string>
-    <string name="edit_profile">Modifier le Profil</string>
+    <string name="edit_profile">Modifier votre Profil</string>
     <string name="patient_name">Nom du Patient</string>
     <string name="upcoming_appointments">
         Rendez-vous à venir
