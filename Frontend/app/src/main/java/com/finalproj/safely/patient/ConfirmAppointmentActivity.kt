@@ -119,7 +119,6 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
 
             } else {
                 Log.d("OKKKKK", "Error booking appointment")
-
             }
         }
         val newAppointment=applicationContext.resources.getString(R.string.new_appointment)

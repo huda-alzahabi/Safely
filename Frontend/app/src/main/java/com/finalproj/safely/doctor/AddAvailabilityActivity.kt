@@ -18,13 +18,13 @@ class AddAvailabilityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_availability)
+        val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val doctor = sharedPreferences.getString("doctor_id", "")!!
 
-        val add_availability = findViewById<Button>(R.id.add_availability)
+        val add_availability = findViewById<Button>(R.id.submit_day)
         add_availability.setOnClickListener {
-            val sharedPrefFile = "kotlin_shared_preference"
-            val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
-                Context.MODE_PRIVATE)
-            val doctor = sharedPreferences.getString("doctor_id", "")!!
 
             Log.d("doctor", doctor)
             Log.d("date", picked_day)
@@ -62,7 +62,6 @@ class AddAvailabilityActivity : AppCompatActivity() {
         pickedTimes: MutableList<String>,
         doctor: String,
     ) {
-        setContentView(R.layout.activity_all_hospitals)
         val sharedPrefFile = "kotlin_shared_preference"
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
@@ -76,7 +75,6 @@ class AddAvailabilityActivity : AppCompatActivity() {
                 Log.d("NOO", "Error adding new availability")
             }
         }
-
     }
 
     private fun addElement(s: String): MutableList<String> {

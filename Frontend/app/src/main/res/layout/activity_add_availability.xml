@@ -62,7 +62,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/add_availability"
+                android:id="@+id/submit_day"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/time"
@@ -72,7 +72,7 @@
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/inter_extra_bold"
                 android:padding="13dp"
-                android:text="@string/add_availability"
+                android:text="@string/submit_day"
                 android:textAllCaps="false"
                 android:textSize="17sp" />
 

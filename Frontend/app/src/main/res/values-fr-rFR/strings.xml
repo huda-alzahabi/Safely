@@ -73,7 +73,7 @@
     <string name="invalid_credentials">Les informations d\'identification invalides</string>
     <string name="signup_failed">Échec de l\'inscription</string>
     <string name="email_in_use">Email déjà utilisé</string>
-    <string name="add_availability">Jour de Soumission</string>
+    <string name="submit_day">Jour de Soumission</string>
     <string-array name="time_per_day">
         <item>08:00–09:00 A.M</item>
         <item>09:00–10:00 A.M</item>
@@ -99,6 +99,8 @@
     <string name="available_doctors">Trouver les médecins disponibles</string>
     <string name="flow">Prenez Rendez-vous</string>
     <string name="new_appointment">Nouveau Rendez-vous</string>
+    <string name="add_availability">Ajouter Disponibilité</string>
+    <string name="logout">Déconnexion</string>
 
 
 

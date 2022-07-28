@@ -24,6 +24,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_medical_services_24.xml" value="0.133" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1205" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_post_add_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_records_24.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_baseline_today_24.xml" value="0.1595" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/ic_hospital_location_on_24.xml" value="0.1455" />
@@ -86,6 +87,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nearby_card_view.xml" value="0.16681776971894832" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/notification.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/doctor_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/search_item.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/search_menu.xml" value="0.16547066272688898" />
       </map>

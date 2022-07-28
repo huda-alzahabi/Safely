@@ -72,7 +72,7 @@
     <string name="invalid_credentials">Invalid Credentials</string>
     <string name="signup_failed">Signup Failed</string>
     <string name="email_in_use">Email Already in use</string>
-    <string name="add_availability">Submit Day</string>
+    <string name="submit_day">Submit Day</string>
     <string-array name="time_per_day">
         <item>08:00–09:00 A.M</item>
         <item>09:00–10:00 A.M</item>
@@ -98,6 +98,8 @@
     <string name="available_doctors">Find the available doctors</string>
     <string name="flow">Book an Appointment</string>
     <string name="new_appointment">New Appointment</string>
+    <string name="add_availability">Add Availability</string>
+    <string name="logout">Logout</string>
 
 
 </resources>
