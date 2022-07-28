@@ -56,20 +56,23 @@ class PatientHomeActivity : AppCompatActivity() {
         val home_date = findViewById<TextView>(R.id.home_date)
         val hospital = findViewById<TextView>(R.id.hospital_name)
         val upcoming_appointment = findViewById<TextView>(R.id.upcoming)
+        val applicationContext: Context = applicationContext
 
         if (appointment_day != "" && appointment_time != "" && doctor_name != "" && hospital_name != "") {
             val date = "$appointment_day, $appointment_time"
             home_date.text = date
-            val location = "$hospital_name Hospital / Dr. $doctor_name"
+            val location = "$hospital_name"+ applicationContext.resources.getString(R.string.hospital)+" / Dr. $doctor_name"
             hospital.setText(location)
         } else {
-            val applicationContext: Context = applicationContext
+
             upcoming_appointment.text = applicationContext.resources.getString(R.string.no_appointment)
             upcoming_appointment.setPadding(0, 20, 0, 0);
             home_date.text = ""
             hospital.text = "\u25BA "+applicationContext.resources.getString(R.string.discover)+"\n\u25BA "+applicationContext.resources.getString(R.string.available_doctors) +"\n\u25BA "+ applicationContext.resources.getString(R.string.flow)
             hospital.setPadding(0, -10, 0, 0);
+            val image = findViewById<ImageView>(R.id.calendar)
             val imageView = findViewById<ImageView>(R.id.loc)
+            image.visibility=ImageView.GONE
             imageView.visibility = ImageView.GONE
         }
 
