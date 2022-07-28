@@ -350,4 +350,28 @@ class RestApiService {
                 }
             })
     }
+    fun addHospitalLocation(
+        hospitalId: String,
+        location: Location,
+        token: String,
+        onResult: (SuccessMessageResponse?) -> Unit,
+    ) {
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addHospitalLocation(hospitalId, location,token).enqueue(
+            object : Callback<SuccessMessageResponse> {
+                override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
+                    Log.d("No Patient", t.toString())
+                    onResult(null)
+                }
+
+                override fun onResponse(
+                    call: Call<SuccessMessageResponse>,
+                    response: Response<SuccessMessageResponse>,
+                ) {
+                    val addedUser = response.body()
+                    Log.d("Added Loc", response.body().toString())
+                    onResult(addedUser)
+                }
+            })
+    }
 }
