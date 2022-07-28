@@ -102,6 +102,11 @@
     <string name="add_availability">Ajouter Disponibilité</string>
     <string name="logout">Déconnexion</string>
     <string name="edit_profile">Modifier le Profil</string>
+    <string name="patient_name">Nom du Patient</string>
+    <string name="upcoming_appointments">
+        Rendez-vous à venir
+    </string>
+
 
 
 </resources>

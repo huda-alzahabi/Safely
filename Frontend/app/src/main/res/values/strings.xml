@@ -101,6 +101,9 @@
     <string name="add_availability">Add Availability</string>
     <string name="logout">Logout</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="upcoming_appointments">Upcoming Appointments</string>
+
 
 
 </resources>
