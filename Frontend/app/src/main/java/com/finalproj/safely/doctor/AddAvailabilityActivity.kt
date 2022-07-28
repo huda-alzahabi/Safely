@@ -1,6 +1,7 @@
 package com.finalproj.safely.doctor
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_availability)
+
         val sharedPrefFile = "kotlin_shared_preference"
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
@@ -53,6 +55,12 @@ class AddAvailabilityActivity : AppCompatActivity() {
             Toast.makeText(this@AddAvailabilityActivity, picked_day, Toast.LENGTH_SHORT).show()
         }
         datePicker.setMinDate(System.currentTimeMillis() - 1000)
+
+        val back = findViewById<TextView>(R.id.go_home)
+        back.setOnClickListener {
+            val intent = Intent(this, DoctorHomeActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
