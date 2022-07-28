@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".patient.PatientProfileActivity">
+    tools:context=".user.EditProfileActivity">
+
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/fl_wrapper"
-        android:layout_above="@+id/bottom_nav">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/logout_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/logout"
             android:layout_gravity="end"
             android:layout_margin="15dp"
-            android:id="@+id/logout_icon"
-            />
+            android:background="@drawable/profile_logout" />
     </FrameLayout>
 
     <ImageView
@@ -67,9 +66,9 @@
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_name"
-                android:singleLine="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,9 +97,9 @@
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email"
-                android:singleLine="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,10 +129,10 @@
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_pass"
-                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -153,18 +152,9 @@
             android:textAllCaps="false"
             android:textSize="17sp" />
 
+
+
     </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/blue"
-        app:itemIconTint="@drawable/nav_item_color_selected"
-        app:itemTextColor="@color/white"
-        app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/patient_navigation_menu" />
 
 
 </RelativeLayout>

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.finalproj.safely.R
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -108,7 +109,7 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
                 }
                 R.id.nav_profile -> {
                     val intent = Intent(this@ChooseTimeActivity,
-                        PatientProfileActivity::class.java)
+                        EditProfileActivity::class.java)
                     startActivity(intent)
                 }
             }

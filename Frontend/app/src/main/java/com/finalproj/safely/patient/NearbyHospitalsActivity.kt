@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.R
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -106,7 +107,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
                 }
                 R.id.nav_profile -> {
                     val intent = Intent(this@NearbyHospitalsActivity,
-                        PatientProfileActivity::class.java)
+                        EditProfileActivity::class.java)
                     startActivity(intent)
                     overridePendingTransition(0, 0);
                 }

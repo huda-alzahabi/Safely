@@ -17,6 +17,7 @@ import com.finalproj.safely.R
 import com.finalproj.safely.patient.HospitalResponse
 import com.finalproj.safely.patient.NearbyHospitalsAdapter
 import com.finalproj.safely.patient.TopSpacingItemDecoration
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.MainActivity
 import com.finalproj.safely.user.RestApiService
 
@@ -70,7 +71,7 @@ class DoctorHomeActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             R.id.doc_profile -> {
-                val intent = Intent(this, DoctorHomeActivity::class.java)
+                val intent = Intent(this, EditProfileActivity::class.java)
                 startActivity(intent)
             }
             R.id.doc_logout -> {

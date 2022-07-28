@@ -3,13 +3,13 @@ package com.finalproj.safely.patient
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.finalproj.safely.R
+import com.finalproj.safely.user.EditProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PatientHomeActivity : AppCompatActivity() {
@@ -103,7 +103,7 @@ class PatientHomeActivity : AppCompatActivity() {
                 }
                 R.id.nav_profile -> {
                     val intent =
-                        Intent(this@PatientHomeActivity, PatientProfileActivity::class.java)
+                        Intent(this@PatientHomeActivity, EditProfileActivity::class.java)
                     startActivity(intent)
                 }
             }

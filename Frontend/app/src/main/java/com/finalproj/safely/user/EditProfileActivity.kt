@@ -1,4 +1,4 @@
-package com.finalproj.safely.patient
+package com.finalproj.safely.user
 
 import android.content.Context
 import android.content.Intent
@@ -10,19 +10,22 @@ import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
-import com.finalproj.safely.user.MainActivity
-import com.finalproj.safely.user.RestApiService
-import com.finalproj.safely.user.UserInfo
+import com.finalproj.safely.doctor.DoctorHomeActivity
+import com.finalproj.safely.hospital.HospitalHomeActivity
+import com.finalproj.safely.patient.AddMedicalRecordsActivity
+import com.finalproj.safely.patient.MapsActivity
+import com.finalproj.safely.patient.NearbyHospitalsActivity
+import com.finalproj.safely.patient.PatientHomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class PatientProfileActivity : AppCompatActivity() {
+class EditProfileActivity : AppCompatActivity() {
     private val sharedPrefFile = "kotlin_shared_preference"
     lateinit var sharedPreferences: SharedPreferences
     lateinit var user: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_patient_profile)
+        setContentView(R.layout.activity_edit_profile)
 
         val submit_btn = findViewById<Button>(R.id.submit_changes)
         val edit_name = findViewById<EditText>(R.id.edit_name)
@@ -43,9 +46,20 @@ class PatientProfileActivity : AppCompatActivity() {
             val edit_pass = findViewById<EditText>(R.id.edit_pass).text.toString()
 
             editProfile(edit_name, edit_email, edit_pass, usertype)
-            val intent = Intent(this, PatientHomeActivity::class.java)
-            intent.putExtra("new_name", edit_name)
-            startActivity(intent)
+            if(usertype == "patient"){
+                val intent = Intent(this, PatientHomeActivity::class.java)
+                startActivity(intent)
+            }
+            else if(usertype == "doctor"){
+                val intent = Intent(this, DoctorHomeActivity::class.java)
+                startActivity(intent)
+            }
+            else if(usertype == "hospital"){
+                val intent = Intent(this,HospitalHomeActivity::class.java)
+                startActivity(intent)
+            }
+
+
         }
 
         val logout = findViewById<ImageView>(R.id.logout_icon)
@@ -53,7 +67,6 @@ class PatientProfileActivity : AppCompatActivity() {
             logout()
             Log.d("logout", "logout")
         }
-        clickedNavItem()
     }
 
     private fun editProfile(
@@ -82,35 +95,4 @@ class PatientProfileActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun clickedNavItem() {
-        val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomnav.menu.findItem(R.id.nav_profile).isChecked = true;
-
-        bottomnav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val intent =
-                        Intent(this@PatientProfileActivity, PatientHomeActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_hospitals -> {
-                    val intent = Intent(this@PatientProfileActivity,
-                        NearbyHospitalsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_location -> {
-                    val intent = Intent(this@PatientProfileActivity, MapsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_records -> {
-                    val intent =
-                        Intent(this@PatientProfileActivity, AddMedicalRecordsActivity::class.java)
-                    startActivity(intent)
-                }
-                R.id.nav_profile -> {
-                }
-            }
-            return@setOnItemSelectedListener true
-        }
-    }
 }

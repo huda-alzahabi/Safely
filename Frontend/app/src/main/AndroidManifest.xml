@@ -61,7 +61,7 @@
             android:name=".patient.ChooseDayActivity"
             android:exported="false" />
         <activity
-            android:name=".patient.PatientProfileActivity"
+            android:name=".user.EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".patient.AddMedicalRecordsActivity"

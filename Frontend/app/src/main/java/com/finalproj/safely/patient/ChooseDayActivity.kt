@@ -6,11 +6,10 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.finalproj.safely.R
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -100,7 +99,7 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
                 }
                 R.id.nav_profile -> {
                     val intent = Intent(this@ChooseDayActivity,
-                        PatientProfileActivity::class.java)
+                        EditProfileActivity::class.java)
                     startActivity(intent)
                 }
             }

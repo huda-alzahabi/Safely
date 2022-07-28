@@ -10,6 +10,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.finalproj.safely.*
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -116,7 +117,7 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
                     }
                     R.id.nav_profile -> {
                         val intent =
-                            Intent(this@PatientDoctorsActivity, PatientProfileActivity::class.java)
+                            Intent(this@PatientDoctorsActivity, EditProfileActivity::class.java)
                         startActivity(intent)
                     }
                 }

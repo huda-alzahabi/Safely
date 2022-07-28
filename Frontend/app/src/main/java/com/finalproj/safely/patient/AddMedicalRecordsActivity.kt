@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
+import com.finalproj.safely.user.EditProfileActivity
 import com.finalproj.safely.user.RestApiService
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -96,7 +97,7 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
                 }
                 R.id.nav_profile -> {
                     val intent =
-                        Intent(this@AddMedicalRecordsActivity, PatientProfileActivity::class.java)
+                        Intent(this@AddMedicalRecordsActivity, EditProfileActivity::class.java)
                     startActivity(intent)
                 }
             }
