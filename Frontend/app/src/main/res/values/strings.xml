@@ -104,7 +104,7 @@
     <string name="patient_name">Patient Name</string>
     <string name="upcoming_appointments">Upcoming Appointments</string>
     <string name="go_home">Go Back</string>
-
-
+<string name="pick">Pick your available days and times</string>
+    <string name="multiple">Select multiple times for each day</string>
 
 </resources>

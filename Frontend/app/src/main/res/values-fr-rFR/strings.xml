@@ -107,6 +107,8 @@
         Rendez-vous à venir
     </string>
     <string name="go_home">Retourner</string>
+    <string name="pick">Choisissez vos jours et heures disponibles</string>
+    <string name="multiple">Sélectionnez plusieurs fois pour chaque jour</string>
 
 
 </resources>

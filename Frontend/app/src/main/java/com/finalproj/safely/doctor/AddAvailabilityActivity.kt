@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
@@ -56,12 +57,16 @@ class AddAvailabilityActivity : AppCompatActivity() {
         }
         datePicker.setMinDate(System.currentTimeMillis() - 1000)
 
+        //remove header from datepicker
+        val datePickerLayout = datePicker.getChildAt(0) as LinearLayout
+        val datePickerHeader = datePickerLayout.getChildAt(0) as LinearLayout
+        datePickerHeader.visibility = View.GONE
+
         val back = findViewById<TextView>(R.id.go_home)
         back.setOnClickListener {
             val intent = Intent(this, DoctorHomeActivity::class.java)
             startActivity(intent)
         }
-
 
     }
 
