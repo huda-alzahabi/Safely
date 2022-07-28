@@ -1,6 +1,5 @@
 package com.finalproj.safely.doctor
 
-import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,7 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
 import android.widget.ImageView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.finalproj.safely.R
 import com.finalproj.safely.user.MainActivity
@@ -18,15 +19,10 @@ class DoctorHomeActivity : AppCompatActivity() {
 
     val sharedPrefFile = "kotlin_shared_preference"
     override fun onCreate(savedInstanceState: Bundle?) {
-        val actionBar: ActionBar? = actionBar
-        actionBar?.show()
+        setTheme(R.style.Theme_Doctor);
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctor_home)
-
-
-//set theme with action bar
-
-
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")!!
@@ -36,11 +32,6 @@ class DoctorHomeActivity : AppCompatActivity() {
             Log.d("appointments", it.toString())
         }
 
-        val logout = findViewById<ImageView>(R.id.logout_doc)
-        logout.setOnClickListener {
-            logout()
-            Log.d("logout", "logout")
-        }
     }
     //override oncreate options menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

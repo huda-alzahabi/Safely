@@ -7,12 +7,12 @@
     app:showAsAction="ifRoom"/>
     <item android:id="@+id/doc_profile"
         android:icon="@drawable/profile_icon"
-        android:title="@string/profile"
-        app:showAsAction="never"/>
+        android:title="@string/edit_profile"
+        app:showAsAction="ifRoom"/>
     <item android:id="@+id/doc_logout"
         android:icon="@drawable/logout"
         android:title="@string/logout"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 
 
 </menu>

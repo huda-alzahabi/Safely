@@ -15,7 +15,26 @@
         <item name="custom_beige">#F2F5F8</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/custom_black</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="Theme.Doctor" parent="Theme.MaterialComponents.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="custom_white">#FFFF</item>
+        <item name="custom_grey">#4f4d4d</item>
+        <item name="custom_black">@color/black</item>
+        <item name="custom_beige">#F2F5F8</item>
+        <item name="android:dropDownListViewStyle">@android:style/Widget.Holo.Light.ListView.DropDown</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/custom_black</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

@@ -101,12 +101,7 @@
     <string name="new_appointment">Nouveau Rendez-vous</string>
     <string name="add_availability">Ajouter Disponibilité</string>
     <string name="logout">Déconnexion</string>
-
-
-
-
-
-
+    <string name="edit_profile">Modifier le Profil</string>
 
 
 </resources>
