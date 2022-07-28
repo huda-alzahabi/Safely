@@ -5,12 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hospital.HospitalHomeActivity">
+    <?xml version="1.0" encoding="utf-8"?>
+
+    <FrameLayout
+        android:id="@+id/fl_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/full_name"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/blue_500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:textColor="?attr/custom_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_num"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/blue_500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:textColor="?attr/custom_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/blue_500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="30dp"
+                android:textColor="?attr/custom_black" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:scaleType="fitEnd"
+            android:src="@drawable/hospital_home" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:src="@drawable/homebg" />
+    </FrameLayout>
+
     <ImageView
+        android:id="@+id/logout_hosp"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/logout"
-        android:layout_margin="15dp"
-        android:id="@+id/logout_hosp"
-        />
-
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/profile_logout" />
 </RelativeLayout>
+

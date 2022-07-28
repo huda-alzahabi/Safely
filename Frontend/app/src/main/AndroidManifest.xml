@@ -20,7 +20,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".user.NotificationActivity"
+            android:name=".hospital.HospitalLocationActivity"
             android:exported="false" />
         <activity
             android:name=".patient.ConfirmAppointmentActivity"
