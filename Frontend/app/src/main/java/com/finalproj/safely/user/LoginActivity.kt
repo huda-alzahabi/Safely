@@ -136,14 +136,18 @@ class LoginActivity : AppCompatActivity() {
                                     editor.putString("hospital_id", hospitalId)
                                     editor.apply()
                                     editor.commit()
-                                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
+                                    val intent =
+                                        Intent(this@LoginActivity, HospitalHomeActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 } else {
                                     Log.d("Error", "No hospital response")
                                 }
                             }
+                        } else {
+                            error("Invalid user type")
                         }
+
             } else {
                 Log.d("Login Error", "Error logging new user")
                 alertDialog.setCancelable(false)

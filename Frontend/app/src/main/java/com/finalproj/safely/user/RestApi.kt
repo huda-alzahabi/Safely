@@ -144,5 +144,5 @@ interface RestApi {
     fun getHospitalByUserId(
         @Query("id") userId: String?,
         @Header("token") token: String,
-    ): Call<HospitalResponse>
+    ): Call<Hospital>
 }
