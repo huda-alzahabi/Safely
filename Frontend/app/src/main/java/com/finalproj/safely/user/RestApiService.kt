@@ -407,4 +407,21 @@ class RestApiService {
                 }
             })
     }
+    fun getHospitalByUserId(userId: String,token:String, onResult: (HospitalResponse?) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getHospitalByUserId(userId,token)
+            .enqueue(object : Callback<HospitalResponse?> {
+                override fun onResponse(
+                    call: Call<HospitalResponse?>,
+                    response: Response<HospitalResponse?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("patient info", responseBody.toString())
+                }
+                override fun onFailure(call: Call<HospitalResponse?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
+                }
+            })
+    }
 }
