@@ -389,4 +389,22 @@ class RestApiService {
                 }
             })
     }
+
+    fun getDoctorByUserId(userId: String,token:String, onResult: (DoctorResponse?) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getDoctorByUserId(userId,token)
+            .enqueue(object : Callback<DoctorResponse?> {
+                override fun onResponse(
+                    call: Call<DoctorResponse?>,
+                    response: Response<DoctorResponse?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("patient info", responseBody.toString())
+                }
+                override fun onFailure(call: Call<DoctorResponse?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
+                }
+            })
+    }
 }
