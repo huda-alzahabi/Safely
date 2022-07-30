@@ -152,7 +152,6 @@ class RestApiService {
                     Log.d("No Hospital", t.toString())
                     onResult(null)
                 }
-
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -195,7 +194,6 @@ class RestApiService {
                     onResult(responseBody)
                     Log.d("Nearby HOSPITALSS", responseBody.toString())
                 }
-
                 override fun onFailure(call: Call<List<HospitalResponse>?>, t: Throwable) {
                     d(TAG, "onFailure: " + t.message)
                 }
@@ -363,7 +361,6 @@ class RestApiService {
                     Log.d("No Patient", t.toString())
                     onResult(null)
                 }
-
                 override fun onResponse(
                     call: Call<SuccessMessageResponse>,
                     response: Response<SuccessMessageResponse>,
@@ -371,6 +368,24 @@ class RestApiService {
                     val addedUser = response.body()
                     Log.d("Added Loc", response.body().toString())
                     onResult(addedUser)
+                }
+            })
+    }
+
+    fun getPatientByUserId(userId: String,token:String, onResult: (PatientResponse?) -> Unit) {
+        val retrofitInstance = ServiceBuilder.buildService(RestApi::class.java)
+        retrofitInstance.getPatientByUserId(userId,token)
+            .enqueue(object : Callback<PatientResponse?> {
+                override fun onResponse(
+                    call: Call<PatientResponse?>,
+                    response: Response<PatientResponse?>,
+                ) {
+                    val responseBody = response.body()!!
+                    onResult(responseBody)
+                    Log.d("patient info", responseBody.toString())
+                }
+                override fun onFailure(call: Call<PatientResponse?>, t: Throwable) {
+                    d(TAG, "onFailure: " + t.message)
                 }
             })
     }
