@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
             var email = ""
             var user_type = ""
             var _id = ""
+            var token = ""
 
             if (it?.token != null) {
                 Log.d("Token", it.token)
@@ -82,11 +83,12 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     error("Invalid token")
                 }
+                token = it.token
                 val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
                     Context.MODE_PRIVATE)
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putString("Token", it.token)
+                editor.putString("Token", token)
                 editor.putString("Name", user_name)
                 editor.putString("Email", email)
                 editor.putString("user_id", _id)
@@ -94,36 +96,18 @@ class LoginActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                val patientId = sharedPreferences.getString("patient_id", "")!!
-                val doctorId = sharedPreferences.getString("doctor_id", "")!!
-                val hospitalId = sharedPreferences.getString("hospital_id", "")!!
-
-
-                if (user_type == "patient" && patientId == "") {
-                    val intent = Intent(this@LoginActivity, PatientInfoActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else if (user_type == "patient" && patientId != "") {
-                    val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else if (user_type == "doctor" && doctorId != "") {
-                    val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else if (user_type == "doctor" && doctorId == "") {
-                    val intent = Intent(this@LoginActivity, AllHospitalsActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else if (user_type == "hospital" && hospitalId == "") {
-                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                } else if (user_type == "hospital" && hospitalId != "") {
-                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                if (user_type == "patient") {
+                    apiService.getPatientByUserId(_id, token) {
+                        if (it != null) {
+                            Log.d("itttttt", it.toString())
+                            val patientId=it._id
+                            editor.putString("patient_id",patientId)
+                            editor.apply()
+                            editor.commit()
+                        }
+                    }
                 }
+
 
             } else {
                 Log.d("Login Error", "Error logging new user")
