@@ -100,13 +100,30 @@ class LoginActivity : AppCompatActivity() {
                     apiService.getPatientByUserId(_id, token) {
                         if (it != null) {
                             Log.d("itttttt", it.toString())
-                            val patientId=it._id
-                            editor.putString("patient_id",patientId)
+                            val patientId = it._id
+                            editor.putString("patient_id", patientId)
                             editor.apply()
                             editor.commit()
+                        } else {
+                            Log.d("Error", "No patient response")
                         }
                     }
+                } else
+                    if (user_type == "doctor") {
+                        apiService.getDoctorByUserId(_id,token){
+                            if(it != null){
+                                Log.d("itttttt", it.toString())
+                                val doctorId = it._id
+                                editor.putString("doctor_id", doctorId)
+                                editor.apply()
+                                editor.commit()
+                            }
+                            else{
+                                Log.d("Error", "No doctor response")
+                            }
+                        }
                 }
+               
 
 
             } else {
