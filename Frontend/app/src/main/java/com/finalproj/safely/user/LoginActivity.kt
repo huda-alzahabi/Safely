@@ -104,40 +104,46 @@ class LoginActivity : AppCompatActivity() {
                             editor.putString("patient_id", patientId)
                             editor.apply()
                             editor.commit()
+                            val intent = Intent(this@LoginActivity, PatientHomeActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         } else {
                             Log.d("Error", "No patient response")
                         }
                     }
                 } else
                     if (user_type == "doctor") {
-                        apiService.getDoctorByUserId(_id,token){
-                            if(it != null){
+                        apiService.getDoctorByUserId(_id, token) {
+                            if (it != null) {
                                 Log.d("itttttt", it.toString())
                                 val doctorId = it._id
                                 editor.putString("doctor_id", doctorId)
                                 editor.apply()
                                 editor.commit()
-                            }
-                            else{
+                                val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
                                 Log.d("Error", "No doctor response")
                             }
                         }
-                }
-                else
-                    if (user_type == "hospital") {
-                        apiService.getHospitalByUserId(_id,token){
-                            if(it != null){
-                                Log.d("itttttt", it.toString())
-                                val hospitalId = it._id
-                                editor.putString("hospital_id", hospitalId)
-                                editor.apply()
-                                editor.commit()
-                            }
-                            else{
-                                Log.d("Error", "No hospital response")
+                    } else
+                        if (user_type == "hospital") {
+                            apiService.getHospitalByUserId(_id, token) {
+                                if (it != null) {
+                                    Log.d("itttttt", it.toString())
+                                    val hospitalId = it._id
+                                    editor.putString("hospital_id", hospitalId)
+                                    editor.apply()
+                                    editor.commit()
+                                    val intent = Intent(this@LoginActivity, HospitalHomeActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    Log.d("Error", "No hospital response")
+                                }
                             }
                         }
-                }
             } else {
                 Log.d("Login Error", "Error logging new user")
                 alertDialog.setCancelable(false)
