@@ -1,5 +1,6 @@
 package com.finalproj.safely.patient
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -11,6 +12,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -19,6 +21,8 @@ import com.bumptech.glide.Glide
 import com.finalproj.safely.R
 import com.finalproj.safely.user.RestApiService
 import com.finalproj.safely.user.UserInfo
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import org.json.JSONObject
 
 class ConfirmAppointmentActivity : AppCompatActivity() {
@@ -37,7 +41,15 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confirm_appointment)
 
-
+        //fetch token for notification
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(ContentValues.TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+            val token = task.result
+            Log.d(ContentValues.TAG, token)
+        })
         appointment_day = intent.getStringExtra("appointment_day")!!
         appointment_time = intent.getStringExtra("appointment_time")!!
         doctor_id = intent.getStringExtra("doctor_id")!!
@@ -46,8 +58,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         hospital_name = intent.getStringExtra("hospital_name")!!
 
 
-         sharedPreferences = this.getSharedPreferences(sharedPrefFile,
-            Context.MODE_PRIVATE)
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            MODE_PRIVATE)
         patient_id = sharedPreferences.getString("patient_id", "")!!
         patient_name = sharedPreferences.getString("Name", "")!!
 
@@ -112,7 +124,7 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
 
         val token = sharedPreferences.getString("Token", "")!!
 
-        apiService.bookAppointment(appointmentInfo,token) {
+        apiService.bookAppointment(appointmentInfo, token) {
             Log.d("Appointment", appointmentInfo.toString())
             if (it != null) {
                 Log.d("it", it.toString())
@@ -121,8 +133,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
                 Log.d("OKKKKK", "Error booking appointment")
             }
         }
-        val newAppointment=applicationContext.resources.getString(R.string.new_appointment)
-        val details= "$appointmentDay, $appointmentTime"
+        val newAppointment = applicationContext.resources.getString(R.string.new_appointment)
+        val details = "$appointmentDay, $appointmentTime"
         pushNotification(this,
             "e3AAQ4LAQBm7Yi4FZJVK3N:APA91bHPott-AD22wGSmg_kUYeUCms5nVejBDFAkIaK7LL-Pr4aiz8V-3Naci3DgQYQIDYFIZrEM9WrGZ4FjbykTXVbk0OChD-pJWpAAwnLICdzca1_PbYsGtfSVRxKzTamiKFcgYs8D",
             newAppointment,
@@ -135,6 +147,7 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         intent.putExtra("hospital_name", hospital_name)
         startActivity(intent)
     }
+
     val BASE_URL: String = "https://fcm.googleapis.com/fcm/send"
     val SERVER_KEY: String =
         "f2HBLJinT9qGNDS2BXaYI7:APA91bHt-CMoBYv_C-mMEHixdHFNVdDHvEPn-WnZDobTwB8xy9-1RSjdA_usv91mF1EAy03ZczCwG4iZA79bKNMNGNKP5Rnot1oHfaMTAj4mbgSu82j8HxoVCv_GG2Q9fYsuAc7TO80v"
