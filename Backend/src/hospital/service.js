@@ -1,7 +1,7 @@
 const Hospital = require("../../model/Hospital");
 
 async function addHospital(body) {
-  const { phone_number, user, country, city, street, building } = body;
+  const { phone_number, user, country, city, street, building,outpatient_clinic, } = body;
 
   const hospital = new Hospital({
     phone_number,
@@ -12,6 +12,7 @@ async function addHospital(body) {
       street,
       building,
     },
+    outpatient_clinic,
   });
 
   return await hospital.save();

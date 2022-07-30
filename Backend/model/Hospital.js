@@ -34,6 +34,10 @@ const hospitalSchema = new mongoose.Schema({
       ref: "Doctor",
     },
   ],
+  outpatient_clinic: {
+    type: String,
+    required: false,
+  }
 });
 hospitalSchema.index({ hospital_location: "2dsphere" });
 
