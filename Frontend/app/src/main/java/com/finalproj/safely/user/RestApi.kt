@@ -78,4 +78,9 @@ interface RestApi {
     @POST("/api/hospital/location")
     fun addHospitalLocation(@Query("id") hospitalId: String?,@Body location: Location,@Header("token") token:String): Call<SuccessMessageResponse>
 
+    @Headers("Content-Type: application/json")
+    @GET("/api/patient/user")
+    fun getPatientByUserId(@Query("id") userId: String?,@Header("token") token:String): Call<PatientResponse>
+
+
 }
