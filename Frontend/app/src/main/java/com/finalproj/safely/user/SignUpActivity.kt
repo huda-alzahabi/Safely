@@ -8,6 +8,7 @@ import android.util.Base64
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +24,8 @@ class SignUpActivity : AppCompatActivity() {
     lateinit var builder: AlertDialog.Builder
     lateinit var alertDialog: AlertDialog
     lateinit var user_id: String
-
+    lateinit var user_type: String
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -36,6 +38,15 @@ class SignUpActivity : AppCompatActivity() {
         builder.setPositiveButton("Exit") { dialogInterface, which ->
         }
         alertDialog = builder.create()
+
+        val sharedPrefFile = "kotlin_shared_preference"
+       sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+            Context.MODE_PRIVATE)
+        user_type = sharedPreferences.getString("user_type", "")!!
+        var label = findViewById<TextView>(R.id.h_name)
+        if(user_type == "hospital") {
+            label.setText(applicationContext.resources.getString(R.string.h_name))
+        }
 
 
         signUp.setOnClickListener {
@@ -57,10 +68,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun registerUser(name: String, email: String, password: String) {
-        val sharedPrefFile = "kotlin_shared_preference"
-        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
-            Context.MODE_PRIVATE)
-        val user_type = sharedPreferences.getString("user_type", "")!!
+
 
         val apiService = RestApiService()
         val userInfo = UserInfo(
@@ -100,9 +108,6 @@ class SignUpActivity : AppCompatActivity() {
                         } else {
                             error("Invalid token")
                         }
-                        val sharedPreferences: SharedPreferences =
-                            this.getSharedPreferences(sharedPrefFile,
-                                Context.MODE_PRIVATE)
 
                         val editor: SharedPreferences.Editor = sharedPreferences.edit()
                         editor.putString("Token", it.token)
