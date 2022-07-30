@@ -1,5 +1,7 @@
 const { addHospital, getHospitals, getHospitalById } = require("./service");
 const Hospital = require("../../model/Hospital");
+const User = require("../../model/User");
+
 
 async function add(req, res) {
   try {
@@ -30,6 +32,7 @@ async function get(req, res) {
     console.log(error);
   }
 }
+
 async function addHospitalLocation(req, res) {
   try {
     const hospital = await Hospital.findByIdAndUpdate(
@@ -49,8 +52,23 @@ async function addHospitalLocation(req, res) {
   }
 }
 
+async function getHospitalByUserId(req, res) {
+  try {
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await Hospital.findOne({user: id});
+      console.log(result);
+      return res.send(result);
+
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   add,
   get,
-  addHospitalLocation
+  addHospitalLocation,
+  getHospitalByUserId
 };
