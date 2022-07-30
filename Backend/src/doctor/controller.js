@@ -109,7 +109,19 @@ async function getAppointmentsByDrId(req, res) {
   }
 }
 
+async function getDoctorByUserId(req, res) {
+  try {
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await Doctor.findOne({user: id});
+      console.log(result);
+      return res.send(result);
 
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   addDr,
@@ -117,5 +129,6 @@ module.exports = {
   getDoctors,
   getAvailabilityByDrId,
   getTimesByAvailabilityId,
-  getAppointmentsByDrId
+  getAppointmentsByDrId,
+  getDoctorByUserId
 };
