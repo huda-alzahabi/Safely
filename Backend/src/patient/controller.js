@@ -126,11 +126,26 @@ async function getAppointmentsByPatientId(req, res) {
   }
 }
 
+async function getPatientByUserId(req, res) {
+  try {
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await Patient.findOne({user: id});
+      console.log(result);
+      return res.send(result);
+
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   add,
   addLocation,
   addMedicalRecords,
   findNearbyHospitals,
   bookAppointment,
-  getAppointmentsByPatientId
+  getAppointmentsByPatientId,
+  getPatientByUserId
 };

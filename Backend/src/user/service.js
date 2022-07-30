@@ -7,7 +7,7 @@ async function getUsers() {
 }
 
 async function getById(id) {
-    return await User.findById(id).populate("contacts");
+    return await User.findById(id);
 }
 
 async function addUser(body, hashPassword) {
