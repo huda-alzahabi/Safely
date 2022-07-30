@@ -26,16 +26,18 @@ class HospitalInfoActivity : AppCompatActivity() {
             val city = findViewById<EditText>(R.id.city).text.toString()
             val street = findViewById<EditText>(R.id.street).text.toString()
             val building = findViewById<EditText>(R.id.building).text.toString()
+            val outpatient_clinic = findViewById<EditText>(R.id.hours).text.toString()
+
             sharedPreferences = this.getSharedPreferences(sharedPrefFile,
                 Context.MODE_PRIVATE)
             val user = sharedPreferences.getString("user_id", "")!!
 
-            submitInfo(phone_num, country, city, street, building, user)
+            submitInfo(phone_num, country, city, street, building, user,outpatient_clinic)
 
         }
     }
 
-    private fun submitInfo(phoneNum: String, country: String, city: String, street: String, building: String, user: String) {
+    private fun submitInfo(phoneNum: String, country: String, city: String, street: String, building: String, user: String,outpatient_clinic:String) {
         sharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")!!
@@ -46,7 +48,8 @@ class HospitalInfoActivity : AppCompatActivity() {
             city = city,
             street = street,
             building = building,
-            user = user
+            user = user,
+            outpatient_clinic = outpatient_clinic,
         )
         apiService.addHospitalInfo(hospitalInfo,token) {
             Log.d("HospitalResponse", hospitalInfo.toString())
@@ -55,6 +58,12 @@ class HospitalInfoActivity : AppCompatActivity() {
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("hospital_id", it.message)
+                editor.putString("phone", phoneNum)
+                editor.putString("street", street)
+                editor.putString("city", city)
+                editor.putString("country", country)
+                editor.putString("outpatient_clinic", outpatient_clinic)
+
                 editor.apply()
                 editor.commit()
                 Log.d("HOSPID", it.message!!)

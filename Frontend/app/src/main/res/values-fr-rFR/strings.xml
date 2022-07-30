@@ -5,6 +5,7 @@
     <string name="near">Proche de vous, où que vous soyez...</string>
     <string name="try_now">Essayez maintenant</string>
     <string name="full_name">Nom et prénom</string>
+    <string name="h_name">Nom de l\'hôpital</string>
     <string name="email">E-mail</string>
     <string name="password">Mot de passe</string>
     <string name="login">Se Connecter</string>
@@ -109,6 +110,9 @@
     <string name="go_home">Retourner</string>
     <string name="pick">Choisissez vos jours et heures disponibles</string>
     <string name="multiple">Sélectionnez plusieurs fois pour chaque jour</string>
+    <string name="hours">Heures de travail de la clinique externe</string>
+    <string name="general_info">Informations Générales</string>
+
 
 
 </resources>

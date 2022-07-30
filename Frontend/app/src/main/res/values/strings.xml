@@ -4,6 +4,7 @@
     <string name="near">Close to you, wherever you are...</string>
     <string name="try_now">Try Now</string>
     <string name="full_name">Full Name</string>
+    <string name="h_name">Hospital Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Log in</string>
@@ -104,7 +105,19 @@
     <string name="patient_name">Patient Name</string>
     <string name="upcoming_appointments">Upcoming Appointments</string>
     <string name="go_home">Go Back</string>
-<string name="pick">Pick your available days and times</string>
+    <string name="pick">Pick your available days and times</string>
     <string name="multiple">Select multiple times for each day</string>
+    <string-array name="profession">
+        <item>Dermatologist</item>
+        <item>Cardiologist</item>
+        <item>Psychiatrist</item>
+        <item>Gynecologist</item>
+        <item>Neurologist</item>
+        <item>Radiologist</item>
+        <item>Anesthesiologist</item>
+        <item>Pediatrician</item>
+    </string-array>
+    <string name="hours">Outpatient Clinic Working Hours</string>
+    <string name="general_info">General Info</string>
 
 </resources>
