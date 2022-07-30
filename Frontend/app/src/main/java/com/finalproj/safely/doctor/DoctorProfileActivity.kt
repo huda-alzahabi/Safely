@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import com.finalproj.safely.R
@@ -19,6 +21,14 @@ class DoctorProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctor_profile)
+
+        var profession = ""
+        //create dropdown for nationalities
+        val professions = resources.getStringArray(R.array.profession)
+        val professionAdapter = ArrayAdapter(this, R.layout.dropdown, professions)
+        val prof = findViewById<AutoCompleteTextView>(R.id.profession)
+        prof.setAdapter(professionAdapter)
+
         intent.getStringExtra("hospital_id")?.let {
             hospital_id = it
         }
@@ -28,9 +38,9 @@ class DoctorProfileActivity : AppCompatActivity() {
 
         val submit = findViewById<Button>(R.id.submit_doctor)
         submit.setOnClickListener {
-            val specialty = findViewById<EditText>(R.id.specialty).text.toString()
+            profession = prof.text.toString()
             val experience = findViewById<EditText>(R.id.experience).text.toString()
-            submitInfo(specialty, experience, hospital_id, user)
+            submitInfo(profession, experience, hospital_id, user)
         }
     }
 
@@ -65,7 +75,7 @@ class DoctorProfileActivity : AppCompatActivity() {
                 Log.d("NOO", "Error adding new doctor")
             }
         }
-        val intent = Intent(this@DoctorProfileActivity, AddAvailabilityActivity::class.java)
+        val intent = Intent(this@DoctorProfileActivity, DoctorHomeActivity::class.java)
         startActivity(intent)
     }
 }
