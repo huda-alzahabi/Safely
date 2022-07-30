@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.*
 import com.finalproj.safely.R
@@ -21,6 +22,11 @@ class AddAvailabilityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_availability)
 
+        val layout =layoutInflater.inflate(R.layout.toast,findViewById(R.id.toast_wrapper)) as LinearLayout
+
+        val toast=layout.findViewById<TextView>(R.id.toast_text)
+
+
         val sharedPrefFile = "kotlin_shared_preference"
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
@@ -28,11 +34,16 @@ class AddAvailabilityActivity : AppCompatActivity() {
 
         val add_availability = findViewById<Button>(R.id.submit_day)
         add_availability.setOnClickListener {
-
+            toast.text=  "Availability added successfully"
+            Toast(this@AddAvailabilityActivity).apply {
+                duration = Toast.LENGTH_LONG
+                setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 30)
+                view = layout
+            }.show()
             Log.d("doctor", doctor)
             Log.d("date", picked_day)
             Log.d("time", picked_times.toString())
-            addAvailability(picked_day, picked_times, doctor)
+            addAvailability(picked_day, picked_times, "62e1d7548e3dfb09ce418ca7")
             picked_times.clear()
         }
 
@@ -41,8 +52,14 @@ class AddAvailabilityActivity : AppCompatActivity() {
         val timeAdapter = ArrayAdapter(this, R.layout.dropdown, times)
         val timeslot = findViewById<AutoCompleteTextView>(R.id.timeslot)
         timeslot.setAdapter(timeAdapter)
-        timeslot.setOnItemClickListener { parent, view, position, id ->
+        timeslot.setOnItemClickListener { parent, _view, position, id ->
             picked_times = addElement(times[position])
+            toast.text=  picked_times.toString()
+            Toast(this@AddAvailabilityActivity).apply {
+                duration = Toast.LENGTH_LONG
+                setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 30)
+                view = layout
+            }.show()
         }
 
         val datePicker = findViewById<DatePicker>(R.id.date_Picker)
@@ -53,7 +70,6 @@ class AddAvailabilityActivity : AppCompatActivity() {
         ) { view, year, month, day ->
             val month = month + 1
             picked_day = "$day/$month/$year"
-            Toast.makeText(this@AddAvailabilityActivity, picked_day, Toast.LENGTH_SHORT).show()
         }
         datePicker.setMinDate(System.currentTimeMillis() - 1000)
 
