@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hospital.HospitalHomeActivity">
-    <?xml version="1.0" encoding="utf-8"?>
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
@@ -22,19 +21,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/full_name"
+                android:text="@string/h_name"
                 android:textSize="20sp"
-                android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:fontFamily="@font/laila"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/blue_500" />
 
             <TextView
+                android:id="@+id/hosp_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hospital"
                 android:textSize="18sp"
                 android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:textColor="?attr/custom_black" />
 
             <TextView
@@ -43,37 +43,57 @@
                 android:text="@string/phone_num"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:fontFamily="@font/laila"
+                android:layout_marginStart="20dp"
                 android:textColor="@color/blue_500" />
 
             <TextView
+                android:id="@+id/hosp_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hospital"
                 android:textSize="18sp"
                 android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:textColor="?attr/custom_black" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hours"
+                android:textSize="20sp"
+                android:fontFamily="@font/laila"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/blue_500" />
+            <TextView
+                android:id="@+id/hosp_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hospital"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter"
+                android:layout_marginStart="20dp"
+                android:textColor="?attr/custom_black" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/address"
                 android:textSize="20sp"
-                android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:fontFamily="@font/laila"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/blue_500" />
 
             <TextView
+                android:id="@+id/hosp_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hospital"
                 android:textSize="18sp"
                 android:fontFamily="@font/inter"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:textColor="?attr/custom_black" />
+
 
         </LinearLayout>
 
@@ -93,11 +113,11 @@
 
     <ImageView
         android:id="@+id/logout_hosp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/profile_logout" />
