@@ -51,13 +51,13 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_choose_time.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_confirm_appointment.xml" value="0.16364460562103356" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctor_home.xml" value="0.14505893019038985" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctor_profile.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctor_profile.xml" value="0.67" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_doctors.xml" value="0.17162872154115585" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_edit_profile.xml" value="0.3381742738589212" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_hospital_home.xml" value="0.2" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_hospital_home.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_hospital_info.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_hospital_location.xml" value="0.15095194922937444" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_login2.xml" value="0.22" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_main.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_maps.xml" value="0.16417272338606242" />
@@ -70,9 +70,9 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_doctors.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_home.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_hospitals.xml" value="0.10944848225737494" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_info.xml" value="0.15476699444206926" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_info.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_patient_profile.xml" value="0.25" />
-        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_sign_up.xml" value="0.1328195829555757" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_user_info.xml" value="0.22" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_user_type.xml" value="0.212" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/activity_view_medical_records.xml" value="0.1" />

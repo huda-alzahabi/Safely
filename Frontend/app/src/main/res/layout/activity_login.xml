@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".user.LoginActivity">
 
     <ImageView
@@ -16,8 +16,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-       >
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/laila"
+            android:text="@string/email"
+            android:textSize="16sp"
+            android:textColor="@color/blue" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_email1"
@@ -25,18 +35,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="32dp"
-            android:hint="@string/email">
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="32dp">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_email"
-                android:singleLine="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/laila"
+            android:text="@string/password"
+            android:textSize="16sp"
+            android:textColor="@color/blue" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_pass1"
@@ -44,18 +64,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="32dp"
-            app:endIconMode="password_toggle"
-            android:hint="@string/password">
+            app:endIconMode="password_toggle">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_pass"
-                android:singleLine="true"
-                android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,11 +87,11 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="#D90BA3D3"
-            android:padding="13dp"
             android:fontFamily="@font/inter_extra_bold"
-            android:textSize="17sp"
+            android:padding="13dp"
             android:text="@string/login"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/no_acc"
@@ -90,14 +109,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/inter"
             android:gravity="center"
             android:text="@string/register"
-            android:clickable="true"
             android:textColor="@color/blue"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:focusable="true" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 </FrameLayout>
