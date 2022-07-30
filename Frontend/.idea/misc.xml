@@ -40,6 +40,8 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/profile_icon.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/records_icon.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/toast.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/toast_time_24.xml" value="0.113" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/whit_btn.xml" value="0.178" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/drawable/white_rounded_corners.xml" value="0.1" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout-v26/activity_welcome.xml" value="0.5" />
@@ -89,6 +91,7 @@
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nationality_dropdown.xml" value="0.11196736174070716" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/nearby_card_view.xml" value="0.16681776971894832" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/notification.xml" value="0.25" />
+        <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/layout/toast.xml" value="0.33" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/doctor_navigation_menu.xml" value="0.25" />
         <entry key="..\:/Users/HP/Desktop/Safely/Frontend/app/src/main/res/menu/patient_navigation_menu.xml" value="0.1675929884566054" />
