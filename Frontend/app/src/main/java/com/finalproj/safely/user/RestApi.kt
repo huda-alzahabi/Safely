@@ -82,5 +82,7 @@ interface RestApi {
     @GET("/api/patient/user")
     fun getPatientByUserId(@Query("id") userId: String?,@Header("token") token:String): Call<PatientResponse>
 
-
+    @Headers("Content-Type: application/json")
+    @GET("/api/doctor/user")
+    fun getDoctorByUserId(@Query("id") userId: String?,@Header("token") token:String): Call<DoctorResponse>
 }
