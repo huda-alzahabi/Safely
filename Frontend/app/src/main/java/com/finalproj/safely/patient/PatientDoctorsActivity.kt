@@ -26,7 +26,6 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_doctors)
 
-
         intent.getStringExtra("hospital_id")
             ?.let {
                 hospital_id = it
