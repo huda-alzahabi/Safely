@@ -2,7 +2,6 @@ const { addHospital, getHospitals, getHospitalById } = require("./service");
 const Hospital = require("../../model/Hospital");
 const User = require("../../model/User");
 
-
 async function add(req, res) {
   try {
     const newHospital = await addHospital(req.body);
@@ -13,6 +12,7 @@ async function add(req, res) {
     res.status(500).send(error);
   }
 }
+
 async function get(req, res) {
   try {
     console.log(req.query);
@@ -23,10 +23,8 @@ async function get(req, res) {
       console.log("result of specific user =>", result);
       return res.send(result);
     }
-
     const result = await getHospitals();
     console.log("result =>", result);
-
     return res.send(result);
   } catch (error) {
     console.log(error);
@@ -59,7 +57,6 @@ async function getHospitalByUserId(req, res) {
       const result = await Hospital.findOne({user: id});
       console.log(result);
       return res.send(result);
-
     }
   } catch (error) {
     console.log(error);
