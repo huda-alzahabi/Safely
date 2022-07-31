@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Laila:wght@500&family=Press+Start+2P&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+.login{
+  display: flex;
+  margin-top: 40px;
+}
+body{
+  background-image: url("./assets/loginbg.png");
+  background-repeat: no-repeat;
+}
+.container{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    display: inline-block;
+    color:white;
+    border: 0cm;
+    padding: 18px 10px;
+    margin: 5px;
+    width: 80%;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bolder;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.form-control input,
+.input {
+    width: 80%;
+    margin: 5px !important;
+    padding: 15px 10px;
+    font-size: 17px;
+}	
+
+h1 {
+  font-family: 'Laila', sans-serif !important;
+    text-align: center;
+    color: #0BA3D3;
 }
+
+h2,
+.loginbtn {
+    text-align: center;
+} 
