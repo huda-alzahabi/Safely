@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="custom_white">#FFFF</item>
         <item name="custom_grey">#4f4d4d</item>
+        <item name="light_grey">#888888</item>
         <item name="custom_black">@color/black</item>
         <item name="custom_beige">#F2F5F8</item>
 
@@ -29,6 +30,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="custom_white">#FFFF</item>
         <item name="custom_grey">#4f4d4d</item>
+        <item name="light_grey">#888888</item>
         <item name="custom_black">@color/black</item>
         <item name="custom_beige">#F2F5F8</item>
         <item name="android:dropDownListViewStyle">@android:style/Widget.Holo.Light.ListView.DropDown</item>

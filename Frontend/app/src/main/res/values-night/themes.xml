@@ -13,6 +13,8 @@
         <item name="custom_grey">#FFFF</item>
         <item name="custom_black">#FFFF</item>
         <item name="custom_beige">@color/black</item>
+        <item name="light_grey">#FFF</item>
+
 
 
         <!-- Status bar color. -->

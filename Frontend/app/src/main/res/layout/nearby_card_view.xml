@@ -59,8 +59,8 @@
             android:layout_toEndOf="@+id/img"
             android:fontFamily="@font/inter"
             android:text="Title"
-            android:textColor="?attr/custom_grey"
-            android:textSize="16sp" />
+            android:textColor="?attr/light_grey"
+            android:textSize="14sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
