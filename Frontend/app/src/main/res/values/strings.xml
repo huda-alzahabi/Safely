@@ -117,7 +117,7 @@
         <item>Anesthesiologist</item>
         <item>Pediatrician</item>
     </string-array>
-    <string name="hours">Outpatient Clinic Working Hours</string>
+    <string name="hours">Outpatient Clinics Working Hours</string>
     <string name="general_info">General Info</string>
 
 </resources>

@@ -32,12 +32,20 @@ class HospitalInfoActivity : AppCompatActivity() {
                 Context.MODE_PRIVATE)
             val user = sharedPreferences.getString("user_id", "")!!
 
-            submitInfo(phone_num, country, city, street, building, user,outpatient_clinic)
+            submitInfo(phone_num, country, city, street, building, user, outpatient_clinic)
 
         }
     }
 
-    private fun submitInfo(phoneNum: String, country: String, city: String, street: String, building: String, user: String,outpatient_clinic:String) {
+    private fun submitInfo(
+        phoneNum: String,
+        country: String,
+        city: String,
+        street: String,
+        building: String,
+        user: String,
+        outpatient_clinic: String,
+    ) {
         sharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")!!
@@ -51,21 +59,21 @@ class HospitalInfoActivity : AppCompatActivity() {
             user = user,
             outpatient_clinic = outpatient_clinic,
         )
-        apiService.addHospitalInfo(hospitalInfo,token) {
+        apiService.addHospitalInfo(hospitalInfo, token) {
             Log.d("HospitalResponse", hospitalInfo.toString())
             if (it != null) {
                 Log.d("HOSPITAL", it.toString())
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                val hospitalAddress =
+                    street + ", " + city + ", " + country
                 editor.putString("hospital_id", it.message)
-                editor.putString("phone", phoneNum)
-                editor.putString("street", street)
-                editor.putString("city", city)
-                editor.putString("country", country)
-                editor.putString("outpatient_clinic", outpatient_clinic)
-
+                editor.putString("phone_num", phoneNum)
+                editor.putString("hospital_address", hospitalAddress)
+                editor.putString("hours", outpatient_clinic)
                 editor.apply()
                 editor.commit()
+
                 Log.d("HOSPID", it.message!!)
             } else {
                 Log.d("NOO", "Error adding new hospital")

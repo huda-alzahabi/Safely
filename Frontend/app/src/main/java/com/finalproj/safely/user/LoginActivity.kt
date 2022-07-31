@@ -120,7 +120,8 @@ class LoginActivity : AppCompatActivity() {
                                 editor.putString("doctor_id", doctorId)
                                 editor.apply()
                                 editor.commit()
-                                val intent = Intent(this@LoginActivity, DoctorHomeActivity::class.java)
+                                val intent =
+                                    Intent(this@LoginActivity, DoctorHomeActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             } else {
@@ -133,7 +134,14 @@ class LoginActivity : AppCompatActivity() {
                                 if (it != null) {
                                     Log.d("itttttt", it.toString())
                                     val hospitalId = it._id
+                                    val hospitalAddress =
+                                        it.address.street + ", " + it.address.city + ", " + it.address.country
+                                    val phoneNum = it.phone_number
+                                    val hours = it.outpatient_clinic
                                     editor.putString("hospital_id", hospitalId)
+                                    editor.putString("phone_num", phoneNum)
+                                    editor.putString("hospital_address", hospitalAddress)
+                                    editor.putString("hours", hours)
                                     editor.apply()
                                     editor.commit()
                                     val intent =
