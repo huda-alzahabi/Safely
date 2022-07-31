@@ -14,7 +14,7 @@ class TimesAdapter(private val listener: OnItemClickListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return TimeViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.day_card_view, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.date_card_view, parent, false)
         )
     }
 
