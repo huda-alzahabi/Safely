@@ -133,6 +133,16 @@ async function get(req, res) {
   }
 }
 
+async function getDoctorsCount(req, res) {
+  try {
+    const result = await getDoctors();
+    console.log("result =>", result);
+    return res.send({doctors:result.length});
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   addDr,
   addDrAvailability,
@@ -141,5 +151,6 @@ module.exports = {
   getTimesByAvailabilityId,
   getAppointmentsByDrId,
   getDoctorByUserId,
-  get
+  get,
+  getDoctorsCount
 };
