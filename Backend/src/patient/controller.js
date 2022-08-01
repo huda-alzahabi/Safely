@@ -1,4 +1,4 @@
-const { addPatient,addAppointment } = require("./service");
+const { addPatient,addAppointment,getPatients,getById } = require("./service");
 const Patient = require("../../model/Patient");
 const Hospital = require("../../model/Hospital");
 const Appointment = require("../../model/Appointment");
@@ -139,6 +139,25 @@ async function getPatientByUserId(req, res) {
     console.log(error);
   }
 }
+async function get(req, res) {
+  try {
+    console.log(req.query);
+
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await getById(id);
+      console.log("result of specific patient =>", result);
+      return res.send(result);
+    }
+
+    const result = await getPatients();
+    console.log("result =>", result);
+
+    return res.send(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 module.exports = {
   add,
@@ -147,5 +166,6 @@ module.exports = {
   findNearbyHospitals,
   bookAppointment,
   getAppointmentsByPatientId,
-  getPatientByUserId
+  getPatientByUserId,
+  get
 };
