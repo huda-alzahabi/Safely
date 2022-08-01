@@ -27,9 +27,13 @@ async function addAvailability(body) {
   console.log("availability =>", availability);
   return await availability.save();
 }
+async function getDoctors() {
+  return await Doctor.find().populate("user");
+}
 
 module.exports = {
   addDoctor,
   addAvailability,
   getDoctorsByHospitalId,
+  getDoctors,
 };
