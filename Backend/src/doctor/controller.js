@@ -143,6 +143,23 @@ async function getDoctorsCount(req, res) {
   }
 }
 
+async function getSpecialtiesCount(req, res) {
+  try {
+    const result = await Doctor.aggregate([
+      {
+        $group: {
+          specialty: "$specialty",
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+    console.log("result =>", result);
+    return res.send(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   addDr,
   addDrAvailability,
@@ -152,5 +169,6 @@ module.exports = {
   getAppointmentsByDrId,
   getDoctorByUserId,
   get,
-  getDoctorsCount
+  getDoctorsCount,
+  getSpecialtiesCount
 };
