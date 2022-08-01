@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { add,addLocation,addMedicalRecords,findNearbyHospitals,bookAppointment,getAppointmentsByPatientId,getPatientByUserId,get } = require("./controller");
+const { add,addLocation,addMedicalRecords,findNearbyHospitals,bookAppointment,getAppointmentsByPatientId,getPatientByUserId,get,getPatientsCount } = require("./controller");
 const router = Router();
 const userMiddleware = require("../../middleware/user_middleware");
 
@@ -12,6 +12,9 @@ router.post("/book",userMiddleware(), bookAppointment);
 router.get("/appointment",userMiddleware(), getAppointmentsByPatientId);
 router.get("/user",userMiddleware(), getPatientByUserId);
 router.get("/get",userMiddleware(), get);
+router.get("/count",userMiddleware(), getPatientsCount);
+
+
 
 
 

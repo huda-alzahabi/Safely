@@ -1,8 +1,11 @@
-const { addPatient,addAppointment,getPatients,getById } = require("./service");
+const {
+  addPatient,
+  addAppointment,
+  getPatients,
+} = require("./service");
 const Patient = require("../../model/Patient");
 const Hospital = require("../../model/Hospital");
 const Appointment = require("../../model/Appointment");
-
 
 async function add(req, res) {
   try {
@@ -57,29 +60,27 @@ async function addMedicalRecords(req, res) {
 }
 async function findNearbyHospitals(req, res) {
   try {
-  //get patient location
-  const patient = await Patient.findById(req.query.id);
-  const patientLatitude = patient.location.latitude;
-  const patientLongitude = patient.location.longitude;
-  //get all hospitals
-  const hospitals = await Hospital.find().populate("user");
-  //find hospitals within 25km
-  const nearbyHospitals = hospitals.filter((hospital) => {
-    const hospitalLatitude = hospital.location.latitude;
-    const hospitalLongitude = hospital.location.longitude;
-    const distance = getDistanceFromLatLonInKm(
-      patientLatitude,
-      patientLongitude,
-      hospitalLatitude,
-      hospitalLongitude
-    );
-    hospital.distance = distance.toFixed(2);
-    return distance <= 25;
-  }
-  );
-  return res.send(nearbyHospitals);
-  }
-  catch (error) {
+    //get patient location
+    const patient = await Patient.findById(req.query.id);
+    const patientLatitude = patient.location.latitude;
+    const patientLongitude = patient.location.longitude;
+    //get all hospitals
+    const hospitals = await Hospital.find().populate("user");
+    //find hospitals within 25km
+    const nearbyHospitals = hospitals.filter((hospital) => {
+      const hospitalLatitude = hospital.location.latitude;
+      const hospitalLongitude = hospital.location.longitude;
+      const distance = getDistanceFromLatLonInKm(
+        patientLatitude,
+        patientLongitude,
+        hospitalLatitude,
+        hospitalLongitude
+      );
+      hospital.distance = distance.toFixed(2);
+      return distance <= 25;
+    });
+    return res.send(nearbyHospitals);
+  } catch (error) {
     console.log(error);
   }
 }
@@ -99,13 +100,13 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 }
 
 function degreesToRadians(degrees) {
-  return degrees * Math.PI / 180;
+  return (degrees * Math.PI) / 180;
 }
 
 async function bookAppointment(req, res) {
   try {
     const newAppointment = await addAppointment(req.body);
-    return res.status(200).send({message: newAppointment._id});
+    return res.status(200).send({ message: newAppointment._id });
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -116,10 +117,9 @@ async function getAppointmentsByPatientId(req, res) {
   try {
     if (req.query.id) {
       const id = req.query.id;
-      const result = await Appointment.find({patient_id: id});
+      const result = await Appointment.find({ patient_id: id });
       console.log(result);
       return res.send(result);
-
     }
   } catch (error) {
     console.log(error);
@@ -130,10 +130,9 @@ async function getPatientByUserId(req, res) {
   try {
     if (req.query.id) {
       const id = req.query.id;
-      const result = await Patient.findOne({user: id});
+      const result = await Patient.findOne({ user: id });
       console.log(result);
       return res.send(result);
-
     }
   } catch (error) {
     console.log(error);
@@ -141,19 +140,18 @@ async function getPatientByUserId(req, res) {
 }
 async function get(req, res) {
   try {
-    console.log(req.query);
-
-    if (req.query.id) {
-      const id = req.query.id;
-      const result = await getById(id);
-      console.log("result of specific patient =>", result);
-      return res.send(result);
-    }
-
     const result = await getPatients();
     console.log("result =>", result);
-
     return res.send(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getPatientsCount(req, res) {
+  try {
+    const result = await getPatients();
+    return res.send({patients:result.length});
   } catch (error) {
     console.log(error);
   }
@@ -167,5 +165,6 @@ module.exports = {
   bookAppointment,
   getAppointmentsByPatientId,
   getPatientByUserId,
-  get
+  get,
+  getPatientsCount
 };
