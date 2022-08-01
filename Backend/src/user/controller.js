@@ -84,9 +84,30 @@ async function editProfile(req, res) {
   }
 }
 
+
+async function getUsersCount(req, res) {
+  try {
+    console.log(req.query);
+    if (req.query.id) {
+      const id = req.query.id;
+      const result = await getById(id);
+      console.log("result of specific user =>", result);
+      return res.send(result);
+    }
+
+    const result = await getUsers();
+    console.log("result =>", result.length);
+    return res.send({users:result.length});
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 module.exports = {
   get,
   register,
   login,
   editProfile,
+  getUsersCount
 };
