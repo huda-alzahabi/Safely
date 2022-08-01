@@ -55,7 +55,8 @@ const PieChart = () => {
 
   return (
     <div className="donut">
-      <Chart options={options} series={series} type="pie" width="380" />
+      <div className="title"> Users </div>
+      <Chart className="chart" options={options} series={series} type="pie" width="380" />
     </div>
   );
 };

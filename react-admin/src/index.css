@@ -54,3 +54,17 @@ h2,
 .login-img {
   margin-top: 40px;
 }
+.donut {
+  margin-top: 200px;
+  width: 50%;
+}
+.chart {
+  margin-left: 30px;
+}
+.title {
+  margin-left: 130px;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bold;
+  color: #0ba3d3;
+  font-size: 30px;
+}
