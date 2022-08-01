@@ -2,22 +2,23 @@ import { useState } from "react";
 import Button from "../components/Button";
 import img from "../assets/login.png";
 import TextField from '@material-ui/core/TextField';
+import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
-  // States for login
+  const nav=useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Handling the email change
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
 
-  // Handling the password change
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  // Handling the form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     login();
@@ -25,7 +26,6 @@ const Login = () => {
     setPassword("");
   };
 
-  //Sending the user to the users table in the db
   const login = async () => {
     let _data = {
       email: email,
@@ -40,8 +40,12 @@ const Login = () => {
       body: JSON.stringify(_data),
     });
     const result = await res.json();
-    console.log(result);
-    // nav("/Contacts");
+    console.log(result.token);
+    window.localStorage.setItem("Bearer", result.token);
+    var user = jwt_decode(result.token);
+    window.localStorage.setItem("user_id", user._id);
+    console.log(user);     console.log(result);
+     nav("/statistics");
   };
 
   return (
@@ -52,8 +56,7 @@ const Login = () => {
             <h1>Sign in Here</h1>
           </div>
           <form>
-            {/* Labels and inputs for form data */}
-
+            
             <TextField label="Email" variant="outlined"
               onChange={handleEmail}
               className="input"
@@ -75,7 +78,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-      <div>
+      <div className="login-img">
         <img src={img} alt="login" />
       </div>
     </div>
