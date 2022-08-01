@@ -148,7 +148,7 @@ async function getSpecialtiesCount(req, res) {
     const result = await Doctor.aggregate([
       {
         $group: {
-          specialty: "$specialty",
+          _id: "$specialty",
           count: { $sum: 1 },
         },
       },
