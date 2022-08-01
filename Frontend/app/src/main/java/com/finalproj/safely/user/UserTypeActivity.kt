@@ -12,7 +12,7 @@ class UserTypeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_type)
-      val sharedPrefFile = "kotlin_shared_preference"
+        val sharedPrefFile = "kotlin_shared_preference"
 
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)

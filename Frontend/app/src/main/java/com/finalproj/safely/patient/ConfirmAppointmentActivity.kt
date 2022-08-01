@@ -136,17 +136,17 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         }
         val newAppointment = applicationContext.resources.getString(R.string.new_appointment)
         val details = "$appointmentDay, $appointmentTime"
-        if(notification_token!=""){
+        if (notification_token != "") {
             pushNotification(this,
                 notification_token,
                 newAppointment,
                 details)
+        } else {
+            pushNotification(this,
+                "e3AAQ4LAQBm7Yi4FZJVK3N:APA91bHPott-AD22wGSmg_kUYeUCms5nVejBDFAkIaK7LL-Pr4aiz8V-3Naci3DgQYQIDYFIZrEM9WrGZ4FjbykTXVbk0OChD-pJWpAAwnLICdzca1_PbYsGtfSVRxKzTamiKFcgYs8D",
+                newAppointment,
+                details)
         }
-        else{
-        pushNotification(this,
-            "e3AAQ4LAQBm7Yi4FZJVK3N:APA91bHPott-AD22wGSmg_kUYeUCms5nVejBDFAkIaK7LL-Pr4aiz8V-3Naci3DgQYQIDYFIZrEM9WrGZ4FjbykTXVbk0OChD-pJWpAAwnLICdzca1_PbYsGtfSVRxKzTamiKFcgYs8D",
-            newAppointment,
-            details)}
         val intent =
             Intent(this@ConfirmAppointmentActivity, PatientHomeActivity::class.java)
         intent.putExtra("appointment_day", appointment_day)

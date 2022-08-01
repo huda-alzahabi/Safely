@@ -31,7 +31,6 @@ class AllHospitalsActivity : AppCompatActivity(), AllHospitalsAdapter.OnItemClic
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)
-
         }
 
         searchHospitals()
@@ -49,6 +48,7 @@ class AllHospitalsActivity : AppCompatActivity(), AllHospitalsAdapter.OnItemClic
             adapter = hospitalsAdapter
         }
     }
+
     private fun searchHospitals() {
         val searchView = findViewById<SearchView>(R.id.searchAll)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

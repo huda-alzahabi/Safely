@@ -25,10 +25,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="250dp"
             android:layout_marginEnd="20dp"
-            android:textSize="16sp"
             android:fontFamily="@font/laila"
             android:text="@string/full_name"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_name1"
@@ -54,10 +54,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:textSize="16sp"
             android:fontFamily="@font/laila"
             android:text="@string/email"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_email1"
@@ -76,17 +76,18 @@
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:textSize="16sp"
+            android:fontFamily="@font/laila"
             android:text="@string/password"
             android:textColor="@color/blue"
-            android:fontFamily="@font/laila"
-            />
+            android:textSize="16sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_pass1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

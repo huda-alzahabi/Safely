@@ -40,11 +40,11 @@ class SignUpActivity : AppCompatActivity() {
         alertDialog = builder.create()
 
         val sharedPrefFile = "kotlin_shared_preference"
-       sharedPreferences = this.getSharedPreferences(sharedPrefFile,
+        sharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         user_type = sharedPreferences.getString("user_type", "")!!
         var label = findViewById<TextView>(R.id.h_name)
-        if(user_type == "hospital") {
+        if (user_type == "hospital") {
             label.setText(applicationContext.resources.getString(R.string.h_name))
         }
 

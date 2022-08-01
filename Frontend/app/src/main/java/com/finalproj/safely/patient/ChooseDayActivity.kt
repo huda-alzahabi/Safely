@@ -35,15 +35,15 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
             }
 
         val apiService = RestApiService()
-        apiService.getAvailabilityByDrId(doctor_id,token) {
+        apiService.getAvailabilityByDrId(doctor_id, token) {
             daysList = it as List<DrAvailabilityResponse>
             Log.d("availability", it.toString())
             daysAdapter.submitList(daysList)
         }
 
-        doctor_name=intent.getStringExtra("doctor_name")!!
-        hospital_id=intent.getStringExtra("hospital_id")!!
-        hospital_name=intent.getStringExtra("hospital_name")!!
+        doctor_name = intent.getStringExtra("doctor_name")!!
+        hospital_id = intent.getStringExtra("hospital_id")!!
+        hospital_name = intent.getStringExtra("hospital_name")!!
 
         initRecyclerView()
         clickedNavItem()

@@ -36,10 +36,10 @@ class DoctorHomeActivity : AppCompatActivity() {
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")!!
-        val doctorId=sharedPreferences.getString("doctor_id", "")!!
+        val doctorId = sharedPreferences.getString("doctor_id", "")!!
         val apiService = RestApiService()
-        apiService.getAppointmentsByDrId(doctorId,token) {
-            appointmentsList=it as List<AppointmentResponse>
+        apiService.getAppointmentsByDrId(doctorId, token) {
+            appointmentsList = it as List<AppointmentResponse>
             appointmentsAdapter.submitList(appointmentsList)
             Log.d("appointments", it.toString())
         }
@@ -58,6 +58,7 @@ class DoctorHomeActivity : AppCompatActivity() {
             adapter = appointmentsAdapter
         }
     }
+
     //override oncreate options menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.doctor_navigation_menu, menu)
@@ -80,6 +81,7 @@ class DoctorHomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     private fun logout() {
         this.getSharedPreferences(sharedPrefFile, 0).edit().clear().apply();
         val intent = Intent(this, MainActivity::class.java)

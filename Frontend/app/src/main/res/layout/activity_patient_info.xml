@@ -16,14 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
-            android:textSize="30sp"
             android:text="@string/info"
             android:textColor="@color/white"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -32,10 +33,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="20dp"
-            android:text="@string/phone_num"
-            android:textColor="@color/blue"
             android:fontFamily="@font/laila"
-            />
+            android:text="@string/phone_num"
+            android:textColor="@color/blue" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phone_num1"
@@ -49,9 +49,9 @@
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone_num"
-                android:singleLine="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,8 +63,8 @@
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/laila"
             android:text="@string/dob"
-            android:textColor="@color/blue"
-             />
+            android:textColor="@color/blue" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dob1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -77,34 +77,36 @@
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/dob"
-                android:singleLine="true"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="85dp"
-            android:text="@string/nationality"
-            android:textColor="@color/blue"
-            android:fontFamily="@font/laila"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:text="@string/marital_status"
-            android:textColor="@color/blue"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="85dp"
+                android:fontFamily="@font/laila"
+                android:text="@string/nationality"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:text="@string/marital_status"
+                android:textColor="@color/blue"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,38 +149,43 @@
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
             android:text="@string/sex"
             android:textColor="@color/blue"
             android:textStyle="bold" />
+
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:checkedButton="@+id/radio_button_1"
-            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/radio_button_1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            android:text="@string/male"/>
-        <RadioButton
-            android:id="@+id/radio_button_2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            android:text="@string/female"/>
-        <RadioButton
-            android:id="@+id/radio_button_3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/other"/>
+            android:checkedButton="@+id/radio_button_1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/radio_button_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="32dp"
+                android:text="@string/female" />
+
+            <RadioButton
+                android:id="@+id/radio_button_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/other" />
         </RadioGroup>
 
 
@@ -190,10 +197,10 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#D90BA3D3"
+            android:fontFamily="@font/inter_extra_bold"
+            android:padding="13dp"
             android:text="@string/submit"
             android:textAllCaps="false"
-            android:padding="13dp"
-            android:fontFamily="@font/inter_extra_bold"
             android:textSize="17sp" />
 
     </LinearLayout>

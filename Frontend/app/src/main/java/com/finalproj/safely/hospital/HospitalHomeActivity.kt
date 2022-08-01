@@ -20,10 +20,10 @@ class HospitalHomeActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val name = sharedPreferences.getString("Name", "")!!
-        val nameText=findViewById<TextView>(R.id.hosp_name)
-        val phoneText=findViewById<TextView>(R.id.hosp_num)
-        val addrText=findViewById<TextView>(R.id.hosp_address)
-        val hosp_hours=findViewById<TextView>(R.id.hosp_hours)
+        val nameText = findViewById<TextView>(R.id.hosp_name)
+        val phoneText = findViewById<TextView>(R.id.hosp_num)
+        val addrText = findViewById<TextView>(R.id.hosp_address)
+        val hosp_hours = findViewById<TextView>(R.id.hosp_hours)
         val num = sharedPreferences.getString("phone_num", "")!!
         val address = sharedPreferences.getString("hospital_address", "")!!
         val hours = sharedPreferences.getString("hours", "")!!
@@ -40,6 +40,7 @@ class HospitalHomeActivity : AppCompatActivity() {
             Log.d("logout", "logout")
         }
     }
+
     private fun logout() {
         this.getSharedPreferences(sharedPrefFile, 0).edit().clear().apply();
         val intent = Intent(this, MainActivity::class.java)

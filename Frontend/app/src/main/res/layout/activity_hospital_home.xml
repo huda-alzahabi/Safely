@@ -21,78 +21,80 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/h_name"
-                android:textSize="20sp"
-                android:fontFamily="@font/laila"
                 android:layout_marginStart="20dp"
-                android:textColor="@color/blue_500" />
+                android:fontFamily="@font/laila"
+                android:text="@string/h_name"
+                android:textColor="@color/blue_500"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/hosp_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hospital"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
                 android:layout_marginStart="20dp"
-                android:textColor="?attr/custom_black" />
+                android:fontFamily="@font/inter"
+                android:text="@string/hospital"
+                android:textColor="?attr/custom_black"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/phone_num"
-                android:textSize="20sp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/laila"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/blue_500" />
+                android:text="@string/phone_num"
+                android:textColor="@color/blue_500"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/hosp_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hospital"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
                 android:layout_marginStart="20dp"
-                android:textColor="?attr/custom_black" />
+                android:fontFamily="@font/inter"
+                android:text="@string/hospital"
+                android:textColor="?attr/custom_black"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hours"
-                android:textSize="20sp"
-                android:fontFamily="@font/laila"
                 android:layout_marginStart="20dp"
-                android:textColor="@color/blue_500" />
+                android:fontFamily="@font/laila"
+                android:text="@string/hours"
+                android:textColor="@color/blue_500"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/hosp_hours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hospital"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
                 android:layout_marginStart="20dp"
-                android:textColor="?attr/custom_black" />
+                android:fontFamily="@font/inter"
+                android:text="@string/hospital"
+                android:textColor="?attr/custom_black"
+                android:textSize="18sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/address"
-                android:textSize="20sp"
-                android:fontFamily="@font/laila"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/blue_500" />
+                android:fontFamily="@font/laila"
+                android:text="@string/address"
+                android:textColor="@color/blue_500"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/hosp_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hospital"
-                android:textSize="18sp"
-                android:fontFamily="@font/inter"
                 android:layout_marginStart="20dp"
-                android:textColor="?attr/custom_black" />
+                android:fontFamily="@font/inter"
+                android:text="@string/hospital"
+                android:textColor="?attr/custom_black"
+                android:textSize="18sp" />
 
 
         </LinearLayout>

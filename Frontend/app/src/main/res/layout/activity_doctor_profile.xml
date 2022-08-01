@@ -25,15 +25,15 @@
             android:src="@drawable/doctorprof" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="45dp"
-        android:textSize="20sp"
-        android:fontFamily="@font/laila"
-        android:text="@string/specialty"
-        android:textColor="@color/blue" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/laila"
+            android:text="@string/specialty"
+            android:textColor="@color/blue"
+            android:textSize="20sp" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -43,40 +43,41 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp">
 
-        <AutoCompleteTextView
-            android:id="@+id/profession"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:text="------------------" />
+            <AutoCompleteTextView
+                android:id="@+id/profession"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:text="------------------" />
         </com.google.android.material.textfield.TextInputLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
-        android:fontFamily="@font/laila"
-        android:text="@string/years_of_experience"
-        android:textColor="@color/blue" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/laila"
+            android:text="@string/years_of_experience"
+            android:textColor="@color/blue"
+            android:textSize="20sp" />
 
-        <!--this is the actual edit text which takes the input-->
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/experience"
-            android:singleLine="true"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/experience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/submit_doctor"
             android:layout_width="match_parent"
@@ -85,10 +86,10 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="#D90BA3D3"
+            android:fontFamily="@font/inter_extra_bold"
+            android:padding="13dp"
             android:text="@string/submit"
             android:textAllCaps="false"
-            android:padding="13dp"
-            android:fontFamily="@font/inter_extra_bold"
             android:textSize="20sp" />
 
     </LinearLayout>

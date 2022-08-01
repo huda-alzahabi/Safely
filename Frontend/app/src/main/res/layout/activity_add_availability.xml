@@ -18,16 +18,18 @@
             android:layout_height="match_parent"
             android:scaleType="fitStart"
             android:src="@drawable/calendarbg" />
+
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="120dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="120dp"
             android:fontFamily="@font/inter"
             android:text="@string/pick"
             android:textColor="@color/white"
             android:textSize="20sp" />
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +42,6 @@
                 android:layout_height="wrap_content"
                 android:calendarTextColor="@color/black"
                 android:headerBackground="@android:color/transparent"
-
                 />
 
             <TextView
@@ -54,6 +55,7 @@
                 android:text="@string/multiple"
                 android:textColor="#969393"
                 android:textSize="15sp" />
+
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"

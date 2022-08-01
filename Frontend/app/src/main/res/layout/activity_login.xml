@@ -26,8 +26,8 @@
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/laila"
             android:text="@string/email"
-            android:textSize="16sp"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_email1"
@@ -55,8 +55,8 @@
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/laila"
             android:text="@string/password"
-            android:textSize="16sp"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_pass1"

@@ -4,25 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".patient.MapsActivity" >
+    tools:context=".patient.MapsActivity">
 
-<fragment
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight=".9"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"/>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".9" />
 
     <Button
         android:id="@+id/patient_confirm_location"
-        android:backgroundTint="#D90BA3D3"
-        android:padding="13dp"
-        android:fontFamily="@font/inter_extra_bold"
-        android:textSize="17sp"
-        android:textAllCaps="false"
-        android:text="@string/confirm_location"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="32dp"
-        android:layout_weight=".1" />
+        android:layout_weight=".1"
+        android:backgroundTint="#D90BA3D3"
+        android:fontFamily="@font/inter_extra_bold"
+        android:padding="13dp"
+        android:text="@string/confirm_location"
+        android:textAllCaps="false"
+        android:textSize="17sp" />
 </LinearLayout>

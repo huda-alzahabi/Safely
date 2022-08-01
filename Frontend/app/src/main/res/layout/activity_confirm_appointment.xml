@@ -5,61 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".patient.ConfirmAppointmentActivity">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitStart"
         android:src="@drawable/login" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/appointment_summary"
-        android:fontFamily="@font/laila"
         android:layout_gravity="center_horizontal"
-        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/laila"
+        android:text="@string/appointment_summary"
         android:textColor="?attr/custom_black"
-        android:layout_marginTop="30dp"/>
+        android:textSize="25sp" />
+
     <TextView
         android:id="@+id/appointment_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/appointment_date"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/inter"
-        android:textSize="20sp"
+        android:text="@string/appointment_date"
         android:textColor="?attr/custom_black"
-        android:layout_marginTop="100dp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/appointment_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/appointment_time"
-        android:fontFamily="@font/inter"
-        android:textSize="20sp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="135dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/appointment_time"
         android:textColor="?attr/custom_black"
-        android:layout_marginTop="135dp"/>
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/appointment_doctor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/doctor"
-        android:fontFamily="@font/inter"
-        android:textSize="20sp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/doctor"
         android:textColor="?attr/custom_black"
-        android:layout_marginTop="170dp"/>
+        android:textSize="20sp" />
+
     <TextView
         android:id="@+id/appointment_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/appointment_location"
-        android:fontFamily="@font/inter"
-        android:textSize="20sp"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="205dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/appointment_location"
         android:textColor="?attr/custom_black"
-        android:layout_marginTop="205dp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/confirm_appointment"
@@ -69,11 +74,12 @@
         android:layout_marginTop="320dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#D90BA3D3"
-        android:padding="13dp"
         android:fontFamily="@font/inter_extra_bold"
-        android:textSize="17sp"
+        android:padding="13dp"
         android:text="@string/confirm_appointment"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textSize="17sp" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

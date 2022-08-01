@@ -149,7 +149,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             longitude = longitude,
             latitude = latitude
         )
-        apiService.addPatientLocation(patientId, location,token) {
+        apiService.addPatientLocation(patientId, location, token) {
             Log.d("LOCATION", location.toString())
             if (it != null) {
                 Log.d("Location", it.toString())

@@ -96,9 +96,9 @@
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/blood_type"
-                    android:singleLine="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,9 +123,9 @@
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/current_medications"
-                    android:singleLine="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -150,9 +150,9 @@
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/chronic_diseases"
-                    android:singleLine="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -176,9 +176,9 @@
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/allergies"
-                    android:singleLine="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

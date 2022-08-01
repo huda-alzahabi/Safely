@@ -90,7 +90,7 @@ class PatientInfoActivity : AppCompatActivity() {
             marital_status = maritalStatus,
             user = user
         )
-        apiService.addPatient(patientInfo,token) {
+        apiService.addPatient(patientInfo, token) {
             Log.d("PATIENT", patientInfo.toString())
             if (it != null) {
                 Log.d("Patienttt", it.toString())

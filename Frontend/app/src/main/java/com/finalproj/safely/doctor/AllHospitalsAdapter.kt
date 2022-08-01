@@ -49,7 +49,7 @@ class AllHospitalsAdapter(private val listener: OnItemClickListener) :
     inner class HospitalViewHolder
     constructor(
         itemView: View,
-    ) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
+    ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
@@ -65,21 +65,23 @@ class AllHospitalsAdapter(private val listener: OnItemClickListener) :
                 listener.onItemClick(position)
             }
         }
-            fun bind(hospitalResponse: HospitalResponse) {
 
-                val requestOptions = RequestOptions()
-                    .placeholder(R.drawable.hospital)
-                    .error(R.drawable.hospital)
+        fun bind(hospitalResponse: HospitalResponse) {
 
-                Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(hospitalResponse.user.name)
-                    .into(img)
-                txt.setText(hospitalResponse.user.name)
-                sub_txt.setText(hospitalResponse.phone_number)
+            val requestOptions = RequestOptions()
+                .placeholder(R.drawable.hospital)
+                .error(R.drawable.hospital)
 
-            }
+            Glide.with(itemView.context)
+                .applyDefaultRequestOptions(requestOptions)
+                .load(hospitalResponse.user.name)
+                .into(img)
+            txt.setText(hospitalResponse.user.name)
+            sub_txt.setText(hospitalResponse.phone_number)
+
         }
+    }
+
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -88,7 +90,8 @@ class AllHospitalsAdapter(private val listener: OnItemClickListener) :
                 if (constraint == null || constraint.isEmpty()) {
                     filteredList.addAll(fullList)
                 } else {
-                    val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
+                    val filterPattern =
+                        constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
                     for (item in fullList) {
                         if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
                             filteredList.add(item)
@@ -99,13 +102,15 @@ class AllHospitalsAdapter(private val listener: OnItemClickListener) :
                 results.values = filteredList
                 return results
             }
+
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 items = results?.values as List<HospitalResponse>
                 notifyDataSetChanged()
             }
         }
     }
-        interface OnItemClickListener {
-            fun onItemClick(position:Int)
-        }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
+}

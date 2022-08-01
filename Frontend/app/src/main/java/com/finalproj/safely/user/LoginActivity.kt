@@ -99,7 +99,7 @@ class LoginActivity : AppCompatActivity() {
                 if (user_type == "patient") {
                     apiService.getPatientByUserId(_id, token) {
                         if (it != null) {
-                            Log.d("itttttt", it.toString())
+                            Log.d("patient logged in", it.toString())
                             val patientId = it._id
                             editor.putString("patient_id", patientId)
                             editor.apply()
@@ -115,7 +115,7 @@ class LoginActivity : AppCompatActivity() {
                     if (user_type == "doctor") {
                         apiService.getDoctorByUserId(_id, token) {
                             if (it != null) {
-                                Log.d("itttttt", it.toString())
+                                Log.d("doctor logged in", it.toString())
                                 val doctorId = it._id
                                 editor.putString("doctor_id", doctorId)
                                 editor.apply()
@@ -132,7 +132,7 @@ class LoginActivity : AppCompatActivity() {
                         if (user_type == "hospital") {
                             apiService.getHospitalByUserId(_id, token) {
                                 if (it != null) {
-                                    Log.d("itttttt", it.toString())
+                                    Log.d("hospital logged in", it.toString())
                                     val hospitalId = it._id
                                     val hospitalAddress =
                                         it.address.street + ", " + it.address.city + ", " + it.address.country

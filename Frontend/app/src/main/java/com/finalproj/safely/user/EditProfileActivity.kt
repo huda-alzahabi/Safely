@@ -46,16 +46,14 @@ class EditProfileActivity : AppCompatActivity() {
             val edit_pass = findViewById<EditText>(R.id.edit_pass).text.toString()
 
             editProfile(edit_name, edit_email, edit_pass, usertype)
-            if(usertype == "patient"){
+            if (usertype == "patient") {
                 val intent = Intent(this, PatientHomeActivity::class.java)
                 startActivity(intent)
-            }
-            else if(usertype == "doctor"){
+            } else if (usertype == "doctor") {
                 val intent = Intent(this, DoctorHomeActivity::class.java)
                 startActivity(intent)
-            }
-            else if(usertype == "hospital"){
-                val intent = Intent(this,HospitalHomeActivity::class.java)
+            } else if (usertype == "hospital") {
+                val intent = Intent(this, HospitalHomeActivity::class.java)
                 startActivity(intent)
             }
 
@@ -79,7 +77,7 @@ class EditProfileActivity : AppCompatActivity() {
         val token = sharedPreferences.getString("Token", "")!!
         val apiService = RestApiService()
         val userInfo = UserInfo(editedName, editedEmail, editedPass, usertype)
-        apiService.editUserProfile(user, userInfo,token) {
+        apiService.editUserProfile(user, userInfo, token) {
             if (it != null) {
                 Log.d("User Updated", it.toString())
             } else {

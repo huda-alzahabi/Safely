@@ -9,4 +9,4 @@ data class PatientInfo(
     @SerializedName("sex") val sex: String?,
     @SerializedName("marital_status") val marital_status: String?,
     @SerializedName("user") val user: String?,
-    )
+)

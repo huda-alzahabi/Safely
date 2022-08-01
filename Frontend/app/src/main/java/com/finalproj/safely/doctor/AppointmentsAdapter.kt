@@ -16,7 +16,8 @@ class AppointmentsAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return AppointmentViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.appointments_card_view, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.appointments_card_view, parent, false)
         )
     }
 

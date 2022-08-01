@@ -8,7 +8,7 @@ data class DrAvailabilityResponse(
     var _id: String,
 
 
-) {
+    ) {
     override fun toString(): String {
         return "DrAvailabilityResponse(user_appointment=$user_appointment, day='$day', times=$times, doctor='$doctor', _id='$_id')"
     }

@@ -7,15 +7,6 @@
     android:background="?attr/custom_beige"
     tools:context=".patient.PatientDoctorsActivity">
 
-    <FrameLayout
-        android:id="@+id/fl_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_nav">
-
-
-    </FrameLayout>
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

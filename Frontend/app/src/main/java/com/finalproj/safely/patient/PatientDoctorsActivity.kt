@@ -21,7 +21,6 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
     private lateinit var hospital_name: String
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_doctors)
@@ -37,12 +36,12 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
         val token = sharedPreferences.getString("Token", "")!!
 
         val apiService = RestApiService()
-        apiService.getDrs(hospital_id,token) {
+        apiService.getDrs(hospital_id, token) {
             Log.d("doctors", it.toString())
             doctorsList = it as List<DoctorResponse>
             doctorAdapter.submitList(doctorsList)
         }
-        hospital_name=intent.getStringExtra("hospital_name")!!
+        hospital_name = intent.getStringExtra("hospital_name")!!
 
         searchDrs()
         initRecyclerView()
@@ -88,39 +87,40 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
             }
         })
     }
-        private fun clickedNavItem() {
-            val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-            bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
 
-            bottomnav.setOnItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.nav_home -> {
-                        val intent =
-                            Intent(this@PatientDoctorsActivity, PatientHomeActivity::class.java)
-                        startActivity(intent)
-                    }
-                    R.id.nav_hospitals -> {
-                        val intent =
-                            Intent(this@PatientDoctorsActivity, NearbyHospitalsActivity::class.java)
-                        startActivity(intent)
-                    }
-                    R.id.nav_location -> {
-                        val intent = Intent(this@PatientDoctorsActivity, MapsActivity::class.java)
-                        startActivity(intent)
-                    }
-                    R.id.nav_records -> {
-                        val intent =
-                            Intent(this@PatientDoctorsActivity,
-                                AddMedicalRecordsActivity::class.java)
-                        startActivity(intent)
-                    }
-                    R.id.nav_profile -> {
-                        val intent =
-                            Intent(this@PatientDoctorsActivity, EditProfileActivity::class.java)
-                        startActivity(intent)
-                    }
+    private fun clickedNavItem() {
+        val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomnav.menu.findItem(R.id.nav_hospitals).isChecked = true;
+
+        bottomnav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    val intent =
+                        Intent(this@PatientDoctorsActivity, PatientHomeActivity::class.java)
+                    startActivity(intent)
                 }
-                return@setOnItemSelectedListener true
+                R.id.nav_hospitals -> {
+                    val intent =
+                        Intent(this@PatientDoctorsActivity, NearbyHospitalsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_location -> {
+                    val intent = Intent(this@PatientDoctorsActivity, MapsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_records -> {
+                    val intent =
+                        Intent(this@PatientDoctorsActivity,
+                            AddMedicalRecordsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_profile -> {
+                    val intent =
+                        Intent(this@PatientDoctorsActivity, EditProfileActivity::class.java)
+                    startActivity(intent)
+                }
             }
+            return@setOnItemSelectedListener true
         }
     }
+}

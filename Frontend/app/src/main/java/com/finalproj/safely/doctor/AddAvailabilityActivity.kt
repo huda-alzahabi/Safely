@@ -22,9 +22,10 @@ class AddAvailabilityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_availability)
 
-        val layout =layoutInflater.inflate(R.layout.toast,findViewById(R.id.toast_wrapper)) as LinearLayout
+        val layout =
+            layoutInflater.inflate(R.layout.toast, findViewById(R.id.toast_wrapper)) as LinearLayout
 
-        val toast=layout.findViewById<TextView>(R.id.toast_text)
+        val toast = layout.findViewById<TextView>(R.id.toast_text)
 
 
         val sharedPrefFile = "kotlin_shared_preference"
@@ -34,7 +35,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
 
         val add_availability = findViewById<Button>(R.id.submit_day)
         add_availability.setOnClickListener {
-            toast.text=  "Availability added successfully"
+            toast.text = "Availability added successfully"
             Toast(this@AddAvailabilityActivity).apply {
                 duration = Toast.LENGTH_LONG
                 setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 30)
@@ -54,7 +55,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
         timeslot.setAdapter(timeAdapter)
         timeslot.setOnItemClickListener { parent, _view, position, id ->
             picked_times = addElement(times[position])
-            toast.text=  picked_times.toString()
+            toast.text = picked_times.toString()
             Toast(this@AddAvailabilityActivity).apply {
                 duration = Toast.LENGTH_LONG
                 setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 30)

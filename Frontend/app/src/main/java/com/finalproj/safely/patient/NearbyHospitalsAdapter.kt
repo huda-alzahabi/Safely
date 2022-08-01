@@ -49,7 +49,7 @@ class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
     inner class HospitalViewHolder
     constructor(
         itemView: View,
-    ) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
+    ) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         val txt = itemView.findViewById<View>(R.id.txt) as TextView
         val sub_txt = itemView.findViewById<View>(R.id.sub_txt) as TextView
@@ -66,31 +66,41 @@ class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
                 listener.onItemClick(position)
             }
         }
-            fun bind(hospitalResponse: HospitalResponse) {
 
-                val requestOptions = RequestOptions()
-                    .placeholder(R.drawable.hospital)
-                    .error(R.drawable.hospital)
+        fun bind(hospitalResponse: HospitalResponse) {
 
-                Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(hospitalResponse.user.name)
-                    .into(img)
-                val applicationContext: Context = itemView.context
-                val hospital_name=hospitalResponse.user.name+" " +applicationContext.resources.getString(R.string.hospital)
+            val requestOptions = RequestOptions()
+                .placeholder(R.drawable.hospital)
+                .error(R.drawable.hospital)
 
-                txt.setText(hospital_name)
+            Glide.with(itemView.context)
+                .applyDefaultRequestOptions(requestOptions)
+                .load(hospitalResponse.user.name)
+                .into(img)
+            val applicationContext: Context = itemView.context
+            val hospital_name =
+                hospitalResponse.user.name + " " + applicationContext.resources.getString(R.string.hospital)
 
-                val distance=hospitalResponse.distance+" " +applicationContext.resources.getString(R.string.away)
-                sub_txt.setText(distance)
-                sub_txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_hospital_location_on_24, 0, 0, 0);
+            txt.setText(hospital_name)
 
-                sub_txt2.setText(hospitalResponse.phone_number)
-                sub_txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_phone_24, 0, 0, 0);
+            val distance =
+                hospitalResponse.distance + " " + applicationContext.resources.getString(R.string.away)
+            sub_txt.setText(distance)
+            sub_txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_hospital_location_on_24,
+                0,
+                0,
+                0);
+
+            sub_txt2.setText(hospitalResponse.phone_number)
+            sub_txt2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_phone_24,
+                0,
+                0,
+                0);
 
 
-            }
         }
+    }
+
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -99,9 +109,13 @@ class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
                 if (constraint == null || constraint.isEmpty()) {
                     filteredList.addAll(fullList)
                 } else {
-                    val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
+                    val filterPattern =
+                        constraint.toString().lowercase(Locale.ROOT).trim { it <= ' ' }
                     for (item in fullList) {
-                        if (item.user.name?.lowercase(Locale.ROOT)!!.contains(filterPattern)||item.distance?.lowercase(Locale.ROOT)!!.contains(filterPattern)) {
+                        if (item.user.name?.lowercase(Locale.ROOT)!!
+                                .contains(filterPattern) || item.distance?.lowercase(Locale.ROOT)!!
+                                .contains(filterPattern)
+                        ) {
                             filteredList.add(item)
                         }
                     }
@@ -110,13 +124,15 @@ class NearbyHospitalsAdapter(private val listener: OnItemClickListener) :
                 results.values = filteredList
                 return results
             }
+
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 items = results?.values as List<HospitalResponse>
                 notifyDataSetChanged()
             }
         }
     }
-        interface OnItemClickListener {
-            fun onItemClick(position:Int)
-        }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
+}

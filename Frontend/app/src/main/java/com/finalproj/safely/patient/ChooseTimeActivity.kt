@@ -19,7 +19,7 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
     private lateinit var availability_id: String
     private lateinit var timesAdapter: TimesAdapter
     private lateinit var timesList: ArrayList<String>
-    private lateinit var appointment_day:String
+    private lateinit var appointment_day: String
     private lateinit var doctor_id: String
     private lateinit var doctor_name: String
     private lateinit var hospital_id: String
@@ -36,24 +36,24 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
                 Log.d("availability_id", it)
             }
         Log.d("DD", intent.getStringExtra("appointment_day")!!)
-         appointment_day = intent.getStringExtra("appointment_day")!!
+        appointment_day = intent.getStringExtra("appointment_day")!!
         val sharedPrefFile = "kotlin_shared_preference"
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")!!
 
         val apiService = RestApiService()
-        apiService.getTimesByAvailabilityId(availability_id,token) {
+        apiService.getTimesByAvailabilityId(availability_id, token) {
             if (it != null) {
                 timesList = it.times as ArrayList<String>
             }
             Log.d("times", it.toString())
             timesAdapter.submitList(timesList)
         }
-        doctor_id=intent.getStringExtra("doctor_id")!!
-        doctor_name=intent.getStringExtra("doctor_name")!!
-        hospital_id= intent.getStringExtra("hospital_id")!!
-        hospital_name=intent.getStringExtra("hospital_name")!!
+        doctor_id = intent.getStringExtra("doctor_id")!!
+        doctor_name = intent.getStringExtra("doctor_name")!!
+        hospital_id = intent.getStringExtra("hospital_id")!!
+        hospital_name = intent.getStringExtra("hospital_name")!!
 
         initRecyclerView()
         clickedNavItem()

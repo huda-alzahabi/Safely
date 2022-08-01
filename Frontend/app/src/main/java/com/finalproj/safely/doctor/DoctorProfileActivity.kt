@@ -51,7 +51,7 @@ class DoctorProfileActivity : AppCompatActivity() {
         user: String,
     ) {
         sharedPreferences = this.getSharedPreferences(sharedPrefFile,
-        Context.MODE_PRIVATE)
+            Context.MODE_PRIVATE)
 
         val apiService = RestApiService()
         val doctor =
@@ -61,7 +61,7 @@ class DoctorProfileActivity : AppCompatActivity() {
                 user = user)
 
         val token = sharedPreferences.getString("Token", "")!!
-        apiService.addDoctor(doctor,token) {
+        apiService.addDoctor(doctor, token) {
             Log.d("DOCC", doctor.toString())
             if (it != null) {
                 Log.d("DOCT", it.toString())

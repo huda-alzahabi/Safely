@@ -30,7 +30,7 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         Log.d("patientId", patientId)
 
         val apiService = RestApiService()
-        apiService.findNearbyHospitals(patientId,token) {
+        apiService.findNearbyHospitals(patientId, token) {
             hospitalsList = it as List<HospitalResponse>
             Log.d("hospitals", it.toString())
             nearbyHospitalsAdapter.submitList(hospitalsList)

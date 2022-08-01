@@ -8,14 +8,13 @@ data class DoctorResponse(
     var years_of_experience: String,
     var hospital: String,
     var availability: ArrayList<DrAvailabilityResponse>,
-    var user: UserInfo
+    var user: UserInfo,
 
     ) {
 
     override fun toString(): String {
         return "Doctor(specialty='$specialty',years_of_experience='$years_of_experience',hospital='$hospital', user='$user' ,_id='$_id',availability='$availability')"
     }
-
 
 
 }

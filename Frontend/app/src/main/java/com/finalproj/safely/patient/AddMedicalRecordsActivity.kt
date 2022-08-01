@@ -62,8 +62,8 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
             blood_type = bloodType,
             weight = weight,
             height = height
-            )
-        apiService.submitRecords(patientId,medicalRecords,token) {
+        )
+        apiService.submitRecords(patientId, medicalRecords, token) {
             Log.d("Records", medicalRecords.toString())
             if (it != null) {
                 Log.d("Medss", it.toString())
@@ -72,6 +72,7 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun clickedNavItem() {
         val bottomnav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomnav.menu.findItem(R.id.nav_records).isChecked = true;

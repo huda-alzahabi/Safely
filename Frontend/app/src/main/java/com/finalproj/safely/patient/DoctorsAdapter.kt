@@ -87,7 +87,8 @@ class DoctorsAdapter(private val listener: OnItemClickListener) :
                 0,
                 0);
             val applicationContext: Context = itemView.context
-            val exp=doctor.years_of_experience+ " " + applicationContext.getString(R.string.years_of_experience)
+            val exp =
+                doctor.years_of_experience + " " + applicationContext.getString(R.string.years_of_experience)
             sub_txt2.setText(exp)
 
         }

@@ -17,8 +17,8 @@ import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
         val sharedPrefFile = "kotlin_shared_preference"
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
@@ -31,22 +31,19 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
                 startActivity(intent)
                 finish()
-            } else if(user_type == "patient") {
+            } else if (user_type == "patient") {
                 val intent = Intent(this@MainActivity, PatientHomeActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            else if(user_type == "doctor") {
+            } else if (user_type == "doctor") {
                 val intent = Intent(this@MainActivity, DoctorHomeActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            else if(user_type == "hospital") {
+            } else if (user_type == "hospital") {
                 val intent = Intent(this@MainActivity, HospitalHomeActivity::class.java)
                 startActivity(intent)
                 finish()
-            }
-            else{
+            } else {
                 val intent = Intent(this@MainActivity, WelcomeActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -54,5 +51,6 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-} }
+    }
+}
 

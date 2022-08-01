@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f2f5f8"
-    tools:context=".doctor.AllHospitalsActivity"
-   >
+    tools:context=".doctor.AllHospitalsActivity">
+
     <ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scaleType="fitStart"
-    android:src="@drawable/userinfo_bg" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitStart"
+        android:src="@drawable/userinfo_bg" />
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -22,10 +22,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/laila"
             android:text="@string/choose_workplace"
-           android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
             android:textColor="@color/white"
             android:textSize="22sp" />
 

@@ -38,14 +38,14 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/calendar"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/inter"
-                android:textColor="?attr/custom_black"
-                android:id="@+id/calendar"
-                android:src="@drawable/ic_baseline_calendar_month_24" />
+                android:src="@drawable/ic_baseline_calendar_month_24"
+                android:textColor="?attr/custom_black" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -99,8 +99,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitEnd"
             android:layout_marginTop="130dp"
+            android:scaleType="fitEnd"
             android:src="@drawable/home_image" />
 
         <ImageView
