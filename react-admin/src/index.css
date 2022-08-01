@@ -61,10 +61,54 @@ h2,
 .chart {
   margin-left: 30px;
 }
-.title {
-  margin-left: 130px;
+.users_title {
+  margin-left: 120px;
   font-family: "Laila", sans-serif !important;
   font-weight: bold;
   color: #0ba3d3;
   font-size: 30px;
+}
+.doctors_title {
+  text-align: center;
+  margin-right: 160px;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bold;
+  color: #0ba3d3;
+  font-size: 30px;
+}
+.charts {
+  display: flex;
+}
+.sidenav {
+  margin-top: 70px;
+  display: "block";
+  width: fit-content;
+  background-color:white !important;
+  color: #0ba3d3 !important;
+    margin-left: 0px;
+
+}
+.logo {
+  width: 180px;
+  height: 100px;
+}
+.item {
+  background-color:white !important;
+  color: #0ba3d3 !important;
+  font-family: "Inter", sans-serif !important;
+}
+.rs-sidenav-toggle {
+  border-top: none !important;
+}
+.rs-sidenav-toggle-button {
+  background-color: white !important;
+  border-radius: 20px;
+}
+.rs-sidenav-item-active{
+  background-color: #b6e4f2 !important;
+  color: white !important;
+  font-weight: bold;
+}
+.rs-btn-icon.rs-btn>.rs-icon {
+  color: #0ba3d3 !important;
 }
