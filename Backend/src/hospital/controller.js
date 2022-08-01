@@ -63,9 +63,20 @@ async function getHospitalByUserId(req, res) {
   }
 }
 
+async function getHospitalsCount(req, res) {
+  try {
+    const result = await getHospitals();
+    console.log("result =>", result);
+    return res.send({hospitals:result.length});
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   add,
   get,
   addHospitalLocation,
-  getHospitalByUserId
+  getHospitalByUserId,
+  getHospitalsCount
 };
