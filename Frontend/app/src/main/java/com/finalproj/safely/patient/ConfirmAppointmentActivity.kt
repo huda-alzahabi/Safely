@@ -36,6 +36,7 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
     lateinit var patient_name: String
     val sharedPrefFile = "kotlin_shared_preference"
     lateinit var sharedPreferences: SharedPreferences
+    lateinit var notification_token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,8 +48,8 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
                 Log.w(ContentValues.TAG, "Fetching FCM registration token failed", task.exception)
                 return@OnCompleteListener
             }
-            val token = task.result
-            Log.d(ContentValues.TAG, token)
+            notification_token = task.result
+            Log.d(ContentValues.TAG, notification_token)
         })
         appointment_day = intent.getStringExtra("appointment_day")!!
         appointment_time = intent.getStringExtra("appointment_time")!!
@@ -135,10 +136,17 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         }
         val newAppointment = applicationContext.resources.getString(R.string.new_appointment)
         val details = "$appointmentDay, $appointmentTime"
+        if(notification_token!=""){
+            pushNotification(this,
+                notification_token,
+                newAppointment,
+                details)
+        }
+        else{
         pushNotification(this,
             "e3AAQ4LAQBm7Yi4FZJVK3N:APA91bHPott-AD22wGSmg_kUYeUCms5nVejBDFAkIaK7LL-Pr4aiz8V-3Naci3DgQYQIDYFIZrEM9WrGZ4FjbykTXVbk0OChD-pJWpAAwnLICdzca1_PbYsGtfSVRxKzTamiKFcgYs8D",
             newAppointment,
-            details)
+            details)}
         val intent =
             Intent(this@ConfirmAppointmentActivity, PatientHomeActivity::class.java)
         intent.putExtra("appointment_day", appointment_day)
@@ -181,7 +189,6 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
                     headers["Content-Type"] = "application/json"
                     return headers
                 }
-
             }
             requestQueue.add(request)
 
