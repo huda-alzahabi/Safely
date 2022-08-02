@@ -55,9 +55,9 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | ------- |  ------- | -------    |-------  |
 | ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) | ![User Type](readme/figma_usertype.png) | ![Signup](readme/figma_signup.png) |
 
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
-| ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
+| Location |  Hospitals   | Doctors  | Availability  |
+| ------- |  ------- | -------    |-------  |
+| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | ![Availability](readme/figma_availability.png) |
 
 
 <br><br>
