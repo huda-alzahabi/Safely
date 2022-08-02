@@ -79,6 +79,10 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 | -----------------| -----|-----|
 | ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Home/ Nearby Hospitals](readme/patient.gif) |
 
+| Doctors  | Choose Day/Time   | Confirm Appointment|
+| -----------------| -----|-----|
+| ![Book Appointment](readme/doctors.gif) | ![Choose Day/Time](readme/day_time.gif) | ![Confirm Appointment](readme/patient.gif) |
+
 
 <br><br>
 <img id="how-to-run" src="./readme/title6.svg"/>
