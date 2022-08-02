@@ -77,7 +77,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 | Welcome/Login  | Signup Failed  |
 | -----------------| -----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_inuse.gif) |
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email.gif) |
 
 
 <br><br>
