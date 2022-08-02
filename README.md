@@ -4,34 +4,56 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
 
-**[PROJECT PHILOSOPHY](https://github.com/julescript/well_app#-project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
+**[PROJECT PHILOSOPHY](https://github.com/huda-alzahabi/Safely#project-philosophy) • [WIREFRAMES](https://github.com/huda-alzahabi/Safely#wireframes) • [TECH STACK](https://github.com/huda-alzahabi/Safely#tech-stack) • [IMPLEMENTATION](https://github.com/huda-alzahabi/Safely#implementation) • [HOW TO RUN?](https://github.com/huda-alzahabi/Safely#how-to-run)**
 
 </div>
 
 <br><br>
 
 
-<img src="./readme/title2.svg"/>
+<img id="project-philosophy" src="./readme/title2.svg"/>
 
-> The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
-> 
-> There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
+> Safely is a medical app built to facilitate patients' lives. Safely is more than just a random medical app; it stores your medical records and directs you to the nearest hospitals to your location, wherever you are.
 
 ### User Stories
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
+
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a patient: 
+
+- I want to store my medical records so I can access them whenever I want.
+- I want to find the nearest hospital to me so I can get the best service.
+- I want to know the distance between me and the nearby hospitals in KM.
+- I want to be able to see the doctors' professions and years of experience so I can book appoitments with them.
+- I want to travel without worrying about my medications and treatment.
+
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a doctor: 
+
+- I want to be able to choose the hospital I work at.
+- I want to add my available time slots for appointments.
+- I want to view the scheduled appointments with me.
+
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a hospital: 
+
+- I want to add my location, my address, and outpatient clinics working hours, so the patient can find me.
+
+### Admin Stories
+
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
+
+- I want to view, edit, delete users, and add new ones.
+- I want to view statistics about the app.
+
+
 
 <br><br>
 
-<img src="./readme/title3.svg"/>
+<img id="wireframes" src="./readme/title3.svg"/>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
-Note that i didn't use any styling library or theme, all from scratch and using pure css modules
+Note that i didn't use any styling library or theme, all from scratch and using pure css and xml modules
 
 | Landing  | Home/Search  |
 | -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Landing](readme/figma_welcome.png) (readme/figma_usertype.png)| ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
@@ -40,7 +62,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 <br><br>
 
-<img src="./readme/title4.svg"/>
+<img id="tech-stack" src="./readme/title4.svg"/>
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 
@@ -53,7 +75,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 
 <br><br>
-<img src="./readme/title5.svg"/>
+<img id="implementation" src="./readme/title5.svg"/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
@@ -63,7 +85,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 
 <br><br>
-<img src="./readme/title6.svg"/>
+<img id="how-to-run" src="./readme/title6.svg"/>
 
 
 > This is an example of how you may give instructions on setting up your project locally.
