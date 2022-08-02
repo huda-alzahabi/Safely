@@ -84,12 +84,15 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 <img id="how-to-run" src="./readme/title6.svg"/>
 
 
-> This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+> To run the backend of the app, you need the following command:
+
+      ```bash
+      npm start
+      ```
+> To run the frontend of the app, you need to open it in Android studio and click on the “Run” button, if you have an emulator, or plug an android device.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -106,7 +109,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API in `local.properties` 
+4. Enter your API in `local.properties` in Frontend Folder 
    ```js
    MAPS_API_KEY = 'ENTER YOUR API';
    ```
