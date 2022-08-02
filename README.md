@@ -53,7 +53,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Home/Search  |
 | -----------------| -----|
-| ![Landing](readme/figma_welcome.png)| ![Login/Signup](readme/figma_login_signup.jpg) |
+| ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) |![Signup](readme/figma_signup.png) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
