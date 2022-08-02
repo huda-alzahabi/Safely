@@ -81,7 +81,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 | Doctors  | Choose Day/Time   | Confirm Appointment|
 | -----------------| -----|-----|
-| ![Book Appointment](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+| ![Book Appointment](readme/doctors.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
 
 <br><br>
