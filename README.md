@@ -39,13 +39,6 @@
 
 - I want to add my location, my address, and outpatient clinics working hours, so the patient can find me.
 
-### Admin Stories
-
-#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
-
-- I want to view statistics about the app, so that I know how many users are using it.
-
-
 
 <br><br>
 
@@ -73,7 +66,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 - For persistent storage (database), the app uses [MongoDB](https://www.mongodb.com/atlas/database) to store the data and [Node.js](https://nodejs.org/en/) to serve the data.
 - To send push notifications, the app uses [firebase](https://firebase.google.com/docs) which supports Android, iOS, and macOS.
-- The app uses the fonts [Inter] (https://fonts.google.com/specimen/Inter) and [Laila] (https://fonts.google.com/?query=Laila) as its main fonts, and the design of the app adheres to the material design guidelines.
+- The app uses the fonts [Inter](https://fonts.google.com/specimen/Inter) and [Laila](https://fonts.google.com/?query=Laila) as its main fonts, and the design of the app adheres to the material design guidelines.
 
 
 
