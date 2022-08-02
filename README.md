@@ -17,19 +17,23 @@
 
 ### User Stories
 
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a user: 
+
+- I want to change the language of my app so that I can use it freely.
+- I want to change the theme to dark so that I use it comfortably at night.
+
+
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a patient: 
 
-- I want to store my medical records so I can access them whenever I want.
-- I want to find the nearest hospital to me so I can get the best service.
-- I want to know the distance between me and the nearby hospitals in KM.
-- I want to be able to see the doctors' professions and years of experience so I can book appoitments with them.
-- I want to travel without worrying about my medications and treatment.
+- I want to store my medical records so that I can access them whenever I want.
+- I want to use Google Maps to locate me so that I can find the nearest hospitals.
+- I want to be able to see the doctors' professions and years of experience so that I can book appoitments with them.
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a doctor: 
 
-- I want to be able to choose the hospital I work at.
-- I want to add my available time slots for appointments.
-- I want to view the scheduled appointments with me.
+- I want to be able to choose the hospital I work at, so that the patients can find me.
+- I want to add my available time slots for appointments, so that the patients can access them.
+- I want to receive notification about scheduled appointments, so that I become aware of the patient name and appointment date.
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As a hospital: 
 
@@ -39,8 +43,7 @@
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
 
-- I want to view, edit, delete users, and add new ones.
-- I want to view statistics about the app.
+- I want to view statistics about the app, so that I know how many users are using it.
 
 
 
@@ -55,29 +58,29 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | ------- |  ------- | -------    |-------  |
 | ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) | ![User Type](readme/figma_usertype.png) | ![Signup](readme/figma_signup.png) |
 
-| Location |  Hospitals   | Doctors  | Availability  |
-| ------- |  ------- | -------    |-------  |
-| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | ![Availability](readme/figma_availability.png) |
+| Location |  Hospitals   | Doctors  |
+| ------- |  ------- | -------    |
+| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
 
 
 <br><br>
 
 <img id="tech-stack" src="./readme/title4.svg"/>
 
-Here's a brief high-level overview of the tech stack the Well app uses:
+Here's a brief high-level overview of the tech stack the Safely uses:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+- This project uses the [Kotlin language](https://kotlinlang.org/docs/home.html). Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference, announced by google as the preferred language for Android app developers.
+
+- For persistent storage (database), the app uses  [MongoDB](https://www.mongodb.com/atlas/database) to store the data.
+- To send push notifications, the app uses [firebase](https://firebase.google.com/docs) which supports Android, iOS, and macOS.
+- The app uses the fonts ["Inter"] (https://fonts.google.com/specimen/Inter) and ["Laila"] (https://fonts.google.com/?query=Laila) as its main fonts, and the design of the app adheres to the material design guidelines.
 
 
 
 <br><br>
 <img id="implementation" src="./readme/title5.svg"/>
 
-> Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
+> Using the above mentioned tech stacks and the wireframes built with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
 | Landing  | Home/Search  |
 | -----------------| -----|
