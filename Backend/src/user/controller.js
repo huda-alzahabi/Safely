@@ -15,11 +15,18 @@ async function get(req, res) {
       console.log("result of specific user =>", result);
       return res.send(result);
     }
-
     const result = await getUsers();
-    console.log("result =>", result);
 
-    return res.send(result);
+    const resultSorted = result.sort((a, b) => {
+      if (a.userType < b.userType) {
+        return -1;
+      }
+      if (a.userType > b.userType) {
+        return 1;
+      }
+      return 0;
+    });
+    return res.send(resultSorted);
   } catch (error) {
     console.log(error);
   }
@@ -53,7 +60,12 @@ async function login(req, res) {
     if (!validPassword) return res.status(400).send("invalid credentials");
 
     const token = jwt.sign(
-      { _id: user._id, name: user.name, email: user.email, userType: user.userType },
+      {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        userType: user.userType,
+      },
       TOKEN_SECRET
     );
 
@@ -78,12 +90,11 @@ async function editProfile(req, res) {
         },
       }
     );
-    return res.send({message:"Contact Successfully Updated"});
+    return res.send({ message: "Contact Successfully Updated" });
   } catch (error) {
     console.log(error);
   }
 }
-
 
 async function getUsersCount(req, res) {
   try {
@@ -97,17 +108,16 @@ async function getUsersCount(req, res) {
 
     const result = await getUsers();
     console.log("result =>", result.length);
-    return res.send({users:result.length});
+    return res.send({ users: result.length });
   } catch (error) {
     console.log(error);
   }
 }
-
 
 module.exports = {
   get,
   register,
   login,
   editProfile,
-  getUsersCount
+  getUsersCount,
 };
