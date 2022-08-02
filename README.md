@@ -53,7 +53,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Home/Search  |
 | -----------------| -----|
-| ![Landing](readme/figma_welcome.png) (readme/figma_usertype.png)| ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Landing](readme/figma_welcome.png) (readme/figma_usertype.png)| ![Login/Signup](readme/figma_login_signup.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
