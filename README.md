@@ -75,9 +75,9 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Welcome/Login  | Signup Failed  |
-| -----------------| -----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) |
+| Welcome/Login  | Signup Failed  | Patient Home/ Nearby Hospitals|
+| -----------------| -----|-----|
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Home/ Nearby Hospitals](readme/patient_home.gif) |
 
 
 <br><br>
