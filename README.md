@@ -77,7 +77,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 | Welcome/Login  | Signup Failed  | Patient Home/ Nearby Hospitals|
 | -----------------| -----|-----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Home/ Nearby Hospitals](readme/patient_home.gif) |
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Home/ Nearby Hospitals](readme/patient.gif) |
 
 
 <br><br>
