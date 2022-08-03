@@ -85,7 +85,7 @@ Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointme
 
 Doctor Availability| Upcoming Appointments  | Hospital Home  | Dark Mode
 | -----------------| -----|-----|-----|
-![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/doctor.gif) | ![Hospital Home](readme/hospital.jpg) | ![Dark Mode](readme/dark.gif)
+![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) | ![Dark Mode](readme/dark.gif)
 
 Safely in French| Patient Home |Doctor Info | Doctor Avialability |
 | -----------------| -----------------| -----------------| -----------------|
