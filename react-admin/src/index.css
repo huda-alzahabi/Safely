@@ -120,6 +120,7 @@ table {
   border-radius: 10px;
   background-color: #b6e4f2;
 }
+
 th,
 td {
   font-size: larger;
@@ -132,14 +133,14 @@ th {
   font-family: "Laila", sans-serif !important;
   text-align: center;
   color: #000a50;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 td {
   padding: 10px !important;
   font-family: "Laila", sans-serif !important;
   color: #000a50;
-  font-size: x-large;
+  font-size: large;
 }
 
 tr:nth-child(even) {
@@ -150,4 +151,11 @@ tr:nth-child(even) {
 :root {
   --rs-tooltip-bg: rgb(180, 202, 204) !important;
   color: white;
+}
+.logout{
+  float: right;
+  width: 45px;
+  height: 45px;
+  color: white;
+  margin: 10px;
 }
