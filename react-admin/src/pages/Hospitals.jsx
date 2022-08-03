@@ -32,7 +32,7 @@ const Hospitals = () => {
       <table className="titleMargin">
         <tr>
           <th>Name</th>
-          <th>Email</th>
+          <th>Phone Number</th>
           <th>Location</th>
           <th>Clinics Working Hours</th>
         </tr>
@@ -41,10 +41,10 @@ const Hospitals = () => {
             hospital.user !== null && (
               <tr key={i}>
                 <td>{hospital.user.name} </td>
-                <td>
-                  {hospital.address.city}, {hospital.address.country}
-                </td>
                 <td>{hospital.phone_number}</td>
+                <td>
+                {hospital.address.street}, {hospital.address.city}, {hospital.address.country}
+                </td>
                 <td>{hospital.outpatient_clinic}</td>
                 <td>
                   <FaEdit />
