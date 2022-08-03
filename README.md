@@ -91,15 +91,11 @@ Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointme
 | -----------------| -----|-----|-----|
 ![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
-Doctor Availability| Upcoming Appointments  | Hospital Home  | 
+Doctor Availability| Upcoming Appointments  | Hospital Home  | Dark Mode
 | -----------------| -----|-----|-----|
-![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) | 
+![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) | ![Dark Mode](readme/dark.gif)
 
-|Safely in French |
-| -----------------|
-!<img src="readme/fr1.jpg" width="23%"><dd><img src="readme/fr2.jpg" width="23%"></dd><dd><img src="readme/fr3.jpg" width="23%" ></dd><dd><img src="readme/fr4.jpg" width="23%"></dd>
-
-|Dark Mode |
+Safely in French| Patient Home |Doctor Info | Doctor Availability |
 | -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
 
