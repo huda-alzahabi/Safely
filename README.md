@@ -91,8 +91,8 @@ Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointme
 | -----------------| -----|-----|-----|
 ![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
-Doctor Availability| Upcoming Appointments  | Hospital Home  
-| -----------------| -----|-----|-----|
+Doctor Availability| Upcoming Appointments  | Hospital Home  |
+| -----------------| -----|-----|
 ![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) 
 
 ### Safely in French
