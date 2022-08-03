@@ -13,7 +13,7 @@
 
 <img id="project-philosophy" src="./readme/title2.svg"/>
 
-> Safely is a medical app built to facilitate patients' lives. Safely is more than just a random medical app; it stores your medical records and directs you to the nearest hospitals to your location, wherever you are.
+> Safely is a medical app built to facilitate patients' lives. Safely is more than just a random medical app; it is multi language, multi theme , and it stores your medical records and directs you to the nearest hospitals, wherever you are.
 
 ### User Stories
 
@@ -75,13 +75,13 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Welcome/Login  | Signup Failed  | Patient Home/ Nearby Hospitals|
-| -----------------| -----|-----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Home/ Nearby Hospitals](readme/patient.gif) |
+| Welcome/Login  | Signup Failed  | Patient Info/ Location| Medical Records
+| -----------------| -----|-----|-----|
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Info/ Location](readme/patient_info.gif) | ![Medical Records](readme/medical_records.gif) |
 
-| Doctors  | Choose Day/Time   | Confirm Appointment|
+Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointment|
 | -----------------| -----|-----|
-| ![Book Appointment](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+![Patient Home/ Nearby Hospitals](readme/patient_home.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
 
 <br><br>
@@ -89,10 +89,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 
 > To run the backend of the app, you need the following command:
-
-      ```bash
-      npm start
-      ```
+      npm start    
 > To run the frontend of the app, you need to open it in Android studio and click on the “Run” button, if you have an emulator, or plug an android device.
 
 ### Prerequisites
