@@ -58,7 +58,7 @@ Note that I didn't use any styling library or theme, all from scratch and using 
 
 |Edit Profile | Location |  Hospitals   | Doctors  | 
 | --------- | ------- |  ------- | -------    |
-| ![Edit Profile](readme/edit_profile.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
+| ![Edit Profile](readme/figma_profile.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
 
 
 <br><br>
@@ -85,22 +85,18 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots and gifs from the real app
 
-| Welcome/Login  | Signup Failed  |
-| -----------------| -----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) |
+| Welcome/Login  | Signup Failed  | Patient Info/ Location|
+| -----------------| -----||-----|
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) |![Patient Info/ Location](readme/patient_info.gif) 
 
-| Patient Info/ Location| Medical Records
-|-----|-----|
-![Patient Info/ Location](readme/patient_info.gif) | ![Medical Records](readme/medical_records.gif) |
-
-Patient Home/ Nearby Hospitals| Doctors  |
-| -----------------| -----|
-![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) |
+|Medical Records|Patient Home/ Nearby Hospitals| Doctors  |
+|-----|| -----------------| -----|
+| ![Medical Records](readme/medical_records.gif) |![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) |
 
 
-| Choose Day/Time   | Confirm Appointment|
-|-----|-----|
-| ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+|Edit Profile| Choose Day/Time   | Confirm Appointment|
+|-----|-----||-----|
+| ![Edit Profile](readme/edit_profile.jpg)| ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
 
 Doctor Availability| Upcoming Appointments  | Hospital Home  |

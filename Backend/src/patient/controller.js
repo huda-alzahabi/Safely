@@ -140,7 +140,7 @@ async function getPatientByUserId(req, res) {
 }
 async function get(req, res) {
   try {
-    const result = await getPatients().populate("user");
+    const result = await getPatients();
     console.log("result =>", result);
     return res.send(result);
   } catch (error) {
