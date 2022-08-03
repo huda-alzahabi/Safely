@@ -102,7 +102,9 @@ Welcome | Patient Home |Doctor Info | Doctor Availability |
 ![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
 
 ### Dark Mode
-
+Patient Home | Nearby Hospitals |Medical Records |
+| -----------------| -----------------| -----------------| 
+![Dark Mode](readme/darkhome.jpg)|![Dark Mode](readme/darkhospitals.jpg)|![Dark Mode](readme/darkrecords.jpg)|
 
 Admin|
 | -----------------|
