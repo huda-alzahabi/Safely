@@ -75,13 +75,22 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Welcome/Login  | Signup Failed  | Patient Info/Location| Medical Records
+| Welcome/Login  | Signup Failed  | Patient Info/ Location| Medical Records
 | -----------------| -----|-----|-----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Info/Location](readme/patient_info.gif) | ![Medical Records](readme/medical_records.gif) |
+| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) | ![Patient Info/ Location](readme/patient_info.gif) | ![Medical Records](readme/medical_records.gif) |
 
 Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointment|
 | -----------------| -----|-----|-----|
 ![Patient Home/ Nearby Hospitals](readme/patient_home.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+
+Doctor Availability| Upcoming Appointments  | Hospital Home  |
+| -----------------| -----|-----|
+![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/doctor.gif) | ![Hospital Home](readme/date_time.gif) |
+
+Safely in French| Dark Mode  |
+| -----------------| -----|
+![Safely in French](readme/french.gif)| ![Dark Mode](readme/dark.gif) | 
+
 
 
 <br><br>
