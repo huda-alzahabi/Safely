@@ -53,7 +53,7 @@ Note that I didn't use any styling library or theme, all from scratch and using 
 
 Edit Profile | Location |  Hospitals   | Doctors  | 
 | ------- | ------- |  ------- | -------    |
-| ![Edit Profile](readme/edit_profile.png.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
+| ![Edit Profile](readme/edit_profile.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
 
 
 <br><br>
