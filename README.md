@@ -97,7 +97,7 @@ Doctor Availability| Upcoming Appointments  | Hospital Home  |
 
 |Safely in French |
 | -----------------|
-!<img src="readme/fr1.jpg" width="23%" margin="2px"><img src="readme/fr2.jpg" width="23%"  margin="2px"><img src="readme/fr3.jpg" width="23%"  margin="2px"><img src="readme/fr4.jpg" width="23%">
+!<img src="readme/fr1.jpg" width="200"><img src="readme/fr2.jpg" width="200" ><img src="readme/fr3.jpg" width="200"  ><img src="readme/fr4.jpg" width="200">
 
 |Dark Mode |
 | -----------------| -----------------| -----------------| -----------------|
