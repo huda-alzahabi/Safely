@@ -89,7 +89,7 @@ Doctor Availability| Upcoming Appointments  | Hospital Home  |
 
 Safely in French| | | |
 | -----------------| -----------------| -----------------| -----------------|
-![Safely in French](readme/fr1.jpg)![Safely in French](readme/fr2.jpg)![Safely in French](readme/fr3.jpg)![Safely in French](readme/fr4.jpg)
+![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
 
 
 
