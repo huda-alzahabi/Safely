@@ -99,7 +99,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 | ![Edit Profile](readme/edit_profile.jpg)| ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
 
-Doctor Availability| Upcoming Appointments  | Hospital Home  |
+Doctor Availability| Doctor Appointments  | Hospital Home  |
 | -----------------| -----|-----|
 ![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) 
 
