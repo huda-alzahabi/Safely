@@ -51,8 +51,8 @@ Note that I didn't use any styling library or theme, all from scratch and using 
 | ------- |  ------- | -------    |-------  |
 | ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) | ![User Type](readme/figma_usertype.png) | ![Signup](readme/figma_signup.png) |
 
-Edit Profile | Location |  Hospitals   | Doctors  | 
-| ------- | ------- |  ------- | -------    |
+|Edit Profile | Location |  Hospitals   | Doctors  | 
+| --------- | ------- |  ------- | -------    |
 | ![Edit Profile](readme/edit_profile.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
 
 
