@@ -48,7 +48,7 @@ async function addAppointment(body) {
   return await appointment.save();
 }
 async function getPatients() {
-  return await Patient.find();
+  return await Patient.find().populate("user");
 }
 
 async function getById(id) {
