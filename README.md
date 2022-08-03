@@ -51,9 +51,9 @@ Note that I didn't use any styling library or theme, all from scratch and using 
 | ------- |  ------- | -------    |-------  |
 | ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) | ![User Type](readme/figma_usertype.png) | ![Signup](readme/figma_signup.png) |
 
-| Location |  Hospitals   | Doctors  |
-| ------- |  ------- | -------    |
-| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
+Edit Profile | Location |  Hospitals   | Doctors  | 
+| ------- | ------- |  ------- | -------    |
+| ![Edit Profile](readme/edit_profile.png.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
 
 
 <br><br>
@@ -87,11 +87,13 @@ Doctor Availability| Upcoming Appointments  | Hospital Home  | Dark Mode
 | -----------------| -----|-----|-----|
 ![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) | ![Dark Mode](readme/dark.gif)
 
-Safely in French| Patient Home |Doctor Info | Doctor Avialability |
+Safely in French| Patient Home |Doctor Info | Doctor Availability |
 | -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
 
-
+Admin|
+| -----------------|
+![Admin](readme/admin.gif)
 
 <br><br>
 <img id="how-to-run" src="./readme/title6.svg"/>

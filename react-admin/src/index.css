@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Laila:wght@500&family=Press+Start+2P&display=swap");
 * {
   box-sizing: border-box;
-  padding: 0;
 }
 .login {
   display: flex;
@@ -80,21 +79,22 @@ h2,
   display: flex;
 }
 .sidenav {
-  margin-top: 70px;
+  margin-top: 78px;
   display: "block";
   width: fit-content;
-  background-color:white !important;
+  background-color: white !important;
   color: #0ba3d3 !important;
-    margin-left: 0px;
-
+  margin-left: 0px;
 }
 .logo {
   width: 180px;
   height: 100px;
 }
 .item {
-  background-color:white !important;
-  color: #0ba3d3 !important;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: white !important;
+  color: #000a50 !important;
   font-family: "Inter", sans-serif !important;
 }
 .rs-sidenav-toggle {
@@ -104,11 +104,50 @@ h2,
   background-color: white !important;
   border-radius: 20px;
 }
-.rs-sidenav-item-active{
+.rs-sidenav-item-active {
   background-color: #b6e4f2 !important;
   color: white !important;
   font-weight: bold;
 }
-.rs-btn-icon.rs-btn>.rs-icon {
-  color: #0ba3d3 !important;
+.rs-btn-icon.rs-btn > .rs-icon {
+  color: #000a50 !important;
+}
+table {
+  border-collapse: collapse;
+  margin-left: 5%;
+  margin-top: 13%;
+  width: 65%;
+  border-radius: 10px;
+  background-color: #b6e4f2;
+}
+th,
+td {
+  font-size: larger;
+  text-align: center;
+  justify-content: center;
+}
+
+th {
+  padding: 12px !important;
+  font-family: "Laila", sans-serif !important;
+  text-align: center;
+  color: #000a50;
+  font-size: xx-large;
+}
+
+td {
+  padding: 10px !important;
+  font-family: "Laila", sans-serif !important;
+  color: #000a50;
+  font-size: x-large;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+.rs-theme-light,
+:root {
+  --rs-tooltip-bg: rgb(180, 202, 204) !important;
+  color: white;
 }
