@@ -83,11 +83,11 @@ Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointme
 | -----------------| -----|-----|-----|
 ![Patient Home/ Nearby Hospitals](readme/patient_home.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
-Doctor Availability| Upcoming Appointments  | Hospital Home  |
-| -----------------| -----|-----|
-![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/doctor.gif) | ![Hospital Home](readme/date_time.gif) |
+Doctor Availability| Upcoming Appointments  | Hospital Home  | Dark Mode
+| -----------------| -----|-----|-----|
+![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/doctor.gif) | ![Hospital Home](readme/hospital.jpg) | ![Dark Mode](readme/dark.gif)
 
-Safely in French| | | |
+Safely in French| Patient Home |Doctor Info | Doctor Avialability |
 | -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
 
