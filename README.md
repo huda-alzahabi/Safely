@@ -87,8 +87,8 @@ Doctor Availability| Upcoming Appointments  | Hospital Home  |
 | -----------------| -----|-----|
 ![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/doctor.gif) | ![Hospital Home](readme/date_time.gif) |
 
-Safely in French| 
-| -----------------|
+Safely in French| | | |
+| -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](readme/fr1.jpg)![Safely in French](readme/fr2.jpg)![Safely in French](readme/fr3.jpg)![Safely in French](readme/fr4.jpg)
 
 
