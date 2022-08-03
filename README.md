@@ -96,8 +96,8 @@ Doctor Availability| Upcoming Appointments  | Hospital Home  |
 ![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) | 
 
 |Safely in French |
-| -----------------| -----------------| -----------------| -----------------|
-![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
+| -----------------|
+!<img src="readme/fr1.jpg"><img src="readme/fr2.jpg"><img src="readme/fr3.jpg"><img src="readme/fr4.jpg">
 
 |Dark Mode |
 | -----------------| -----------------| -----------------| -----------------|
