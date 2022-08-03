@@ -39,6 +39,11 @@
 
 - I want to add my location, my address, and outpatient clinics working hours, so the patient can find me.
 
+#### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
+
+- I want view all my users and their information, so that I can manage them.
+- I want to view statistics about the app, so that I can see how it is used.
+
 
 <br><br>
 
