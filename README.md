@@ -81,7 +81,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 Patient Home/ Nearby Hospitals| Doctors  | Choose Day/Time   | Confirm Appointment|
 | -----------------| -----|-----|-----|
-![Patient Home/ Nearby Hospitals](readme/patient_home.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) | ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
 
 Doctor Availability| Upcoming Appointments  | Hospital Home  | Dark Mode
 | -----------------| -----|-----|-----|
