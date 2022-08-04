@@ -148,7 +148,7 @@ async function removeUser(req, res) {
     const user = await User.findOne({ _id: req.query.id });
     if (!user) console.log(404);
     const deleteResult = await user.remove();
-    return res.send("user removed successfully");
+    return res.send({message:"user removed successfully"});
   } catch (error) {
     console.log(error);
   }
