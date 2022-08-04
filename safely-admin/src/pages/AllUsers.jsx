@@ -7,11 +7,12 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Users = () => {
-  var isUpdated = false;
   const nav = useNavigate();
 
   const [users, setUsers] = useState([]);
   const [usersFiltered, setFiltered] = useState([]);
+  const [isUpdated, setIsUpdated] = useState(false);
+
 
   const getUsers = async () => {
     const res = await fetch("http://127.0.0.1:3030/api/user/auth/get", {
@@ -31,7 +32,7 @@ const Users = () => {
       setFiltered(usersFromServer);
     };
     getData();
-  }, [isUpdated]);
+  }, [isUpdated,]);
 
   const deleteUser = async (id) => {
     const res = await fetch(
@@ -46,7 +47,7 @@ const Users = () => {
     );
     const data = await res.json();
     toast.success("User Successfully Deleted");
-    isUpdated = !isUpdated;
+    setIsUpdated(!isUpdated);
   };
   const filterUsers = (e) => {
     let value = e.target.value.toLowerCase();
