@@ -42,12 +42,12 @@ body {
 
 h1 {
   font-family: "Laila", sans-serif !important;
-  text-align: center;
-  color: #0ba3d3;
+  text-align: left;
+  margin-left: 45px !important;
+  color: #0ba3d3 !important;
 }
 
-h2,
-.loginbtn {
+h2{
   text-align: center;
 }
 .login-img {
@@ -116,8 +116,11 @@ table {
   border-collapse: collapse;
   margin-left: 5%;
   margin-top: 13%;
+  margin-bottom: 5%;
   width: 65%;
   border-radius: 10px;
+  max-height: 30px;
+  overflow: scroll;
   background-color: #b6e4f2;
 }
 

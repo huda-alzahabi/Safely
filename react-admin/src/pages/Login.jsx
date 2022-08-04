@@ -72,7 +72,7 @@ const Login = () => {
               type="password"
             />
 
-            <div className="loginbtn">
+            <div >
               <Button color={"#0BA3D3"} text={"Login"} onClick={handleSubmit} />
             </div>
           </form>
