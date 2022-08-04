@@ -32,7 +32,7 @@ const Login = () => {
       password: password,
     };
 
-    const res = await fetch("http://127.0.0.1:3030/api/user/auth/login", {
+    const res = await fetch("http://127.0.0.1:3030/api/user/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
