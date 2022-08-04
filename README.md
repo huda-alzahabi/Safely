@@ -89,28 +89,28 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 | -----------------| -----|-----|
 | ![Welcome/Login](safely-readme/login_signup.gif) | ![Signup Failed](safely-readme/email_in_use.gif) |![Patient Info/ Location](safely-readme/patient_info.gif) 
 
-|Medical Records|Patient Home/ Nearby Hospitals| Doctors  |
+|Medical Records|Patient Homepage/ Nearby Hospitals| Doctors/ Search  |
 |-----|-----------------| -----|
 | ![Medical Records](safely-readme/medical_records.gif) |![Patient Home/ Nearby Hospitals](safely-readme/patient.gif)| ![Doctors](safely-readme/doctor.gif) |
 
 
-|Edit Profile| Choose Day/Time   | Confirm Appointment|
+|Edit Profile| Choose Day/ Time   | Confirm Appointment|
 |-----|-----|----|
 | ![Edit Profile](safely-readme/edit_profile.jpg)| ![Choose Day/Time](safely-readme/date_time.gif) | ![Confirm Appointment](safely-readme/confirm_appointment.gif) |
 
 
-Doctor Availability| Doctor Appointments  | Hospital Home  |
+Doctor Availability| Doctor Appointments  | Hospital Homepage  |
 | -----------------| -----|-----|
 ![Doctor Availability](safely-readme/availability.gif)| ![Upcoming Appointments](safely-readme/appointments.gif) | ![Hospital Home](safely-readme/hospital.jpg) 
 
 ### Safely in French
 
-Welcome | Patient Home |Doctor Info | Doctor Availability |
+Welcome | Patient Homepage |Doctor Info | Doctor Availability |
 | -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](safely-readme/fr1.jpg)|![Safely in French](safely-readme/fr2.jpg)|![Safely in French](safely-readme/fr3.jpg)|![Safely in French](safely-readme/fr4.jpg)
 
 ### Dark Mode
-Patient Home | Nearby Hospitals |Medical Records |
+Patient Homepage | Nearby Hospitals |Medical Records |
 | -----------------| -----------------| -----------------| 
 ![Dark Mode](safely-readme/darkhome.jpg)|![Dark Mode](safely-readme/darkhospitals.jpg)|![Dark Mode](safely-readme/darkrecords.jpg)|
 
@@ -138,13 +138,13 @@ Hospitals/ Patients/ Doctors  |
 <img id="how-to-run" src="./safely-readme/title6.svg"/>
 
 
-> To run the backend of the app, you need the following command:
-      npm start    
-> To run the frontend of the app, you need to open it in Android studio and click on the “Run” button, if you have an emulator, or plug an android device.
-> Before runnning, make sure to change the IP Address in the base url found in ServiceBuilder, and put the IP Address of your network instead.
+> To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
+* Download and Install [Node.js](https://nodejs.org/en/)
+* Download and Install [Android Studio](https://developer.android.com/studio/index.html)
+* Download an android emulator device or connect a real android device to your computer.
 * npm
   ```sh
   npm install npm@latest -g
@@ -161,7 +161,7 @@ Hospitals/ Patients/ Doctors  |
    ```sh
    npm install
    ```
-4. Enter your API in `local.properties` in Frontend Folder 
+4. Enter your API in `local.properties` in the frontend folder 
    ```js
    MAPS_API_KEY = 'ENTER YOUR API';
    ```
