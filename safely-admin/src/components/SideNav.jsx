@@ -50,7 +50,7 @@ const SideNav = () => {
                 icon={<UserCircle />}
                 onClick={goToUsers}
               >
-                Statistics
+                Users
               </Nav.Item>
               <Nav.Item
                 className="item"
