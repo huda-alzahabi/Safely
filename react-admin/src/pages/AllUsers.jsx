@@ -45,7 +45,6 @@ const Users = () => {
       }
     );
     const data = await res.json();
-    console.log(data);
     alert("User Successfully Deleted");
     isUpdated = !isUpdated;
   };

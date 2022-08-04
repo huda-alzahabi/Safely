@@ -40,11 +40,9 @@ const Login = () => {
       body: JSON.stringify(_data),
     });
     const result = await res.json();
-    console.log(result.token);
     window.localStorage.setItem("Bearer", result.token);
     var user = jwt_decode(result.token);
     window.localStorage.setItem("user_id", user._id);
-    console.log(user);     console.log(result);
      nav("/statistics");
   };
 

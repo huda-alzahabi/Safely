@@ -25,7 +25,6 @@ const Doctors = () => {
     };
     getData();
   }, []);
-  console.log(doctors);
 
   const logout = () => {
     localStorage.removeItem("user_id");

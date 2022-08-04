@@ -15,7 +15,6 @@ const UsersPieChart = () => {
       },
     });
     const data = await res.json();
-    console.log(data["patients"]);
     setPatientsCount(data["patients"]);
     return data;
   };
@@ -27,7 +26,6 @@ const UsersPieChart = () => {
       },
     });
     const data = await res.json();
-    console.log(data["doctors"]);
     setDoctorsCount(data["doctors"]);
     return data;
   };
@@ -39,7 +37,6 @@ const UsersPieChart = () => {
       },
     });
     const data = await res.json();
-    console.log(data["hospitals"]);
     setHospitalsCount(data["hospitals"]);
     return data;
   };
