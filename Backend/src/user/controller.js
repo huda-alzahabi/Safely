@@ -113,11 +113,22 @@ async function getUsersCount(req, res) {
     console.log(error);
   }
 }
-
+async function removeUser(req, res) {
+  try {
+    const user = await User.findOne({ _id: req.query.id });
+    if (!user) console.log(404);
+    const deleteResult = await user.remove();
+    return res.send("user removed successfully");
+  } catch (error) {
+    console.log(error);
+  }
+}
+  
 module.exports = {
   get,
   register,
   login,
   editProfile,
   getUsersCount,
+  removeUser,
 };
