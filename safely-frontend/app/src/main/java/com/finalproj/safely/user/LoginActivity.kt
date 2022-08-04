@@ -69,13 +69,11 @@ class LoginActivity : AppCompatActivity() {
             var token = ""
 
             if (it?.token != null) {
-                Log.d("Token", it.token)
                 val elements = it.token.split('.')
                 if (elements.size == 3) {
                     val (header, payload, signature) = elements
                     val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
                     val json = JSONObject(p)
-                    Log.d("Payload", json.toString())
                     user_name = json.getString(("name").toString())
                     email = json.getString(("email").toString())
                     user_type = json.getString(("userType").toString())
@@ -99,7 +97,6 @@ class LoginActivity : AppCompatActivity() {
                 if (user_type == "patient") {
                     apiService.getPatientByUserId(_id, token) {
                         if (it != null) {
-                            Log.d("patient logged in", it.toString())
                             val patientId = it._id
                             editor.putString("patient_id", patientId)
                             editor.apply()
@@ -115,7 +112,6 @@ class LoginActivity : AppCompatActivity() {
                     if (user_type == "doctor") {
                         apiService.getDoctorByUserId(_id, token) {
                             if (it != null) {
-                                Log.d("doctor logged in", it.toString())
                                 val doctorId = it._id
                                 editor.putString("doctor_id", doctorId)
                                 editor.apply()
@@ -132,7 +128,6 @@ class LoginActivity : AppCompatActivity() {
                         if (user_type == "hospital") {
                             apiService.getHospitalByUserId(_id, token) {
                                 if (it != null) {
-                                    Log.d("hospital logged in", it.toString())
                                     val hospitalId = it._id
                                     val hospitalAddress =
                                         it.address.street + ", " + it.address.city + ", " + it.address.country

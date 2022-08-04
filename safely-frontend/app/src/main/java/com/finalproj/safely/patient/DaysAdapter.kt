@@ -55,7 +55,6 @@ class DaysAdapter(private val listener: OnItemClickListener) :
         }
 
         fun bind(availabilityResponse: DrAvailabilityResponse) {
-            Log.d("DayViewHolder", "bind: " + availabilityResponse.day)
             day.setText(availabilityResponse.day)
         }
     }

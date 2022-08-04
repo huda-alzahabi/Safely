@@ -41,10 +41,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
                 setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL, 0, 30)
                 view = layout
             }.show()
-            Log.d("doctor", doctor)
-            Log.d("date", picked_day)
-            Log.d("time", picked_times.toString())
-            addAvailability(picked_day, picked_times, "62e1d7548e3dfb09ce418ca7")
+            addAvailability(picked_day, picked_times, doctor)
             picked_times.clear()
         }
 
@@ -102,7 +99,7 @@ class AddAvailabilityActivity : AppCompatActivity() {
             if (it != null) {
                 Log.d("availability", it.message!!)
             } else {
-                Log.d("NOO", "Error adding new availability")
+                Log.d("NO", "Error adding new availability")
             }
         }
     }

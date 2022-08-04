@@ -126,12 +126,11 @@ class ConfirmAppointmentActivity : AppCompatActivity() {
         val token = sharedPreferences.getString("Token", "")!!
 
         apiService.bookAppointment(appointmentInfo, token) {
-            Log.d("Appointment", appointmentInfo.toString())
             if (it != null) {
-                Log.d("it", it.toString())
+                Log.d("appointment", it.toString())
 
             } else {
-                Log.d("OKKKKK", "Error booking appointment")
+                Log.d("NO", "Error booking appointment")
             }
         }
         val newAppointment = applicationContext.resources.getString(R.string.new_appointment)

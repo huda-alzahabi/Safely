@@ -24,7 +24,6 @@ class PatientHomeActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
             Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("Token", "")
-        Log.d("YEYYY", "" + token)
         if (intent.getStringExtra("new_name") == null) {
             name = sharedPreferences.getString("Name", "")!!
             val textView = findViewById<TextView>(R.id.user_name)

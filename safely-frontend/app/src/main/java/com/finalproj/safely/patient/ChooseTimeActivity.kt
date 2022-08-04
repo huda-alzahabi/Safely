@@ -33,9 +33,7 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
         intent.getStringExtra("availability_id")
             ?.let {
                 availability_id = it
-                Log.d("availability_id", it)
             }
-        Log.d("DD", intent.getStringExtra("appointment_day")!!)
         appointment_day = intent.getStringExtra("appointment_day")!!
         val sharedPrefFile = "kotlin_shared_preference"
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
@@ -47,7 +45,6 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
             if (it != null) {
                 timesList = it.times as ArrayList<String>
             }
-            Log.d("times", it.toString())
             timesAdapter.submitList(timesList)
         }
         doctor_id = intent.getStringExtra("doctor_id")!!
@@ -76,7 +73,6 @@ class ChooseTimeActivity : AppCompatActivity(), TimesAdapter.OnItemClickListener
         intent.putExtra("hospital_id", hospital_id)
         intent.putExtra("hospital_name", hospital_name)
         val clickedItem: String = timesList[position]
-        Log.d("CLICKED", clickedItem)
         clickedItem?.let {
             intent.putExtra("appointment_time", it)
         }

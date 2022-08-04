@@ -150,11 +150,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             latitude = latitude
         )
         apiService.addPatientLocation(patientId, location, token) {
-            Log.d("LOCATION", location.toString())
             if (it != null) {
                 Log.d("Location", it.toString())
             } else {
-                Log.d("NOO", "Error adding location")
+                Log.d("NO", "Error adding location")
             }
         }
 

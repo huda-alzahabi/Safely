@@ -62,17 +62,13 @@ class DoctorProfileActivity : AppCompatActivity() {
 
         val token = sharedPreferences.getString("Token", "")!!
         apiService.addDoctor(doctor, token) {
-            Log.d("DOCC", doctor.toString())
             if (it != null) {
-                Log.d("DOCT", it.toString())
-
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("doctor_id", it.message)
                 editor.apply()
                 editor.commit()
-                Log.d("DOCTORID", it.message!!)
             } else {
-                Log.d("NOO", "Error adding new doctor")
+                Log.d("NO", "Error adding new doctor")
             }
         }
         val intent = Intent(this@DoctorProfileActivity, DoctorHomeActivity::class.java)

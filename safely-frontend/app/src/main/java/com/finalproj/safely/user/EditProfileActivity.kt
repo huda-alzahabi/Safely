@@ -63,7 +63,6 @@ class EditProfileActivity : AppCompatActivity() {
         val logout = findViewById<ImageView>(R.id.logout_icon)
         logout.setOnClickListener {
             logout()
-            Log.d("logout", "logout")
         }
     }
 
@@ -81,7 +80,7 @@ class EditProfileActivity : AppCompatActivity() {
             if (it != null) {
                 Log.d("User Updated", it.toString())
             } else {
-                Log.d("NOO", "Error updating user")
+                Log.d("NO", "Error updating user")
             }
         }
     }

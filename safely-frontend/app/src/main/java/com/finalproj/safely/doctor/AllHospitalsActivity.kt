@@ -29,7 +29,6 @@ class AllHospitalsActivity : AppCompatActivity(), AllHospitalsAdapter.OnItemClic
         val apiService = RestApiService()
         apiService.getHospitals(token) {
             hospitalsList = it as List<HospitalResponse>
-            Log.d("hospitals", it.toString())
             hospitalsAdapter.submitList(hospitalsList)
         }
 

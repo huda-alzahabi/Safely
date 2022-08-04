@@ -27,12 +27,9 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
         val patientId = sharedPreferences.getString("patient_id", "")!!
         val token = sharedPreferences.getString("Token", "")!!
 
-        Log.d("patientId", patientId)
-
         val apiService = RestApiService()
         apiService.findNearbyHospitals(patientId, token) {
             hospitalsList = it as List<HospitalResponse>
-            Log.d("hospitals", it.toString())
             nearbyHospitalsAdapter.submitList(hospitalsList)
 
         }
@@ -56,7 +53,6 @@ class NearbyHospitalsActivity : AppCompatActivity(), NearbyHospitalsAdapter.OnIt
     override fun onItemClick(position: Int) {
         val intent = Intent(this, PatientDoctorsActivity::class.java)
         val clickedItem: HospitalResponse = hospitalsList[position]
-        Log.d("hospitals", clickedItem._id)
         clickedItem?.let {
             intent.putExtra("hospital_id", it._id)
             intent.putExtra("hospital_name", it.user.name)

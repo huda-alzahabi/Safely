@@ -91,17 +91,13 @@ class PatientInfoActivity : AppCompatActivity() {
             user = user
         )
         apiService.addPatient(patientInfo, token) {
-            Log.d("PATIENT", patientInfo.toString())
             if (it != null) {
-                Log.d("Patienttt", it.toString())
-
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString("patient_id", it._id)
                 editor.apply()
                 editor.commit()
-                Log.d("PATIENTID", it._id!!)
             } else {
-                Log.d("NOO", "Error adding new patient")
+                Log.d("NO", "Error adding patient info")
             }
         }
         val intent = Intent(this@PatientInfoActivity, MapsActivity::class.java)

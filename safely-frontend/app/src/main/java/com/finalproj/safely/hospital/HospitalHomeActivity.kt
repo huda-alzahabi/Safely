@@ -37,7 +37,6 @@ class HospitalHomeActivity : AppCompatActivity() {
         val logout = findViewById<ImageView>(R.id.logout_hosp)
         logout.setOnClickListener {
             logout()
-            Log.d("logout", "logout")
         }
     }
 

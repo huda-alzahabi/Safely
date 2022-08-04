@@ -41,7 +41,7 @@ class DoctorHomeActivity : AppCompatActivity() {
         apiService.getAppointmentsByDrId(doctorId, token) {
             appointmentsList = it as List<AppointmentResponse>
             appointmentsAdapter.submitList(appointmentsList)
-            Log.d("appointments", it.toString())
+
         }
         initRecyclerView()
 

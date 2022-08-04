@@ -28,7 +28,6 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
         intent.getStringExtra("hospital_id")
             ?.let {
                 hospital_id = it
-                Log.d("user_id", it)
             }
         val sharedPrefFile = "kotlin_shared_preference"
         var sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPrefFile,
@@ -37,7 +36,6 @@ class PatientDoctorsActivity : AppCompatActivity(), DoctorsAdapter.OnItemClickLi
 
         val apiService = RestApiService()
         apiService.getDrs(hospital_id, token) {
-            Log.d("doctors", it.toString())
             doctorsList = it as List<DoctorResponse>
             doctorAdapter.submitList(doctorsList)
         }

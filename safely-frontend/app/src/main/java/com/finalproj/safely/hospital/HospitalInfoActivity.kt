@@ -60,9 +60,7 @@ class HospitalInfoActivity : AppCompatActivity() {
             outpatient_clinic = outpatient_clinic,
         )
         apiService.addHospitalInfo(hospitalInfo, token) {
-            Log.d("HospitalResponse", hospitalInfo.toString())
             if (it != null) {
-                Log.d("HOSPITAL", it.toString())
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 val hospitalAddress =
@@ -74,9 +72,8 @@ class HospitalInfoActivity : AppCompatActivity() {
                 editor.apply()
                 editor.commit()
 
-                Log.d("HOSPID", it.message!!)
             } else {
-                Log.d("NOO", "Error adding new hospital")
+                Log.d("NO", "Error adding new hospital")
             }
         }
         val intent = Intent(this@HospitalInfoActivity, HospitalLocationActivity::class.java)

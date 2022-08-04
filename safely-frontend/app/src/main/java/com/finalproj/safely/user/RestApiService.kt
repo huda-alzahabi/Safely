@@ -19,7 +19,6 @@ class RestApiService {
         retrofit.register(userData).enqueue(
             object : Callback<SignupResponse> {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-                    Log.d("No User", t.toString())
                     onResult(null)
                 }
 
@@ -28,7 +27,6 @@ class RestApiService {
                     response: Response<SignupResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added User", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -51,7 +49,6 @@ class RestApiService {
                     if (response.code() == 400) {
                         response.errorBody()?.let { Log.e("error", it.string()) }
                     }
-                    Log.d("User", response.toString())
                 }
             }
         )
@@ -67,7 +64,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("DOCTORSSS", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<List<DoctorResponse>?>, t: Throwable) {
@@ -86,7 +82,6 @@ class RestApiService {
         retrofit.submitRecords(patientId, medicalRecords, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Records", t.toString())
                     onResult(null)
                 }
 
@@ -95,7 +90,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Records", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -106,7 +100,6 @@ class RestApiService {
         retrofit.addPatient(patientInfo, token).enqueue(
             object : Callback<PatientResponse> {
                 override fun onFailure(call: Call<PatientResponse>, t: Throwable) {
-                    Log.d("No Patient", t.toString())
                     onResult(null)
                 }
 
@@ -115,7 +108,6 @@ class RestApiService {
                     response: Response<PatientResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Patient", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -131,7 +123,6 @@ class RestApiService {
         retrofit.addPatientLocation(patientId, location, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Patient", t.toString())
                     onResult(null)
                 }
 
@@ -140,7 +131,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Patient", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -155,7 +145,6 @@ class RestApiService {
         retrofit.addHospitalInfo(hospitalInfo, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Hospital", t.toString())
                     onResult(null)
                 }
 
@@ -164,7 +153,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Hospital", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -180,7 +168,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("HOSPITALSS", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<List<HospitalResponse>?>, t: Throwable) {
@@ -203,7 +190,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("Nearby HOSPITALSS", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<List<HospitalResponse>?>, t: Throwable) {
@@ -217,7 +203,6 @@ class RestApiService {
         retrofit.addDoctor(doctor, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Patient", t.toString())
                     onResult(null)
                 }
 
@@ -226,7 +211,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Doctor", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -242,7 +226,6 @@ class RestApiService {
         retrofit.editUserProfile(userId, userInfo, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No User", t.toString())
                     onResult(null)
                 }
 
@@ -251,7 +234,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Edited Profile", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -266,7 +248,6 @@ class RestApiService {
         retrofit.addDrAvailability(availability, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No DrAvailabilityInfo", t.toString())
                     onResult(null)
                 }
 
@@ -275,7 +256,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added DrAvailability", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -295,7 +275,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("DOCTOR AVAILABILITY", response.toString())
                 }
 
                 override fun onFailure(call: Call<List<DrAvailabilityResponse>>, t: Throwable) {
@@ -317,12 +296,10 @@ class RestApiService {
                     response: Response<TimesResponse>,
                 ) {
                     val result = response.body()
-                    Log.d("Timess", response.body().toString())
                     onResult(result)
                 }
 
                 override fun onFailure(call: Call<TimesResponse>, t: Throwable) {
-                    Log.d("No Times", t.toString())
                     onResult(null)
                 }
             })
@@ -337,7 +314,6 @@ class RestApiService {
         retrofit.bookAppointment(appointmentInfo, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Appointment", t.toString())
                     onResult(null)
                 }
 
@@ -346,7 +322,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Appointment Booked", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -366,7 +341,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("HOSPITALSS", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<List<AppointmentResponse>?>, t: Throwable) {
@@ -385,7 +359,6 @@ class RestApiService {
         retrofit.addHospitalLocation(hospitalId, location, token).enqueue(
             object : Callback<SuccessMessageResponse> {
                 override fun onFailure(call: Call<SuccessMessageResponse>, t: Throwable) {
-                    Log.d("No Patient", t.toString())
                     onResult(null)
                 }
 
@@ -394,7 +367,6 @@ class RestApiService {
                     response: Response<SuccessMessageResponse>,
                 ) {
                     val addedUser = response.body()
-                    Log.d("Added Loc", response.body().toString())
                     onResult(addedUser)
                 }
             })
@@ -410,7 +382,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("patient info", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<PatientResponse?>, t: Throwable) {
@@ -429,7 +400,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("doctor info", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<Doctor?>, t: Throwable) {
@@ -448,7 +418,6 @@ class RestApiService {
                 ) {
                     val responseBody = response.body()!!
                     onResult(responseBody)
-                    Log.d("patient info", responseBody.toString())
                 }
 
                 override fun onFailure(call: Call<Hospital?>, t: Throwable) {

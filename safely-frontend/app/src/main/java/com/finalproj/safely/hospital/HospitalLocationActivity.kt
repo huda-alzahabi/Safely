@@ -105,7 +105,7 @@ class HospitalLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 } else {
                     // if location is null , log an error message
-                    Log.e("NOO", "No location found")
+                    Log.e("NO", "No location found")
                 }
 
             }
@@ -128,7 +128,7 @@ class HospitalLocationActivity : AppCompatActivity(), OnMapReadyCallback {
                 getCurrentLocation()
             } else {
                 //if it doesn`t log an error message
-                Log.e("NOO", "Location permission has been denied")
+                Log.e("NO", "Location permission has been denied")
             }
         }
     }
@@ -150,11 +150,10 @@ class HospitalLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             latitude = latitude
         )
         apiService.addHospitalLocation(hospitalId, location, token) {
-            Log.d("LOCATION", location.toString())
             if (it != null) {
                 Log.d("Location", it.toString())
             } else {
-                Log.d("NOO", "Error adding location")
+                Log.d("NO", "Error adding location")
             }
         }
 

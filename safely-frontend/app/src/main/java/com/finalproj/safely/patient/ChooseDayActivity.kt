@@ -31,13 +31,11 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
         intent.getStringExtra("doctor_id")
             ?.let {
                 doctor_id = it
-                Log.d("doctor_id", it)
             }
 
         val apiService = RestApiService()
         apiService.getAvailabilityByDrId(doctor_id, token) {
             daysList = it as List<DrAvailabilityResponse>
-            Log.d("availability", it.toString())
             daysAdapter.submitList(daysList)
         }
 
@@ -65,7 +63,6 @@ class ChooseDayActivity : AppCompatActivity(), DaysAdapter.OnItemClickListener {
         intent.putExtra("hospital_id", hospital_id)
         intent.putExtra("hospital_name", hospital_name)
         val clickedItem: DrAvailabilityResponse = daysList[position]
-        Log.d("availability_id", clickedItem._id)
         clickedItem?.let {
             intent.putExtra("availability_id", it._id)
             intent.putExtra("appointment_day", it.day)

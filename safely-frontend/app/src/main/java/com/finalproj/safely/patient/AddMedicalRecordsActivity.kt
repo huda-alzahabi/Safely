@@ -66,9 +66,9 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
         apiService.submitRecords(patientId, medicalRecords, token) {
             Log.d("Records", medicalRecords.toString())
             if (it != null) {
-                Log.d("Medss", it.toString())
+                Log.d("Medical Records", it.toString())
             } else {
-                Log.d("NOO", "Error registering new user")
+                Log.d("NO", "Error adding medical records")
             }
         }
         val intent =

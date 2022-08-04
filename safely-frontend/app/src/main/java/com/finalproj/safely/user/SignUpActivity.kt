@@ -79,9 +79,7 @@ class SignUpActivity : AppCompatActivity() {
         )
 
         apiService.register(userInfo) {
-            Log.d("User", userInfo.toString())
             if (it != null) {
-                Log.d("it", it.toString())
                 user_id = it.user
                 val loginInfo = LoginInfo(
                     email = email,
@@ -94,13 +92,11 @@ class SignUpActivity : AppCompatActivity() {
                     var _id = ""
 
                     if (it?.token != null) {
-                        Log.d("Token", it.token)
                         val elements = it.token.split('.')
                         if (elements.size == 3) {
                             val (header, payload, signature) = elements
                             val p = Base64.decode(payload, Base64.DEFAULT).decodeToString()
                             val json = JSONObject(p)
-                            Log.d("Payload", json.toString())
                             user_name = json.getString(("name").toString())
                             email = json.getString(("email").toString())
                             user_type = json.getString(("userType").toString())
@@ -127,9 +123,6 @@ class SignUpActivity : AppCompatActivity() {
 
 
             } else {
-
-                Log.d("OKKKKK", "Error registering new user")
-
                 alertDialog.setCancelable(false)
                 alertDialog.show()
             }
