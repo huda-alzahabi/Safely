@@ -4,7 +4,7 @@
 }
 .login {
   display: flex;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 body {
   background-image: url("./assets/loginbg.png");
@@ -23,7 +23,7 @@ body {
   color: white;
   border: 0cm;
   padding: 18px 10px;
-  margin: 5px;
+  margin:   10px;
   width: 80%;
   border-radius: 5px;
   cursor: pointer;
@@ -35,7 +35,7 @@ body {
 .form-control input,
 .input {
   width: 80%;
-  margin: 5px !important;
+  margin: 10px !important;
   padding: 15px 10px;
   font-size: 17px;
 }
@@ -51,7 +51,7 @@ h2 {
   text-align: center;
 }
 .login-img {
-  margin-top: 40px;
+  margin-top:-30px;
 }
 .donut {
   margin-top: 200px;

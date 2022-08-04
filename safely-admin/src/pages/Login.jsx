@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import logo from "../assets/logo.png";
 
 const Login = () => {
   const nav = useNavigate();
@@ -52,42 +53,49 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="container">
-        <div className="form">
-          <div>
-            <h1>Sign in Here</h1>
-          </div>
-          <form>
-            <TextField
-              label="Email"
-              variant="outlined"
-              onChange={handleEmail}
-              className="input"
-              value={email}
-              type="email"
-            />
-
-            <TextField
-              label="Password"
-              variant="outlined"
-              onChange={handlePassword}
-              className="input"
-              value={password}
-              placeholder={"Password"}
-              type="password"
-            />
-
+    <>
+      <img className="logo" src={logo} alt="" />
+      <div className="login">
+        <div className="container">
+          <div className="form">
             <div>
-              <Button color={"#0BA3D3"} text={"Login"} onClick={handleSubmit} />
+              <h1>Sign in Here</h1>
             </div>
-          </form>
+            <form>
+              <TextField
+                label="Email"
+                variant="outlined"
+                onChange={handleEmail}
+                className="input"
+                value={email}
+                type="email"
+              />
+
+              <TextField
+                label="Password"
+                variant="outlined"
+                onChange={handlePassword}
+                className="input"
+                value={password}
+                placeholder={"Password"}
+                type="password"
+              />
+
+              <div>
+                <Button
+                  color={"#0BA3D3"}
+                  text={"Login"}
+                  onClick={handleSubmit}
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="login-img">
+          <img src={img} alt="login" />
         </div>
       </div>
-      <div className="login-img">
-        <img src={img} alt="login" />
-      </div>
-    </div>
+    </>
   );
 };
 export default Login;
