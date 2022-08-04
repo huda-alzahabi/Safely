@@ -1,4 +1,4 @@
-<img src="./readme/title1.svg"/>
+<img src="./safely-readme/title1.svg"/>
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 <br><br>
 
 
-<img id="project-philosophy" src="./readme/title2.svg"/>
+<img id="project-philosophy" src="./safely-readme/title2.svg"/>
 
 > Safely is a medical app built to facilitate patients' lives. Safely is more than just a random medical app; it is multi language, multi theme , and it stores your medical records and directs you to the nearest hospitals, wherever you are.
 
@@ -41,29 +41,29 @@
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
 
-- I want view all my users and their information, so that I can manage them.
+- I want view all my users and their information, so that I can edit, delete and add users.
 - I want to view statistics about the app, so that I can see how it is used.
 
 
 <br><br>
 
-<img id="wireframes" src="./readme/title3.svg"/>
+<img id="wireframes" src="./safely-readme/title3.svg"/>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that I didn't use any styling library or theme, all from scratch and using pure css and xml modules
 
 | Welcome |  Login   | User Type  | Signup  |
 | ------- |  ------- | -------    |-------  |
-| ![Welcome](readme/figma_welcome.png)| ![Login](readme/figma_login.png) | ![User Type](readme/figma_usertype.png) | ![Signup](readme/figma_signup.png) |
+| ![Welcome](safely-readme/figma_welcome.png)| ![Login](safely-readme/figma_login.png) | ![User Type](safely-readme/figma_usertype.png) | ![Signup](safely-readme/figma_signup.png) |
 
 |Edit Profile | Location |  Hospitals   | Doctors  | 
 | --------- | ------- |  ------- | -------    |
-| ![Edit Profile](readme/figma_profile.png)| ![Location](readme/figma_location.png)| ![Hospitals](readme/figma_hospitals.png) | ![Doctors](readme/figma_doctors.png) | 
+| ![Edit Profile](safely-readme/figma_profile.png)| ![Location](safely-readme/figma_location.png)| ![Hospitals](safely-readme/figma_hospitals.png) | ![Doctors](safely-readme/figma_doctors.png) | 
 
 
 <br><br>
 
-<img id="tech-stack" src="./readme/title4.svg"/>
+<img id="tech-stack" src="./safely-readme/title4.svg"/>
 
 Here's a brief high-level overview of the tech stack the Safely uses:
 
@@ -79,7 +79,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 
 <br><br>
-<img id="implementation" src="./readme/title5.svg"/>
+<img id="implementation" src="./safely-readme/title5.svg"/>
 
 <div align="center">
 
@@ -87,45 +87,46 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 
 | Welcome/Login  | Signup Failed  | Patient Info/ Location|
 | -----------------| -----|-----|
-| ![Welcome/Login](readme/login_signup.gif) | ![Signup Failed](readme/email_in_use.gif) |![Patient Info/ Location](readme/patient_info.gif) 
+| ![Welcome/Login](safely-readme/login_signup.gif) | ![Signup Failed](safely-readme/email_in_use.gif) |![Patient Info/ Location](safely-readme/patient_info.gif) 
 
 |Medical Records|Patient Home/ Nearby Hospitals| Doctors  |
 |-----|-----------------| -----|
-| ![Medical Records](readme/medical_records.gif) |![Patient Home/ Nearby Hospitals](readme/patient.gif)| ![Doctors](readme/doctor.gif) |
+| ![Medical Records](safely-readme/medical_records.gif) |![Patient Home/ Nearby Hospitals](safely-readme/patient.gif)| ![Doctors](safely-readme/doctor.gif) |
 
 
 |Edit Profile| Choose Day/Time   | Confirm Appointment|
 |-----|-----|----|
-| ![Edit Profile](readme/edit_profile.jpg)| ![Choose Day/Time](readme/date_time.gif) | ![Confirm Appointment](readme/confirm_appointment.gif) |
+| ![Edit Profile](safely-readme/edit_profile.jpg)| ![Choose Day/Time](safely-readme/date_time.gif) | ![Confirm Appointment](safely-readme/confirm_appointment.gif) |
 
 
 Doctor Availability| Doctor Appointments  | Hospital Home  |
 | -----------------| -----|-----|
-![Doctor Availability](readme/availability.gif)| ![Upcoming Appointments](readme/appointments.gif) | ![Hospital Home](readme/hospital.jpg) 
+![Doctor Availability](safely-readme/availability.gif)| ![Upcoming Appointments](safely-readme/appointments.gif) | ![Hospital Home](safely-readme/hospital.jpg) 
 
 ### Safely in French
 
 Welcome | Patient Home |Doctor Info | Doctor Availability |
 | -----------------| -----------------| -----------------| -----------------|
-![Safely in French](readme/fr1.jpg)|![Safely in French](readme/fr2.jpg)|![Safely in French](readme/fr3.jpg)|![Safely in French](readme/fr4.jpg)
+![Safely in French](safely-readme/fr1.jpg)|![Safely in French](safely-readme/fr2.jpg)|![Safely in French](safely-readme/fr3.jpg)|![Safely in French](safely-readme/fr4.jpg)
 
 ### Dark Mode
 Patient Home | Nearby Hospitals |Medical Records |
 | -----------------| -----------------| -----------------| 
-![Dark Mode](readme/darkhome.jpg)|![Dark Mode](readme/darkhospitals.jpg)|![Dark Mode](readme/darkrecords.jpg)|
+![Dark Mode](safely-readme/darkhome.jpg)|![Dark Mode](safely-readme/darkhospitals.jpg)|![Dark Mode](safely-readme/darkrecords.jpg)|
 
 Admin|
 | -----------------|
-![Admin](readme/admin.gif)
+![Admin](safely-readme/admin.gif)
 
 </div>
 <br><br>
-<img id="how-to-run" src="./readme/title6.svg"/>
+<img id="how-to-run" src="./safely-readme/title6.svg"/>
 
 
 > To run the backend of the app, you need the following command:
       npm start    
 > To run the frontend of the app, you need to open it in Android studio and click on the “Run” button, if you have an emulator, or plug an android device.
+> Before runnning, make sure to change the IP Address in the base url found in ServiceBuilder, and put the IP Address of your network instead.
 
 ### Prerequisites
 
