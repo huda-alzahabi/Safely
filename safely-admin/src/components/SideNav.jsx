@@ -7,27 +7,15 @@ import logo from "../assets/logo.png";
 import UserMd from "@rsuite/icons/legacy/UserMd";
 import Bed from "@rsuite/icons/legacy/Bed";
 import Percent from "@rsuite/icons/legacy/Percent";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SideNav = () => {
   const [expand, setExpand] = useState(false);
   const [activeKey, setActiveKey] = useState("1");
   let nav = useNavigate();
 
-  function goToPatients() {
-    nav("/patients");
-  }
-  function goToUsers() {
-    nav("/users");
-  }
-  function goToHospitals() {
-    nav("/hospitals");
-  }
-  function goToDoctors() {
-    nav("/doctors");
-  }
-  function goToStats() {
-    nav("/statistics");
+  function navigateTo(link) {
+    nav(link);
   }
   return (
     <div>
@@ -38,41 +26,41 @@ const SideNav = () => {
             <Nav activeKey={activeKey} onSelect={setActiveKey}>
               <Nav.Item
                 className="item"
-                eventKey="1"
+                eventKey="/statistics"
                 icon={<Percent />}
-                onClick={goToStats}
+                onClick={() => navigateTo("/statistics")}
               >
                 Statistics
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="2"
+                eventKey="/users"
                 icon={<UserCircle />}
-                onClick={goToUsers}
+                onClick={() => navigateTo("/users")}
               >
                 Users
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="3"
+                eventKey="/hospitals"
                 icon={<HospitalO />}
-                onClick={goToHospitals}
+                onClick={() => navigateTo("/hospitals")}
               >
                 Hospitals
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="4"
+                eventKey="/patients"
                 icon={<Bed />}
-                onClick={goToPatients}
+                onClick={() => navigateTo("/patients")}
               >
                 Patients
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="5"
+                eventKey="/doctors"
                 icon={<UserMd />}
-                onClick={goToDoctors}
+                onClick={() => navigateTo("/doctors")}
               >
                 Doctors
               </Nav.Item>
