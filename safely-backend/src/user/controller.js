@@ -153,23 +153,7 @@ async function removeUser(req, res) {
     console.log(error);
   }
 }
-async function editUser(req, res) {
-  try {
-    const user = await User.findByIdAndUpdate(
-      { _id: req.query.id },
-      {
-        $set: {
-          name: req.body.name,
-          email: req.body.email,
-          userType: req.body.userType,
-        },
-      }
-    );
-    return res.send("User Successfully Updated");
-  } catch (error) {
-    console.log(error);
-  }
-}
+
 module.exports = {
   get,
   register,
@@ -178,5 +162,4 @@ module.exports = {
   getUsersCount,
   removeUser,
   adminLogin,
-  editUser
 };
