@@ -1,10 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FaEdit } from "react-icons/fa";
-import { MdDeleteForever } from "react-icons/md";
 import SideNav from "../components/SideNav";
+import { TbLogout } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
-const AllPatients = () => {
+
+const Patients = () => {
+  const nav = useNavigate();
+
   const [patients, setPatients] = useState([]);
   const getPatients = async () => {
     const res = await fetch("http://127.0.0.1:3030/api/patient/get", {
@@ -24,15 +27,21 @@ const AllPatients = () => {
     };
     getData();
   }, []);
-  console.log(patients);
+
+  const logout = () => {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("Bearer");
+    nav("/");
+  };
 
   return (
+    <>
+    <TbLogout className="logout" role="button" onClick={logout} />
     <div className="charts">
       <SideNav />
       <table className="titleMargin">
         <tr>
           <th>Name</th>
-          <th>Email</th>
           <th>Phone Number</th>
           <th>Nationality</th>
         </tr>
@@ -41,20 +50,14 @@ const AllPatients = () => {
             patient.user !== null && (
               <tr key={i}>
                 <td>{patient.user.name} </td>
-                <td>{patient.user.email}</td>
                 <td>{patient.phone_number} </td>
                 <td>{patient.nationality}</td>
-                <td>
-                  <FaEdit />
-                </td>
-                <td>
-                  <MdDeleteForever />
-                </td>
               </tr>
             )
         )}
       </table>
     </div>
+    </>
   );
 };
-export default AllPatients;
+export default Patients;
