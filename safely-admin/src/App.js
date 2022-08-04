@@ -5,7 +5,9 @@ import Patients from "./pages/Patients";
 import Hospitals from "./pages/Hospitals";
 import Doctors from "./pages/Doctors";
 import AllUsers from "./pages/AllUsers";
+import AddUser from "./pages/AddUser";
 import { Toaster } from "react-hot-toast";
+
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -21,7 +23,7 @@ function App() {
           <Route path="/hospitals" element={<Hospitals />}></Route>
           <Route path="/doctors" element={<Doctors />}></Route>
           <Route path="/users" element={<AllUsers />}></Route>
-
+          <Route path="/add" element={<AddUser />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

@@ -5,6 +5,8 @@ import SideNav from "../components/SideNav";
 import { TbLogout } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import AddUser from "./AddUser";
+import Button from "../components/Button";
 
 const Users = () => {
   const nav = useNavigate();
@@ -12,7 +14,6 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [usersFiltered, setFiltered] = useState([]);
   const [isUpdated, setIsUpdated] = useState(false);
-
 
   const getUsers = async () => {
     const res = await fetch("http://127.0.0.1:3030/api/user/auth/get", {
@@ -32,7 +33,7 @@ const Users = () => {
       setFiltered(usersFromServer);
     };
     getData();
-  }, [isUpdated,]);
+  }, [isUpdated]);
 
   const deleteUser = async (id) => {
     const res = await fetch(
@@ -70,41 +71,43 @@ const Users = () => {
 
   return (
     <>
-        <TbLogout className="logout" role="button" onClick={logout} />
+      <TbLogout className="logout" role="button" onClick={logout} />
       <div className="charts">
         <SideNav />
         <div className="searchTitle">
-        <div className="filter">
-          <label className="search">
-            Search Users</label>
+        <button className="add-btn" onClick={()=>{nav("/add")} }
+                >Add a User</button>
+          <div className="filter">
+            <label className="search">Search Users</label>
             <input
               className="box"
               type="text"
               onChange={(e) => filterUsers(e)}
             />
-        </div>
-        <table className="all_users" >
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>User Type</th>
-          </tr>
-          {users.map((user, i) => (
-            <tr key={i}>
-              <td>{user.name} </td>
-              <td>{user.email}</td>
-              <td>{user.userType} </td>
-              <td>
-                <MdDeleteForever
-                  role="button"
-                  onClick={() => deleteUser(user._id)}
-                />
-              </td>
+        
+          </div>
+          <table className="all_users">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>User Type</th>
             </tr>
-          ))}
-        </table>
-      </div>
+            {users.map((user, i) => (
+              <tr key={i}>
+                <td>{user.name} </td>
+                <td>{user.email}</td>
+                <td>{user.userType} </td>
+                <td>
+                  <MdDeleteForever
+                    role="button"
+                    onClick={() => deleteUser(user._id)}
+                  />
+                </td>
+              </tr>
+            ))}
+          </table>
         </div>
+      </div>
     </>
   );
 };
