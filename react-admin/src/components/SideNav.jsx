@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 import UserMd from "@rsuite/icons/legacy/UserMd";
 import Bed from "@rsuite/icons/legacy/Bed";
 import Percent from "@rsuite/icons/legacy/Percent";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const SideNav = () => {
   const [expand, setExpand] = useState(false);
@@ -16,6 +16,9 @@ const SideNav = () => {
 
   function goToPatients() {
     nav("/patients");
+  }
+  function goToUsers() {
+    nav("/users");
   }
   function goToHospitals() {
     nav("/hospitals");
@@ -44,6 +47,14 @@ const SideNav = () => {
               <Nav.Item
                 className="item"
                 eventKey="2"
+                icon={<Home />}
+                onClick={goToUsers}
+              >
+                Statistics
+              </Nav.Item>
+              <Nav.Item
+                className="item"
+                eventKey="3"
                 icon={<HospitalO />}
                 onClick={goToHospitals}
               >
@@ -51,7 +62,7 @@ const SideNav = () => {
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="3"
+                eventKey="4"
                 icon={<Bed />}
                 onClick={goToPatients}
               >
@@ -59,7 +70,7 @@ const SideNav = () => {
               </Nav.Item>
               <Nav.Item
                 className="item"
-                eventKey="4"
+                eventKey="5"
                 icon={<UserMd />}
                 onClick={goToDoctors}
               >
