@@ -14,12 +14,12 @@ object ServiceBuilder {
         .create()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.101.121:3030")
+        .baseUrl("http://192.168.1.121:3030")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(client)
         .build()
 
-    fun<T> buildService(service: Class<T>): T{
+    fun <T> buildService(service: Class<T>): T {
         return retrofit.create(service)
     }
 }

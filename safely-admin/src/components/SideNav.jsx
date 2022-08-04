@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "rsuite/dist/rsuite.min.css";
 import { Nav, Sidenav } from "rsuite/";
-import Home from "@rsuite/icons/legacy/Home";
+import UserCircle from "@rsuite/icons/legacy/UserCircle";
 import HospitalO from "@rsuite/icons/legacy/HospitalO";
 import logo from "../assets/logo.png";
 import UserMd from "@rsuite/icons/legacy/UserMd";
@@ -47,7 +47,7 @@ const SideNav = () => {
               <Nav.Item
                 className="item"
                 eventKey="2"
-                icon={<Home />}
+                icon={<UserCircle />}
                 onClick={goToUsers}
               >
                 Statistics

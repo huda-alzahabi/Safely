@@ -71,6 +71,9 @@ class AddMedicalRecordsActivity : AppCompatActivity() {
                 Log.d("NOO", "Error registering new user")
             }
         }
+        val intent =
+            Intent(this@AddMedicalRecordsActivity, PatientHomeActivity::class.java)
+        startActivity(intent)
     }
 
     private fun clickedNavItem() {
