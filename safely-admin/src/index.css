@@ -112,13 +112,26 @@ h2 {
 .rs-btn-icon.rs-btn > .rs-icon {
   color: #000a50 !important;
 }
-table {
+table{
+  border-collapse: collapse;
+  margin-left: 5%;
+  margin-top: 13%;
+  margin-bottom: 5%;
+  width: 65%;
+  border-radius: 10px;
+  max-height: 30px;
+  overflow: scroll;
+  background-color: #b6e4f2;
+}
+
+.all_users {
   border-collapse: collapse;
   margin-bottom: 5%;
   margin-left: 10%;
   border-radius: 10px;
   max-height: 30px;
   min-width: 100%;
+  margin-top: 0%;
   overflow: scroll;
   background-color: #b6e4f2;
 }

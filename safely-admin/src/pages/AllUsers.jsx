@@ -4,6 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 import SideNav from "../components/SideNav";
 import { TbLogout } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Users = () => {
   var isUpdated = false;
@@ -44,7 +45,7 @@ const Users = () => {
       }
     );
     const data = await res.json();
-    alert("User Successfully Deleted");
+    toast.success("User Successfully Deleted");
     isUpdated = !isUpdated;
   };
   const filterUsers = (e) => {
@@ -81,7 +82,7 @@ const Users = () => {
               onChange={(e) => filterUsers(e)}
             />
         </div>
-        <table className="titleMargin">
+        <table className="all_users" >
           <tr>
             <th>Name</th>
             <th>Email</th>
