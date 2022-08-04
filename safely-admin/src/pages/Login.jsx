@@ -48,7 +48,7 @@ const Login = () => {
       toast.success("Login Successful");
       nav("/statistics");
     } catch (err) {
-      toast.error("Login Failed");
+      toast.error("Login Failed: Unauthorized");
     }
   };
 
