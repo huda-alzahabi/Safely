@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import SideNav from "../components/SideNav";
 import { TbLogout } from "react-icons/tb";
@@ -93,9 +92,6 @@ const Users = () => {
               <td>{user.name} </td>
               <td>{user.email}</td>
               <td>{user.userType} </td>
-              <td>
-                <FaEdit />
-              </td>
               <td>
                 <MdDeleteForever
                   role="button"
