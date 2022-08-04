@@ -113,6 +113,38 @@ async function getUsersCount(req, res) {
     console.log(error);
   }
 }
+async function adminLogin(req, res) {
+  try {
+    const user = await getByEmail(req.body.email);
+    if (user.userType === "admin"){
+       
+    if (!user) return res.status(400).send("invalid credentials");
+
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!validPassword) return res.status(400).send("invalid credentials");
+
+    const token = jwt.sign(
+      {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        userType: user.userType,
+      },
+      TOKEN_SECRET
+    );
+    return res.status(200).json({ token: token });
+  }
+    else{
+        return res.status(400).send("Unauthorized");
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+}
 async function removeUser(req, res) {
   try {
     const user = await User.findOne({ _id: req.query.id });
@@ -131,4 +163,5 @@ module.exports = {
   editProfile,
   getUsersCount,
   removeUser,
+  adminLogin
 };
