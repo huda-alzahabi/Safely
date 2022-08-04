@@ -115,14 +115,14 @@ Patient Home | Nearby Hospitals |Medical Records |
 ![Dark Mode](safely-readme/darkhome.jpg)|![Dark Mode](safely-readme/darkhospitals.jpg)|![Dark Mode](safely-readme/darkrecords.jpg)|
 
 ### Admin
-Unauthorized |
+Login/ Unauthorized |
 | -----------------|
 ![Unauthorized](safely-readme/login_admin.gif)
 
 
 Statistics |
 | -----------------|
-![Statistics](safely-readme/login_admin.gif)
+![Statistics](safely-readme/statistics.gif)
 
 
 </div>
