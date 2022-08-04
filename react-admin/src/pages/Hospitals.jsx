@@ -1,10 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { FaEdit } from "react-icons/fa";
-import { MdDeleteForever } from "react-icons/md";
 import SideNav from "../components/SideNav";
+import { TbLogout } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const Hospitals = () => {
+  const nav= useNavigate();
   const [hospitals, setHospitals] = useState([]);
   const getHospitals = async () => {
     const res = await fetch("http://127.0.0.1:3030/api/hospital/", {
@@ -26,7 +27,16 @@ const Hospitals = () => {
   }, []);
   console.log(hospitals);
 
+  const logout = () => {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("Bearer");
+    nav("/");
+  };
+
+
   return (
+    <>
+    <TbLogout className="logout" role="button" onClick={logout} />
     <div className="charts">
       <SideNav />
       <table className="titleMargin">
@@ -34,7 +44,7 @@ const Hospitals = () => {
           <th>Name</th>
           <th>Phone Number</th>
           <th>Location</th>
-          <th>Clinics Working Hours</th>
+          <th>Outpatient Clinics Working Hours</th>
         </tr>
         {hospitals.map(
           (hospital, i) =>
@@ -46,17 +56,12 @@ const Hospitals = () => {
                 {hospital.address.street}, {hospital.address.city}, {hospital.address.country}
                 </td>
                 <td>{hospital.outpatient_clinic}</td>
-                <td>
-                  <FaEdit />
-                </td>
-                <td>
-                  <MdDeleteForever />
-                </td>
               </tr>
             )
         )}
       </table>
     </div>
+    </>
   );
 };
 export default Hospitals;
