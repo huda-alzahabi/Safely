@@ -23,7 +23,7 @@ body {
   color: white;
   border: 0cm;
   padding: 18px 10px;
-  margin:   10px;
+  margin: 10px;
   width: 80%;
   border-radius: 5px;
   cursor: pointer;
@@ -52,7 +52,7 @@ h2 {
   text-align: center;
 }
 .login-img {
-  margin-top:-90px;
+  margin-top: -90px;
 }
 .donut {
   margin-top: 200px;
@@ -112,17 +112,6 @@ h2 {
 }
 .rs-btn-icon.rs-btn > .rs-icon {
   color: #000a50 !important;
-}
-table{
-  border-collapse: collapse;
-  margin-left: 5%;
-  margin-top: 13%;
-  margin-bottom: 5%;
-  width: 65%;
-  border-radius: 10px;
-  max-height: 30px;
-  overflow: scroll;
-  background-color: #b6e4f2;
 }
 
 .all_users {
@@ -192,14 +181,14 @@ tr:nth-child(even) {
 .top {
   display: flex;
 }
-label{
+label {
   margin-right: 5px;
 }
-.searchTitle{
+.searchTitle {
   margin-top: 5%;
   width: 65% !important;
 }
-.box{
+.box {
   border-radius: 10px;
   height: 45px;
   width: 175px;
@@ -207,4 +196,12 @@ label{
   font-size: large;
   font-family: "Laila", sans-serif !important;
   font-weight: bold;
+}
+.user_type {
+  color: #000a50;
+  font-size: 50px;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bolder;
+  margin-left: 120px;
+  text-shadow: 2px 2px #6da8d4d3;
 }
