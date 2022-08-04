@@ -161,6 +161,7 @@ async function editUser(req, res) {
         $set: {
           name: req.body.name,
           email: req.body.email,
+          userType: req.body.userType,
         },
       }
     );
