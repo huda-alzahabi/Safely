@@ -5,12 +5,14 @@ import Patients from "./pages/Patients";
 import Hospitals from "./pages/Hospitals";
 import Doctors from "./pages/Doctors";
 import AllUsers from "./pages/AllUsers";
+import { Toaster } from "react-hot-toast";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-center" reverseOrder={false} />
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />}></Route>

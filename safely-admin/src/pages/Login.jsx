@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import img from "../assets/login.png";
-import TextField from '@material-ui/core/TextField';
+import TextField from "@material-ui/core/TextField";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const nav=useNavigate();
+  const nav = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,19 +32,23 @@ const Login = () => {
       email: email,
       password: password,
     };
-
-    const res = await fetch("http://127.0.0.1:3030/api/user/admin/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(_data),
-    });
-    const result = await res.json();
-    window.localStorage.setItem("Bearer", result.token);
-    var user = jwt_decode(result.token);
-    window.localStorage.setItem("user_id", user._id);
-     nav("/statistics");
+    try {
+      const res = await fetch("http://127.0.0.1:3030/api/user/admin/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(_data),
+      });
+      const result = await res.json();
+      window.localStorage.setItem("Bearer", result.token);
+      var user = jwt_decode(result.token);
+      window.localStorage.setItem("user_id", user._id);
+      toast.success("Login Successful");
+      nav("/statistics");
+    } catch (err) {
+      toast.error("Login Failed");
+    }
   };
 
   return (
@@ -54,15 +59,18 @@ const Login = () => {
             <h1>Sign in Here</h1>
           </div>
           <form>
-            
-            <TextField label="Email" variant="outlined"
+            <TextField
+              label="Email"
+              variant="outlined"
               onChange={handleEmail}
               className="input"
               value={email}
               type="email"
             />
 
-            <TextField label="Password" variant="outlined" 
+            <TextField
+              label="Password"
+              variant="outlined"
               onChange={handlePassword}
               className="input"
               value={password}
@@ -70,7 +78,7 @@ const Login = () => {
               type="password"
             />
 
-            <div >
+            <div>
               <Button color={"#0BA3D3"} text={"Login"} onClick={handleSubmit} />
             </div>
           </form>
