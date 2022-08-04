@@ -185,7 +185,6 @@ label {
   margin-right: 5px;
 }
 .searchTitle {
-  margin-top: 5%;
   width: 65% !important;
 }
 .box {
@@ -204,4 +203,96 @@ label {
   font-weight: bolder;
   margin-left: 120px;
   text-shadow: 2px 2px #6da8d4d3;
+}
+.add input[type="text"],
+.add input[type="email"],
+.add input[type="password"] {
+  border: none;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 2px solid white;
+  outline: none;
+  height: 37px;
+  color: white;
+  background: transparent;
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.add input[type="text"]:focus,
+.add input[type="email"]:focus,
+.add input {
+  border-bottom: 2px solid #0ba3d3;
+}
+.add input[type="text"]:hover,
+.add input[type="email"]:hover,
+.add input[type="password"]:hover {
+  color: #0ba3d3;
+  border: 1px solid #0ba3d3 ;
+  box-shadow: 0 0 5px white, 0 0 10px rgba(229, 99, 63, 0.2),
+    0 0 15px rgba(255, 77, 0, 0.1), 0 2px 0 black;
+}
+.add input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.add {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  min-height: 400px;
+  background-color: #b6e4f2;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #000a50;
+  margin-top: 5%;
+}
+
+.title {
+  color: #000a50;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bolder;
+  text-shadow: 2px 2px #6da8d4d3;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.logColor{
+  color: #000a50;
+  font-size: 20px;
+  font-weight: bold;
+}
+.add-btn {
+  color: #000a50;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: white;
+  font-weight: bolder;
+  margin-left: 49%;
+  margin-top: 30px;
+  width: 170px;
+}
+
+.submit-btn {
+  color: #000a50;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: white;
+  font-weight: bolder;
+  margin-left: 35%;
+  margin-top: 30px;
+  width: 170px;
 }
