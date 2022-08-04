@@ -43,7 +43,8 @@ body {
 h1 {
   font-family: "Laila", sans-serif !important;
   text-align: left;
-  margin-left: 45px !important;
+  margin-left: 65px !important;
+  margin-bottom: 10px !important;
   color: #0ba3d3 !important;
 }
 
@@ -51,7 +52,7 @@ h2 {
   text-align: center;
 }
 .login-img {
-  margin-top:-30px;
+  margin-top:-90px;
 }
 .donut {
   margin-top: 200px;
