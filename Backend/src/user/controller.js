@@ -116,29 +116,27 @@ async function getUsersCount(req, res) {
 async function adminLogin(req, res) {
   try {
     const user = await getByEmail(req.body.email);
-    if (user.userType === "admin"){
-       
-    if (!user) return res.status(400).send("invalid credentials");
+    if (user.userType === "admin") {
+      if (!user) return res.status(400).send("invalid credentials");
 
-    const validPassword = await bcrypt.compare(
-      req.body.password,
-      user.password
-    );
-    if (!validPassword) return res.status(400).send("invalid credentials");
+      const validPassword = await bcrypt.compare(
+        req.body.password,
+        user.password
+      );
+      if (!validPassword) return res.status(400).send("invalid credentials");
 
-    const token = jwt.sign(
-      {
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        userType: user.userType,
-      },
-      TOKEN_SECRET
-    );
-    return res.status(200).json({ token: token });
-  }
-    else{
-        return res.status(400).send("Unauthorized");
+      const token = jwt.sign(
+        {
+          _id: user._id,
+          name: user.name,
+          email: user.email,
+          userType: user.userType,
+        },
+        TOKEN_SECRET
+      );
+      return res.status(200).json({ token: token });
+    } else {
+      return res.status(400).send("Unauthorized");
     }
   } catch (error) {
     console.log(error);
@@ -155,7 +153,22 @@ async function removeUser(req, res) {
     console.log(error);
   }
 }
-  
+async function editUser(req, res) {
+  try {
+    const user = await User.findByIdAndUpdate(
+      { _id: req.query.id },
+      {
+        $set: {
+          name: req.body.name,
+          email: req.body.email,
+        },
+      }
+    );
+    return res.send("User Successfully Updated");
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
   get,
   register,
@@ -163,5 +176,6 @@ module.exports = {
   editProfile,
   getUsersCount,
   removeUser,
-  adminLogin
+  adminLogin,
+  editUser
 };
