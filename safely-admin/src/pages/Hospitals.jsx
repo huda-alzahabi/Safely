@@ -38,7 +38,11 @@ const Hospitals = () => {
     <TbLogout className="logout" role="button" onClick={logout} />
     <div className="charts">
       <SideNav />
-      <table className="titleMargin">
+      <div className="searchTitle">
+        <div className="filter">
+          <h2 className="user_type">Hospitals</h2>
+        </div>
+      <table className="all_users">
         <tr>
           <th>Name</th>
           <th>Phone Number</th>
@@ -59,6 +63,7 @@ const Hospitals = () => {
             )
         )}
       </table>
+    </div>
     </div>
     </>
   );
