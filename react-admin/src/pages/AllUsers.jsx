@@ -26,7 +26,17 @@ const Users = () => {
     getData();
   }, [isUpdated]);
 
-
+  const deleteUser = async (id) => {
+    const res = await fetch(
+      `http://127.0.0.1:3030/api/user/auth/delete?id=` + id,
+      {
+        method: "delete",
+        headers: {
+          token: localStorage.getItem("Bearer"),
+          "content-type": "application/json",
+        },
+      }
+    );
     const data = await res.json();
     console.log(data);
     alert("User Successfully Deleted");
@@ -52,7 +62,8 @@ const Users = () => {
             </td>
             <td>
               <MdDeleteForever
-               
+                role="button"
+                onClick={() => deleteUser(user._id)}
               />
             </td>
           </tr>
@@ -60,4 +71,5 @@ const Users = () => {
       </table>
     </div>
   );
+};
 export default Users;
