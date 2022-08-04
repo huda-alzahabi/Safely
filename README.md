@@ -113,27 +113,27 @@ Here's a brief high-level overview of the tech stack Safely uses:
 | Login/ Unauthorized |
 | ------------------- |
 
-![Unauthorized](safely-readme/login_admin.gif)
+/![Unauthorized](safely-readme/login_admin.gif)|
 
 | Statistics |
 | ---------- |
 
-![Statistics](safely-readme/statistics.gif)
+|![Statistics](safely-readme/statistics.gif)|
 
 | View/ Search/ Delete Users |
 | -------------------------- |
 
-![Statistics](safely-readme/allusers.gif)
+|![View/ Search/ Delete Users](safely-readme/allusers.gif)|
 
 | Hospitals/ Patients/ Doctors |
 | ---------------------------- |
 
-![Statistics](safely-readme/tables.gif)
+|![Hospitals/ Patients/ Doctors](safely-readme/tables.gif)|
 
 | Add User |
 | -------- |
 
-![Statistics](safely-readme/add_user.gif)
+|![Add User](safely-readme/add_user.gif)|
 
 </div>
 <br><br>
