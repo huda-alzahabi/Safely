@@ -114,9 +114,16 @@ Patient Home | Nearby Hospitals |Medical Records |
 | -----------------| -----------------| -----------------| 
 ![Dark Mode](safely-readme/darkhome.jpg)|![Dark Mode](safely-readme/darkhospitals.jpg)|![Dark Mode](safely-readme/darkrecords.jpg)|
 
-Admin|
+### Admin
+Unauthorized |
 | -----------------|
-![Admin](safely-readme/admin.gif)
+![Unauthorized](safely-readme/login_admin.gif)
+
+
+Statistics |
+| -----------------|
+![Statistics](safely-readme/login_admin.gif)
+
 
 </div>
 <br><br>
