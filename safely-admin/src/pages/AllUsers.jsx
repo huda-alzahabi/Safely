@@ -54,9 +54,9 @@ const Users = () => {
     let result = [];
     result = usersFiltered.filter((users) => {
       return (
-        users.name.search(value) != -1 ||
-        users.email.search(value) != -1 ||
-        users.userType.search(value) != -1
+        users.name.search(value) !== -1 ||
+        users.email.search(value) !== -1 ||
+        users.userType.search(value) !== -1
       );
     });
     setUsers(result);
