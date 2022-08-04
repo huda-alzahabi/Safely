@@ -9,7 +9,10 @@ import { useNavigate } from "react-router-dom";
 const Users = () => {
   var isUpdated = false;
   const nav = useNavigate();
+
   const [users, setUsers] = useState([]);
+  const [usersFiltered, setFiltered] = useState([]);
+
   const getUsers = async () => {
     const res = await fetch("http://127.0.0.1:3030/api/user/auth/get", {
       headers: {
@@ -25,6 +28,7 @@ const Users = () => {
     const getData = async () => {
       const usersFromServer = await getUsers();
       setUsers(usersFromServer);
+      setFiltered(usersFromServer);
     };
     getData();
   }, [isUpdated]);
@@ -45,6 +49,19 @@ const Users = () => {
     alert("User Successfully Deleted");
     isUpdated = !isUpdated;
   };
+  const filterUsers = (e) => {
+    let value = e.target.value.toLowerCase();
+    let result = [];
+    result = usersFiltered.filter((users) => {
+      return (
+        users.name.search(value) != -1 ||
+        users.email.search(value) != -1 ||
+        users.userType.search(value) != -1
+      );
+    });
+    setUsers(result);
+  };
+
   const logout = () => {
     localStorage.removeItem("user_id");
     localStorage.removeItem("Bearer");
@@ -53,6 +70,16 @@ const Users = () => {
 
   return (
     <>
+      <div className="filter">
+        <label className="search">
+          Filter Search{" "}
+          <input
+            className="box"
+            type="text"
+            onChange={(e) => filterUsers(e)}
+          />
+        </label>
+      </div>
       <TbLogout className="logout" role="button" onClick={logout} />
       <div className="charts">
         <SideNav />
