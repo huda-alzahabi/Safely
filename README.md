@@ -124,6 +124,10 @@ Statistics |
 | -----------------|
 ![Statistics](safely-readme/statistics.gif)
 
+View/ Search/ Delete Users  |
+| -----------------|
+![Statistics](safely-readme/allusers.gif)
+
 
 </div>
 <br><br>
