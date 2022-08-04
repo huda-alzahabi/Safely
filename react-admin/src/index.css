@@ -47,7 +47,7 @@ h1 {
   color: #0ba3d3 !important;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 .login-img {
@@ -114,12 +114,11 @@ h2{
 }
 table {
   border-collapse: collapse;
-  margin-left: 5%;
-  margin-top: 13%;
   margin-bottom: 5%;
-  width: 65%;
+  margin-left: 10%;
   border-radius: 10px;
   max-height: 30px;
+  min-width: 100%;
   overflow: scroll;
   background-color: #b6e4f2;
 }
@@ -155,10 +154,43 @@ tr:nth-child(even) {
   --rs-tooltip-bg: rgb(180, 202, 204) !important;
   color: white;
 }
-.logout{
+.logout {
   float: right;
   width: 45px;
   height: 45px;
   color: white;
   margin: 10px;
+}
+.search {
+  color: #000a50;
+  font-size: x-large;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bold;
+}
+.filter {
+  height: fit-content;
+  width: fit-content;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+.top {
+  display: flex;
+}
+label{
+  margin-right: 5px;
+}
+.searchTitle{
+  margin-top: 5%;
+  width: 65% !important;
+}
+.box{
+  border-radius: 10px;
+  height: 45px;
+  width: 175px;
+  color: #0ba3d3;
+  font-size: large;
+  font-family: "Laila", sans-serif !important;
+  font-weight: bold;
 }

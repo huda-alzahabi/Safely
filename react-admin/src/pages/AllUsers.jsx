@@ -70,19 +70,19 @@ const Users = () => {
 
   return (
     <>
-      <div className="filter">
-        <label className="search">
-          Filter Search{" "}
-          <input
-            className="box"
-            type="text"
-            onChange={(e) => filterUsers(e)}
-          />
-        </label>
-      </div>
-      <TbLogout className="logout" role="button" onClick={logout} />
+        <TbLogout className="logout" role="button" onClick={logout} />
       <div className="charts">
         <SideNav />
+        <div className="searchTitle">
+        <div className="filter">
+          <label className="search">
+            Search Users</label>
+            <input
+              className="box"
+              type="text"
+              onChange={(e) => filterUsers(e)}
+            />
+        </div>
         <table className="titleMargin">
           <tr>
             <th>Name</th>
@@ -107,6 +107,7 @@ const Users = () => {
           ))}
         </table>
       </div>
+        </div>
     </>
   );
 };
