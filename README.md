@@ -41,7 +41,7 @@
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  As an admin: 
 
-- I want view all my users and their information, so that I can edit, delete and add users.
+- I want view all my users and their information, so that I can manage, delete and add users.
 - I want to view statistics about the app, so that I can see how it is used.
 
 
