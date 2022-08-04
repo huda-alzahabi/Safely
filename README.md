@@ -89,7 +89,7 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 | -----------------| -----|-----|
 | ![Welcome/Login](safely-readme/login_signup.gif) | ![Signup Failed](safely-readme/email_in_use.gif) |![Patient Info/ Location](safely-readme/patient_info.gif) 
 
-|Medical Records|Patient Homepage/ Nearby Hospitals| Doctors/ Search  |
+|Medical Records|Patient Home/ Nearby Hospitals| Doctors/ Search  |
 |-----|-----------------| -----|
 | ![Medical Records](safely-readme/medical_records.gif) |![Patient Home/ Nearby Hospitals](safely-readme/patient.gif)| ![Doctors](safely-readme/doctor.gif) |
 
@@ -99,18 +99,18 @@ Here's a brief high-level overview of the tech stack the Safely uses:
 | ![Edit Profile](safely-readme/edit_profile.jpg)| ![Choose Day/Time](safely-readme/date_time.gif) | ![Confirm Appointment](safely-readme/confirm_appointment.gif) |
 
 
-Doctor Availability| Doctor Appointments  | Hospital Homepage  |
+Doctor Availability| Doctor Appointments  | Hospital Home  |
 | -----------------| -----|-----|
 ![Doctor Availability](safely-readme/availability.gif)| ![Upcoming Appointments](safely-readme/appointments.gif) | ![Hospital Home](safely-readme/hospital.jpg) 
 
 ### Safely in French
 
-Welcome | Patient Homepage |Doctor Info | Doctor Availability |
+Welcome | Patient Home |Doctor Info | Doctor Availability |
 | -----------------| -----------------| -----------------| -----------------|
 ![Safely in French](safely-readme/fr1.jpg)|![Safely in French](safely-readme/fr2.jpg)|![Safely in French](safely-readme/fr3.jpg)|![Safely in French](safely-readme/fr4.jpg)
 
 ### Dark Mode
-Patient Homepage | Nearby Hospitals |Medical Records |
+Patient Home | Nearby Hospitals |Medical Records |
 | -----------------| -----------------| -----------------| 
 ![Dark Mode](safely-readme/darkhome.jpg)|![Dark Mode](safely-readme/darkhospitals.jpg)|![Dark Mode](safely-readme/darkrecords.jpg)|
 
@@ -132,6 +132,9 @@ Hospitals/ Patients/ Doctors  |
 | -----------------|
 ![Statistics](safely-readme/tables.gif)
 
+Add User  |
+| -----------------|
+![Statistics](safely-readme/add_user.gif)
 
 </div>
 <br><br>
