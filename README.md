@@ -128,6 +128,10 @@ View/ Search/ Delete Users  |
 | -----------------|
 ![Statistics](safely-readme/allusers.gif)
 
+Hospitals/ Patients/ Doctors  |
+| -----------------|
+![Statistics](safely-readme/tables.gif)
+
 
 </div>
 <br><br>
