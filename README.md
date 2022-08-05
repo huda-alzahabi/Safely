@@ -167,3 +167,13 @@ Here's a brief high-level overview of the tech stack Safely uses:
    ```js
    MAPS_API_KEY = "ENTER YOUR API";
    ```
+### Running the admin website
+
+1. Navigate to the admin folder: safely-admin and install the dependencies
+   ```sh
+   npm install
+   ```
+2. Run the start up command
+   ```sh
+   npm start
+   ```
