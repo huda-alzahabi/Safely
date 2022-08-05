@@ -161,9 +161,12 @@ Here's a brief high-level overview of the tech stack Safely uses:
    cd safely-backend
    npm start
    ```
-2. Navigate to the Frontend folder: safely-frontend, open it in Android Studio and run the app.
+2. Navigate to the Frontend folder: safely-frontend and open it in Android Studio.
 
-3. Enter your Google Maps API in `local.properties` in the frontend folder
+3. Navigate to ServiceBuilder (safely-frontend/app/src/main/java/com/finalproj/safely/user/ServiceBuilder.kt) and change the IP address of the base url to your local IP address.
+
+
+4. Enter your Google Maps API in `local.properties` in the frontend folder
    ```js
    MAPS_API_KEY = "ENTER YOUR API";
    ```
