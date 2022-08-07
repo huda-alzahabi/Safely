@@ -93,7 +93,8 @@ class PatientInfoActivity : AppCompatActivity() {
         apiService.addPatient(patientInfo, token) {
             if (it != null) {
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putString("patient_id", it._id)
+                editor.putString("patient_id", it._id.toString())
+                Log.d("patient_id", it._id.toString())
                 editor.apply()
                 editor.commit()
             } else {
